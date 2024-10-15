@@ -1,9 +1,7 @@
 ##### Original
 
 - [x] Copy all 66 Books from Bolls.Life into USFM
-- [ ] Check files integrity
-  - [ ] compare chapters with original: first and last words
-  - [ ] check number of verses
+- [ ] Check files integrity: compare chapters with original first and last words
 - [ ] Place each tag on new line
 - [ ] Fix typos
 - [ ] Add WJ tags for JESUS' Words in red
