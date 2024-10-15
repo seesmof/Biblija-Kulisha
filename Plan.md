@@ -13,7 +13,7 @@
 
 ##### Revision
 
-- Use UBIO or HOM Bible + some English literal one like KJV to make revisions
+- Use PHIL, HOM, KJV, WEB, BSB Bibles for revisions 
 
 1. Capitalize GOD's Pronouns
 2. Add quotation marks in direct speech: “‘’”
