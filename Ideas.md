@@ -1,0 +1,8 @@
+- text them and offer files to add Bible to their website
+  - BibleGateway
+  - Blue Letter Bible
+  - YouVersion
+  - Bible Hub
+- make a latin version (romanized or latynka) of the text 
+- for one file text version use KJV as example, for multiple files see requirements at Temp Projects docx file 
+- for header tags use Bolls names for now, maybe use TOCA to add OT Book names from YouVersion
