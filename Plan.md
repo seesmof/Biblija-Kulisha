@@ -21,7 +21,7 @@
   - [x] Remove `\ide` tags 
   - [x] Remove `\h` tags 
   - [x] Change `\toc1 ` to `###!!`
-  - [ ] Change `\toc2 ` to `###!`
+  - [x] Change `\toc2 ` to `###!`
   - [ ] Remove `\toc3` tags 
   - [ ] Remove `\mt1` tags 
   - [ ] Change `\c ` to `##`
