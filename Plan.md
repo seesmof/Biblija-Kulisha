@@ -26,7 +26,7 @@
   - [x] Remove `\mt1` tags 
   - [x] Change `\c ` to `##`
   - [x] Remove `\p` tags 
-  - [ ] Change `\v ` to `#`
+  - [x] Change `\v ` to `#`
   - [ ] Replace `[ ]` with `* *`
 - [ ] Add space after `###!!`
 - [ ] Add space after `###!`
