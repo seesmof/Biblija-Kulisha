@@ -1,23 +1,16 @@
-- Прибрати всі символи *
-- Прибрати подвійні пробіли, або замінити на P тег
-- Зайва крапочка на початку вірша
-  - Вихід 7.9
-  - Вихід 16.28
-  - Второзаконня 26.10
-  - Псалом 16.9
-  - Псалом 26.7
-  - Псалом 73.4
-- Розділені перші літери першого вірша - одруківка: ![](https://lh3.googleusercontent.com/pw/AP1GczNjNytYdmcklLcxpyY_t3iuEeE568U_KXVShcmvDYaz2bxaJOqph3UOBwJuDZNOrhkWd9GJN08Vh2-hx6iRbniBVtG9obZEM5nsAjpDRaD1AzOlW16zLx80BXgWim1hwfZrYCvlX-hXwZkXZcOVh1sUEQ=w885-h1288-s-no?authuser=0)
-  - Ісая 13
-  - Псалом 17
-
 - General typos 
   - [x] ` ` symbols 
   - [ ] `*` symbols 
   - [ ] Double spaces 
   - [ ] Extra dot at the beginning 
+    - Вихід 7.9
+    - Вихід 16.28
+    - Второзаконня 26.10
+    - Псалом 16.9
+    - Псалом 26.7
+    - Псалом 73.4
 - Specific typos 
-  - Розділена перша літера 
+  - Розділена перша літера першого слова: ![](https://lh3.googleusercontent.com/pw/AP1GczNjNytYdmcklLcxpyY_t3iuEeE568U_KXVShcmvDYaz2bxaJOqph3UOBwJuDZNOrhkWd9GJN08Vh2-hx6iRbniBVtG9obZEM5nsAjpDRaD1AzOlW16zLx80BXgWim1hwfZrYCvlX-hXwZkXZcOVh1sUEQ=w885-h1288-s-no?authuser=0)
     - [ ] Ісаї 13 
     - [ ] Псалми 17 
   - [ ] 1 Мойсея 31.25 нема крапочки на кінці
