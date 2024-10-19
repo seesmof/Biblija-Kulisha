@@ -14,7 +14,7 @@
 
 - For getting WJ, ND, QT tags check NASB on BibleGateway
 
-##### Text version
+###### Text version
 
 - [x] Copy USFM files, rename each: remove number, remove BKS, change extension to TXT 
 - Change USFM tags to TBS markup 
