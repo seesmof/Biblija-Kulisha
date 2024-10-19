@@ -4,9 +4,9 @@
 - [x] Check files integrity: compare chapters with original first and last words; check chapter numbers
 - [x] Place each tag on new line
 - [x] Make preview text version 
-- [ ] Make complete text version: add local verse numbers 
 - [ ] Fix general typos
 - [ ] Fix specific typos: check each verse manually 
+- [ ] Make complete text version: add local verse numbers 
 - [ ] Add WJ tags for JESUS' Words in red
 - [ ] Add ND tags for LORD's Name in small caps
 - [ ] Add QT tags for OT quotes in NT
