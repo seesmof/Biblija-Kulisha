@@ -7,7 +7,7 @@
   - Псалом 16.9
   - Псалом 26.7
   - Псалом 73.4
-- Розділені перші літери першого вірша - одруківка: ![](https://i.imgur.com/q47XbyM.jpeg)
+- Розділені перші літери першого вірша - одруківка: ![](https://lh3.googleusercontent.com/pw/AP1GczNjNytYdmcklLcxpyY_t3iuEeE568U_KXVShcmvDYaz2bxaJOqph3UOBwJuDZNOrhkWd9GJN08Vh2-hx6iRbniBVtG9obZEM5nsAjpDRaD1AzOlW16zLx80BXgWim1hwfZrYCvlX-hXwZkXZcOVh1sUEQ=w885-h1288-s-no?authuser=0)
   - Ісая 13
   - Псалом 17
 
