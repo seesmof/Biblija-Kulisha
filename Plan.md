@@ -30,7 +30,7 @@
   - [x] Change `\v ` to `#`
   - [x] Replace `[ ]` with `* *`
 - [x] Add space after `###!!`
-- [ ] Add space after `###!`
+- [x] Add space after `###!`
 - [ ] Add local chapter numbers 
 - [ ] Add local verse numbers using `original_verse/local_verse` syntax
 
