@@ -5,3 +5,4 @@
   - Bible Hub
 - make a latin version (romanized or latynka) of the text 
 - for one file text version use KJV as example, for multiple files see requirements at Temp Projects docx file 
+- name original version Kulish Standard Bible (KSB) and a revision Kulish Revised Bible (KRB)
