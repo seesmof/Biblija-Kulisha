@@ -20,7 +20,7 @@
   - [x] Change `\id ` to `###`
   - [x] Remove `\ide` tags 
   - [x] Remove `\h` tags 
-  - [ ] Change `\toc1 ` to `###!!`
+  - [x] Change `\toc1 ` to `###!!`
   - [ ] Change `\toc2 ` to `###!`
   - [ ] Remove `\toc3` tags 
   - [ ] Remove `\mt1` tags 
