@@ -10,13 +10,13 @@
     - Псалом 26.7
     - Псалом 73.4
 - Specific typos 
-  - Розділена перша літера першого слова: ![](https://lh3.googleusercontent.com/pw/AP1GczNjNytYdmcklLcxpyY_t3iuEeE568U_KXVShcmvDYaz2bxaJOqph3UOBwJuDZNOrhkWd9GJN08Vh2-hx6iRbniBVtG9obZEM5nsAjpDRaD1AzOlW16zLx80BXgWim1hwfZrYCvlX-hXwZkXZcOVh1sUEQ=w885-h1288-s-no?authuser=0)
-    - [ ] Ісаї 13 
-    - [ ] Псалми 17 
+  - Розділена перша літера першого слова є одруківкою: ![](https://lh3.googleusercontent.com/pw/AP1GczNjNytYdmcklLcxpyY_t3iuEeE568U_KXVShcmvDYaz2bxaJOqph3UOBwJuDZNOrhkWd9GJN08Vh2-hx6iRbniBVtG9obZEM5nsAjpDRaD1AzOlW16zLx80BXgWim1hwfZrYCvlX-hXwZkXZcOVh1sUEQ=w885-h1288-s-no?authuser=0)
   - [ ] 1 Мойсея 31.25 нема крапочки на кінці
   - [ ] 1 Мойсея 33.3 нїм замість нїж 
   - [ ] Судді 7.1 Еробаах замість Еробаал 
   - [ ] Йов 27.20 ва замість на
+  - [ ] Псалми 17.1 розділена літера
+  - [ ] Ісаї 13.1 розділена літера
   - [ ] Ісаїї 41.4 крапочка має бути в кінці (можливо)
   - [ ] Захарії 5.5 зайвий пробіл перед ?
   - [ ] Захарії 6.4 зайвий пробіл перед ?
