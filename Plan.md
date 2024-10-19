@@ -29,7 +29,7 @@
   - [x] Remove `\p` tags 
   - [x] Change `\v ` to `#`
   - [x] Replace `[ ]` with `* *`
-- [ ] Add space after `###!!`
+- [x] Add space after `###!!`
 - [ ] Add space after `###!`
 - [ ] Add local chapter numbers 
 - [ ] Add local verse numbers using `original_verse/local_verse` syntax
