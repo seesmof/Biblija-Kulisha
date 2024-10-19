@@ -25,6 +25,7 @@
   - [x] Remove `\toc3` tags 
   - [x] Remove `\mt1` tags 
   - [x] Change `\c ` to `##`
+  - [x] Remove `\p` tags 
   - [ ] Change `\v ` to `#`
   - [ ] Replace `[ ]` with `* *`
 - [ ] Add space after `###!!`
