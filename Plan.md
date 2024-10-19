@@ -16,7 +16,7 @@
 
 - [x] Copy USFM files, rename each: remove number, remove BKS, change extension to TXT 
 - Change USFM tags to TBS markup 
-  - [ ] Remove ` - Biblija Kulisha Standartna`
+  - [x] Remove ` - Biblija Kulisha Standartna`
   - [ ] Change `\id ` to `###`
   - [ ] Remove `\ide` tags 
   - [ ] Remove `\h` tags 
@@ -27,6 +27,8 @@
   - [ ] Change `\c ` to `##`
   - [ ] Change `\v ` to `#`
   - [ ] Replace `[ ]` with `* *`
+- [ ] Add local chapter numbers 
+- [ ] Add local verse numbers using `original_verse/local_verse` syntax
 
 ##### Revision
 

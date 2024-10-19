@@ -1,4 +1,4 @@
-\id PSA - Biblija Kulisha Standartna
+\id PSA
 \ide UTF-8
 \h Псалтирь
 \toc1 Псалтирь

@@ -1,4 +1,4 @@
-\id DEU - Biblija Kulisha Standartna
+\id DEU
 \ide UTF-8
 \h 5 Мойсея
 \toc1 Пята книга Мойсея

@@ -1,4 +1,4 @@
-\id 1TI - Biblija Kulisha Standartna
+\id 1TI
 \ide UTF-8
 \h 1 Тимотея
 \toc1 Перве Посланнє Сьв. Апостола Павла до Тимотея

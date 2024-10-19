@@ -1,4 +1,4 @@
-\id LEV - Biblija Kulisha Standartna
+\id LEV
 \ide UTF-8
 \h 3 Мойсея
 \toc1 Третя книга Мойсея

@@ -1,4 +1,4 @@
-\id GAL - Biblija Kulisha Standartna
+\id GAL
 \ide UTF-8
 \h Галат
 \toc1 Посланнє Сьв. Апостола Павла до Галат

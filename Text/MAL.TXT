@@ -1,4 +1,4 @@
-\id MAL - Biblija Kulisha Standartna
+\id MAL
 \ide UTF-8
 \h Малахія
 \toc1 Книга Пророка Малахія

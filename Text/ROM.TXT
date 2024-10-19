@@ -1,4 +1,4 @@
-\id ROM - Biblija Kulisha Standartna
+\id ROM
 \ide UTF-8
 \h Римлян
 \toc1 Посланнє Сьв. Апостола Павла до Римлян

@@ -1,4 +1,4 @@
-\id NEH - Biblija Kulisha Standartna
+\id NEH
 \ide UTF-8
 \h Неємії
 \toc1 Книга Неємії

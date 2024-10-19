@@ -1,4 +1,4 @@
-\id HAB - Biblija Kulisha Standartna
+\id HAB
 \ide UTF-8
 \h Аввакума
 \toc1 Книга Пророка Аввакума

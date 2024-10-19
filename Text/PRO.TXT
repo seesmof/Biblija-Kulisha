@@ -1,4 +1,4 @@
-\id PRO - Biblija Kulisha Standartna
+\id PRO
 \ide UTF-8
 \h Приповісток
 \toc1 Книга Приповісток Соломонових

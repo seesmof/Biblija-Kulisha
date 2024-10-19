@@ -1,4 +1,4 @@
-\id HAG - Biblija Kulisha Standartna
+\id HAG
 \ide UTF-8
 \h Аггея
 \toc1 Книга Пророка Аггея

@@ -1,4 +1,4 @@
-\id EST - Biblija Kulisha Standartna
+\id EST
 \ide UTF-8
 \h Естери
 \toc1 Книга Естери

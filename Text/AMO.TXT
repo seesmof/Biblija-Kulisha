@@ -1,4 +1,4 @@
-\id AMO - Biblija Kulisha Standartna
+\id AMO
 \ide UTF-8
 \h Амоса
 \toc1 Книга Пророка Амоса

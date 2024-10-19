@@ -1,4 +1,4 @@
-\id EXO - Biblija Kulisha Standartna
+\id EXO
 \ide UTF-8
 \h 2 Мойсея
 \toc1 Друга книга Мойсея

@@ -1,4 +1,4 @@
-\id JER - Biblija Kulisha Standartna
+\id JER
 \ide UTF-8
 \h Еремії
 \toc1 Книга Пророка Еремії

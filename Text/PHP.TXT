@@ -1,4 +1,4 @@
-\id PHP - Biblija Kulisha Standartna
+\id PHP
 \ide UTF-8
 \h Филипян
 \toc1 Посланнє Сьв. Апостола Павла до Филипян

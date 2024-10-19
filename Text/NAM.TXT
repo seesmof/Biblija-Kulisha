@@ -1,4 +1,4 @@
-\id NAM - Biblija Kulisha Standartna
+\id NAM
 \ide UTF-8
 \h Наума
 \toc1 Книга Пророка Наума

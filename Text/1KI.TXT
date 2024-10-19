@@ -1,4 +1,4 @@
-\id 1KI - Biblija Kulisha Standartna
+\id 1KI
 \ide UTF-8
 \h 1 Царів
 \toc1 Перва книга Царів

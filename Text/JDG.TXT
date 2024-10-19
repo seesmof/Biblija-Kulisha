@@ -1,4 +1,4 @@
-\id JDG - Biblija Kulisha Standartna
+\id JDG
 \ide UTF-8
 \h Суддїв
 \toc1 Книга Суддїв

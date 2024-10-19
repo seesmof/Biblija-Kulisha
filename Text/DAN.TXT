@@ -1,4 +1,4 @@
-\id DAN - Biblija Kulisha Standartna
+\id DAN
 \ide UTF-8
 \h Даниїла
 \toc1 Книга Пророка Даниїла

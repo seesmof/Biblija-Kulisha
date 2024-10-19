@@ -1,4 +1,4 @@
-\id HEB - Biblija Kulisha Standartna
+\id HEB
 \ide UTF-8
 \h Жидів
 \toc1 Посланнє Сьв. Апостола Павла до Жидів

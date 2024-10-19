@@ -1,4 +1,4 @@
-\id MIC - Biblija Kulisha Standartna
+\id MIC
 \ide UTF-8
 \h Михея
 \toc1 Книга Пророка Михея

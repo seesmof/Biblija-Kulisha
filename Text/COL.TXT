@@ -1,4 +1,4 @@
-\id COL - Biblija Kulisha Standartna
+\id COL
 \ide UTF-8
 \h Колосян
 \toc1 Посланнє Сьв. Апостола Павла до Колосян
