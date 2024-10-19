@@ -12,6 +12,22 @@
 
 - For getting WJ, ND, QT tags check NASB on BibleGateway
 
+##### Text version
+
+- [x] Copy USFM files, rename each: remove number, remove BKS, change extension to TXT 
+- Change USFM tags to TBS markup 
+  - [ ] Remove ` - Biblija Kulisha Standartna`
+  - [ ] Change `\id ` to `###`
+  - [ ] Remove `\ide` tags 
+  - [ ] Remove `\h` tags 
+  - [ ] Change `\toc1 ` to `###!!`
+  - [ ] Change `\toc2 ` to `###!`
+  - [ ] Remove `\toc3` tags 
+  - [ ] Remove `\mt1` tags 
+  - [ ] Change `\c ` to `##`
+  - [ ] Change `\v ` to `#`
+  - [ ] Replace `[ ]` with `* *`
+
 ##### Revision
 
 - Use PHIL, KJV (maybe also BSB) Bibles for revisions 
