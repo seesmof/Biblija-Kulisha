@@ -22,7 +22,7 @@
   - [x] Remove `\h` tags 
   - [x] Change `\toc1 ` to `###!!`
   - [x] Change `\toc2 ` to `###!`
-  - [ ] Remove `\toc3` tags 
+  - [x] Remove `\toc3` tags 
   - [ ] Remove `\mt1` tags 
   - [ ] Change `\c ` to `##`
   - [ ] Change `\v ` to `#`
