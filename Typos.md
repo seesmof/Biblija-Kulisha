@@ -1,3 +1,4 @@
+- Замінити ` ` на ` `
 - Прибрати всі символи *
 - Прибрати подвійні пробіли, або замінити на P тег
 - Зайва крапочка на початку вірша
@@ -12,7 +13,8 @@
   - Псалом 17
 
 - General typos 
-  - [ ] * symbols 
+  - [ ] ` ` symbols 
+  - [ ] `*` symbols 
   - [ ] Double spaces 
   - [ ] Extra dot at the beginning 
 - Specific typos 
