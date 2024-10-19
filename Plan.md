@@ -17,7 +17,7 @@
 - [x] Copy USFM files, rename each: remove number, remove BKS, change extension to TXT 
 - Change USFM tags to TBS markup 
   - [x] Remove ` - Biblija Kulisha Standartna`
-  - [ ] Change `\id ` to `###`
+  - [x] Change `\id ` to `###`
   - [ ] Remove `\ide` tags 
   - [ ] Remove `\h` tags 
   - [ ] Change `\toc1 ` to `###!!`

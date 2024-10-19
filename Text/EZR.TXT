@@ -1,4 +1,4 @@
-\id EZR
+###EZR
 \ide UTF-8
 \h Ездри
 \toc1 Книга Ездри

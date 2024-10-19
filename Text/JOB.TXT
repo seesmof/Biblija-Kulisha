@@ -1,4 +1,4 @@
-\id JOB
+###JOB
 \ide UTF-8
 \h Йова
 \toc1 Книга Йова
