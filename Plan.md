@@ -19,7 +19,7 @@
   - [x] Remove ` - Biblija Kulisha Standartna`
   - [x] Change `\id ` to `###`
   - [x] Remove `\ide` tags 
-  - [ ] Remove `\h` tags 
+  - [x] Remove `\h` tags 
   - [ ] Change `\toc1 ` to `###!!`
   - [ ] Change `\toc2 ` to `###!`
   - [ ] Remove `\toc3` tags 
