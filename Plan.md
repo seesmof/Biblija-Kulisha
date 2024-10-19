@@ -27,7 +27,7 @@
   - [x] Change `\c ` to `##`
   - [x] Remove `\p` tags 
   - [x] Change `\v ` to `#`
-  - [ ] Replace `[ ]` with `* *`
+  - [x] Replace `[ ]` with `* *`
 - [ ] Add space after `###!!`
 - [ ] Add space after `###!`
 - [ ] Add local chapter numbers 
