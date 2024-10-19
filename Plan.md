@@ -2,7 +2,7 @@
 
 - [x] Copy all 66 Books from Bolls.Life into USFM
 - [x] Check files integrity: compare chapters with original first and last words; check chapter numbers
-- [ ] Place each tag on new line
+- [x] Place each tag on new line
 - [ ] Fix typos
 - [ ] Add WJ tags for JESUS' Words in red
 - [ ] Add ND tags for LORD's Name in small caps
