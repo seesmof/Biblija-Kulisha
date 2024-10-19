@@ -24,9 +24,11 @@
   - [x] Change `\toc2 ` to `###!`
   - [x] Remove `\toc3` tags 
   - [x] Remove `\mt1` tags 
-  - [ ] Change `\c ` to `##`
+  - [x] Change `\c ` to `##`
   - [ ] Change `\v ` to `#`
   - [ ] Replace `[ ]` with `* *`
+- [ ] Add space after `###!!`
+- [ ] Add space after `###!`
 - [ ] Add local chapter numbers 
 - [ ] Add local verse numbers using `original_verse/local_verse` syntax
 
