@@ -13,7 +13,7 @@
 
 ##### Revision
 
-- Use PHIL, HOM, KJV, WEB, BSB Bibles for revisions 
+- Use PHIL, KJV (maybe also BSB) Bibles for revisions 
 
 - [ ] Capitalize GOD's Pronouns
 - [ ] Add quotation marks in direct speech: “‘’”
