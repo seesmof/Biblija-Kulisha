@@ -37,15 +37,20 @@
 
 ##### Revision
 
-- Use PHIL, KJV (maybe also BSB) Bibles for revisions 
+Ideas: 
 
-- [ ] Capitalize GOD's Pronouns
-- [ ] Add quotation marks in direct speech: “‘’”
-- [ ] Replace numbers with digits: ten to 10
-- [ ] Add more P tags
-- [ ] Add Q tags for poetry
-- [ ] Add LI tags for lists
-- [ ] Add S tags for headings
-- [ ] Add R tags for parallel places
-- [ ] Renumber Psalm verses, move intros into D tag
-- [ ] Look into brackets: replace some with ADD tag, move some into footnote, remove some or replace with squared brackets []
+- Use WEB, YLT for revision 
+- Capitalize GOD's Pronouns: or maybe leave as they are or change as they are in English Bibles
+- Add quotation marks in direct speech: “‘’”
+- Replace numbers with digits: ten to 10
+- Add more P tags
+- Add Q tags for poetry
+- Add LI tags for lists
+- Add S tags for headings
+- Add R tags for parallel places
+- Renumber Psalm verses, move intros into D tag
+- Look into brackets: replace some with ADD tag, move some into footnote, remove some or replace with squared brackets []
+
+Changes:
+
+- [ ] 
