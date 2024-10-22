@@ -50,6 +50,9 @@ Ideas:
 - Add R tags for parallel places
 - Renumber Psalm verses, move intros into D tag
 - Look into brackets: replace some with ADD tag, move some into footnote, remove some or replace with squared brackets []
+- Replace quotes with proper symbols “ ” or ‘ ’
+- Replace apostrophes with proper symbol ʼ
+- Replace dashes with proper symbols —
 
 Changes:
 
