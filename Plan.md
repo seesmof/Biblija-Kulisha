@@ -5,10 +5,13 @@
 - Add WJ tags for JESUS' Words in red
 - Add ND tags for LORD's Name in small caps
 - Add QT tags for OT quotes in NT
-  - For getting WJ, ND, QT tags use NASB on BibleGateway
 - Add W tags for Strong's numbers
 
+- For getting WJ, ND, QT tags use NASB on BibleGateway
+
 ##### Revision
+
+- Maybe don't change any text here, instead use this stable formatted Bible version as a guide for translating the BSB
 
 - Capitalize GOD's Pronouns, use BSB for reference
 - Add “‘’” in direct speech, use BSB for reference 
