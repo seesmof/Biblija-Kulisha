@@ -12,3 +12,5 @@
   - large (em) dash for sentence punctuation: "Господь — муж боїв страшенний, на імя Господь він."
 - maybe also replaces apostrophes with the proper symbol ʼ
 - maybe also replace quotes with proper symbols “ ” or ‘ ’
+- add local verse numbers for TXT version 
+- replace numbers with digits: ten to 10 
