@@ -1,4 +1,3 @@
-- `*` symbols
 - Розділена перша літера першого слова є одруківкою: ![](https://lh3.googleusercontent.com/pw/AP1GczNjNytYdmcklLcxpyY_t3iuEeE568U_KXVShcmvDYaz2bxaJOqph3UOBwJuDZNOrhkWd9GJN08Vh2-hx6iRbniBVtG9obZEM5nsAjpDRaD1AzOlW16zLx80BXgWim1hwfZrYCvlX-hXwZkXZcOVh1sUEQ=w885-h1288-s-no?authuser=0)
   - Псалтирь 12.1
   - Псалтирь 16.1
