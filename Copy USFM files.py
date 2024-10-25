@@ -15,7 +15,6 @@ def copy_original_to_paratext():
             get_relative_path(ORIGINAL_FILES_PATH,file),
             get_relative_path(PARATEXT_PROJECT_PATH,file)
         )
-    print("All Bible original files copied to Paratext project")
 
 # copy_original_to_paratext()
 
@@ -63,10 +62,8 @@ def copy_original_to_text():
 # copy_original_to_text()
 
 def make_single_text_file():
-    global_lines=["Bible Kulish (ukr1871)"]
+    global_lines=[]
     for file in os.listdir(ORIGINAL_FILES_PATH):
-        if file!="58PHMBKS.USFM":
-            continue
         with open(get_relative_path(ORIGINAL_FILES_PATH,file),mode='r',encoding='utf-8') as f:
             current_lines=f.readlines()
             Book=current_lines[2].replace("\\h ","").strip()
@@ -77,6 +74,11 @@ def make_single_text_file():
                 elif '\\v ' in line:
                     verse=line[3:].strip()
                     global_lines.append(f'{Book} {chapter}:{verse}')
-    print(global_lines)
+    with open(get_relative_path(target_path='Original.txt'),mode='w',encoding='utf-8') as f:
+        f.writelines([
+            line+'\n' if index!=len(global_lines)-1 
+            else line 
+            for index,line in enumerate(global_lines)
+        ])
 
 make_single_text_file()
