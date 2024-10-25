@@ -14,3 +14,4 @@
 - maybe also replace quotes with proper symbols “ ” or ‘ ’
 - add local verse numbers for TXT version 
 - replace numbers with digits: ten to 10 
+- make one text file, uppercase content of ND and QT tags 

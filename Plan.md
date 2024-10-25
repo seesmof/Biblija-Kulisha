@@ -13,10 +13,9 @@
 
 - Maybe don't change any text here, instead use this stable formatted Bible version as a guide for translating the BSB
 
-- Capitalize GOD's Pronouns, use BSB for reference
-- Add “‘’” in direct speech, use BSB for reference 
+- Capitalize GOD's Pronouns, use BSB for reference 
+- Add “‘’” in direct speech, use WEB for reference 
 - Add more P tags, use WEB for reference
-- Add S tags for headings, use BSB for reference 
 - Add Q tags for poetry
 - Add LI tags for lists
 - Move Psalm intros in D tag
@@ -30,6 +29,7 @@
   - replace () with []
   - remove
 - Add R tags for parallel places (?)
+- Add F tags for footnotes where there are cross-references mentioned in BSB 
 
 ##### Translation
 
