@@ -73,6 +73,7 @@ def make_single_text_file():
                     chapter=line[3:].strip()
                 elif '\\v ' in line:
                     verse=line[3:].strip()
+                    # TODO make `\nd` and `\qt` tags' content uppercase
                     global_lines.append(f'{Book} {chapter}:{verse}')
     with open(get_relative_path(target_path='Original.txt'),mode='w',encoding='utf-8') as f:
         f.writelines([
