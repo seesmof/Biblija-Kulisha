@@ -16,7 +16,7 @@ def copy_original_to_paratext():
             get_relative_path(PARATEXT_PROJECT_PATH,file)
         )
 
-# copy_original_to_paratext()
+copy_original_to_paratext()
 
 def copy_original_to_text():
     for file in os.listdir(ORIGINAL_FILES_PATH):
@@ -74,6 +74,7 @@ def make_single_text_file():
                 elif '\\v ' in line:
                     verse=line[3:].strip()
                     # TODO make `\nd` and `\qt` tags' content uppercase
+                    verse=verse.replace("\\wj*","").replace("\\wj ","")
                     global_lines.append(f'{Book} {chapter}:{verse}')
     with open(get_relative_path(target_path='Original.txt'),mode='w',encoding='utf-8') as f:
         f.writelines([
