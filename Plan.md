@@ -29,23 +29,23 @@
 
 ##### Revision
 
-- Maybe don't change any text here, instead use this stable formatted Bible version as a guide for translating the BSB
-
-- [ ] Capitalize GOD's Pronouns, use BSB for reference 
-- [ ] Add “‘’” in direct speech, use WEB for reference 
-- [ ] Add more P tags, use WEB for reference
-- [ ] Add Q tags for poetry
-- [ ] Add LI tags for lists
-- [ ] Move Psalm intros in D tag
-- [ ] Replace "''" with “‘’”
-- [ ] Replace ' with ʼ
-- [ ] Replace - with — (em dash)
-- [ ] Replace numbers with digits: ten to 10
-- [ ] Look through brackets. Options:
-  - ADD tag
-  - footnote
-  - replace () with []
-  - remove
-- [ ] Add R tags for parallel places (?)
-- [ ] Add F tags for footnotes where there are cross-references mentioned in BSB 
-- [ ] 2 Солунян 3:4 краще написати замість `що що`
+- [ ] Align Bible formatting with WEB and maybe a bit with BSB
+  - [ ] Capitalize all GOD's Pronouns, use BSB for reference 
+  - [ ] Add “‘’” in direct speech, use WEB for reference 
+  - [ ] Add more P tags, use WEB for reference
+  - [ ] Add Q tags for poetry
+  - [ ] Add LI tags for lists
+  - [ ] Move Psalm intros in D tag
+  - [ ] Replace "''" with “‘’”
+  - [ ] Replace ' with ʼ
+  - [ ] Replace - with — (em dash)
+  - [ ] Replace numbers with digits: ten to 10
+  - [ ] Look through brackets. Options:
+    - ADD tag
+    - footnote
+    - replace () with []
+    - remove
+  - [ ] Add R tags for parallel places (?)
+  - [ ] Add F tags for footnotes where there are cross-references mentioned in BSB 
+- [ ] Use WEB and other public domain Bibles to make a language update for the Bible Kulish
+  - [ ] 2 Солунян 3:4 краще написати замість `що що`
