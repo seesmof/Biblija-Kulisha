@@ -48,3 +48,4 @@
   - remove
 - [ ] Add R tags for parallel places (?)
 - [ ] Add F tags for footnotes where there are cross-references mentioned in BSB 
+- [ ] 2 Солунян 3:4 краще написати замість `що що`
