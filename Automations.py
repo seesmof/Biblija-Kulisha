@@ -88,6 +88,8 @@ def make_single_text_file():
                     verse="".join(m.upper() if ' ' not in m else m for m in re.split(r'\\nd (.*?)\\nd\*',verse))
                     # handle QT tags
                     verse=handle_quotes(verse)
+                    # handle Strong's numbers
+                    verse=re.sub(r'\|strong=\"[GH]\d{4}\"\\w\*',"",verse).replace("\\w ","")
                     global_lines.append(f'{Book} {chapter}:{verse}')
     with open(get_relative_path(target_path='Original.txt'),mode='w',encoding='utf-8') as f:
         f.writelines([
