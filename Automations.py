@@ -72,9 +72,12 @@ def make_single_text_file():
                 if '\\c ' in line:
                     chapter=line[3:].strip()
                 elif '\\v ' in line:
+                    # remove verse tag
                     verse=line[3:].strip()
-                    # TODO make `\nd` and `\qt` tags' content uppercase
+                    # remove WJ tags 
                     verse=verse.replace("\\wj*","").replace("\\wj ","")
+                    # handle ND tags 
+                    verse="".join(m.upper() if ' ' not in m else m for m in re.split(r'\\nd (.*?)\\nd\*',verse))
                     global_lines.append(f'{Book} {chapter}:{verse}')
     with open(get_relative_path(target_path='Original.txt'),mode='w',encoding='utf-8') as f:
         f.writelines([
