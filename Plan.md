@@ -5,11 +5,9 @@
 - [x] Place each tag on new line
 - [ ] Fix typos
 - [ ] Add WJ tags for JESUS' Words in red
+- [ ] Add QT tags for OT quotes in NT (https://www.blueletterbible.org/study/misc/quotes.cfm)
 - [ ] Add ND tags for LORD's Name in small caps
-- [ ] Add QT tags for OT quotes in NT
 - [ ] Add W tags for Strong's numbers
-
-- For getting WJ, ND, QT tags use NASB on BibleGateway
 
 ##### Text version
 
