@@ -37,6 +37,7 @@
   - [ ] Replace "''" with “‘’”
   - [ ] Replace ' with ʼ
   - [ ] Replace - with — (em dash)
+    - Або переглянути знаки тире `-` і краще прибрати більшість, якщо не всі
   - [ ] Replace numbers with digits: ten to 10
   - [ ] Look through brackets. Options:
     - ADD tag
@@ -45,5 +46,6 @@
     - remove
   - [ ] Add R tags for parallel places (?)
   - [ ] Add F tags for footnotes where there are cross-references mentioned in BSB 
-- [ ] Use WEB and other public domain Bibles to make a language update for the Bible Kulish
+- [ ] Use KJV and YLT (and/or other TR public domain BIBLES) to make a language update for the Bible Kulish
   - [ ] 2 Солунян 3:4 краще написати замість `що що`
+  - [ ] Луки 13.32 краще `звершуюся` аніж `скінчаюся`, від KJV "I shall be perfected"
