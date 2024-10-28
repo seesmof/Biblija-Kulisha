@@ -62,6 +62,14 @@ def copy_original_to_text():
 # copy_original_to_text()
 
 def make_single_text_file():
+    def handle_quotes(verse:str):
+        quote:bool=False
+        words=[]
+        for word in verse.split():
+            if word=='\\qt': quote=True
+            words.append(word.upper() if quote else word)
+            if '\\qt*' in word: quote=False
+        return " ".join(words).replace("\\QT*","").replace("\\QT ","")
     global_lines=[]
     for file in os.listdir(ORIGINAL_FILES_PATH):
         with open(get_relative_path(ORIGINAL_FILES_PATH,file),mode='r',encoding='utf-8') as f:
@@ -78,6 +86,8 @@ def make_single_text_file():
                     verse=verse.replace("\\wj*","").replace("\\wj ","")
                     # handle ND tags 
                     verse="".join(m.upper() if ' ' not in m else m for m in re.split(r'\\nd (.*?)\\nd\*',verse))
+                    # handle QT tags
+                    verse=handle_quotes(verse)
                     global_lines.append(f'{Book} {chapter}:{verse}')
     with open(get_relative_path(target_path='Original.txt'),mode='w',encoding='utf-8') as f:
         f.writelines([
