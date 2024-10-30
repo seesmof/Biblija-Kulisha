@@ -6,6 +6,7 @@ from shutil import copy2
 
 ROOT_PATH=os.path.dirname(os.path.abspath(__file__))
 ORIGINAL_FILES_PATH=os.path.join(ROOT_PATH,"Original")
+ORIGINAL_FILES=ORIGINAL_FILES_PATH+"\\*.USFM"
 TEXT_FILES_PATH=os.path.join(ROOT_PATH,"Text")
 PARATEXT_PROJECT_PATH=os.path.join("C:\\My Paratext 9 Projects\\BKS")
 
@@ -101,7 +102,7 @@ def perform_automations():
 
 def monitor_files_for_changes():
     def get_last_modified_file():
-        return max(glob.glob(ORIGINAL_FILES_PATH+"\\*.USFM"),key=os.path.getmtime)
+        return max(glob.glob(ORIGINAL_FILES),key=os.path.getmtime)
     def get_modification_time(file:str):
         return os.path.getmtime(file)
 
