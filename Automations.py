@@ -1,11 +1,14 @@
 import os
-from shutil import copy2
 import re
+import glob
+import time
+from shutil import copy2
 
 def get_relative_path(root_folder_path:str=os.path.dirname(os.path.abspath(__file__)),target_path:str=""):
     return os.path.join(root_folder_path,target_path)
 
 ORIGINAL_FILES_PATH=get_relative_path("Original")
+ORIGINAL_FILES=glob.glob(ORIGINAL_FILES_PATH+"\\*.USFM")
 TEXT_FILES_PATH=get_relative_path("Text")
 PARATEXT_PROJECT_PATH=get_relative_path("C:\\My Paratext 9 Projects\\BKS")
 
@@ -15,8 +18,6 @@ def copy_original_to_paratext():
             get_relative_path(ORIGINAL_FILES_PATH,file),
             get_relative_path(PARATEXT_PROJECT_PATH,file)
         )
-
-copy_original_to_paratext()
 
 def copy_original_to_text():
     for file in os.listdir(ORIGINAL_FILES_PATH):
@@ -59,8 +60,6 @@ def copy_original_to_text():
         with open(get_relative_path(TEXT_FILES_PATH,file),encoding='utf-8',mode='w') as f:
             f.writelines(lines)
 
-# copy_original_to_text()
-
 def make_single_text_file():
     def handle_quotes(verse:str):
         quote:bool=False
@@ -91,6 +90,7 @@ def make_single_text_file():
                     # handle Strong's numbers
                     verse=re.sub(r'\|strong=\"[GH]\d{4}\"\\w\*',"",verse).replace("\\w ","")
                     global_lines.append(f'{Book} {chapter}:{verse}')
+    # FIX this crashes sometimes, look at path forming again
     with open(get_relative_path(target_path='Original.txt'),mode='w',encoding='utf-8') as f:
         f.writelines([
             line+'\n' if index!=len(global_lines)-1 
@@ -98,4 +98,26 @@ def make_single_text_file():
             for index,line in enumerate(global_lines)
         ])
 
-make_single_text_file()
+def perform_automations():
+    copy_original_to_paratext()
+    # copy_original_to_text()
+    make_single_text_file()
+
+def monitor_files_for_changes():
+    def get_last_modified_file():
+        return max(ORIGINAL_FILES,key=os.path.getmtime)
+    def get_modification_time(file:str):
+        return os.path.getmtime(file)
+
+    latest_file=get_last_modified_file()
+    last_modification_time=get_modification_time(latest_file)
+    while 1:
+        latest_file=get_last_modified_file()
+        current_modification_time=get_modification_time(latest_file)
+        if last_modification_time!=current_modification_time:
+            perform_automations()
+            last_modification_time=current_modification_time
+            print(latest_file.split("\\")[-1][2:5],time.ctime(last_modification_time))
+        time.sleep(1)
+
+monitor_files_for_changes()
