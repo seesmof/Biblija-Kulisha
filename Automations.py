@@ -6,7 +6,7 @@ from shutil import copy2
 
 ROOT_PATH=os.path.dirname(os.path.abspath(__file__))
 ORIGINAL_FILES_PATH=os.path.join(ROOT_PATH,"Original")
-ORIGINAL_FILES=ORIGINAL_FILES_PATH+"\\*.USFM"
+ORIGINAL_FILES=glob.glob(ORIGINAL_FILES_PATH+"\\*.USFM")
 TEXT_FILES_PATH=os.path.join(ROOT_PATH,"Text")
 PARATEXT_PROJECT_PATH=os.path.join("C:\\My Paratext 9 Projects\\BKS")
 
@@ -95,6 +95,21 @@ def make_single_text_file():
             for index,line in enumerate(global_lines)
         ])
 
+def write_wj_log_file():
+    log=[]
+    for file_path in ORIGINAL_FILES:
+        with open(file_path,encoding='utf-8',mode='r') as f:
+            lines=f.readlines()
+        Book_name=lines[2].replace("\\h ","").strip()
+        last_chapter=0
+        for line in lines:
+            if '\\c ' in line: 
+                last_chapter=line[3:].strip()
+            if 'wj' in line:
+                log.append(f"{Book_name} {last_chapter}:{line[3:].split()[0]}")
+    with open(os.path.join(ROOT_PATH,"JESUS_Words.txt"),encoding='utf-8',mode='w') as f:
+        f.write("\n".join(log))
+
 def perform_automations():
     copy_original_to_paratext()
     # copy_original_to_text()
@@ -102,7 +117,7 @@ def perform_automations():
 
 def monitor_files_for_changes():
     def get_last_modified_file():
-        return max(glob.glob(ORIGINAL_FILES),key=os.path.getmtime)
+        return max(ORIGINAL_FILES,key=os.path.getmtime)
     def get_modification_time(file:str):
         return os.path.getmtime(file)
 
@@ -117,4 +132,4 @@ def monitor_files_for_changes():
             print(latest_file.split("\\")[-1][2:5],time.ctime(last_modification_time))
         time.sleep(1)
 
-monitor_files_for_changes()
+write_wj_log_file()
