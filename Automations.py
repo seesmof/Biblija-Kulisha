@@ -88,7 +88,7 @@ def make_single_text_file():
                     # handle Strong's numbers
                     verse=re.sub(r'\|strong=\"[GH]\d{4}\"\\w\*',"",verse).replace("\\w ","")
                     global_lines.append(f'{Book} {chapter}:{verse}')
-    with open(os.path.join(ROOT_PATH,"Original.txt"),encoding='utf-8',mode='w') as f:
+    with open(file=os.path.join(ROOT_PATH,"Original.txt"),encoding='utf-8',mode='w') as f:
         f.writelines([
             line+'\n' if index!=len(global_lines)-1 
             else line 
