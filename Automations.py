@@ -4,24 +4,21 @@ import glob
 import time
 from shutil import copy2
 
-def get_relative_path(root_folder_path:str=os.path.dirname(os.path.abspath(__file__)),target_path:str=""):
-    return os.path.join(root_folder_path,target_path)
-
-ORIGINAL_FILES_PATH=get_relative_path("Original")
-ORIGINAL_FILES=glob.glob(ORIGINAL_FILES_PATH+"\\*.USFM")
-TEXT_FILES_PATH=get_relative_path("Text")
-PARATEXT_PROJECT_PATH=get_relative_path("C:\\My Paratext 9 Projects\\BKS")
+ROOT_PATH=os.path.dirname(os.path.abspath(__file__))
+ORIGINAL_FILES_PATH=os.path.join(ROOT_PATH,"Original")
+TEXT_FILES_PATH=os.path.join(ROOT_PATH,"Text")
+PARATEXT_PROJECT_PATH=os.path.join("C:\\My Paratext 9 Projects\\BKS")
 
 def copy_original_to_paratext():
-    for file in os.listdir(ORIGINAL_FILES_PATH):
+    for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
         copy2(
-            get_relative_path(ORIGINAL_FILES_PATH,file),
-            get_relative_path(PARATEXT_PROJECT_PATH,file)
+            os.path.join(ORIGINAL_FILES_PATH,full_file_name),
+            os.path.join(PARATEXT_PROJECT_PATH,full_file_name)
         )
 
 def copy_original_to_text():
-    for file in os.listdir(ORIGINAL_FILES_PATH):
-        with open(get_relative_path(ORIGINAL_FILES_PATH,file), mode='r',encoding='utf-8') as f:
+    for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
+        with open(os.path.join(ORIGINAL_FILES_PATH,full_file_name), mode='r',encoding='utf-8') as f:
             lines=f.readlines()
         lines=[
             line for line in lines 
@@ -52,12 +49,12 @@ def copy_original_to_text():
             for line in lines
         ]
 
-        file_name,file_extension=file.split(".")
+        file_name,file_extension=full_file_name.split(".")
         file_name=file_name[2:].replace("BKS","")
         file_extension="TXT"
-        file=f'{file_name}.{file_extension}'
+        full_file_name=f'{file_name}.{file_extension}'
 
-        with open(get_relative_path(TEXT_FILES_PATH,file),encoding='utf-8',mode='w') as f:
+        with open(os.path.join(TEXT_FILES_PATH,full_file_name),encoding='utf-8',mode='w') as f:
             f.writelines(lines)
 
 def make_single_text_file():
@@ -70,8 +67,8 @@ def make_single_text_file():
             if '\\qt*' in word: quote=False
         return " ".join(words).replace("\\QT*","").replace("\\QT ","")
     global_lines=[]
-    for file in os.listdir(ORIGINAL_FILES_PATH):
-        with open(get_relative_path(ORIGINAL_FILES_PATH,file),mode='r',encoding='utf-8') as f:
+    for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
+        with open(os.path.join(ORIGINAL_FILES_PATH,full_file_name),mode='r',encoding='utf-8') as f:
             current_lines=f.readlines()
             Book=current_lines[2].replace("\\h ","").strip()
             chapter=1
@@ -90,8 +87,7 @@ def make_single_text_file():
                     # handle Strong's numbers
                     verse=re.sub(r'\|strong=\"[GH]\d{4}\"\\w\*',"",verse).replace("\\w ","")
                     global_lines.append(f'{Book} {chapter}:{verse}')
-    # FIX this crashes sometimes, look at path forming again
-    with open(get_relative_path(target_path='Original.txt'),mode='w',encoding='utf-8') as f:
+    with open(os.path.join(ROOT_PATH,'Original.txt'),mode='w',encoding='utf-8') as f:
         f.writelines([
             line+'\n' if index!=len(global_lines)-1 
             else line 
@@ -105,7 +101,7 @@ def perform_automations():
 
 def monitor_files_for_changes():
     def get_last_modified_file():
-        return max(ORIGINAL_FILES,key=os.path.getmtime)
+        return max(glob.glob(ORIGINAL_FILES_PATH+"\\*.USFM"),key=os.path.getmtime)
     def get_modification_time(file:str):
         return os.path.getmtime(file)
 
