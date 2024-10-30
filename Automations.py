@@ -95,8 +95,10 @@ def make_single_text_file():
             for index,line in enumerate(global_lines)
         ])
 
-def write_wj_log_file():
-    log=[]
+def form_log_files():
+    JESUS_Words=[]
+    LORD_Names=[]
+    OT_Quotes=[]
     for file_path in ORIGINAL_FILES:
         with open(file_path,encoding='utf-8',mode='r') as f:
             lines=f.readlines()
@@ -105,15 +107,28 @@ def write_wj_log_file():
         for line in lines:
             if '\\c ' in line: 
                 last_chapter=line[3:].strip()
-            if 'wj' in line:
-                log.append(f"{Book_name} {last_chapter}:{line[3:].split()[0]}")
+            if '\\wj' in line:
+                verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
+                JESUS_Words.append(verse_reference)
+            if '\\nd' in line:
+                verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
+                LORD_Names.append(verse_reference)
+            if '\\qt' in line:
+                verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
+                OT_Quotes.append(verse_reference)
+
     with open(os.path.join(ROOT_PATH,"JESUS_Words.txt"),encoding='utf-8',mode='w') as f:
-        f.write("\n".join(log))
+        f.write("\n".join(JESUS_Words))
+    with open(os.path.join(ROOT_PATH,"LORD_Names.txt"),encoding='utf-8',mode='w') as f:
+        f.write("\n".join(LORD_Names))
+    with open(os.path.join(ROOT_PATH,"OT_Quotes.txt"),encoding='utf-8',mode='w') as f:
+        f.write("\n".join(OT_Quotes))
 
 def perform_automations():
     copy_original_to_paratext()
     # copy_original_to_text()
     make_single_text_file()
+    form_log_files()
 
 def monitor_files_for_changes():
     def get_last_modified_file():
@@ -132,4 +147,4 @@ def monitor_files_for_changes():
             print(latest_file.split("\\")[-1][2:5],time.ctime(last_modification_time))
         time.sleep(1)
 
-write_wj_log_file()
+monitor_files_for_changes()
