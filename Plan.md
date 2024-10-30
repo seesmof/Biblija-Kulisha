@@ -49,3 +49,4 @@
 - [ ] Use KJV and YLT (and/or other TR public domain BIBLES) to make a language update for the Bible Kulish
   - [ ] 2 Солунян 3:4 краще написати замість `що що`
   - [ ] Луки 13.32 краще `звершуюся` аніж `скінчаюся`, від KJV "I shall be perfected"
+  - [ ] 5 Мойсея 17 8 `та` замість `а` 
