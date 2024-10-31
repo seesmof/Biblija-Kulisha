@@ -148,7 +148,7 @@ def monitor_files_for_changes():
         if last_modification_time!=current_modification_time:
             perform_automations()
             last_modification_time=current_modification_time
-            print(latest_file.split("\\")[-1][2:5],time.ctime(last_modification_time))
+            # print(latest_file.split("\\")[-1][2:5],time.ctime(last_modification_time))
         time.sleep(1)
 
 monitor_files_for_changes()
