@@ -8,6 +8,7 @@
 - [ ] Add QT tags for OT quotes in NT (https://www.blueletterbible.org/study/misc/quotes.cfm)
 - [ ] Add ND tags for LORD's Name in small caps (https://www.blueletterbible.org/lexicon/h3068/kjv/wlc/0-1/)
 - [ ] Add W tags for Strong's numbers
+  - [ ] Make a spreadsheet (or an SQLite database) with all Ukrainian BIBLE words and their Strong's number
 
 ##### Text version
 
