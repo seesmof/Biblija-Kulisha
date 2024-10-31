@@ -69,6 +69,23 @@ def make_single_text_file():
             if '\\qt*' in word: quote=False
         return " ".join(words).replace("\\QT*","").replace("\\QT ","")
 
+    def replace_plain_quotes_with_proper(verse:str):
+        double_quotes="“ ”"
+        double_open,double_close=double_quotes.split()
+        # TODO add handling for nested quotes, try using stack somehow: JESUS THANK YOU LORD GOD ALMIGHTY HALLELUJAH AMEN
+        single_quotes="‘ ’"
+        single_open,single_close=single_quotes.split()
+
+        opened:false=False
+        words=[]
+        for word in verse.split():
+            if '"' in word:
+                opened=not opened
+                words.append(word.replace('"',double_open if opened else double_close))
+            else: 
+                words.append(word)
+        return " ".join(words)
+
     global_lines=[]
     for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
         with open(os.path.join(ORIGINAL_FILES_PATH,full_file_name),mode='r',encoding='utf-8') as f:
