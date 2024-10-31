@@ -146,6 +146,8 @@ def monitor_files_for_changes():
     def get_modification_time(file:str):
         return os.path.getmtime(file)
 
+    print("Automations script started")
+    perform_automations()
     latest_file=get_last_modified_file()
     last_modification_time=get_modification_time(latest_file)
     while 1:
