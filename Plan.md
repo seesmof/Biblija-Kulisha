@@ -39,7 +39,7 @@
   - [ ] Replace - with — (em dash)
     - Або переглянути знаки тире `-` і краще прибрати більшість, якщо не всі
   - [ ] Replace numbers with digits: ten to 10
-  - [ ] Look through brackets. Options:
+  - [ ] Look through brackets. Align all with KJV. Options:
     - ADD tag
     - footnote
     - replace () with []
