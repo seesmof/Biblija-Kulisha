@@ -6,7 +6,7 @@
 - [ ] Fix typos
 - [ ] Add WJ tags for JESUS' Words in red
 - [ ] Add QT tags for OT quotes in NT (https://www.blueletterbible.org/study/misc/quotes.cfm)
-- [ ] Add ND tags for LORD's Name in small caps
+- [ ] Add ND tags for LORD's Name in small caps (https://www.blueletterbible.org/lexicon/h3068/kjv/wlc/0-1/)
 - [ ] Add W tags for Strong's numbers
 
 ##### Text version
@@ -47,9 +47,3 @@
   - [ ] Add R tags for parallel places (?)
   - [ ] Add F tags for footnotes where there are cross-references mentioned in BSB 
 - [ ] Use KJV and YLT (and/or other TR public domain BIBLES) to make a language update for the Bible Kulish
-  - [ ] 2 Солунян 3:4 краще написати замість `що що`
-  - [ ] Луки 13.32 краще `звершуюся` аніж `скінчаюся`, від KJV "I shall be perfected"
-  - [ ] 5 Мойсея 17 8 `та` замість `а` 
-  - [ ] Псалтирь 58 11 `дійсно` замість `існо` можливо
-  - [ ] Одкриттє 15 6 `льняну` замість `лнянку` можливо
-  - [ ] Луки 12 49 можливо трохи дивне тире `і чого хочу? - тільки щоб запалав уже.`
