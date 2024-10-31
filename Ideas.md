@@ -19,3 +19,4 @@
   - Марка 7 11 `(that is to say given to GOD)`
   - Марка 13 14 `(let the reader understand)`
   - Маттея 24 15 `(let the reader understand)`
+  - Йоана 9 7 `(which is by interpretation, Sent)`
