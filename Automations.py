@@ -110,15 +110,21 @@ def form_log_files():
                 last_chapter=line[3:].strip()
             if '\\wj' in line:
                 verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
-                if '*' not in line: echo(f"WARNING: Missing closing tag {verse_reference}",color=RED_DARK)
+                if '*' not in line: 
+                    echo(f"WARNING: Missing closing tag {verse_reference}",color=RED_DARK)
+                    exit()
                 JESUS_Words.append(verse_reference)
             if '\\nd' in line:
                 verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
-                if '*' not in line: echo(f"WARNING: Missing closing tag {verse_reference}",color=RED_DARK)
+                if '*' not in line: 
+                    echo(f"WARNING: Missing closing tag {verse_reference}",color=RED_DARK)
+                    exit()
                 LORD_Names.append(verse_reference)
             if '\\qt' in line:
                 verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
-                if '*' not in line: echo(f"WARNING: Missing closing tag {verse_reference}",color=RED_DARK)
+                if '*' not in line: 
+                    echo(f"WARNING: Missing closing tag {verse_reference}",color=RED_DARK)
+                    exit()
                 OT_Quotes.append(verse_reference)
 
     with open(os.path.join(ROOT_PATH,"JESUS_Words.txt"),encoding='utf-8',mode='w') as f:
