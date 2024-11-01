@@ -34,7 +34,7 @@ def write_file(
     tries:int=0
 ):
     if tries>=3:
-        fail(section,f"fail writing {file_name}")
+        fail(section,f"writing {file_name}")
         return
     try:
         target_file_path=os.path.join(root,file_name)
