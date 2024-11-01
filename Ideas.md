@@ -16,7 +16,6 @@
 - replace numbers with digits: ten to 10 
 - make one text file, uppercase content of ND and QT tags 
 - Спірні місця ІСУСОВИХ Слів
-  - Марка 13 14 `(let the reader understand)`
   - Маттея 24 15 `(let the reader understand)`
   - Йоана 8 33 можливо не включати `що` до СЛІВ ІСУСА
   - Йоана 12 34 можливо не включати `що` до СЛІВ ІСУСА
