@@ -103,10 +103,10 @@ def make_single_text_file():
         quote:bool=False
         words=[]
         for word in verse.split():
-            if word=='\\qt': quote=True
+            if word=='\\qt' or word=='\\+qt': quote=True
             words.append(word.upper() if quote else word)
-            if '\\qt*' in word: quote=False
-        return " ".join(words).replace("\\QT*","").replace("\\QT ","")
+            if '\\qt*' in word or '\\+qt*' in word: quote=False
+        return " ".join(words).replace("\\QT*","").replace("\\QT ","").replace("\\+QT*","").replace("\\+QT ","")
 
     def replace_plain_quotes_with_proper(verse:str):
         double_quotes="“ ”"
