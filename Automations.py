@@ -176,17 +176,17 @@ def form_log_files():
             if '\\wj' in line:
                 verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
                 if '*' not in line:
-                    warn(section,f"{verse_reference} missing closing WJ tag")
+                    warn(verse_reference,"missing closing WJ tag")
                 JESUS_Words.append(verse_reference)
             if '\\nd' in line:
                 verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
                 if '*' not in line:
-                    warn(section,f"{verse_reference} missing closing ND tag")
+                    warn(verse_reference,"missing closing ND tag")
                 LORD_Names.append(verse_reference)
             if '\\qt' in line:
                 verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
                 if '*' not in line:
-                    warn(section,f"{verse_reference} missing closing QT tag")
+                    warn(verse_reference,"missing closing QT tag")
                 OT_Quotes.append(verse_reference)
 
     write_file(section,"JESUS_Words.txt",combine_lines(JESUS_Words))
