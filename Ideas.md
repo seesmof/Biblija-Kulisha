@@ -20,3 +20,4 @@
   - Марка 13 14 `(let the reader understand)`
   - Маттея 24 15 `(let the reader understand)`
   - Йоана 9 7 `(which is by interpretation, Sent)`
+  - Йоана 8 33 можливо не включати `що` до СЛІВ ІСУСА
