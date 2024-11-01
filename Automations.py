@@ -203,7 +203,10 @@ def form_log_files():
         fail(section,"forming OT Quotes file")
     yes(section,"form files")
 
-def perform_automations():
+def perform_automations(last_time):
+    print()
+    echo(time.ctime(last_time))
+
     copy_original_to_paratext()
     copy_original_to_text()
     make_single_text_file()
@@ -215,20 +218,16 @@ def monitor_files_for_changes():
     def get_modification_time(file:str):
         return os.path.getmtime(file)
 
-    echo("START\n")
+    echo("START")
     latest_file=get_last_modified_file()
     last_modification_time=get_modification_time(latest_file)
-    echo(time.ctime(last_modification_time))
-    perform_automations()
+    perform_automations(last_modification_time)
     while 1:
         latest_file=get_last_modified_file()
         current_modification_time=get_modification_time(latest_file)
         if last_modification_time!=current_modification_time:
-            print()
-            echo(time.ctime(last_modification_time))
-            perform_automations()
+            perform_automations(last_modification_time)
             last_modification_time=current_modification_time
         time.sleep(1)
 
 monitor_files_for_changes()
-# TODO add retrying when writing or reading files
