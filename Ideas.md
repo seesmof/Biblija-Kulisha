@@ -12,3 +12,4 @@
   - Одкриттє 1:8 not all BIBLES include `Who IS and WHO WAS and WHO IS to come, the ALMIGHTY`
   - Одкриттє 1:11 можливо включати `і [що бачиш]` до ІСУСОВИХ Слів
   - Одкриттє 21:5-8 only WEB has WJ there, although it makes perfect sense that JESUS would say those words, especially the `I AM The Alpha and The Omega, The Beginning and The End`
+  - Одкриттє 21:14-15 only WEB, CSB, NIV and [this BIBLE](https://media.ipsapps.org/eng/osa/bible/gm-pastors/PSBE-66-REV-022.html) have these Words in RED
