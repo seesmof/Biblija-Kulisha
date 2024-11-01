@@ -8,3 +8,5 @@
 - Спірні місця ІСУСОВИХ Слів
   - Одкриттє 21:5-8 only WEB has WJ there, although it makes perfect sense that JESUS would say those words, especially the `I AM The Alpha and The Omega, The Beginning and The End`
   - Одкриттє 21:14-15 only WEB, CSB, NIV and [this BIBLE](https://media.ipsapps.org/eng/osa/bible/gm-pastors/PSBE-66-REV-022.html) have these Words in RED
+- Спірні місця цитат СЗ у Новому Завіті 
+  - Маттея 1 23 not sure if mark `GOD with us` as QT also
