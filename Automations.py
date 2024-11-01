@@ -77,9 +77,9 @@ def copy_original_to_text():
             .replace("\\toc2","###!")
             .replace("\\c ","##")
             .replace("\\v ","#")
-            .replace("\\wj*","").replace("\\wj ","")
-            .replace("\\nd*","").replace("\\nd ","")
-            .replace("\\qt*","").replace("\\qt ","")
+            .replace("\\wj*","").replace("\\wj ","").replace("\\+wj*","").replace("\\+wj ","")
+            .replace("\\nd*","").replace("\\nd ","").replace("\\+nd*","").replace("\\+nd ","")
+            .replace("\\qt*","").replace("\\qt ","").replace("\\+qt*","").replace("\\+qt ","")
             .replace("[","*")
             .replace("]",'*') 
             for line in lines
@@ -146,7 +146,12 @@ def make_single_text_file():
                 # remove WJ tags 
                 verse=verse.replace("\\wj*","").replace("\\wj ","")
                 # handle ND tags 
-                verse="".join(m.upper() if ' ' not in m else m for m in re.split(r'\\nd (.*?)\\nd\*',verse))
+                verse="".join(
+                    match.upper() 
+                    if ' ' not in match 
+                    else match 
+                    for match in re.split(r'\\\+?nd (.*?)\\\+?nd\*',verse)
+                )
                 # handle QT tags
                 verse=handle_quotes(verse)
                 # handle Strong's numbers
