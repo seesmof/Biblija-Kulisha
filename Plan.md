@@ -51,3 +51,4 @@
   - [ ] Add R tags for parallel places (?)
   - [ ] Add F tags for footnotes where there are cross-references mentioned in BSB 
 - [ ] Use KJV and YLT (and/or other TR public domain BIBLES) to make a language update for the Bible Kulish
+  - [ ] When updating language always choose shortest words probably
