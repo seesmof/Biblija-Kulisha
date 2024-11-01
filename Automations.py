@@ -160,7 +160,7 @@ def form_log_files():
 
 def perform_automations():
     copy_original_to_paratext()
-    # copy_original_to_text()
+    copy_original_to_text()
     make_single_text_file()
     form_log_files()
 
