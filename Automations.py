@@ -181,16 +181,16 @@ def form_log_files():
                     warn(section,f"{verse_reference} missing closing QT tag")
                 OT_Quotes.append(verse_reference)
 
-    JESUS_Words_target_path=os.path.join(ROOT_PATH,"JESUS_Words.txt")
     try:
-        with open(file=JESUS_Words_target_path,encoding='utf-8',mode='w') as f:
+        target_file_path=os.path.join(ROOT_PATH,"JESUS_Words.txt")
+        with open(file=target_file_path,encoding='utf-8',mode='w') as f:
             f.writelines([l+'\n' if i!=len(JESUS_Words)-1 else l for i,l in enumerate(JESUS_Words)])
     except:
         fail(section,"forming JESUS' Words file")
     
-    LORD_Names_target_path=os.path.join(ROOT_PATH,"LORD_Names.txt")
     try:
-        with open(os.path.join(ROOT_PATH,"LORD_Names.txt"),encoding='utf-8',mode='w') as f:
+        target_file_path=os.path.join(ROOT_PATH,"LORD_Names.txt")
+        with open(file=target_file_path,encoding='utf-8',mode='w') as f:
             f.writelines([l+'\n' if i!=len(LORD_Names)-1 else l for i,l in enumerate(LORD_Names)])
     except:
         fail(section,"forming LORD's Names file")
