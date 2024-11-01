@@ -10,3 +10,4 @@
   - Одкриттє 21:14-15 only WEB, CSB, NIV and [this BIBLE](https://media.ipsapps.org/eng/osa/bible/gm-pastors/PSBE-66-REV-022.html) have these Words in RED
 - Спірні місця цитат СЗ у Новому Завіті 
   - Маттея 1 23 not sure if mark `GOD with us` as QT also
+  - Маттея 2 6 not sure about `земле Юдина` because in Михея 5 2 the quote is `І ти, Бетлеєме - ти, Ефрато, хоч ти малий між тисячами в Юдеї, але з тебе вийде менї Той, що має бути Володарем ув Ізраїлї, а його народини - від початків, від днїв вічностї.`
