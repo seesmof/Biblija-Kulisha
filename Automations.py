@@ -27,6 +27,31 @@ def copy_original_to_paratext():
         fail(section,"copying files")
     yes(section,"copy files")
 
+def write_file(
+    section:str,
+    file_name:str,
+    lines:list,
+    root:str=ROOT_PATH,
+    tries:int=0
+):
+    if tries>=3:
+        fail(section,f"fail writing {file_name}")
+        return
+    try:
+        target_file_path=os.path.join(root,file_name)
+        with open(file=target_file_path,encoding='utf-8',mode='w') as f:
+            f.writelines(lines)
+    except:
+        write_file(section,file_name,lines,root,tries+1)
+
+def combine_lines(lines:list):
+    return [
+        l+'\n' 
+        if i!=len(lines)-1 
+        else l 
+        for i,l in enumerate(lines)
+    ]
+
 def copy_original_to_text():
     section="TEXT"
     for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
@@ -71,14 +96,8 @@ def copy_original_to_text():
         file_extension="TXT"
         full_file_name=f'{file_name}.{file_extension}'
 
-        try:
-            target_file_path=os.path.join(TEXT_FILES_PATH,full_file_name)
-            with open(file=target_file_path,encoding='utf-8',mode='w') as f:
-                f.writelines(lines)
-        except:
-            fail(section,f"writing {full_file_name}")
+        write_file(section,full_file_name,lines,TEXT_FILES_PATH)
     yes(section,f"form files")
-
 
 def make_single_text_file():
     def handle_quotes(verse:str):
@@ -135,17 +154,7 @@ def make_single_text_file():
                 verse=re.sub(r'\|strong=\"[GH]\d{4}\"\\w\*',"",verse).replace("\\w ","")
                 global_lines.append(f'{Book} {chapter}:{verse}')
 
-    try:
-        target_file_path=os.path.join(ROOT_PATH,'Original.txt')
-        with open(file=target_file_path,encoding='utf-8',mode='w') as f:
-            f.writelines([
-                line+'\n' 
-                if index != len(global_lines)-1 
-                else line 
-                for index, line in enumerate(global_lines)
-            ])
-    except:
-        fail(section,"forming file")
+    write_file(section,"Original.txt",combine_lines(global_lines))
     yes(section,"form file")
 
 def form_log_files():
@@ -181,26 +190,9 @@ def form_log_files():
                     warn(section,f"{verse_reference} missing closing QT tag")
                 OT_Quotes.append(verse_reference)
 
-    try:
-        target_file_path=os.path.join(ROOT_PATH,"JESUS_Words.txt")
-        with open(file=target_file_path,encoding='utf-8',mode='w') as f:
-            f.writelines([l+'\n' if i!=len(JESUS_Words)-1 else l for i,l in enumerate(JESUS_Words)])
-    except:
-        fail(section,"forming JESUS' Words file")
-    
-    try:
-        target_file_path=os.path.join(ROOT_PATH,"LORD_Names.txt")
-        with open(file=target_file_path,encoding='utf-8',mode='w') as f:
-            f.writelines([l+'\n' if i!=len(LORD_Names)-1 else l for i,l in enumerate(LORD_Names)])
-    except:
-        fail(section,"forming LORD's Names file")
-
-    try:
-        target_file_path=os.path.join(ROOT_PATH,"OT_Quotes.txt")
-        with open(file=target_file_path,encoding='utf-8',mode='w') as f:
-            f.writelines([l+'\n' if i!=len(OT_Quotes)-1 else l for i,l in enumerate(OT_Quotes)])
-    except:
-        fail(section,"forming OT Quotes file")
+    write_file(section,"JESUS_Words.txt",combine_lines(JESUS_Words))
+    write_file(section,"LORD_Names.txt",combine_lines(LORD_Names))
+    write_file(section,"OT_Quotes.txt",combine_lines(OT_Quotes))
     yes(section,"form files")
 
 def perform_automations(last_time):
