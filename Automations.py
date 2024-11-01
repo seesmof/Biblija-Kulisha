@@ -178,17 +178,17 @@ def form_log_files():
         for line in lines:
             if '\\c ' in line: 
                 last_chapter=line[3:].strip()
-            if '\\wj' in line:
+            if '\\wj' in line or '\\+wj' in line:
                 verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
                 if '*' not in line:
                     warn(verse_reference,"missing closing WJ tag")
                 JESUS_Words.append(verse_reference)
-            if '\\nd' in line:
+            if '\\nd' in line or '\\+nd' in line:
                 verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
                 if '*' not in line:
                     warn(verse_reference,"missing closing ND tag")
                 LORD_Names.append(verse_reference)
-            if '\\qt' in line:
+            if '\\qt' in line or '\\+qt' in line:
                 verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
                 if '*' not in line:
                     warn(verse_reference,"missing closing QT tag")
