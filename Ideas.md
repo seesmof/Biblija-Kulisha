@@ -13,3 +13,4 @@
   - Маттея 3 17 nobody adds it, but links to Псалтирь 2 7 and Ісаїї 42 1 maybe
   - Маттея 5 5 nobody adds, but links to Псалтирь 37 11
   - Маттея 5 34 nobody adds, but links to Ісаїї 66 1
+  - Маттея 11 23 nobody adds, but links to Ісаїї 14 13,15
