@@ -16,3 +16,4 @@
   - Маттея 11 23 nobody adds, but links to Ісаїї 14 13,15
   - Маттея 13 32 [this table](https://www.bible-researcher.com/quote02.html) doesnt have it 
   - Маттея 13 43 not found in the table also
+  - Маттея 17 5 first part references Псалтирь 2 7, the latter references 5 Мойсея 18 15 maybe
