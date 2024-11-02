@@ -18,3 +18,4 @@
   - Маттея 13 43 not found in the table also
   - Маттея 17 5 first part references Псалтирь 2 7, the latter references 5 Мойсея 18 15 maybe
   - Маттея 23 38 nobody adds but links to Еремії 22 5 and 1 Царів 9 7-28 maybe
+  - Маттея 27 48 nobody adds, but links to Псалтирь 69 21
