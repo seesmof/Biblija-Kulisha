@@ -9,6 +9,4 @@
   - Одкриттє 21:5-8 only WEB has WJ there, although it makes perfect sense that JESUS would say those words, especially the `I AM The Alpha and The Omega, The Beginning and The End`
   - Одкриттє 21:14-15 only WEB, CSB, NIV and [this BIBLE](https://media.ipsapps.org/eng/osa/bible/gm-pastors/PSBE-66-REV-022.html) have these Words in RED
 - Спірні місця цитат СЗ у Новому Завіті 
-  - Маттея 1 23 not sure if mark `GOD with us` as QT also
-  - Маттея 2 6 not sure about `земле Юдина` because in Михея 5 2 the quote is `І ти, Бетлеєме - ти, Ефрато, хоч ти малий між тисячами в Юдеї, але з тебе вийде менї Той, що має бути Володарем ув Ізраїлї, а його народини - від початків, від днїв вічностї.`
-  - Маттея 12 40 not sure if include `Йона` in QT as well, the NET does not
+  - Маттея 2 23 nobody adds it, but it links to Judges 13.5 and Isaiah 11.1 maybe
