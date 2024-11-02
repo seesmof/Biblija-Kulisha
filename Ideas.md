@@ -11,3 +11,4 @@
 - Спірні місця цитат СЗ у Новому Завіті 
   - Маттея 2 23 nobody adds it, but it links to Суддїв 13.5 and Ісаїї 11.1 maybe
   - Маттея 3 17 nobody adds it, but links to Псалтирь 2 7 and Ісаїї 42 1 maybe
+  - Маттея 5 5 nobody adds, but links to Псалтирь 37 11
