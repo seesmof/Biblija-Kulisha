@@ -52,3 +52,4 @@
   - [ ] Add F tags for footnotes after QT tags and for adding cross-references
 - [ ] Use KJV and YLT (and/or other TR public domain BIBLES) to make a language update for the Bible Kulish
   - [ ] When updating language always choose shortest words probably
+  - [ ] Add S tags for headings, take them from [Bible Outline](https://biblehub.com/outline/)
