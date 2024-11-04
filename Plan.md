@@ -39,3 +39,4 @@ Ideas:
   - [ ] Add S tags for headings, take them from [Bible Outline](https://biblehub.com/outline/)
   - [ ] Переглянути знаки тире `-` і краще прибрати якомога більше
 
+Ideas:
