@@ -4,10 +4,11 @@ import glob
 import time
 from shutil import copy2
 
-ROOT_PATH=os.path.dirname(os.path.abspath(__file__))
+ROOT_PATH=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
 ORIGINAL_FILES_PATH=os.path.join(ROOT_PATH,"Original")
 ORIGINAL_FILES=glob.glob(ORIGINAL_FILES_PATH+"\\*.USFM")
 TEXT_FILES_PATH=os.path.join(ROOT_PATH,"Text")
+LOG_FILES_PATH=os.path.join(ROOT_PATH,"logs")
 PARATEXT_PROJECT_PATH=os.path.join("C:\\My Paratext 9 Projects\\BKS")
 DEFAULT = '\033[0m'; BOLD = '\033[1m';ITALIC = '\033[3m';UNDERLINE = '\033[4m';UNDERLINE_THICK = '\033[21m';HIGHLIGHTED = '\033[7m';HIGHLIGHTED_BLACK = '\033[40m';HIGHLIGHTED_RED = '\033[41m';HIGHLIGHTED_GREEN = '\033[42m';HIGHLIGHTED_YELLOW = '\033[43m';HIGHLIGHTED_BLUE = '\033[44m';HIGHLIGHTED_PURPLE = '\033[45m';HIGHLIGHTED_CYAN = '\033[46m';HIGHLIGHTED_GREY = '\033[47m';HIGHLIGHTED_GREY_LIGHT = '\033[100m';HIGHLIGHTED_RED_LIGHT = '\033[101m';HIGHLIGHTED_GREEN_LIGHT = '\033[102m';HIGHLIGHTED_YELLOW_LIGHT = '\033[103m';HIGHLIGHTED_BLUE_LIGHT = '\033[104m';HIGHLIGHTED_PURPLE_LIGHT = '\033[105m';HIGHLIGHTED_CYAN_LIGHT = '\033[106m';HIGHLIGHTED_WHITE_LIGHT = '\033[107m';STRIKE_THROUGH = '\033[9m';MARGIN_1 = '\033[51m';MARGIN_2 = '\033[52m';BLACK = '\033[30m';RED_DARK = '\033[31m';GREEN_DARK = '\033[32m';YELLOW_DARK = '\033[33m';BLUE_DARK = '\033[34m';PURPLE_DARK = '\033[35m';CYAN_DARK = '\033[36m';GREY_DARK = '\033[37m';BLACK_LIGHT = '\033[90m';RED = '\033[91m';GREEN = '\033[92m';YELLOW = '\033[93m';BLUE = '\033[94m';PURPLE = '\033[95m';CYAN = '\033[96m';WHITE = '\033[97m';echo = lambda values, color=DEFAULT: print("%s%s%s" % (color, values, DEFAULT)) if color else print("%s%s" % (values, DEFAULT)) # source: https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal#:~:text=%2C%20color%3DCYAN)-,1%20Line,-Simply%20copy%20paste
 yes=lambda section,text:echo(f"{section.upper()}: {text}",color=CYAN_DARK)
@@ -209,9 +210,9 @@ def form_log_files():
                     warn(verse_reference,"missing closing QT tag")
                 OT_Quotes.append(verse_reference)
 
-    write_file(section,"JESUS_Words.txt",combine_lines(JESUS_Words))
-    write_file(section,"LORD_Names.txt",combine_lines(LORD_Names))
-    write_file(section,"OT_Quotes.txt",combine_lines(OT_Quotes))
+    write_file(section,"JESUS_Words.txt",combine_lines(JESUS_Words),LOG_FILES_PATH)
+    write_file(section,"LORD_Names.txt",combine_lines(LORD_Names),LOG_FILES_PATH)
+    write_file(section,"OT_Quotes.txt",combine_lines(OT_Quotes),LOG_FILES_PATH)
     yes(section,"form files")
 
 def perform_automations(last_time):
