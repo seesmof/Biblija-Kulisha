@@ -52,6 +52,21 @@ def combine_lines(lines:list):
     ]
 
 def copy_original_to_text():
+    """
+    Copy USFM files, rename each: remove number, remove BKS, change extension to TXT 
+    Remove ` - Biblija Kulisha Standartna`
+    Remove `\ide` tags 
+    Remove `\h` tags 
+    Remove `\toc3` tags 
+    Remove `\mt1` tags 
+    Change `\id ` to `###`
+    Change `\toc1 ` to `###!!`
+    Change `\toc2 ` to `###!`
+    Change `\c ` to `##`
+    Change `\v ` to `#`
+    Replace `[ ]` with `* *`
+    """
+
     section="TEXT"
     for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
         try:
@@ -115,7 +130,7 @@ def make_single_text_file():
         single_quotes="‘ ’"
         single_open,single_close=single_quotes.split()
 
-        opened:false=False
+        opened:bool=False
         words=[]
         for word in verse.split():
             if '"' in word:
