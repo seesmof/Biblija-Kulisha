@@ -2,7 +2,7 @@
 - [x] Прибрати подвійний пробіл `  `
   - [x] Одкриттє 22 20, 2 рази
   - [x] 2 Паралипоменон 7 5
-- [ ] Розділена перша літера першого слова є одруківкою: ![](https://lh3.googleusercontent.com/pw/AP1GczNjNytYdmcklLcxpyY_t3iuEeE568U_KXVShcmvDYaz2bxaJOqph3UOBwJuDZNOrhkWd9GJN08Vh2-hx6iRbniBVtG9obZEM5nsAjpDRaD1AzOlW16zLx80BXgWim1hwfZrYCvlX-hXwZkXZcOVh1sUEQ=w885-h1288-s-no?authuser=0)
+- Розділена перша літера першого слова є одруківкою: ![](https://lh3.googleusercontent.com/pw/AP1GczNjNytYdmcklLcxpyY_t3iuEeE568U_KXVShcmvDYaz2bxaJOqph3UOBwJuDZNOrhkWd9GJN08Vh2-hx6iRbniBVtG9obZEM5nsAjpDRaD1AzOlW16zLx80BXgWim1hwfZrYCvlX-hXwZkXZcOVh1sUEQ=w885-h1288-s-no?authuser=0)
   - [x] 2 Паралипоменон 3 13
   - [x] Псалтирь 9 1
   - [x] Псалтирь 12 1
