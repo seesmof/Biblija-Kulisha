@@ -221,8 +221,8 @@ def perform_automations(last_time):
 
     # copy_original_to_paratext()
     copy_original_to_text()
-    make_single_text_file()
-    form_log_files()
+    # make_single_text_file()
+    # form_log_files()
 
 def monitor_files_for_changes():
     def get_last_modified_file():
