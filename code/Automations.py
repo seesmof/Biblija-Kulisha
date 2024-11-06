@@ -52,68 +52,6 @@ def combine_lines(lines:list):
         for i,l in enumerate(lines)
     ]
 
-def copy_original_to_text():
-    """
-    Copy USFM files, rename each: remove number, remove BKS, change extension to TXT 
-    Remove ` - Biblija Kulisha Standartna`
-    Remove `\ide` tags 
-    Remove `\h` tags 
-    Remove `\toc3` tags 
-    Remove `\mt1` tags 
-    Change `\id ` to `###`
-    Change `\toc1 ` to `###!!`
-    Change `\toc2 ` to `###!`
-    Change `\c ` to `##`
-    Change `\v ` to `#`
-    Replace `[ ]` with `* *`
-    """
-
-    section="TEXT"
-    for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
-        try:
-            target_file_path=os.path.join(ORIGINAL_FILES_PATH,full_file_name)
-            with open(file=target_file_path,encoding='utf-8',mode='r') as f:
-                lines=f.readlines()
-        except:
-            fail(section,f"reading {full_file_name}")
-        
-        lines=[
-            line for line in lines 
-            if '\\ide' not in line 
-            and '\\h' not in line 
-            and '\\toc3' not in line 
-            and '\\mt1' not in line 
-            and '\\p' not in line
-        ]
-        lines=[
-            line
-            .replace(" - Biblija Kulisha Standartna","")
-            .replace("\\id ","###")
-            .replace("\\toc1","###!!")
-            .replace("\\toc2","###!")
-            .replace("\\c ","##")
-            .replace("\\v ","#")
-            .replace("\\wj*","").replace("\\wj ","").replace("\\+wj*","").replace("\\+wj ","")
-            .replace("\\nd*","").replace("\\nd ","").replace("\\+nd*","").replace("\\+nd ","")
-            .replace("\\qt*","").replace("\\qt ","").replace("\\+qt*","").replace("\\+qt ","")
-            .replace("[","*")
-            .replace("]",'*') 
-            for line in lines
-        ]
-        lines=[
-            line[:-2]+'\n' if re.search(r'##\d+\s',line) 
-            else line 
-            for line in lines
-        ]
-
-        file_name,file_extension=full_file_name.split(".")
-        file_name=file_name[2:].replace("BKS","")
-        file_extension="TXT"
-        full_file_name=f'{file_name}.{file_extension}'
-
-        write_file(section,full_file_name,lines,TEXT_FILES_PATH)
-    yes(section,f"form files")
-
 def make_single_text_file():
     def handle_quotes(verse:str):
         quote:bool=False
@@ -215,12 +153,76 @@ def form_log_files():
     write_file(section,"OT_Quotes.txt",combine_lines(OT_Quotes),LOG_FILES_PATH)
     yes(section,"form files")
 
+def form_text_files(source_path:str=ORIGINAL_FILES_PATH):
+    section="TEXT"
+    for full_file_name in os.listdir(source_path):
+        target_file_path=os.path.join(source_path,full_file_name)
+        with open(file=target_file_path,encoding='utf-8',mode='r') as f:
+            lines=f.readlines()
+        
+        lines=[
+            line for line in lines 
+            # Remove `\ide`
+            if '\\ide' not in line 
+            # Remove `\h`
+            and '\\h' not in line 
+            # Remove `\toc3`
+            and '\\toc3' not in line 
+            # Remove `\mt1`
+            and '\\mt1' not in line 
+            # Remove `\p`
+            and '\\p' not in line
+        ]
+        lines=[
+            line
+            # Remove ` - Biblija Kulisha Standartna`
+            .replace(" - Biblija Kulisha Standartna","")
+            # Change `\id ` to `###`
+            .replace("\\id ","###")
+            # Change `\toc1 ` to `###!!`
+            .replace("\\toc1","###!!")
+            # Change `\toc2 ` to `###!`
+            .replace("\\toc2","###!")
+            # Change `\c ` to `##`
+            .replace("\\c ","##")
+            # Change `\v ` to `#`
+            .replace("\\v ","#")
+            # Replace `[ ]` with `* *`
+            .replace("[","*").replace("]",'*') 
+
+            # Remove all WJ tags
+            .replace("\\wj*","").replace("\\wj ","").replace("\\+wj*","").replace("\\+wj ","")
+            # Remove all ND tags
+            .replace("\\nd*","").replace("\\nd ","").replace("\\+nd*","").replace("\\+nd ","")
+            # Remove all QT tags
+            .replace("\\qt*","").replace("\\qt ","").replace("\\+qt*","").replace("\\+qt ","")
+            for line in lines
+        ]
+        lines=[
+            # Put chapter number lines on a separate line
+            line[:-2]+'\n' if re.search(r'##\d+\s',line) 
+            # If its not a chapter number, then write it as it is
+            else line 
+            for line in lines
+        ]
+
+        file_name,file_extension=full_file_name.split(".")
+        # Remove number and BKS from filename
+        # So `41MATBKS` will be `MAT`
+        file_name=file_name[2:].replace("BKS","")
+        # Change file extension and form full name
+        file_extension="TXT"
+        full_file_name=f'{file_name}.{file_extension}'
+
+        write_file(section,full_file_name,lines,TEXT_FILES_PATH)
+    yes(section,f"form files")
+
 def perform_automations(last_time):
     print()
-    echo(time.ctime(last_time))
+    # echo(time.ctime(last_time))
 
     # copy_original_to_paratext()
-    copy_original_to_text()
+    form_text_files()
     # make_single_text_file()
     # form_log_files()
 
