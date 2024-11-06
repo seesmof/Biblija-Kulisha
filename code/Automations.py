@@ -219,7 +219,7 @@ def perform_automations(last_time):
     print()
     echo(time.ctime(last_time))
 
-    copy_original_to_paratext()
+    # copy_original_to_paratext()
     copy_original_to_text()
     make_single_text_file()
     form_log_files()
