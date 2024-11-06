@@ -242,4 +242,5 @@ def monitor_files_for_changes():
             last_modification_time=current_modification_time
         time.sleep(1)
 
-monitor_files_for_changes()
+if __name__=="__main__":
+    monitor_files_for_changes()
