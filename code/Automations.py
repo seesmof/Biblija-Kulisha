@@ -153,7 +153,7 @@ def form_log_files():
     write_file(section,"OT_Quotes.txt",combine_lines(OT_Quotes),LOG_FILES_PATH)
     yes(section,"form files")
 
-def form_text_files(source_path:str=ORIGINAL_FILES_PATH):
+def form_text_files_from_original(source_path:str=ORIGINAL_FILES_PATH):
     section="TEXT"
     for full_file_name in os.listdir(source_path):
         target_file_path=os.path.join(source_path,full_file_name)
@@ -221,8 +221,8 @@ def perform_automations(last_time):
     print()
     # echo(time.ctime(last_time))
 
-    # copy_original_to_paratext()
-    form_text_files()
+    copy_original_to_paratext()
+    form_text_files_from_original()
     # make_single_text_file()
     # form_log_files()
 
