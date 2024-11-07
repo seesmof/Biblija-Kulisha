@@ -182,7 +182,10 @@ def form_text_files_from_original(source_path:str=ORIGINAL_FILES_PATH):
             and '\\p' not in line
         ]
         lines=[
-            line
+            re.sub(
+                # Remove text from \f to \f*, which is any footnote
+                r'\\f(.*?)\\f\*','',line
+            )
             # Remove ` - Biblija Kulisha Standartna`
             .replace(" - Biblija Kulisha Standartna","")
             # Change `\id ` to `###`
