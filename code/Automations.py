@@ -52,6 +52,9 @@ def combine_lines(lines:list):
         for i,l in enumerate(lines)
     ]
 
+def remove_usfm_tags(line:str):
+    return line.replace("\\wj*","").replace("\\wj ","").replace("\\+wj*","").replace("\\+wj ","").replace("\\nd*","").replace("\\nd ","").replace("\\+nd*","").replace("\\+nd ","").replace("\\qt*","").replace("\\qt ","").replace("\\+qt*","").replace("\\+qt ","")
+
 def make_single_text_file():
     def handle_quotes(verse:str):
         quote:bool=False
@@ -116,49 +119,53 @@ def make_single_text_file():
     yes(section,"form file")
 
 def form_log_files():
-    '''
-    TODO
-    add footnote handler 
-    change into csv 
-    format as Book,Chapter,Verse,Content
-    take Content with regex 
-    rename files as tag names in uppercase: WJ, ND, QT, F
-    '''
-    JESUS_Words=[]
-    LORD_Names=[]
-    OT_Quotes=[]
     section="LOGS"
+
+    WJ=['Book,Chapter,Verse,Content']
+    ND=['Book,Chapter,Verse,Content']
+    QT=['Book,Chapter,Verse,Content']
+    F=['Book,Chapter,Verse,Content']
+
     for file_path in ORIGINAL_FILES:
-        try:
-            with open(file_path,encoding='utf-8',mode='r') as f:
-                lines=f.readlines()
-        except:
-            fail(section,f"reading {file_path.split("\\")[-1]}")
+        with open(file_path,encoding='utf-8',mode='r') as f:
+            lines=f.readlines()
 
         Book_name=lines[2].replace("\\h ","").strip()
-        last_chapter=0
+        chapter_number=0
+
         for line in lines:
             if '\\c ' in line: 
-                last_chapter=line[3:].strip()
-            if '\\wj' in line or '\\+wj' in line:
-                verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
-                if '*' not in line:
-                    warn(verse_reference,"missing closing WJ tag")
-                JESUS_Words.append(verse_reference)
-            if '\\nd' in line or '\\+nd' in line:
-                verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
-                if '*' not in line:
-                    warn(verse_reference,"missing closing ND tag")
-                LORD_Names.append(verse_reference)
-            if '\\qt' in line or '\\+qt' in line:
-                verse_reference=f"{Book_name} {last_chapter}:{line[3:].split()[0]}"
-                if '*' not in line:
-                    warn(verse_reference,"missing closing QT tag")
-                OT_Quotes.append(verse_reference)
+                chapter_number=line[3:].strip()
 
-    write_file(section,"JESUS_Words.txt",combine_lines(JESUS_Words),LOG_FILES_PATH)
-    write_file(section,"LORD_Names.txt",combine_lines(LORD_Names),LOG_FILES_PATH)
-    write_file(section,"OT_Quotes.txt",combine_lines(OT_Quotes),LOG_FILES_PATH)
+            if '\\wj' in line or '\\+wj' in line:
+                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                contents=re.findall(r'\\\+?wj(.*?)\\\+?wj\*',line)
+                for c in contents:
+                    res=f'{Book_name},{chapter_number},{verse_number},{remove_usfm_tags(c)}'
+                    WJ.append(res)
+            if '\\nd' in line or '\\+nd' in line:
+                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                contents=re.findall(r'\\\+?nd(.*?)\\\+?nd\*',line)
+                for c in contents:
+                    res=f'{Book_name},{chapter_number},{verse_number},{remove_usfm_tags(c)}'
+                    ND.append(res)
+            if '\\qt' in line or '\\+qt' in line:
+                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                contents=re.findall(r'\\\+?qt(.*?)\\\+?qt\*',line)
+                for c in contents:
+                    res=f'{Book_name},{chapter_number},{verse_number},{remove_usfm_tags(c)}'
+                    QT.append(res)
+            if '\\f' in line or '\\+f' in line:
+                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                contents=re.findall(r'\\\+?ft\s(.*?)\\\+?f\*',line)
+                for c in contents:
+                    res=f'{Book_name},{chapter_number},{verse_number},{c}'
+                    F.append(res)
+
+    write_file(section,"WJ.csv",combine_lines(WJ),LOG_FILES_PATH)
+    write_file(section,"ND.csv",combine_lines(ND),LOG_FILES_PATH)
+    write_file(section,"QT.csv",combine_lines(QT),LOG_FILES_PATH)
+    write_file(section,"F.csv",combine_lines(F),LOG_FILES_PATH)
     yes(section,"form files")
 
 def form_text_files_from_original(source_path:str=ORIGINAL_FILES_PATH):
@@ -256,8 +263,8 @@ def perform_automations(last_time):
 
     copy_original_to_paratext()
     form_text_files_from_original()
+    form_log_files()
     # make_single_text_file()
-    # form_log_files()
 
 def monitor_files_for_changes():
     def get_last_modified_file():
