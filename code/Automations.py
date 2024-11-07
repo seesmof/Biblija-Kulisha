@@ -217,6 +217,28 @@ def form_text_files_from_original(source_path:str=ORIGINAL_FILES_PATH):
         write_file(section,full_file_name,lines,TEXT_FILES_PATH)
     yes(section,f"form files")
 
+def form_solid_text_file():
+    gls=[]
+    for f in ORIGINAL_FILES:
+        with open(f,encoding='utf-8',mode='r') as fr:
+            ls=fr.readlines()
+        ls=[
+            re.sub(r'\\v\s\d+\s','',l).replace("\\wj*","").replace("\\wj ","").replace("\\+wj*","").replace("\\+wj ","").replace("\\nd*","").replace("\\nd ","").replace("\\+nd*","").replace("\\+nd ","").replace("\\qt*","").replace("\\qt ","").replace("\\+qt*","").replace("\\+qt ","")
+            for l in ls
+            if '\\p' not in l
+            and '\\c' not in l
+            and '\\id' not in l
+            and '\\h' not in l
+            and '\\toc1' not in l
+            and '\\toc2' not in l
+            and '\\toc3' not in l
+            and '\\mt1' not in l
+        ]
+        gls+=ls
+    res=" ".join([l.replace('\n','') for l in gls])
+    with open(os.path.join(ROOT_PATH,"Solid.txt"),encoding='utf-8',mode='w') as fr:
+        fr.write(res)
+
 def perform_automations(last_time):
     print()
     # echo(time.ctime(last_time))
@@ -245,4 +267,5 @@ def monitor_files_for_changes():
         time.sleep(1)
 
 if __name__=="__main__":
-    monitor_files_for_changes()
+    # monitor_files_for_changes()
+    form_solid_text_file()
