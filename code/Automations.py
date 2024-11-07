@@ -116,6 +116,14 @@ def make_single_text_file():
     yes(section,"form file")
 
 def form_log_files():
+    '''
+    TODO
+    add footnote handler 
+    change into csv 
+    format as Book,Chapter,Verse,Content
+    take Content with regex 
+    rename files as tag names in uppercase: WJ, ND, QT, F
+    '''
     JESUS_Words=[]
     LORD_Names=[]
     OT_Quotes=[]
