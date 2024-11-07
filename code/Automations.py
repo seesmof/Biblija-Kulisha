@@ -267,5 +267,4 @@ def monitor_files_for_changes():
         time.sleep(1)
 
 if __name__=="__main__":
-    # monitor_files_for_changes()
-    form_solid_text_file()
+    monitor_files_for_changes()
