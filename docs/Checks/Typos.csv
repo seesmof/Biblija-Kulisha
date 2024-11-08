@@ -86,5 +86,6 @@ PSA,125,1,В поваючі,Вповаючі,Separated letter
 ZEC,2,4,сказав,І сказав,Missing letter
 ZEC,3,8,- сї,— сї,Wrong dash
 ZEC,4,1,вернувся,І вернувся,Missing letter
+ZEC,4,2,"сьвітильника,-ввесь","сьвітильника, - ввесь",Missing spaces
 REV,22,20,хутко!  Амінь,хутко! Амінь,Extra space
 REV,22,20,Амінь.  О,Амінь. О,Extra space
