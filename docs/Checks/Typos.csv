@@ -84,6 +84,7 @@ PSA,123,1,З няв,Зняв,Separated letter
 PSA,124,1,Я к,Як,Separated letter
 PSA,125,1,В поваючі,Вповаючі,Separated letter
 ZEC,1,5,"ваші,-","ваші -",Extra symbol
+ZEC,1,5,ваші -,ваші —,Wrong dash
 ZEC,2,4,сказав,І сказав,Missing letter
 ZEC,3,8,- сї,— сї,Wrong dash
 ZEC,4,1,вернувся,І вернувся,Missing letter
