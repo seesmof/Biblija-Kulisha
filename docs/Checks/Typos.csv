@@ -99,5 +99,6 @@ ZEC,5,8,Отся -,Отся —,Wrong dash
 ZEC,6,1,се -,се —,Wrong dash
 ZEC,6,12,муж -,муж —,Wrong dash
 ZEC,7,1,четвертому,У четвертому,Missing letter
+ZEC,9,10,Тоді,Тодї,Wrong letter
 REV,22,20,хутко!  Амінь,хутко! Амінь,Extra space
 REV,22,20,Амінь.  О,Амінь. О,Extra space
