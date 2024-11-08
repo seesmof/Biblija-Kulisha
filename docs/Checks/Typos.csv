@@ -17,6 +17,7 @@ JDG,5,30,Сизарин -,Сизарин —,Wrong dash
 2CH,7,6,"— ,","—,",Extra space
 2CH,7,6,ними -,ними —,Wrong dash
 2CH,7,6,"— ,","—,",Extra space
+JOB,29,24,них -,них —,Wrong dash
 PSA,9,1,С лавити,Славити,Separated letter
 PSA,12,1,С паси,Спаси,Separated letter
 PSA,13,1,Д оки,Доки,Separated letter
