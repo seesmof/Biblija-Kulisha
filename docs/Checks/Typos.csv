@@ -106,6 +106,7 @@ ZEC,4,14,землі,землї,Wrong letter
 ZEC,5,5,проява ?,проява?,Extra space
 ZEC,5,8,Отся -,Отся —,Wrong dash
 ZEC,6,1,се -,се —,Wrong dash
+ZEC,6,4,добродію,добродїю,Wrong letter
 ZEC,6,6,"полуденні.,",полуденні.,Extra symbol
 ZEC,6,12,муж -,муж —,Wrong dash
 ZEC,7,1,четвертому,У четвертому,Missing letter
