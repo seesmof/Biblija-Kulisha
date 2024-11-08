@@ -261,30 +261,21 @@ def form_text_solid():
     with open(os.path.join(TEXT_SOLID_FOLDER_PATH,'Solid.txt'),encoding='utf-8',mode='w') as filer:
         filer.write(res)
 
-def perform_automations(last_time):
-    print()
-    # echo(time.ctime(last_time))
-
+def perform_automations():
     copy_to_paratext()
     form_text_tbs()
     form_text_solid()
     form_logs()
 
 def monitor_files_for_changes():
-    def get_last_modified_file():
-        return max(ORIGINAL_FILES,key=os.path.getmtime)
-    def get_modification_time(file:str):
-        return os.path.getmtime(file)
-
-    echo("START")
-    latest_file=get_last_modified_file()
-    last_modification_time=get_modification_time(latest_file)
-    perform_automations(last_modification_time)
+    latest_file=max(ORIGINAL_FILES,key=os.path.getmtime)
+    last_modification_time=os.path.getmtime(latest_file)
+    perform_automations()
     while 1:
-        latest_file=get_last_modified_file()
-        current_modification_time=get_modification_time(latest_file)
+        latest_file=max(ORIGINAL_FILES,key=os.path.getmtime)
+        current_modification_time=os.path.getmtime(latest_file)
         if last_modification_time!=current_modification_time:
-            perform_automations(last_modification_time)
+            perform_automations()
             last_modification_time=current_modification_time
         time.sleep(1)
 
