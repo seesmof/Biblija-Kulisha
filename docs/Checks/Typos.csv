@@ -141,6 +141,7 @@ ZEC,14,4,'д,ʼд,Wrong apostrophe
 ZEC,14,4,друга -,друга —,Wrong dash
 ZEC,14,4,'д,ʼд,Wrong apostrophe
 ZEC,14,13,"Господа,-","Господа, - ",Missing spaces
+ZEC,14,13,- так,— так,Wrong dash
 ACT,22,20,Почувши,(Почувши,Missing opening bracket: at the end of this verse there is a closing circular bracket. The opening one is nowhere to be found. After checking English Bibles like KJV and DRA, they have this whole verse in brackets. Thus we also add an opening bracket at the beginning here.
 REV,22,20,хутко!  Амінь,хутко! Амінь,Extra space
 REV,22,20,Амінь.  О,Амінь. О,Extra space
