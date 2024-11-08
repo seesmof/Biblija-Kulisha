@@ -2,6 +2,8 @@
 - [x] Copy all 66 Books from Bolls.Life into USFM
 - [x] Check files integrity: compare chapters with original first and last words; check chapter numbers
 - [x] Place each tag on new line
+- [ ] Align text with printed Bible as closely as you can
+- [ ] Fix any additional typos
 - [ ] Replace "''" with “‘’”
 - [ ] Replace ' with ʼ
 - [ ] Replace - with — (em dash)
@@ -9,7 +11,6 @@
   - `–` Середній слеш можна для Біблійних посилань: `1 Мойсея 3:1–3`
   - `—` Довгий слеш можна як знак пунктуації: `Господь — муж боїв страшенний, на імя Господь він.`
 - [ ] Add footnotes from physical Bible
-- [ ] Fix typos
 
 ##### Revision
 - [x] WJ tags
