@@ -1,3 +1,4 @@
+from calendar import c
 import os
 import re
 import glob
@@ -10,6 +11,7 @@ original_file_paths=glob.glob(original_folder_path+"\\*.USFM")
 output_folder_path=os.path.join(root,'Output')
 text_TBS_folder_path=os.path.join(output_folder_path,'TXT TBS')
 text_solid_folder_path=os.path.join(output_folder_path,'TXT SLD')
+text_lined_folder_path=os.path.join(output_folder_path,'TXT LND')
 logs_folder_path=os.path.join(root,"logs")
 paratext_folder_path=os.path.join("C:\\My Paratext 9 Projects\\BKS")
 
@@ -184,12 +186,31 @@ def form_text_solid():
     except: pass
 
 def form_text_lined():
-    pass
+    gls=[]
+    for fp in original_file_paths:
+        with open(fp,encoding='utf-8',mode='r') as f:
+            ls=f.readlines()
+        bn=ls[2][3:].strip()
+        cn=1
+        for l in ls:
+            if '\\p' in l or '\\id' in l or '\\h' in l or '\\toc1' in l or '\\toc2' in l or '\\toc3' in l or '\\mt1' in l:
+                continue
+            elif '\\c ' in l:
+                cn=l[3:].split()[0]
+                continue
+            v=l[3:].strip()
+            r=f'{bn} {cn}:{remove_usfm_tags(re.sub(r'\\v\s\d+\s','',v))}'
+            gls.append(r)
+    try:
+        with open(os.path.join(text_lined_folder_path,'Lined.txt'),encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(gls))
+    except: pass
 
 def perform_automations():
     copy_to_paratext()
     form_text_tbs()
     form_text_solid()
+    form_text_lined()
     form_logs()
 
 def monitor_files_for_changes():
