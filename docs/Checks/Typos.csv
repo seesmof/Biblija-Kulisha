@@ -106,6 +106,8 @@ ZEC,7,9,милосерде,милосердє,Wrong letter
 ZEC,9,10,Тоді,Тодї,Wrong letter
 ZEC,9,10,поторошу,поторощу,Wrong letter
 ZEC,9,10,та в,та й,Wrong letter
+ZEC,9,10,вів. бо,він. бо,Wrong letter
+ZEC,9,10,він. бо,він бо,Extra dot
 ZEC,9,14,зявитьея,зʼявитьея,Missing symbol
 ZEC,9,14,зʼявитьея,зʼявиться,Wrong letter
 ZEC,9,16,часи],"часи,",Wrong symbol
