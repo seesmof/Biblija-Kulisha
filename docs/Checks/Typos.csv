@@ -97,6 +97,7 @@ ZEC,4,7,- низина,— низина,Wrong dash
 ZEC,4,10,- се,— се,Wrong dash
 ZEC,5,8,Отся -,Отся —,Wrong dash
 ZEC,6,1,се -,се —,Wrong dash
+ZEC,6,6,"полуденні.,",полуденні.,Extra symbol
 ZEC,6,12,муж -,муж —,Wrong dash
 ZEC,7,1,четвертому,У четвертому,Missing letter
 ZEC,7,3,пророків:-,пророків:,Extra symbol
