@@ -20,8 +20,7 @@ def copy_to_paratext():
                 file_path,
                 os.path.join(paratext_folder_path,file_path.split('\\')[-1])
             )
-    except: 
-        pass
+    except: pass
 
 def remove_usfm_tags(
     line:str
@@ -71,14 +70,25 @@ def form_logs():
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     F.append(res)
 
-    with open(os.path.join(logs_folder_path,'WJ.csv'),encoding='utf-8',mode='w') as f:
-        f.write('\n'.join(WJ))
-    with open(os.path.join(logs_folder_path,'ND.csv'),encoding='utf-8',mode='w') as f:
-        f.write('\n'.join(ND))
-    with open(os.path.join(logs_folder_path,'QT.csv'),encoding='utf-8',mode='w') as f:
-        f.write('\n'.join(QT))
-    with open(os.path.join(logs_folder_path,'F.csv'),encoding='utf-8',mode='w') as f:
-        f.write('\n'.join(F))
+    try:
+        with open(os.path.join(logs_folder_path,'WJ.csv'),encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(WJ))
+    except: pass
+
+    try:
+        with open(os.path.join(logs_folder_path,'ND.csv'),encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(ND))
+    except: pass
+
+    try:
+        with open(os.path.join(logs_folder_path,'QT.csv'),encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(QT))
+    except: pass
+
+    try:
+        with open(os.path.join(logs_folder_path,'F.csv'),encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(F))
+    except: pass
 
 def form_text_tbs():
     for file_path in original_file_paths:
@@ -137,8 +147,10 @@ def form_text_tbs():
         file_extension="TXT"
         full_name=f'{file_name}.{file_extension}'
 
-        with open(os.path.join(text_TBS_folder_path,full_name),encoding='utf-8',mode='w') as f:
-            f.writelines(lines)
+        try:
+            with open(os.path.join(text_TBS_folder_path,full_name),encoding='utf-8',mode='w') as f:
+                f.writelines(lines)
+        except: pass
 
 def form_text_solid():
     all_lines=[]
@@ -166,8 +178,10 @@ def form_text_solid():
         # Replace all new line tags
         [line.replace('\n','') for line in all_lines]
     )
-    with open(os.path.join(text_solid_folder_path,'Solid.txt'),encoding='utf-8',mode='w') as f:
-        f.write(res)
+    try:
+        with open(os.path.join(text_solid_folder_path,'Solid.txt'),encoding='utf-8',mode='w') as f:
+            f.write(res)
+    except: pass
 
 def perform_automations():
     copy_to_paratext()
