@@ -183,6 +183,9 @@ def form_text_solid():
             f.write(res)
     except: pass
 
+def form_text_lined():
+    pass
+
 def perform_automations():
     copy_to_paratext()
     form_text_tbs()
