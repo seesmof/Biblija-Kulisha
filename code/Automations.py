@@ -187,9 +187,11 @@ def form_text_tbs(source_path:str=ORIGINAL_FILES_PATH):
             and '\\p' not in line
         ]
         lines=[
-            re.sub(
-                # Remove text from \f to \f*, which is any footnote
-                r'\\f(.*?)\\f\*','',line
+            remove_usfm_tags(
+                re.sub(
+                    # Remove text from \f to \f*, which is any footnote
+                    r'\\f(.*?)\\f\*','',line
+                )
             )
             # Remove ` - Biblija Kulisha Standartna`
             .replace(" - Biblija Kulisha Standartna","")
@@ -205,13 +207,6 @@ def form_text_tbs(source_path:str=ORIGINAL_FILES_PATH):
             .replace("\\v ","#")
             # Replace `[ ]` with `* *`
             .replace("[","*").replace("]",'*') 
-
-            # Remove all WJ tags
-            .replace("\\wj*","").replace("\\wj ","").replace("\\+wj*","").replace("\\+wj ","")
-            # Remove all ND tags
-            .replace("\\nd*","").replace("\\nd ","").replace("\\+nd*","").replace("\\+nd ","")
-            # Remove all QT tags
-            .replace("\\qt*","").replace("\\qt ","").replace("\\+qt*","").replace("\\+qt ","")
             for line in lines
         ]
         lines=[
