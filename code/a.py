@@ -1,6 +1,3 @@
-import re 
-
-a=r'\v 3 А ось основа, що заложив Соломон, щоб ставити дом Божий: довжина його на шістьдесять локот переднїйшої міри\f + \fr 3:3 \ft Намету Мойсеєвого\f*, а ширина на двайцять локот.'
-p=r'\\f(.*?)\\f\*'
-print(a)
-a=re.sub(p,'',a)
+a='ZEC 1 5 wrong dash'
+Book,chapter,verse,reason=a.split(' ',3)
+print(Book,chapter,verse,reason.capitalize())
