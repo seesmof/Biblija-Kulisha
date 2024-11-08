@@ -121,12 +121,7 @@ def form_text_tbs():
             and '\\p' not in line
         ]
         lines=[
-            remove_usfm_tags(
-                re.sub(
-                    # Remove text from \f to \f*, which is any footnote
-                    r'\\f(.*?)\\f\*','',line
-                )
-            )
+            remove_usfm_tags(line)
             # Remove ` - Biblija Kulisha Standartna`
             .replace(" - Biblija Kulisha Standartna","")
             # Change `\id ` to `###`
