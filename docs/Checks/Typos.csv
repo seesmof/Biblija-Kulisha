@@ -188,6 +188,7 @@ MRK,3,6,Iродиянами,Іродиянами,Wrong letter
 ACT,15,12,ІІавел,Павел,Wrong letter
 ACT,21,23,З роби,Зроби,Separated letter
 ACT,22,20,Почувши,(Почувши,Missing opening bracket: at the end of this verse there is a closing circular bracket. The opening one is nowhere to be found. After checking English Bibles like KJV and DRA, they have this whole verse in brackets. Thus we also add an opening bracket at the beginning here.
+2CO,6,2,спасення. ),спасення.),Extra space
 EPH,3,1,ІсусХристів,Ісус-Христів,Missing dash
 REV,22,20,хутко!  Амінь,хутко! Амінь,Extra space
 REV,22,20,Амінь.  О,Амінь. О,Extra space
