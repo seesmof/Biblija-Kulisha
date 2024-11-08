@@ -22,6 +22,7 @@ JDG,5,30,Сизарин -,Сизарин —,Wrong dash
 1KI,4,19,Урієнко -,Урієнко —,Wrong dash
 1KI,8,27,'біймуть,ʼбіймуть,Wrong apostrophe
 2CH,3,13,К рила,Крила,Separated letter
+2CH,6,13,"- ,","-,",Extra space
 2CH,7,5,дім  царь,дім царь,Extra space
 2CH,7,5,дім царь,дім Божій царь,Missing word
 2CH,7,6,Господа -,Господа —,Wrong dash
