@@ -71,10 +71,14 @@ def form_logs():
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     F.append(res)
 
-    write_file(section,"WJ.csv",combine_lines(WJ),logs_folder_path)
-    write_file(section,"ND.csv",combine_lines(ND),logs_folder_path)
-    write_file(section,"QT.csv",combine_lines(QT),logs_folder_path)
-    write_file(section,"F.csv",combine_lines(F),logs_folder_path)
+    with open(os.path.join(logs_folder_path,'WJ.csv'),encoding='utf-8',mode='w') as f:
+        f.write('\n'.join(WJ))
+    with open(os.path.join(logs_folder_path,'ND.csv'),encoding='utf-8',mode='w') as f:
+        f.write('\n'.join(ND))
+    with open(os.path.join(logs_folder_path,'QT.csv'),encoding='utf-8',mode='w') as f:
+        f.write('\n'.join(QT))
+    with open(os.path.join(logs_folder_path,'F.csv'),encoding='utf-8',mode='w') as f:
+        f.write('\n'.join(F))
 
 def form_text_tbs():
     for file_path in original_file_paths:
@@ -131,9 +135,10 @@ def form_text_tbs():
         file_name=file_name[2:].replace("BKS","")
         # Change file extension and form full name
         file_extension="TXT"
-        file_path=f'{file_name}.{file_extension}'
+        full_name=f'{file_name}.{file_extension}'
 
-        write_file(section,file_path,lines,text_TBS_folder_path)
+        with open(os.path.join(text_TBS_folder_path,full_name),encoding='utf-8',mode='w') as f:
+            f.writelines(lines)
 
 def form_text_solid():
     all_lines=[]
