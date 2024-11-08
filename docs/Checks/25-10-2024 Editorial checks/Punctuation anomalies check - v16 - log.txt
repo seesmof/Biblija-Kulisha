@@ -1,0 +1,1803 @@
+0	info	No punctuationMarks in setup - proceeding using \p{P}
+0	info	No allowInSuppliedSections in setup - proceeding using: false
+1	debug	startingPunctuationRegex: /^\p{P}/gu
+1	debug	doublePunctuationRegex: /[\p{P}]\p{Z}{0,}?[\p{P}]/gu
+1	debug	suppliedPunctuationRegex: /&lt;add&gt;[^&lt;]*?[\p{P}][^&lt;]*?&lt;\/add&gt;/gu
+25	error	Multiple punctuation marks found [ , - ] @ GEN_4_23
+26	warn	Multiple punctuation marks found [ : " ] @ GEN_16_14
+28	error	Multiple punctuation marks found [ *. ] @ GEN_25_30
+30	error	Multiple punctuation marks found [ *. ] @ GEN_41_45
+30	warn	Punctuation mark found in supplied section [ &lt;add&gt;, і дав йому за жену Аснату, дочку Потифера, сьвященника Онського&lt;/add&gt; ] @ GEN_41_45
+31	error	Multiple punctuation marks found [ , - ] @ GEN_48_14
+36	error	Punctuation mark found at beginning of verse [ . ] @ EXO_7_9
+36	error	Multiple punctuation marks found [ *. ] @ EXO_13_4
+37	error	Multiple punctuation marks found [ , - ] @ EXO_15_12
+37	error	Punctuation mark found at beginning of verse [ . ] @ EXO_16_28
+37	error	Multiple punctuation marks found [ *. ] @ EXO_17_15
+38	warn	Multiple punctuation marks found [ : " ] @ EXO_22_9
+38	warn	Punctuation mark found in supplied section [ &lt;add&gt; мережаний, та кедар&lt;/add&gt; ] @ EXO_28_4
+39	error	Multiple punctuation marks found [ *, ] @ EXO_28_30
+39	error	Multiple punctuation marks found [ *; ] @ EXO_28_37
+39	warn	Multiple punctuation marks found [ ". ] @ EXO_34_5
+46	error	Multiple punctuation marks found [ , - ] @ LEV_18_29
+51	error	Multiple punctuation marks found [ *! ] @ NUM_5_22
+52	error	Multiple punctuation marks found [ , - ] @ NUM_7_9
+52	error	Multiple punctuation marks found [ : - ] @ NUM_9_20
+52	error	Multiple punctuation marks found [ *, ] @ NUM_11_3
+52	error	Multiple punctuation marks found [ *; ] @ NUM_11_34
+54	error	Multiple punctuation marks found [ *. ] @ NUM_21_3
+55	warn	Multiple punctuation marks found [ ). ] @ NUM_27_14
+63	error	Multiple punctuation marks found [ , - ] @ DEU_11_2
+64	error	Multiple punctuation marks found [ ; - ] @ DEU_16_3
+64	error	Multiple punctuation marks found [ * - ] @ DEU_16_21
+64	error	Multiple punctuation marks found [ ,* ] @ DEU_22_8
+65	error	Punctuation mark found at beginning of verse [ . ] @ DEU_26_10
+66	error	Multiple punctuation marks found [ ; - ] @ DEU_33_16
+68	error	Multiple punctuation marks found [ , - ] @ JOS_3_15
+69	warn	Multiple punctuation marks found [ ), ] @ JOS_9_14
+69	warn	Multiple punctuation marks found [ ). ] @ JOS_11_4
+70	warn	Multiple punctuation marks found [ ), ] @ JOS_17_15
+70	error	Punctuation mark found at beginning of verse [ ( ] @ JOS_21_7
+70	error	Multiple punctuation marks found [ , - ] @ JOS_21_10
+70	error	Multiple punctuation marks found [ , - ] @ JOS_21_18
+71	warn	Multiple punctuation marks found [ "* ] @ JOS_22_34
+73	error	Multiple punctuation marks found [ *. ] @ JDG_2_5
+73	warn	Multiple punctuation marks found [ ), ] @ JDG_2_14
+73	error	Multiple punctuation marks found [ , - ] @ JDG_3_9
+73	warn	Multiple punctuation marks found [ , ( ] @ JDG_5_4
+73	warn	Multiple punctuation marks found [ ); ] @ JDG_5_6
+73	warn	Multiple punctuation marks found [ ), ] @ JDG_5_18
+73	warn	Multiple punctuation marks found [ , ( ] @ JDG_5_20
+73	warn	Multiple punctuation marks found [ ), ] @ JDG_5_21
+73	warn	Multiple punctuation marks found [ ). ] @ JDG_6_22
+74	warn	Multiple punctuation marks found [ ): ] @ JDG_9_10
+74	warn	Multiple punctuation marks found [ ), ] @ JDG_9_42
+74	warn	Multiple punctuation marks found [ , ( ] @ JDG_12_6
+75	error	Multiple punctuation marks found [ , - ] @ JDG_15_16
+75	warn	Multiple punctuation marks found [ ), ] @ JDG_20_18
+75	warn	Multiple punctuation marks found [ - ( ] @ JDG_20_27
+75	warn	Multiple punctuation marks found [ ) - ] @ JDG_20_28
+75	warn	Multiple punctuation marks found [ , ' ] @ JDG_20_45
+76	error	Multiple punctuation marks found [ *, ] @ RUT_1_20
+76	warn	Punctuation mark found in supplied section [ &lt;add&gt;, а звіть Марою&lt;/add&gt; ] @ RUT_1_20
+77	error	Multiple punctuation marks found [ ! - ] @ RUT_3_10
+77	error	Multiple punctuation marks found [ *. ] @ RUT_4_17
+79	warn	Multiple punctuation marks found [ ): ] @ 1SA_1_20
+80	warn	Multiple punctuation marks found [ ). ] @ 1SA_2_18
+80	warn	Multiple punctuation marks found [ ), ] @ 1SA_4_21
+80	warn	Multiple punctuation marks found [ ). ] @ 1SA_6_1
+80	error	Multiple punctuation marks found [ *, ] @ 1SA_7_12
+81	warn	Multiple punctuation marks found [ . ( ] @ 1SA_14_23
+82	warn	Multiple punctuation marks found [ ); ] @ 1SA_20_18
+83	warn	Multiple punctuation marks found [ ), ] @ 1SA_26_7
+83	warn	Multiple punctuation marks found [ ). ] @ 1SA_28_7
+85	error	Punctuation mark found at beginning of verse [ ( ] @ 2SA_1_18
+86	error	Punctuation mark found at beginning of verse [ ( ] @ 2SA_4_3
+86	warn	Multiple punctuation marks found [ .) ] @ 2SA_4_4
+86	error	Multiple punctuation marks found [ , - ] @ 2SA_5_7
+86	warn	Multiple punctuation marks found [ : " ] @ 2SA_5_8
+86	error	Multiple punctuation marks found [ *, ] @ 2SA_5_10
+86	warn	Multiple punctuation marks found [ ). ] @ 2SA_5_20
+86	warn	Multiple punctuation marks found [ ). ] @ 2SA_5_21
+86	warn	Multiple punctuation marks found [ ). ] @ 2SA_8_1
+86	error	Multiple punctuation marks found [ , - ] @ 2SA_10_5
+87	warn	Multiple punctuation marks found [ , ( ] @ 2SA_16_14
+87	warn	Multiple punctuation marks found [ ). ] @ 2SA_18_11
+87	warn	Multiple punctuation marks found [ ". ] @ 2SA_18_18
+88	error	Multiple punctuation marks found [ *; ] @ 2SA_21_2
+88	error	Multiple punctuation marks found [ *, ] @ 2SA_21_20
+88	error	Multiple punctuation marks found [ :* ] @ 2SA_22_1
+88	error	Punctuation mark found at beginning of verse [ ( ] @ 2SA_23_24
+88	warn	Multiple punctuation marks found [ :) ] @ 2SA_23_24
+91	error	Multiple punctuation marks found [ , - ] @ 1KI_6_1
+92	error	Multiple punctuation marks found [ , - ] @ 1KI_8_2
+92	error	Multiple punctuation marks found [ , - ] @ 1KI_8_35
+92	error	Multiple punctuation marks found [ , - ] @ 1KI_8_37
+92	error	Multiple punctuation marks found [ : - ] @ 1KI_8_39
+92	error	Multiple punctuation marks found [ , - ] @ 1KI_8_41
+92	error	Multiple punctuation marks found [ , - ] @ 1KI_8_42
+92	error	Multiple punctuation marks found [ , - ] @ 1KI_8_46
+92	error	Multiple punctuation marks found [ , - ] @ 1KI_8_65
+92	error	Multiple punctuation marks found [ , - ] @ 1KI_9_11
+92	warn	Multiple punctuation marks found [ ). ] @ 1KI_9_13
+92	error	Multiple punctuation marks found [ *, ] @ 1KI_9_28
+93	warn	Multiple punctuation marks found [ ), ] @ 1KI_11_14
+93	error	Multiple punctuation marks found [ , - ] @ 1KI_11_15
+93	error	Punctuation mark found at beginning of verse [ ( ] @ 1KI_11_16
+93	warn	Multiple punctuation marks found [ ), ] @ 1KI_11_16
+93	error	Multiple punctuation marks found [ , - ] @ 1KI_14_8
+93	error	Multiple punctuation marks found [ , - ] @ 1KI_14_9
+93	warn	Multiple punctuation marks found [ ). ] @ 1KI_14_14
+93	error	Punctuation mark found at beginning of verse [ ( ] @ 1KI_15_6
+93	warn	Multiple punctuation marks found [ .) ] @ 1KI_15_6
+93	error	Multiple punctuation marks found [ , - ] @ 1KI_15_20
+93	error	Multiple punctuation marks found [ , - ] @ 1KI_16_7
+94	warn	Multiple punctuation marks found [ , ( ] @ 1KI_18_29
+94	warn	Multiple punctuation marks found [ . ( ] @ 1KI_18_34
+94	warn	Multiple punctuation marks found [ , ( ] @ 1KI_19_12
+94	warn	Multiple punctuation marks found [ ), ] @ 1KI_20_11
+94	error	Multiple punctuation marks found [ , - ] @ 1KI_20_19
+94	warn	Multiple punctuation marks found [ ), ] @ 1KI_20_34
+94	error	Multiple punctuation marks found [ . - ] @ 1KI_20_40
+94	error	Multiple punctuation marks found [ , - ] @ 1KI_21_18
+94	error	Punctuation mark found at beginning of verse [ ( ] @ 1KI_22_3
+94	warn	Multiple punctuation marks found [ .) ] @ 1KI_22_3
+94	error	Punctuation mark found at beginning of verse [ ( ] @ 1KI_22_11
+94	warn	Multiple punctuation marks found [ ): ] @ 1KI_22_19
+94	warn	Multiple punctuation marks found [ ): ] @ 1KI_22_22
+94	error	Multiple punctuation marks found [ , - ] @ 1KI_22_39
+97	warn	Multiple punctuation marks found [ ). ] @ 2KI_1_4
+97	warn	Multiple punctuation marks found [ ): ] @ 2KI_1_16
+98	warn	Multiple punctuation marks found [ , ( ] @ 2KI_7_13
+98	warn	Multiple punctuation marks found [ . ( ] @ 2KI_10_6
+98	error	Multiple punctuation marks found [ , - ] @ 2KI_10_29
+99	warn	Multiple punctuation marks found [ , ( ] @ 2KI_17_4
+99	error	Multiple punctuation marks found [ , - ] @ 2KI_17_36
+99	error	Multiple punctuation marks found [ , - ] @ 2KI_18_4
+99	error	Multiple punctuation marks found [ , - ] @ 2KI_18_21
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_19_12
+100	error	Multiple punctuation marks found [ *, ] @ 2KI_19_25
+100	warn	Multiple punctuation marks found [ ), ] @ 2KI_19_28
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_19_33
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_20_17
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_22_14
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_22_16
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_22_19
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_23_15
+100	warn	Multiple punctuation marks found [ ): ] @ 2KI_23_17
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_24_2
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_24_4
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_24_12
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_24_16
+100	warn	Multiple punctuation marks found [ , ( ] @ 2KI_25_4
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_25_8
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_25_15
+100	error	Multiple punctuation marks found [ , - ] @ 2KI_25_16
+103	warn	Multiple punctuation marks found [ ), ] @ 1CH_1_4
+103	warn	Multiple punctuation marks found [ ), ] @ 1CH_1_5
+103	warn	Multiple punctuation marks found [ ), ] @ 1CH_1_11
+103	warn	Multiple punctuation marks found [ . ( ] @ 1CH_1_17
+104	error	Punctuation mark found at beginning of verse [ ( ] @ 1CH_1_24
+104	warn	Multiple punctuation marks found [ ): ] @ 1CH_1_24
+104	warn	Multiple punctuation marks found [ . ( ] @ 1CH_1_32
+104	warn	Multiple punctuation marks found [ ; ( ] @ 1CH_1_36
+104	warn	Multiple punctuation marks found [ ). ] @ 1CH_1_41
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_2_3
+104	warn	Multiple punctuation marks found [ ). ] @ 1CH_2_4
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_2_23
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_2_42
+104	warn	Multiple punctuation marks found [ ). ] @ 1CH_4_4
+104	warn	Multiple punctuation marks found [ ); ] @ 1CH_4_12
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_4_32
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_5_1
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_5_18
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_5_26
+104	warn	Multiple punctuation marks found [ ), ] @ 1CH_6_3
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_6_10
+104	warn	Multiple punctuation marks found [ , ( ] @ 1CH_6_27
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_6_39
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_6_44
+104	error	Multiple punctuation marks found [ *. ] @ 1CH_6_65
+104	error	Multiple punctuation marks found [ , - ] @ 1CH_6_78
+105	warn	Multiple punctuation marks found [ ), ] @ 1CH_7_1
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_7_3
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_7_6
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_7_7
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_7_11
+105	warn	Multiple punctuation marks found [ ). ] @ 1CH_7_13
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_7_15
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_8_18
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_8_21
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_8_25
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_8_27
+105	warn	Multiple punctuation marks found [ ), ] @ 1CH_8_29
+105	warn	Multiple punctuation marks found [ , ( ] @ 1CH_8_30
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_9_4
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_9_9
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_9_13
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_9_14
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_9_31
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_9_35
+105	warn	Multiple punctuation marks found [ ). ] @ 1CH_9_41
+105	error	Multiple punctuation marks found [ : - ] @ 1CH_11_5
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_12_2
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_12_17
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_12_29
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_12_32
+105	warn	Multiple punctuation marks found [ ), ] @ 1CH_12_40
+105	warn	Multiple punctuation marks found [ .) ] @ 1CH_14_11
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_15_5
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_15_6
+105	error	Multiple punctuation marks found [ , - ] @ 1CH_15_7
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_15_8
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_15_9
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_15_10
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_16_4
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_16_38
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_17_13
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_17_24
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_18_10
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_19_5
+106	warn	Multiple punctuation marks found [ ), ] @ 1CH_23_13
+106	error	Punctuation mark found at beginning of verse [ ( ] @ 1CH_23_29
+106	error	Punctuation mark found at beginning of verse [ ( ] @ 1CH_23_30
+106	error	Multiple punctuation marks found [ , - ] @ 1CH_23_31
+106	warn	Multiple punctuation marks found [ ), ] @ 1CH_24_1
+107	error	Multiple punctuation marks found [ , - ] @ 1CH_25_1
+107	error	Multiple punctuation marks found [ , - ] @ 1CH_25_3
+107	error	Multiple punctuation marks found [ , - ] @ 1CH_25_7
+107	warn	Multiple punctuation marks found [ ). ] @ 1CH_26_7
+107	error	Multiple punctuation marks found [ , - ] @ 1CH_26_10
+107	error	Multiple punctuation marks found [ , - ] @ 1CH_27_26
+107	error	Multiple punctuation marks found [ , - ] @ 1CH_27_29
+107	error	Multiple punctuation marks found [ , - ] @ 1CH_27_32
+107	error	Multiple punctuation marks found [ , - ] @ 1CH_28_5
+107	error	Multiple punctuation marks found [ , - ] @ 1CH_28_19
+107	error	Multiple punctuation marks found [ ! - ] @ 1CH_29_20
+110	warn	Multiple punctuation marks found [ , ( ] @ 2CH_2_3
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_2_14
+110	error	Multiple punctuation marks found [ *, ] @ 2CH_3_3
+110	warn	Multiple punctuation marks found [ , ( ] @ 2CH_3_7
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_4_2
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_4_4
+110	error	Multiple punctuation marks found [ ; - ] @ 2CH_4_6
+110	warn	Multiple punctuation marks found [ , ( ] @ 2CH_4_11
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_4_22
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_5_5
+110	warn	Multiple punctuation marks found [ , ( ] @ 2CH_5_11
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_5_12
+110	warn	Multiple punctuation marks found [ - ( ] @ 2CH_6_3
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_6_9
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_6_12
+110	error	Multiple punctuation marks found [ - , ] @ 2CH_6_13
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_6_26
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_6_28
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_6_30
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_6_32
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_6_36
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_6_38
+110	error	Multiple punctuation marks found [ - , ] @ 2CH_7_6
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_7_22
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_8_7
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_8_8
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_8_13
+110	error	Multiple punctuation marks found [ , - ] @ 2CH_8_14
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_9_15
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_9_16
+111	error	Multiple punctuation marks found [ . - ] @ 2CH_10_16
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_11_21
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_12_2
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_13_3
+111	warn	Multiple punctuation marks found [ )? ] @ 2CH_13_5
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_14_7
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_14_8
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_18_3
+111	error	Multiple punctuation marks found [ ; - ] @ 2CH_18_7
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_18_13
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_18_16
+111	warn	Multiple punctuation marks found [ : ( ] @ 2CH_19_8
+111	error	Multiple punctuation marks found [ , - ] @ 2CH_19_10
+112	error	Multiple punctuation marks found [ , - ] @ 2CH_20_10
+112	warn	Multiple punctuation marks found [ ), ] @ 2CH_20_29
+112	error	Multiple punctuation marks found [ . - ] @ 2CH_20_37
+112	warn	Multiple punctuation marks found [ ). ] @ 2CH_21_9
+112	error	Multiple punctuation marks found [ , - ] @ 2CH_21_13
+112	error	Multiple punctuation marks found [ , - ] @ 2CH_22_1
+112	error	Multiple punctuation marks found [ , - ] @ 2CH_23_13
+112	warn	Multiple punctuation marks found [ , ( ] @ 2CH_23_18
+112	error	Multiple punctuation marks found [ , - ] @ 2CH_24_18
+112	error	Multiple punctuation marks found [ , - ] @ 2CH_25_19
+112	error	Multiple punctuation marks found [ , - ] @ 2CH_26_19
+112	warn	Multiple punctuation marks found [ ), ] @ 2CH_28_6
+113	error	Multiple punctuation marks found [ , - ] @ 2CH_29_31
+113	error	Multiple punctuation marks found [ , - ] @ 2CH_30_13
+113	warn	Multiple punctuation marks found [ ), ] @ 2CH_30_14
+113	warn	Multiple punctuation marks found [ , ( ] @ 2CH_30_16
+113	error	Multiple punctuation marks found [ , - ] @ 2CH_31_16
+113	error	Multiple punctuation marks found [ , - ] @ 2CH_31_18
+113	error	Multiple punctuation marks found [ , - ] @ 2CH_31_20
+113	warn	Multiple punctuation marks found [ , ( ] @ 2CH_32_4
+113	error	Multiple punctuation marks found [ , - ] @ 2CH_32_9
+113	error	Multiple punctuation marks found [ , - ] @ 2CH_32_19
+113	error	Multiple punctuation marks found [ *, ] @ 2CH_32_31
+113	error	Multiple punctuation marks found [ *, ] @ 2CH_34_14
+113	error	Multiple punctuation marks found [ , - ] @ 2CH_34_22
+113	error	Multiple punctuation marks found [ , - ] @ 2CH_34_27
+114	error	Multiple punctuation marks found [ , - ] @ 2CH_36_13
+114	error	Multiple punctuation marks found [ , - ] @ 2CH_36_17
+114	error	Multiple punctuation marks found [ , - ] @ 2CH_36_22
+114	error	Multiple punctuation marks found [ , - ] @ EZR_1_1
+114	error	Multiple punctuation marks found [ , - ] @ EZR_1_3
+114	error	Multiple punctuation marks found [ , - ] @ EZR_1_7
+114	error	Multiple punctuation marks found [ , - ] @ EZR_2_1
+114	error	Multiple punctuation marks found [ , - ] @ EZR_2_21
+115	error	Multiple punctuation marks found [ , - ] @ EZR_2_42
+115	error	Multiple punctuation marks found [ *, ] @ EZR_2_69
+115	warn	Multiple punctuation marks found [ : " ] @ EZR_3_11
+115	error	Multiple punctuation marks found [ , - ] @ EZR_4_9
+115	warn	Multiple punctuation marks found [ ), ] @ EZR_4_10
+115	warn	Multiple punctuation marks found [ : " ] @ EZR_4_17
+115	error	Multiple punctuation marks found [ , - ] @ EZR_4_19
+115	warn	Multiple punctuation marks found [ ), ] @ EZR_5_6
+115	error	Multiple punctuation marks found [ , - ] @ EZR_5_11
+115	error	Multiple punctuation marks found [ , - ] @ EZR_5_14
+115	error	Multiple punctuation marks found [ , - ] @ EZR_6_20
+115	error	Multiple punctuation marks found [ , - ] @ EZR_7_5
+115	error	Multiple punctuation marks found [ , - ] @ EZR_7_8
+115	error	Multiple punctuation marks found [ , - ] @ EZR_7_9
+115	warn	Multiple punctuation marks found [ , ( ] @ EZR_7_23
+115	error	Multiple punctuation marks found [ , - ] @ EZR_7_25
+115	warn	Multiple punctuation marks found [ ), ] @ EZR_8_10
+115	error	Multiple punctuation marks found [ , - ] @ EZR_8_25
+115	error	Multiple punctuation marks found [ , - ] @ EZR_9_13
+115	warn	Multiple punctuation marks found [ ), ] @ EZR_9_14
+115	warn	Multiple punctuation marks found [ ), ] @ EZR_10_23
+117	error	Multiple punctuation marks found [ *, ] @ NEH_1_1
+117	error	Multiple punctuation marks found [ , - ] @ NEH_1_11
+117	error	Multiple punctuation marks found [ , - ] @ NEH_2_18
+117	error	Multiple punctuation marks found [ , - ] @ NEH_3_15
+117	error	Multiple punctuation marks found [ , - ] @ NEH_4_22
+117	warn	Multiple punctuation marks found [ ); ] @ NEH_5_15
+118	error	Multiple punctuation marks found [ , - ] @ NEH_6_1
+118	warn	Multiple punctuation marks found [ , ( ] @ NEH_7_2
+118	warn	Multiple punctuation marks found [ ), ] @ NEH_7_3
+118	error	Multiple punctuation marks found [ , - ] @ NEH_7_6
+118	warn	Multiple punctuation marks found [ ), ] @ NEH_8_9
+118	warn	Multiple punctuation marks found [ ), ] @ NEH_8_18
+118	error	Punctuation mark found at beginning of verse [ ( ] @ NEH_9_6
+118	warn	Multiple punctuation marks found [ :) ] @ NEH_9_6
+118	warn	Multiple punctuation marks found [ ), ] @ NEH_9_22
+118	warn	Multiple punctuation marks found [ ), ] @ NEH_9_25
+118	error	Multiple punctuation marks found [ , - ] @ NEH_10_34
+118	error	Punctuation mark found at beginning of verse [ ( ] @ NEH_10_35
+118	error	Multiple punctuation marks found [ , - ] @ NEH_11_3
+118	error	Multiple punctuation marks found [ , - ] @ NEH_11_8
+118	error	Multiple punctuation marks found [ , - ] @ NEH_11_14
+119	warn	Multiple punctuation marks found [ , ( ] @ NEH_11_31
+119	warn	Multiple punctuation marks found [ ), ] @ NEH_12_8
+119	error	Multiple punctuation marks found [ *, ] @ NEH_13_15
+120	error	Multiple punctuation marks found [ , - ] @ EST_1_1
+120	error	Multiple punctuation marks found [ , - ] @ EST_1_13
+120	error	Multiple punctuation marks found [ , - ] @ EST_1_14
+120	error	Multiple punctuation marks found [ , - ] @ EST_2_7
+120	error	Multiple punctuation marks found [ , - ] @ EST_2_12
+120	error	Multiple punctuation marks found [ , - ] @ EST_2_14
+120	error	Multiple punctuation marks found [ , - ] @ EST_2_15
+120	error	Multiple punctuation marks found [ , - ] @ EST_2_18
+120	error	Multiple punctuation marks found [ *, ] @ EST_2_19
+120	error	Multiple punctuation marks found [ *. ] @ EST_3_4
+120	error	Punctuation mark found at beginning of verse [ ( ] @ EST_3_7
+120	error	Multiple punctuation marks found [ , - ] @ EST_3_7
+120	error	Multiple punctuation marks found [ , - ] @ EST_3_12
+120	error	Multiple punctuation marks found [ , - ] @ EST_6_9
+120	error	Multiple punctuation marks found [ , - ] @ EST_8_11
+120	error	Multiple punctuation marks found [ , - ] @ EST_9_1
+120	warn	Multiple punctuation marks found [ , ( ] @ EST_9_6
+120	error	Multiple punctuation marks found [ , - ] @ EST_9_22
+120	warn	Multiple punctuation marks found [ ). ] @ EST_9_31
+123	error	Multiple punctuation marks found [ , - ] @ JOB_1_11
+123	error	Multiple punctuation marks found [ , - ] @ JOB_2_5
+123	warn	Multiple punctuation marks found [ ). ] @ JOB_2_8
+123	error	Multiple punctuation marks found [ *, ] @ JOB_3_8
+123	error	Multiple punctuation marks found [ , - ] @ JOB_4_2
+123	warn	Multiple punctuation marks found [ ), ] @ JOB_4_12
+123	error	Multiple punctuation marks found [ , - ] @ JOB_4_16
+123	warn	Multiple punctuation marks found [ ), ] @ JOB_5_4
+123	error	Multiple punctuation marks found [ *. ] @ JOB_5_24
+123	warn	Multiple punctuation marks found [ ), ] @ JOB_5_26
+123	error	Punctuation mark found at beginning of verse [ ( ] @ JOB_6_7
+123	error	Multiple punctuation marks found [ , - ] @ JOB_6_29
+123	warn	Multiple punctuation marks found [ ), ] @ JOB_7_7
+123	error	Multiple punctuation marks found [ , - ] @ JOB_7_8
+123	error	Multiple punctuation marks found [ , - ] @ JOB_7_16
+123	warn	Multiple punctuation marks found [ )? ] @ JOB_7_19
+123	error	Multiple punctuation marks found [ ? - ] @ JOB_8_2
+123	error	Multiple punctuation marks found [ , - ] @ JOB_8_8
+123	error	Multiple punctuation marks found [ , - ] @ JOB_8_9
+123	warn	Multiple punctuation marks found [ , ( ] @ JOB_8_18
+123	error	Multiple punctuation marks found [ , - ] @ JOB_9_7
+124	error	Multiple punctuation marks found [ , - ] @ JOB_9_25
+124	error	Multiple punctuation marks found [ , - ] @ JOB_9_34
+124	error	Multiple punctuation marks found [ , - ] @ JOB_10_8
+124	error	Multiple punctuation marks found [ , - ] @ JOB_10_13
+124	error	Multiple punctuation marks found [ , - ] @ JOB_11_8
+124	error	Multiple punctuation marks found [ , - ] @ JOB_11_11
+124	error	Multiple punctuation marks found [ , - ] @ JOB_12_7
+124	error	Multiple punctuation marks found [ , - ] @ JOB_12_15
+124	error	Multiple punctuation marks found [ ; - ] @ JOB_14_9
+124	warn	Multiple punctuation marks found [ ,) ] @ JOB_14_22
+124	error	Multiple punctuation marks found [ , - ] @ JOB_15_24
+124	error	Punctuation mark found at beginning of verse [ ( ] @ JOB_15_35
+124	error	Multiple punctuation marks found [ , - ] @ JOB_16_6
+124	error	Multiple punctuation marks found [ , - ] @ JOB_16_16
+124	error	Multiple punctuation marks found [ *. ] @ JOB_18_14
+124	warn	Multiple punctuation marks found [ ), ] @ JOB_18_15
+124	warn	Multiple punctuation marks found [ ). ] @ JOB_19_7
+124	error	Multiple punctuation marks found [ , - ] @ JOB_19_16
+124	error	Multiple punctuation marks found [ , - ] @ JOB_19_23
+124	warn	Multiple punctuation marks found [ ), ] @ JOB_19_29
+124	error	Multiple punctuation marks found [ , - ] @ JOB_20_4
+124	error	Multiple punctuation marks found [ , - ] @ JOB_20_6
+125	error	Multiple punctuation marks found [ , - ] @ JOB_20_13
+125	error	Multiple punctuation marks found [ , - ] @ JOB_20_24
+125	warn	Multiple punctuation marks found [ ). ] @ JOB_20_28
+125	warn	Multiple punctuation marks found [ ). ] @ JOB_21_13
+125	error	Multiple punctuation marks found [ . - ] @ JOB_21_16
+125	error	Punctuation mark found at beginning of verse [ ( ] @ JOB_21_19
+125	warn	Multiple punctuation marks found [ :) ] @ JOB_21_19
+125	warn	Multiple punctuation marks found [ )? ] @ JOB_21_22
+125	error	Multiple punctuation marks found [ . - ] @ JOB_22_18
+125	error	Multiple punctuation marks found [ , - ] @ JOB_22_23
+125	error	Multiple punctuation marks found [ *. ] @ JOB_22_30
+125	warn	Multiple punctuation marks found [ ), ] @ JOB_23_3
+125	error	Multiple punctuation marks found [ , - ] @ JOB_23_10
+125	warn	Multiple punctuation marks found [ ), ] @ JOB_24_1
+125	error	Multiple punctuation marks found [ , - ] @ JOB_24_5
+125	error	Multiple punctuation marks found [ , - ] @ JOB_24_15
+125	error	Multiple punctuation marks found [ , - ] @ JOB_24_23
+125	error	Multiple punctuation marks found [ , - ] @ JOB_24_24
+125	error	Multiple punctuation marks found [ , - ] @ JOB_25_6
+125	warn	Multiple punctuation marks found [ ), ] @ JOB_26_7
+125	warn	Multiple punctuation marks found [ , ( ] @ JOB_27_2
+125	error	Multiple punctuation marks found [ , - ] @ JOB_27_18
+125	error	Punctuation mark found at beginning of verse [ ( ] @ JOB_28_3
+125	error	Multiple punctuation marks found [ , - ] @ JOB_28_26
+125	error	Multiple punctuation marks found [ *, ] @ JOB_29_7
+125	error	Multiple punctuation marks found [ , - ] @ JOB_30_4
+125	error	Multiple punctuation marks found [ , - ] @ JOB_30_20
+125	error	Multiple punctuation marks found [ , - ] @ JOB_31_4
+125	error	Multiple punctuation marks found [ , - ] @ JOB_31_5
+125	warn	Multiple punctuation marks found [ )? ] @ JOB_31_16
+125	error	Multiple punctuation marks found [ , - ] @ JOB_31_19
+126	warn	Multiple punctuation marks found [ ), ] @ JOB_31_20
+126	warn	Multiple punctuation marks found [ ), ] @ JOB_31_21
+126	error	Multiple punctuation marks found [ *, ] @ JOB_31_37
+126	error	Multiple punctuation marks found [ , - ] @ JOB_32_11
+126	error	Multiple punctuation marks found [ , - ] @ JOB_33_5
+126	error	Multiple punctuation marks found [ , - ] @ JOB_33_23
+126	error	Multiple punctuation marks found [ , - ] @ JOB_34_14
+126	error	Multiple punctuation marks found [ , - ] @ JOB_34_29
+126	error	Multiple punctuation marks found [ , - ] @ JOB_34_31
+126	error	Multiple punctuation marks found [ , - ] @ JOB_34_32
+126	warn	Multiple punctuation marks found [ ), ] @ JOB_34_37
+126	error	Multiple punctuation marks found [ , - ] @ JOB_35_14
+126	error	Multiple punctuation marks found [ , - ] @ JOB_36_12
+126	warn	Multiple punctuation marks found [ ); ] @ JOB_36_13
+126	error	Multiple punctuation marks found [ *. ] @ JOB_36_15
+126	error	Multiple punctuation marks found [ , - ] @ JOB_36_19
+126	error	Multiple punctuation marks found [ *, ] @ JOB_38_3
+126	warn	Multiple punctuation marks found [ , ( ] @ JOB_38_12
+126	warn	Multiple punctuation marks found [ )? ] @ JOB_38_23
+126	error	Multiple punctuation marks found [ *? ] @ JOB_38_31
+126	error	Punctuation mark found at beginning of verse [ ( ] @ JOB_39_18
+126	error	Multiple punctuation marks found [ , - ] @ JOB_39_18
+126	error	Multiple punctuation marks found [ ; - ] @ JOB_39_35
+126	error	Multiple punctuation marks found [ *: ] @ JOB_40_10
+127	warn	Multiple punctuation marks found [ ), ] @ JOB_40_19
+127	error	Multiple punctuation marks found [ , - ] @ JOB_40_27
+127	warn	Multiple punctuation marks found [ , ( ] @ JOB_41_1
+127	warn	Multiple punctuation marks found [ , ( ] @ JOB_41_2
+127	warn	Multiple punctuation marks found [ , ( ] @ JOB_41_15
+127	warn	Multiple punctuation marks found [ ), ] @ JOB_41_24
+127	error	Multiple punctuation marks found [ , - ] @ JOB_42_3
+127	warn	Multiple punctuation marks found [ ), ] @ JOB_42_14
+132	error	Multiple punctuation marks found [ , - ] @ PSA_7_4
+133	error	Multiple punctuation marks found [ , - ] @ PSA_12_5
+133	error	Punctuation mark found at beginning of verse [ . ] @ PSA_16_9
+133	error	Multiple punctuation marks found [ , - ] @ PSA_18_41
+133	error	Multiple punctuation marks found [ , - ] @ PSA_21_11
+133	warn	Multiple punctuation marks found [ "; ] @ PSA_22_1
+133	error	Punctuation mark found at beginning of verse [ . ] @ PSA_26_7
+133	error	Multiple punctuation marks found [ , - ] @ PSA_27_2
+134	error	Multiple punctuation marks found [ , - ] @ PSA_30_7
+134	error	Multiple punctuation marks found [ , - ] @ PSA_33_12
+134	error	Multiple punctuation marks found [ , - ] @ PSA_35_8
+135	error	Punctuation mark found at beginning of verse [ ( ] @ PSA_49_8
+135	warn	Multiple punctuation marks found [ .) ] @ PSA_49_8
+135	warn	Multiple punctuation marks found [ "; ] @ PSA_56_1
+135	warn	Multiple punctuation marks found [ : " ] @ PSA_57_1
+135	warn	Multiple punctuation marks found [ : " ] @ PSA_58_1
+135	warn	Multiple punctuation marks found [ : " ] @ PSA_59_1
+136	error	Multiple punctuation marks found [ , - ] @ PSA_69_13
+136	error	Punctuation mark found at beginning of verse [ . ] @ PSA_73_4
+136	error	Multiple punctuation marks found [ , - ] @ PSA_74_2
+136	error	Multiple punctuation marks found [ ! - ] @ PSA_74_8
+136	warn	Multiple punctuation marks found [ : " ] @ PSA_75_1
+136	error	Multiple punctuation marks found [ , - ] @ PSA_75_4
+137	error	Multiple punctuation marks found [ . - ] @ PSA_88_18
+137	error	Multiple punctuation marks found [ , - ] @ PSA_89_9
+137	error	Multiple punctuation marks found [ , - ] @ PSA_91_7
+137	error	Multiple punctuation marks found [ , - ] @ PSA_94_8
+137	error	Multiple punctuation marks found [ , - ] @ PSA_94_17
+138	error	Multiple punctuation marks found [ , - ] @ PSA_100_3
+138	error	Multiple punctuation marks found [ , - ] @ PSA_103_15
+138	error	Multiple punctuation marks found [ *! ] @ PSA_104_35
+139	error	Multiple punctuation marks found [ , - ] @ PSA_118_10
+139	error	Multiple punctuation marks found [ , - ] @ PSA_118_11
+140	error	Multiple punctuation marks found [ ! - ] @ PSA_124_1
+140	error	Multiple punctuation marks found [ , - ] @ PSA_129_1
+140	error	Multiple punctuation marks found [ , - ] @ PSA_130_3
+140	error	Punctuation mark found at beginning of verse [ " ] @ PSA_132_3
+140	warn	Multiple punctuation marks found [ !" ] @ PSA_132_5
+140	error	Multiple punctuation marks found [ *. ] @ PSA_132_6
+140	warn	Multiple punctuation marks found [ : " ] @ PSA_137_3
+140	error	Multiple punctuation marks found [ , - ] @ PSA_139_8
+140	error	Multiple punctuation marks found [ !. ] @ PSA_139_19
+140	error	Multiple punctuation marks found [ , - ] @ PSA_141_5
+140	error	Multiple punctuation marks found [ , - ] @ PSA_148_7
+142	error	Multiple punctuation marks found [ , - ] @ PRO_1_12
+142	error	Multiple punctuation marks found [ , - ] @ PRO_1_14
+143	error	Multiple punctuation marks found [ , - ] @ PRO_1_28
+143	error	Multiple punctuation marks found [ , - ] @ PRO_2_4
+143	error	Multiple punctuation marks found [ , - ] @ PRO_3_3
+143	warn	Multiple punctuation marks found [ ). ] @ PRO_3_17
+143	error	Multiple punctuation marks found [ , - ] @ PRO_3_24
+143	warn	Multiple punctuation marks found [ . ( ] @ PRO_3_28
+143	warn	Multiple punctuation marks found [ ). ] @ PRO_4_4
+143	error	Multiple punctuation marks found [ , - ] @ PRO_4_9
+143	error	Multiple punctuation marks found [ , - ] @ PRO_4_12
+143	warn	Multiple punctuation marks found [ ), ] @ PRO_4_17
+143	error	Multiple punctuation marks found [ , - ] @ PRO_5_11
+143	error	Multiple punctuation marks found [ , - ] @ PRO_5_18
+143	error	Multiple punctuation marks found [ , - ] @ PRO_6_1
+143	error	Multiple punctuation marks found [ , - ] @ PRO_6_3
+143	warn	Multiple punctuation marks found [ ). ] @ PRO_7_4
+143	error	Multiple punctuation marks found [ , - ] @ PRO_7_7
+143	error	Multiple punctuation marks found [ , - ] @ PRO_7_19
+143	error	Multiple punctuation marks found [ , - ] @ PRO_8_7
+143	warn	Multiple punctuation marks found [ ), ] @ PRO_8_28
+143	error	Multiple punctuation marks found [ , - ] @ PRO_8_29
+143	error	Multiple punctuation marks found [ , - ] @ PRO_9_9
+143	error	Multiple punctuation marks found [ , - ] @ PRO_9_18
+143	error	Multiple punctuation marks found [ , - ] @ PRO_10_5
+144	error	Multiple punctuation marks found [ , - ] @ PRO_13_20
+144	error	Multiple punctuation marks found [ , - ] @ PRO_14_17
+144	error	Multiple punctuation marks found [ , - ] @ PRO_15_5
+144	error	Multiple punctuation marks found [ , - ] @ PRO_15_10
+144	warn	Multiple punctuation marks found [ - ( ] @ PRO_15_23
+144	error	Multiple punctuation marks found [ , - ] @ PRO_15_32
+144	error	Multiple punctuation marks found [ , - ] @ PRO_16_30
+144	error	Multiple punctuation marks found [ , - ] @ PRO_17_15
+144	error	Multiple punctuation marks found [ , - ] @ PRO_17_16
+144	error	Multiple punctuation marks found [ , - ] @ PRO_17_28
+144	warn	Multiple punctuation marks found [ ) - ] @ PRO_18_19
+144	error	Multiple punctuation marks found [ , - ] @ PRO_19_26
+144	error	Multiple punctuation marks found [ , - ] @ PRO_20_9
+144	error	Multiple punctuation marks found [ , - ] @ PRO_20_14
+144	warn	Multiple punctuation marks found [ : " ] @ PRO_20_22
+144	error	Multiple punctuation marks found [ , - ] @ PRO_22_6
+145	warn	Multiple punctuation marks found [ : " ] @ PRO_22_13
+145	error	Multiple punctuation marks found [ *, ] @ PRO_22_22
+145	warn	Multiple punctuation marks found [ : " ] @ PRO_23_7
+145	error	Multiple punctuation marks found [ , - ] @ PRO_23_20
+145	error	Multiple punctuation marks found [ , - ] @ PRO_24_22
+145	warn	Multiple punctuation marks found [ : " ] @ PRO_24_24
+145	error	Multiple punctuation marks found [ , - ] @ PRO_24_33
+145	warn	Multiple punctuation marks found [ : " ] @ PRO_25_7
+145	error	Multiple punctuation marks found [ , - ] @ PRO_25_20
+145	error	Multiple punctuation marks found [ , - ] @ PRO_26_9
+145	warn	Multiple punctuation marks found [ : " ] @ PRO_26_13
+145	warn	Multiple punctuation marks found [ : " ] @ PRO_26_19
+145	error	Multiple punctuation marks found [ , - ] @ PRO_26_20
+145	error	Multiple punctuation marks found [ , - ] @ PRO_27_2
+145	error	Multiple punctuation marks found [ , - ] @ PRO_27_20
+145	error	Multiple punctuation marks found [ , - ] @ PRO_27_22
+145	error	Multiple punctuation marks found [ , - ] @ PRO_28_3
+145	error	Multiple punctuation marks found [ , - ] @ PRO_28_4
+145	error	Multiple punctuation marks found [ , - ] @ PRO_28_7
+145	error	Multiple punctuation marks found [ , - ] @ PRO_28_16
+145	error	Multiple punctuation marks found [ , - ] @ PRO_28_17
+145	error	Multiple punctuation marks found [ , - ] @ PRO_28_18
+145	warn	Multiple punctuation marks found [ : " ] @ PRO_28_24
+145	error	Multiple punctuation marks found [ , - ] @ PRO_28_25
+145	error	Multiple punctuation marks found [ , - ] @ PRO_28_27
+145	error	Multiple punctuation marks found [ , - ] @ PRO_28_28
+145	error	Multiple punctuation marks found [ , - ] @ PRO_29_2
+145	error	Multiple punctuation marks found [ , - ] @ PRO_29_4
+145	error	Multiple punctuation marks found [ , - ] @ PRO_29_9
+145	warn	Multiple punctuation marks found [ , ( ] @ PRO_29_18
+145	error	Multiple punctuation marks found [ ? - ] @ PRO_29_20
+145	error	Multiple punctuation marks found [ *, ] @ PRO_29_24
+145	warn	Multiple punctuation marks found [ ), ] @ PRO_29_26
+145	error	Multiple punctuation marks found [ , - ] @ PRO_30_1
+145	warn	Multiple punctuation marks found [ )? ] @ PRO_30_4
+145	warn	Multiple punctuation marks found [ : " ] @ PRO_30_15
+145	error	Multiple punctuation marks found [ , - ] @ PRO_30_25
+145	error	Multiple punctuation marks found [ , - ] @ PRO_30_26
+145	error	Multiple punctuation marks found [ , - ] @ PRO_30_30
+145	error	Multiple punctuation marks found [ ?* ] @ PRO_31_2
+145	error	Multiple punctuation marks found [ ; - ] @ PRO_31_21
+145	error	Multiple punctuation marks found [ , - ] @ PRO_31_28
+145	error	Multiple punctuation marks found [ , - ] @ PRO_31_29
+146	error	Multiple punctuation marks found [ , - ] @ ECC_1_2
+146	error	Multiple punctuation marks found [ : - ] @ ECC_1_14
+146	error	Multiple punctuation marks found [ , - ] @ ECC_1_18
+146	error	Multiple punctuation marks found [ , - ] @ ECC_2_1
+146	error	Multiple punctuation marks found [ , - ] @ ECC_2_11
+146	warn	Multiple punctuation marks found [ ; ( ] @ ECC_2_12
+146	error	Multiple punctuation marks found [ , - ] @ ECC_2_16
+146	error	Multiple punctuation marks found [ , - ] @ ECC_3_15
+146	error	Multiple punctuation marks found [ , - ] @ ECC_4_2
+147	error	Multiple punctuation marks found [ , - ] @ ECC_4_11
+147	error	Multiple punctuation marks found [ *, ] @ ECC_4_17
+147	warn	Multiple punctuation marks found [ ): ] @ ECC_5_5
+147	error	Multiple punctuation marks found [ , - ] @ ECC_6_3
+147	error	Multiple punctuation marks found [ , - ] @ ECC_6_6
+147	error	Multiple punctuation marks found [ , - ] @ ECC_7_7
+147	error	Multiple punctuation marks found [ , - ] @ ECC_7_25
+147	error	Multiple punctuation marks found [ , - ] @ ECC_7_26
+147	error	Multiple punctuation marks found [ ? - ] @ ECC_8_1
+147	error	Multiple punctuation marks found [ , - ] @ ECC_8_16
+147	error	Multiple punctuation marks found [ , - ] @ ECC_10_3
+147	error	Multiple punctuation marks found [ , - ] @ ECC_10_10
+147	error	Multiple punctuation marks found [ *, ] @ ECC_11_1
+147	error	Multiple punctuation marks found [ , - ] @ ECC_11_8
+147	warn	Multiple punctuation marks found [ : " ] @ ECC_12_1
+147	error	Multiple punctuation marks found [ ; - ] @ ECC_12_5
+147	error	Multiple punctuation marks found [ *! ] @ ECC_12_8
+147	error	Multiple punctuation marks found [ , - ] @ ECC_12_11
+147	error	Multiple punctuation marks found [ , - ] @ ECC_12_14
+148	error	Multiple punctuation marks found [ , - ] @ SNG_1_3
+148	error	Multiple punctuation marks found [ , - ] @ SNG_1_5
+148	warn	Multiple punctuation marks found [ , ( ] @ SNG_1_8
+148	error	Multiple punctuation marks found [ , - ] @ SNG_2_15
+148	error	Multiple punctuation marks found [ ! - ] @ SNG_4_16
+148	error	Multiple punctuation marks found [ ! - ] @ SNG_5_1
+148	error	Multiple punctuation marks found [ , - ] @ SNG_5_3
+148	error	Multiple punctuation marks found [ , - ] @ SNG_5_6
+148	error	Multiple punctuation marks found [ , - ] @ SNG_5_16
+148	error	Multiple punctuation marks found [ , - ] @ SNG_6_3
+148	error	Multiple punctuation marks found [ , - ] @ SNG_6_5
+148	error	Multiple punctuation marks found [ ! - ] @ SNG_7_1
+148	error	Multiple punctuation marks found [ , - ] @ SNG_7_9
+148	error	Multiple punctuation marks found [ . - ] @ SNG_7_10
+148	error	Multiple punctuation marks found [ , - ] @ SNG_8_9
+148	warn	Multiple punctuation marks found [ ), ] @ SNG_8_14
+152	error	Multiple punctuation marks found [ , - ] @ ISA_1_7
+152	error	Multiple punctuation marks found [ , - ] @ ISA_1_9
+152	error	Multiple punctuation marks found [ , - ] @ ISA_1_18
+152	error	Multiple punctuation marks found [ , - ] @ ISA_1_19
+152	error	Multiple punctuation marks found [ , - ] @ ISA_1_20
+152	error	Multiple punctuation marks found [ , - ] @ ISA_1_27
+152	error	Multiple punctuation marks found [ , - ] @ ISA_3_5
+152	error	Multiple punctuation marks found [ , - ] @ ISA_3_6
+152	error	Multiple punctuation marks found [ , - ] @ ISA_3_16
+152	error	Multiple punctuation marks found [ , - ] @ ISA_4_1
+152	error	Multiple punctuation marks found [ , - ] @ ISA_4_3
+152	error	Multiple punctuation marks found [ , - ] @ ISA_5_6
+152	error	Multiple punctuation marks found [ , - ] @ ISA_5_7
+153	error	Multiple punctuation marks found [ , - ] @ ISA_5_20
+153	error	Multiple punctuation marks found [ , - ] @ ISA_5_26
+153	error	Multiple punctuation marks found [ , - ] @ ISA_6_5
+153	warn	Multiple punctuation marks found [ ), ] @ ISA_6_12
+153	warn	Multiple punctuation marks found [ ): ] @ ISA_7_13
+153	warn	Multiple punctuation marks found [ ). ] @ ISA_7_14
+153	error	Multiple punctuation marks found [ , - ] @ ISA_7_17
+153	error	Multiple punctuation marks found [ , - ] @ ISA_7_18
+153	warn	Multiple punctuation marks found [ : " ] @ ISA_8_1
+153	error	Multiple punctuation marks found [ , - ] @ ISA_8_2
+153	warn	Multiple punctuation marks found [ : " ] @ ISA_8_3
+153	warn	Multiple punctuation marks found [ ", ] @ ISA_8_4
+153	error	Multiple punctuation marks found [ , - ] @ ISA_8_11
+153	warn	Multiple punctuation marks found [ : " ] @ ISA_8_12
+153	error	Multiple punctuation marks found [ , - ] @ ISA_8_19
+153	error	Multiple punctuation marks found [ , - ] @ ISA_8_20
+153	error	Multiple punctuation marks found [ , - ] @ ISA_8_22
+153	error	Multiple punctuation marks found [ , - ] @ ISA_9_10
+153	error	Multiple punctuation marks found [ , - ] @ ISA_11_3
+153	error	Multiple punctuation marks found [ , - ] @ ISA_11_10
+153	error	Multiple punctuation marks found [ , - ] @ ISA_12_5
+153	error	Multiple punctuation marks found [ , - ] @ ISA_13_6
+153	error	Multiple punctuation marks found [ , - ] @ ISA_13_14
+153	error	Multiple punctuation marks found [ ?! ] @ ISA_14_10
+153	error	Multiple punctuation marks found [ , - ] @ ISA_14_15
+153	error	Multiple punctuation marks found [ , - ] @ ISA_14_19
+153	error	Multiple punctuation marks found [ , - ] @ ISA_14_27
+153	error	Multiple punctuation marks found [ , - ] @ ISA_14_32
+154	error	Multiple punctuation marks found [ ; - ] @ ISA_15_9
+154	error	Multiple punctuation marks found [ , - ] @ ISA_16_6
+154	error	Multiple punctuation marks found [ , - ] @ ISA_16_7
+154	error	Multiple punctuation marks found [ , - ] @ ISA_17_2
+154	error	Multiple punctuation marks found [ , - ] @ ISA_17_6
+154	error	Multiple punctuation marks found [ , - ] @ ISA_17_9
+154	error	Multiple punctuation marks found [ , - ] @ ISA_17_13
+154	error	Multiple punctuation marks found [ , - ] @ ISA_18_7
+154	error	Multiple punctuation marks found [ , - ] @ ISA_19_3
+154	error	Multiple punctuation marks found [ , - ] @ ISA_19_4
+154	error	Multiple punctuation marks found [ , - ] @ ISA_19_8
+154	error	Multiple punctuation marks found [ , - ] @ ISA_20_1
+154	error	Multiple punctuation marks found [ , - ] @ ISA_20_3
+154	error	Multiple punctuation marks found [ , - ] @ ISA_21_5
+154	error	Multiple punctuation marks found [ , - ] @ ISA_21_7
+154	error	Multiple punctuation marks found [ , - ] @ ISA_21_16
+154	warn	Multiple punctuation marks found [ ): ] @ ISA_22_5
+154	error	Multiple punctuation marks found [ ? - ] @ ISA_22_16
+154	error	Multiple punctuation marks found [ , - ] @ ISA_22_24
+154	error	Multiple punctuation marks found [ , - ] @ ISA_22_25
+154	warn	Multiple punctuation marks found [ ), ] @ ISA_23_3
+154	warn	Multiple punctuation marks found [ : ( ] @ ISA_23_4
+154	error	Multiple punctuation marks found [ , - ] @ ISA_23_12
+155	error	Multiple punctuation marks found [ ; - ] @ ISA_23_13
+155	error	Multiple punctuation marks found [ , - ] @ ISA_23_15
+155	error	Multiple punctuation marks found [ , - ] @ ISA_24_7
+155	error	Punctuation mark found at beginning of verse [ ( ] @ ISA_24_14
+155	warn	Multiple punctuation marks found [ : " ] @ ISA_24_16
+155	error	Multiple punctuation marks found [ ; - ] @ ISA_25_1
+155	error	Multiple punctuation marks found [ , - ] @ ISA_25_5
+155	error	Multiple punctuation marks found [ , - ] @ ISA_25_6
+155	error	Multiple punctuation marks found [ , - ] @ ISA_25_7
+155	error	Multiple punctuation marks found [ , - ] @ ISA_26_5
+155	error	Punctuation mark found at beginning of verse [ ( ] @ ISA_26_8
+155	error	Multiple punctuation marks found [ , - ] @ ISA_26_10
+155	error	Multiple punctuation marks found [ , - ] @ ISA_26_18
+155	error	Multiple punctuation marks found [ , - ] @ ISA_26_19
+155	error	Multiple punctuation marks found [ , - ] @ ISA_27_13
+155	warn	Multiple punctuation marks found [ , ( ] @ ISA_28_1
+155	warn	Multiple punctuation marks found [ : " ] @ ISA_28_9
+155	warn	Multiple punctuation marks found [ ), ] @ ISA_28_10
+155	warn	Multiple punctuation marks found [ ): ] @ ISA_28_12
+155	error	Multiple punctuation marks found [ , - ] @ ISA_28_13
+155	warn	Multiple punctuation marks found [ : " ] @ ISA_28_15
+155	error	Multiple punctuation marks found [ , - ] @ ISA_28_16
+155	error	Multiple punctuation marks found [ , - ] @ ISA_28_20
+155	error	Multiple punctuation marks found [ , - ] @ ISA_28_22
+155	error	Punctuation mark found at beginning of verse [ ( ] @ ISA_29_7
+155	error	Multiple punctuation marks found [ , - ] @ ISA_29_8
+155	error	Multiple punctuation marks found [ , - ] @ ISA_29_9
+155	error	Multiple punctuation marks found [ , - ] @ ISA_29_10
+155	warn	Multiple punctuation marks found [ : " ] @ ISA_29_11
+155	warn	Multiple punctuation marks found [ : " ] @ ISA_29_12
+155	error	Multiple punctuation marks found [ , - ] @ ISA_29_22
+155	error	Multiple punctuation marks found [ , - ] @ ISA_29_23
+155	error	Multiple punctuation marks found [ , - ] @ ISA_30_1
+155	error	Multiple punctuation marks found [ , - ] @ ISA_30_5
+155	warn	Multiple punctuation marks found [ : " ] @ ISA_30_10
+155	warn	Multiple punctuation marks found [ !" ] @ ISA_30_11
+155	error	Multiple punctuation marks found [ , - ] @ ISA_30_12
+155	error	Multiple punctuation marks found [ , - ] @ ISA_30_13
+155	warn	Multiple punctuation marks found [ : " ] @ ISA_30_16
+155	error	Multiple punctuation marks found [ , - ] @ ISA_30_19
+155	error	Multiple punctuation marks found [ , - ] @ ISA_30_22
+155	error	Multiple punctuation marks found [ , - ] @ ISA_30_26
+155	error	Multiple punctuation marks found [ , - ] @ ISA_30_33
+155	warn	Multiple punctuation marks found [ )! ] @ ISA_32_11
+155	warn	Multiple punctuation marks found [ , ( ] @ ISA_32_12
+155	warn	Multiple punctuation marks found [ , ( ] @ ISA_33_1
+155	error	Multiple punctuation marks found [ , - ] @ ISA_33_11
+155	error	Multiple punctuation marks found [ , - ] @ ISA_33_20
+155	warn	Multiple punctuation marks found [ : " ] @ ISA_33_24
+156	warn	Multiple punctuation marks found [ ), ] @ ISA_34_5
+156	error	Multiple punctuation marks found [ , - ] @ ISA_35_8
+156	error	Multiple punctuation marks found [ , - ] @ ISA_36_6
+156	error	Multiple punctuation marks found [ : - ] @ ISA_36_8
+156	error	Multiple punctuation marks found [ , - ] @ ISA_37_12
+156	error	Multiple punctuation marks found [ , - ] @ ISA_37_21
+156	error	Multiple punctuation marks found [ , - ] @ ISA_37_24
+156	error	Multiple punctuation marks found [ , - ] @ ISA_37_28
+156	warn	Multiple punctuation marks found [ ), ] @ ISA_37_29
+156	warn	Multiple punctuation marks found [ ), ] @ ISA_37_30
+156	error	Multiple punctuation marks found [ , - ] @ ISA_37_34
+156	error	Multiple punctuation marks found [ , - ] @ ISA_37_36
+156	error	Multiple punctuation marks found [ , - ] @ ISA_38_16
+156	error	Multiple punctuation marks found [ , - ] @ ISA_38_19
+156	error	Multiple punctuation marks found [ , - ] @ ISA_39_6
+156	error	Multiple punctuation marks found [ , - ] @ ISA_39_8
+156	error	Punctuation mark found at beginning of verse [ ( ] @ ISA_40_3
+156	warn	Multiple punctuation marks found [ ); ] @ ISA_40_5
+156	warn	Multiple punctuation marks found [ ? ( ] @ ISA_40_6
+156	error	Multiple punctuation marks found [ , - ] @ ISA_40_9
+156	error	Multiple punctuation marks found [ , - ] @ ISA_40_24
+156	error	Multiple punctuation marks found [ ? - ] @ ISA_40_25
+156	error	Multiple punctuation marks found [ , - ] @ ISA_41_2
+156	error	Multiple punctuation marks found [ , - ] @ ISA_41_8
+156	error	Multiple punctuation marks found [ , - ] @ ISA_41_13
+156	error	Multiple punctuation marks found [ , - ] @ ISA_41_14
+156	error	Multiple punctuation marks found [ , - ] @ ISA_41_17
+156	error	Multiple punctuation marks found [ , - ] @ ISA_41_22
+156	error	Multiple punctuation marks found [ , - ] @ ISA_41_26
+156	warn	Multiple punctuation marks found [ ), ] @ ISA_42_22
+156	error	Multiple punctuation marks found [ , - ] @ ISA_43_2
+156	error	Multiple punctuation marks found [ , - ] @ ISA_43_10
+156	error	Multiple punctuation marks found [ , - ] @ ISA_43_17
+157	error	Multiple punctuation marks found [ , - ] @ ISA_43_20
+157	error	Multiple punctuation marks found [ , - ] @ ISA_44_22
+157	error	Multiple punctuation marks found [ , - ] @ ISA_45_3
+157	error	Multiple punctuation marks found [ , - ] @ ISA_45_9
+157	error	Multiple punctuation marks found [ , - ] @ ISA_45_13
+157	error	Multiple punctuation marks found [ , - ] @ ISA_45_14
+157	error	Multiple punctuation marks found [ , - ] @ ISA_45_18
+157	error	Multiple punctuation marks found [ , - ] @ ISA_45_21
+157	error	Multiple punctuation marks found [ : - ] @ ISA_45_23
+157	error	Punctuation mark found at beginning of verse [ ( ] @ ISA_47_4
+157	error	Multiple punctuation marks found [ , - ] @ ISA_47_6
+157	error	Multiple punctuation marks found [ , - ] @ ISA_47_8
+157	error	Multiple punctuation marks found [ ; - ] @ ISA_47_14
+157	error	Multiple punctuation marks found [ , - ] @ ISA_48_2
+157	error	Multiple punctuation marks found [ , - ] @ ISA_49_5
+157	error	Multiple punctuation marks found [ , - ] @ ISA_49_12
+157	error	Multiple punctuation marks found [ , - ] @ ISA_49_18
+157	error	Multiple punctuation marks found [ , - ] @ ISA_49_25
+157	error	Multiple punctuation marks found [ , - ] @ ISA_50_10
+157	error	Multiple punctuation marks found [ , - ] @ ISA_50_11
+157	error	Multiple punctuation marks found [ , - ] @ ISA_51_1
+157	error	Multiple punctuation marks found [ ? - ] @ ISA_51_19
+157	error	Multiple punctuation marks found [ , - ] @ ISA_51_22
+157	error	Multiple punctuation marks found [ , - ] @ ISA_52_5
+157	error	Multiple punctuation marks found [ , - ] @ ISA_52_14
+157	error	Multiple punctuation marks found [ , - ] @ ISA_53_6
+157	warn	Multiple punctuation marks found [ ), ] @ ISA_53_11
+157	error	Multiple punctuation marks found [ , - ] @ ISA_54_2
+157	error	Multiple punctuation marks found [ , - ] @ ISA_54_6
+157	error	Multiple punctuation marks found [ , - ] @ ISA_54_8
+157	error	Multiple punctuation marks found [ , - ] @ ISA_54_10
+158	error	Multiple punctuation marks found [ , - ] @ ISA_54_15
+158	error	Multiple punctuation marks found [ ; - ] @ ISA_54_16
+158	error	Multiple punctuation marks found [ , - ] @ ISA_54_17
+158	error	Multiple punctuation marks found [ ; - ] @ ISA_55_3
+158	error	Multiple punctuation marks found [ , - ] @ ISA_55_10
+158	error	Multiple punctuation marks found [ , - ] @ ISA_55_11
+158	error	Multiple punctuation marks found [ , - ] @ ISA_56_4
+158	error	Multiple punctuation marks found [ , - ] @ ISA_56_6
+158	warn	Multiple punctuation marks found [ ), ] @ ISA_56_12
+158	warn	Multiple punctuation marks found [ : " ] @ ISA_57_10
+158	error	Multiple punctuation marks found [ , - ] @ ISA_57_13
+158	error	Multiple punctuation marks found [ , - ] @ ISA_57_19
+158	error	Punctuation mark found at beginning of verse [ " ] @ ISA_58_3
+158	warn	Multiple punctuation marks found [ ?" ] @ ISA_58_3
+158	error	Multiple punctuation marks found [ , - ] @ ISA_58_5
+158	error	Multiple punctuation marks found [ , - ] @ ISA_58_10
+158	error	Multiple punctuation marks found [ ; - ] @ ISA_58_14
+158	error	Multiple punctuation marks found [ , - ] @ ISA_59_5
+158	error	Multiple punctuation marks found [ , - ] @ ISA_59_7
+158	error	Multiple punctuation marks found [ , - ] @ ISA_59_9
+158	error	Multiple punctuation marks found [ , - ] @ ISA_59_11
+158	warn	Multiple punctuation marks found [ ), ] @ ISA_59_16
+158	error	Multiple punctuation marks found [ , - ] @ ISA_59_19
+158	error	Multiple punctuation marks found [ , - ] @ ISA_59_20
+158	error	Multiple punctuation marks found [ , - ] @ ISA_60_2
+158	error	Multiple punctuation marks found [ , - ] @ ISA_60_16
+158	error	Multiple punctuation marks found [ , - ] @ ISA_60_21
+158	error	Multiple punctuation marks found [ , - ] @ ISA_61_11
+158	error	Multiple punctuation marks found [ , - ] @ ISA_62_6
+158	error	Multiple punctuation marks found [ ? - ] @ ISA_63_1
+158	error	Multiple punctuation marks found [ , - ] @ ISA_63_8
+158	error	Multiple punctuation marks found [ ? - ] @ ISA_63_15
+158	error	Multiple punctuation marks found [ , - ] @ ISA_63_16
+158	error	Multiple punctuation marks found [ , - ] @ ISA_64_8
+158	error	Multiple punctuation marks found [ , - ] @ ISA_65_5
+158	error	Multiple punctuation marks found [ , - ] @ ISA_65_16
+158	error	Multiple punctuation marks found [ , - ] @ ISA_65_25
+158	error	Punctuation mark found at beginning of verse [ ( ] @ ISA_66_3
+158	error	Multiple punctuation marks found [ , - ] @ ISA_66_3
+158	error	Multiple punctuation marks found [ ? - ] @ ISA_66_9
+158	error	Multiple punctuation marks found [ , - ] @ ISA_66_12
+158	error	Multiple punctuation marks found [ , - ] @ ISA_66_17
+159	error	Multiple punctuation marks found [ , - ] @ ISA_66_20
+163	error	Multiple punctuation marks found [ , - ] @ JER_1_1
+163	error	Punctuation mark found at beginning of verse [ ( ] @ JER_2_15
+163	error	Multiple punctuation marks found [ , - ] @ JER_2_21
+163	error	Multiple punctuation marks found [ , - ] @ JER_2_23
+163	error	Multiple punctuation marks found [ , - ] @ JER_2_24
+163	warn	Multiple punctuation marks found [ ), ] @ JER_2_25
+163	error	Multiple punctuation marks found [ , - ] @ JER_2_26
+163	warn	Multiple punctuation marks found [ : " ] @ JER_2_27
+163	error	Multiple punctuation marks found [ , - ] @ JER_2_29
+163	error	Multiple punctuation marks found [ ?! ] @ JER_2_31
+163	warn	Multiple punctuation marks found [ : " ] @ JER_2_35
+163	error	Multiple punctuation marks found [ , - ] @ JER_3_3
+163	error	Multiple punctuation marks found [ , - ] @ JER_3_8
+163	error	Multiple punctuation marks found [ , - ] @ JER_3_12
+163	error	Multiple punctuation marks found [ , - ] @ JER_3_16
+163	error	Multiple punctuation marks found [ , - ] @ JER_3_25
+163	warn	Multiple punctuation marks found [ : " ] @ JER_4_2
+163	error	Multiple punctuation marks found [ , - ] @ JER_4_6
+163	warn	Multiple punctuation marks found [ : " ] @ JER_4_10
+163	error	Multiple punctuation marks found [ , - ] @ JER_4_23
+163	error	Multiple punctuation marks found [ , - ] @ JER_4_30
+163	error	Multiple punctuation marks found [ , - ] @ JER_4_31
+163	error	Multiple punctuation marks found [ , - ] @ JER_5_1
+163	warn	Multiple punctuation marks found [ : " ] @ JER_5_2
+163	warn	Multiple punctuation marks found [ : " ] @ JER_5_12
+163	warn	Multiple punctuation marks found [ ." ] @ JER_5_13
+163	warn	Multiple punctuation marks found [ : " ] @ JER_6_14
+164	error	Multiple punctuation marks found [ , - ] @ JER_6_19
+164	error	Multiple punctuation marks found [ , - ] @ JER_6_28
+164	warn	Multiple punctuation marks found [ : " ] @ JER_7_4
+164	warn	Multiple punctuation marks found [ : " ] @ JER_7_10
+164	error	Multiple punctuation marks found [ , - ] @ JER_7_13
+164	error	Multiple punctuation marks found [ , - ] @ JER_7_14
+164	error	Multiple punctuation marks found [ , - ] @ JER_7_19
+164	error	Multiple punctuation marks found [ , - ] @ JER_7_25
+164	warn	Multiple punctuation marks found [ : " ] @ JER_8_6
+164	warn	Multiple punctuation marks found [ : " ] @ JER_8_11
+164	error	Multiple punctuation marks found [ , - ] @ JER_8_14
+164	error	Multiple punctuation marks found [ , - ] @ JER_8_15
+164	error	Multiple punctuation marks found [ ? - ] @ JER_8_19
+164	error	Multiple punctuation marks found [ , - ] @ JER_8_21
+164	error	Multiple punctuation marks found [ ? - ] @ JER_9_9
+164	warn	Multiple punctuation marks found [ , ( ] @ JER_10_5
+164	error	Multiple punctuation marks found [ , - ] @ JER_10_9
+164	error	Multiple punctuation marks found [ , - ] @ JER_11_4
+164	error	Multiple punctuation marks found [ , - ] @ JER_12_6
+164	warn	Multiple punctuation marks found [ ), ] @ JER_12_8
+164	error	Multiple punctuation marks found [ , - ] @ JER_12_10
+164	warn	Multiple punctuation marks found [ : " ] @ JER_12_16
+164	error	Multiple punctuation marks found [ , - ] @ JER_13_14
+164	warn	Multiple punctuation marks found [ : " ] @ JER_13_22
+164	warn	Multiple punctuation marks found [ ). ] @ JER_14_3
+165	error	Multiple punctuation marks found [ , - ] @ JER_14_16
+165	error	Multiple punctuation marks found [ , - ] @ JER_14_19
+165	error	Multiple punctuation marks found [ , - ] @ JER_15_6
+165	error	Multiple punctuation marks found [ , - ] @ JER_15_14
+165	error	Multiple punctuation marks found [ ? - ] @ JER_16_10
+165	error	Multiple punctuation marks found [ , - ] @ JER_16_11
+165	error	Multiple punctuation marks found [ , - ] @ JER_17_16
+165	error	Multiple punctuation marks found [ , - ] @ JER_18_10
+165	warn	Multiple punctuation marks found [ ? ( ] @ JER_18_13
+165	error	Multiple punctuation marks found [ , - ] @ JER_18_15
+165	warn	Multiple punctuation marks found [ : " ] @ JER_18_18
+165	error	Multiple punctuation marks found [ , - ] @ JER_18_21
+165	error	Multiple punctuation marks found [ , - ] @ JER_19_3
+165	error	Multiple punctuation marks found [ , - ] @ JER_19_13
+165	error	Multiple punctuation marks found [ , - ] @ JER_20_1
+165	warn	Multiple punctuation marks found [ : " ] @ JER_20_10
+165	error	Multiple punctuation marks found [ . - ] @ JER_20_13
+165	error	Multiple punctuation marks found [ , - ] @ JER_20_16
+165	error	Multiple punctuation marks found [ , - ] @ JER_20_17
+165	error	Multiple punctuation marks found [ , - ] @ JER_21_7
+165	error	Multiple punctuation marks found [ , - ] @ JER_21_13
+165	error	Multiple punctuation marks found [ , - ] @ JER_22_2
+165	error	Multiple punctuation marks found [ , - ] @ JER_22_7
+165	error	Multiple punctuation marks found [ , - ] @ JER_22_24
+165	error	Multiple punctuation marks found [ , - ] @ JER_22_25
+165	error	Multiple punctuation marks found [ , - ] @ JER_22_26
+165	error	Multiple punctuation marks found [ , - ] @ JER_23_4
+165	error	Multiple punctuation marks found [ , - ] @ JER_23_12
+166	error	Multiple punctuation marks found [ , - ] @ JER_23_29
+166	error	Multiple punctuation marks found [ , - ] @ JER_23_30
+166	error	Multiple punctuation marks found [ , - ] @ JER_23_32
+166	warn	Multiple punctuation marks found [ : " ] @ JER_23_35
+166	warn	Multiple punctuation marks found [ ", ] @ JER_23_38
+166	warn	Multiple punctuation marks found [ ), ] @ JER_24_1
+166	error	Multiple punctuation marks found [ , - ] @ JER_24_3
+166	error	Multiple punctuation marks found [ , - ] @ JER_25_1
+166	error	Multiple punctuation marks found [ , - ] @ JER_25_3
+166	error	Multiple punctuation marks found [ , - ] @ JER_25_13
+166	error	Multiple punctuation marks found [ , - ] @ JER_25_26
+166	error	Multiple punctuation marks found [ , - ] @ JER_25_33
+166	error	Multiple punctuation marks found [ , - ] @ JER_26_8
+166	error	Multiple punctuation marks found [ , - ] @ JER_26_11
+166	error	Multiple punctuation marks found [ . - ] @ JER_26_23
+166	error	Multiple punctuation marks found [ , - ] @ JER_27_8
+166	error	Multiple punctuation marks found [ , - ] @ JER_27_15
+166	error	Multiple punctuation marks found [ , - ] @ JER_28_1
+166	error	Multiple punctuation marks found [ , - ] @ JER_28_5
+166	error	Multiple punctuation marks found [ , - ] @ JER_29_1
+166	error	Multiple punctuation marks found [ , - ] @ JER_29_2
+166	error	Multiple punctuation marks found [ , - ] @ JER_29_9
+166	error	Multiple punctuation marks found [ , - ] @ JER_29_11
+166	error	Multiple punctuation marks found [ , - ] @ JER_29_16
+166	error	Multiple punctuation marks found [ , - ] @ JER_29_18
+166	error	Multiple punctuation marks found [ , - ] @ JER_29_23
+166	error	Multiple punctuation marks found [ , - ] @ JER_29_31
+166	error	Multiple punctuation marks found [ , - ] @ JER_29_32
+166	error	Multiple punctuation marks found [ , - ] @ JER_31_8
+166	error	Multiple punctuation marks found [ , - ] @ JER_31_18
+166	error	Multiple punctuation marks found [ , - ] @ JER_31_19
+167	error	Multiple punctuation marks found [ , - ] @ JER_31_28
+167	error	Multiple punctuation marks found [ , - ] @ JER_31_31
+167	error	Multiple punctuation marks found [ , - ] @ JER_31_35
+167	error	Multiple punctuation marks found [ , - ] @ JER_32_1
+167	error	Multiple punctuation marks found [ . - ] @ JER_32_5
+167	error	Multiple punctuation marks found [ ; - ] @ JER_32_8
+167	error	Multiple punctuation marks found [ , - ] @ JER_32_22
+167	error	Multiple punctuation marks found [ , - ] @ JER_32_32
+167	error	Multiple punctuation marks found [ , - ] @ JER_32_36
+167	error	Multiple punctuation marks found [ , - ] @ JER_33_2
+167	error	Multiple punctuation marks found [ , - ] @ JER_33_5
+167	error	Multiple punctuation marks found [ , - ] @ JER_33_10
+167	error	Multiple punctuation marks found [ , - ] @ JER_33_15
+167	warn	Multiple punctuation marks found [ !" ] @ JER_33_16
+167	warn	Multiple punctuation marks found [ ), ] @ JER_33_17
+167	error	Multiple punctuation marks found [ , - ] @ JER_34_18
+167	error	Multiple punctuation marks found [ , - ] @ JER_35_8
+167	error	Multiple punctuation marks found [ , - ] @ JER_35_14
+167	error	Multiple punctuation marks found [ , - ] @ JER_35_15
+167	error	Multiple punctuation marks found [ , - ] @ JER_35_18
+167	error	Multiple punctuation marks found [ , - ] @ JER_35_19
+167	error	Multiple punctuation marks found [ , - ] @ JER_36_3
+167	error	Multiple punctuation marks found [ , - ] @ JER_36_22
+167	error	Multiple punctuation marks found [ ? - ] @ JER_36_29
+167	error	Multiple punctuation marks found [ , - ] @ JER_36_32
+167	error	Multiple punctuation marks found [ : - ] @ JER_37_7
+167	error	Multiple punctuation marks found [ , - ] @ JER_38_7
+167	error	Multiple punctuation marks found [ , - ] @ JER_38_22
+168	error	Multiple punctuation marks found [ , - ] @ JER_38_25
+168	error	Multiple punctuation marks found [ , - ] @ JER_39_16
+168	error	Multiple punctuation marks found [ , - ] @ JER_40_4
+168	error	Multiple punctuation marks found [ , - ] @ JER_40_7
+168	error	Multiple punctuation marks found [ , - ] @ JER_40_8
+168	error	Multiple punctuation marks found [ , - ] @ JER_40_9
+168	error	Multiple punctuation marks found [ , - ] @ JER_40_11
+168	error	Multiple punctuation marks found [ , - ] @ JER_41_2
+168	error	Multiple punctuation marks found [ , - ] @ JER_41_3
+168	error	Multiple punctuation marks found [ , - ] @ JER_41_7
+168	error	Multiple punctuation marks found [ , - ] @ JER_41_10
+168	error	Multiple punctuation marks found [ , - ] @ JER_41_16
+168	error	Multiple punctuation marks found [ , - ] @ JER_42_2
+168	error	Multiple punctuation marks found [ , - ] @ JER_42_14
+168	error	Multiple punctuation marks found [ , - ] @ JER_42_19
+168	error	Multiple punctuation marks found [ , - ] @ JER_43_1
+168	error	Multiple punctuation marks found [ , - ] @ JER_43_5
+168	warn	Multiple punctuation marks found [ , ( ] @ JER_43_6
+168	warn	Multiple punctuation marks found [ ): ] @ JER_44_20
+168	error	Multiple punctuation marks found [ , - ] @ JER_44_21
+168	error	Multiple punctuation marks found [ , - ] @ JER_44_28
+168	error	Multiple punctuation marks found [ ; - ] @ JER_45_5
+168	error	Multiple punctuation marks found [ , - ] @ JER_46_5
+168	error	Multiple punctuation marks found [ , - ] @ JER_46_9
+168	error	Multiple punctuation marks found [ , - ] @ JER_46_11
+168	error	Multiple punctuation marks found [ ? - ] @ JER_46_15
+168	error	Multiple punctuation marks found [ , - ] @ JER_46_16
+168	warn	Multiple punctuation marks found [ ", ] @ JER_46_17
+169	error	Multiple punctuation marks found [ , - ] @ JER_46_18
+169	error	Multiple punctuation marks found [ , - ] @ JER_46_21
+169	error	Multiple punctuation marks found [ , - ] @ JER_46_25
+169	error	Multiple punctuation marks found [ , - ] @ JER_48_13
+169	error	Multiple punctuation marks found [ , - ] @ JER_48_15
+169	error	Punctuation mark found at beginning of verse [ ( ] @ JER_48_20
+169	warn	Multiple punctuation marks found [ :) ] @ JER_48_20
+169	warn	Multiple punctuation marks found [ ). ] @ JER_48_30
+169	error	Multiple punctuation marks found [ , - ] @ JER_48_39
+169	warn	Multiple punctuation marks found [ , ( ] @ JER_49_2
+169	warn	Multiple punctuation marks found [ , ( ] @ JER_49_3
+169	error	Multiple punctuation marks found [ , - ] @ JER_49_32
+169	error	Multiple punctuation marks found [ , - ] @ JER_49_35
+169	error	Multiple punctuation marks found [ , - ] @ JER_50_3
+169	warn	Multiple punctuation marks found [ ), ] @ JER_50_8
+169	warn	Multiple punctuation marks found [ ); ] @ JER_50_15
+169	error	Punctuation mark found at beginning of verse [ ( ] @ JER_50_22
+169	error	Multiple punctuation marks found [ , - ] @ JER_50_27
+169	error	Punctuation mark found at beginning of verse [ ( ] @ JER_50_28
+169	error	Multiple punctuation marks found [ , - ] @ JER_51_6
+169	error	Multiple punctuation marks found [ , - ] @ JER_51_8
+169	error	Multiple punctuation marks found [ . - ] @ JER_51_9
+169	error	Multiple punctuation marks found [ , - ] @ JER_51_11
+169	error	Multiple punctuation marks found [ , - ] @ JER_51_13
+169	error	Multiple punctuation marks found [ , - ] @ JER_51_17
+169	warn	Multiple punctuation marks found [ ), ] @ JER_51_41
+170	error	Multiple punctuation marks found [ , - ] @ JER_51_57
+170	warn	Multiple punctuation marks found [ ). ] @ JER_51_59
+170	error	Multiple punctuation marks found [ , - ] @ JER_51_60
+170	warn	Multiple punctuation marks found [ ). ] @ JER_51_64
+170	error	Multiple punctuation marks found [ , - ] @ JER_52_7
+170	error	Multiple punctuation marks found [ , - ] @ JER_52_12
+170	warn	Multiple punctuation marks found [ ). ] @ JER_52_16
+170	error	Multiple punctuation marks found [ , - ] @ JER_52_20
+170	error	Multiple punctuation marks found [ , - ] @ LAM_1_1
+170	error	Multiple punctuation marks found [ , - ] @ LAM_1_4
+170	warn	Multiple punctuation marks found [ ,) ] @ LAM_1_10
+170	error	Multiple punctuation marks found [ , - ] @ LAM_1_16
+170	warn	Multiple punctuation marks found [ ). ] @ LAM_1_19
+170	warn	Multiple punctuation marks found [ - ( ] @ LAM_1_20
+170	warn	Multiple punctuation marks found [ ); ] @ LAM_2_6
+170	warn	Multiple punctuation marks found [ ). ] @ LAM_2_14
+171	warn	Multiple punctuation marks found [ ), ] @ LAM_3_5
+171	error	Multiple punctuation marks found [ , - ] @ LAM_3_10
+171	error	Multiple punctuation marks found [ , - ] @ LAM_3_25
+171	warn	Multiple punctuation marks found [ ); ] @ LAM_3_27
+171	error	Punctuation mark found at beginning of verse [ ( ] @ LAM_3_28
+171	warn	Multiple punctuation marks found [ ): ] @ LAM_3_41
+171	warn	Multiple punctuation marks found [ ), ] @ LAM_3_44
+171	error	Multiple punctuation marks found [ , - ] @ LAM_3_61
+171	error	Punctuation mark found at beginning of verse [ ( ] @ LAM_3_62
+171	error	Multiple punctuation marks found [ , - ] @ LAM_3_63
+171	error	Multiple punctuation marks found [ , - ] @ LAM_4_2
+171	error	Punctuation mark found at beginning of verse [ ( ] @ LAM_4_16
+171	error	Multiple punctuation marks found [ , - ] @ LAM_4_20
+175	error	Multiple punctuation marks found [ : - ] @ EZK_1_10
+175	error	Multiple punctuation marks found [ , - ] @ EZK_2_4
+175	error	Multiple punctuation marks found [ , - ] @ EZK_2_6
+175	error	Multiple punctuation marks found [ , - ] @ EZK_3_5
+175	warn	Multiple punctuation marks found [ , ( ] @ EZK_3_12
+175	error	Multiple punctuation marks found [ , - ] @ EZK_3_20
+175	error	Multiple punctuation marks found [ , - ] @ EZK_3_23
+175	error	Multiple punctuation marks found [ , - ] @ EZK_3_27
+175	error	Multiple punctuation marks found [ ; - ] @ EZK_4_6
+175	error	Multiple punctuation marks found [ , - ] @ EZK_5_1
+175	error	Multiple punctuation marks found [ , - ] @ EZK_5_7
+175	error	Multiple punctuation marks found [ , - ] @ EZK_5_9
+175	error	Multiple punctuation marks found [ , - ] @ EZK_5_15
+175	error	Multiple punctuation marks found [ , - ] @ EZK_6_12
+175	error	Multiple punctuation marks found [ , - ] @ EZK_7_2
+175	warn	Multiple punctuation marks found [ ), ] @ EZK_7_5
+176	error	Multiple punctuation marks found [ , - ] @ EZK_10_9
+176	error	Multiple punctuation marks found [ , - ] @ EZK_10_12
+176	error	Multiple punctuation marks found [ , - ] @ EZK_10_22
+176	warn	Multiple punctuation marks found [ ) - ] @ EZK_11_3
+176	error	Multiple punctuation marks found [ , - ] @ EZK_11_5
+176	error	Multiple punctuation marks found [ , - ] @ EZK_11_7
+176	error	Multiple punctuation marks found [ , - ] @ EZK_11_12
+176	error	Multiple punctuation marks found [ , - ] @ EZK_12_11
+176	error	Multiple punctuation marks found [ , - ] @ EZK_12_16
+176	error	Punctuation mark found at beginning of verse [ ( ] @ EZK_13_16
+176	error	Multiple punctuation marks found [ , - ] @ EZK_13_19
+176	error	Multiple punctuation marks found [ , - ] @ EZK_13_22
+176	error	Multiple punctuation marks found [ , - ] @ EZK_14_11
+176	error	Multiple punctuation marks found [ , - ] @ EZK_14_16
+176	error	Multiple punctuation marks found [ , - ] @ EZK_14_18
+176	error	Multiple punctuation marks found [ , - ] @ EZK_14_20
+176	error	Multiple punctuation marks found [ , - ] @ EZK_14_21
+176	error	Multiple punctuation marks found [ , - ] @ EZK_16_5
+176	error	Multiple punctuation marks found [ , - ] @ EZK_16_19
+176	error	Multiple punctuation marks found [ , - ] @ EZK_16_20
+176	error	Multiple punctuation marks found [ ! - ] @ EZK_16_23
+176	error	Multiple punctuation marks found [ , - ] @ EZK_16_31
+176	error	Multiple punctuation marks found [ , - ] @ EZK_16_36
+176	error	Multiple punctuation marks found [ , - ] @ EZK_16_37
+177	error	Multiple punctuation marks found [ , - ] @ EZK_16_43
+177	error	Multiple punctuation marks found [ , - ] @ EZK_16_46
+177	error	Multiple punctuation marks found [ , - ] @ EZK_16_61
+177	error	Multiple punctuation marks found [ ? - ] @ EZK_17_12
+177	error	Multiple punctuation marks found [ , - ] @ EZK_17_21
+177	error	Multiple punctuation marks found [ , - ] @ EZK_17_22
+177	error	Multiple punctuation marks found [ , - ] @ EZK_18_4
+177	error	Multiple punctuation marks found [ , - ] @ EZK_18_9
+177	error	Multiple punctuation marks found [ , - ] @ EZK_18_13
+177	error	Multiple punctuation marks found [ , - ] @ EZK_18_17
+177	error	Multiple punctuation marks found [ , - ] @ EZK_18_18
+177	error	Multiple punctuation marks found [ , - ] @ EZK_18_19
+177	error	Multiple punctuation marks found [ , - ] @ EZK_18_23
+177	error	Multiple punctuation marks found [ , - ] @ EZK_18_25
+177	error	Multiple punctuation marks found [ , - ] @ EZK_19_14
+177	error	Multiple punctuation marks found [ , - ] @ EZK_20_6
+177	error	Multiple punctuation marks found [ , - ] @ EZK_20_15
+177	warn	Multiple punctuation marks found [ ), ] @ EZK_20_26
+177	error	Multiple punctuation marks found [ , - ] @ EZK_20_31
+177	error	Multiple punctuation marks found [ , - ] @ EZK_20_39
+177	error	Multiple punctuation marks found [ , - ] @ EZK_20_40
+177	error	Multiple punctuation marks found [ , - ] @ EZK_21_7
+177	error	Multiple punctuation marks found [ , - ] @ EZK_21_15
+177	error	Multiple punctuation marks found [ , - ] @ EZK_21_20
+177	error	Multiple punctuation marks found [ , - ] @ EZK_21_25
+177	error	Multiple punctuation marks found [ , - ] @ EZK_21_28
+177	error	Multiple punctuation marks found [ , - ] @ EZK_21_29
+177	error	Multiple punctuation marks found [ , - ] @ EZK_21_30
+177	warn	Multiple punctuation marks found [ ), ] @ EZK_22_9
+178	error	Multiple punctuation marks found [ , - ] @ EZK_23_15
+178	error	Multiple punctuation marks found [ , - ] @ EZK_23_44
+178	warn	Multiple punctuation marks found [ ), ] @ EZK_23_46
+178	error	Multiple punctuation marks found [ , - ] @ EZK_24_4
+178	error	Multiple punctuation marks found [ , - ] @ EZK_24_21
+178	error	Multiple punctuation marks found [ , - ] @ EZK_24_25
+178	warn	Multiple punctuation marks found [ : " ] @ EZK_25_3
+178	error	Multiple punctuation marks found [ , - ] @ EZK_25_6
+178	error	Multiple punctuation marks found [ , - ] @ EZK_26_2
+178	error	Multiple punctuation marks found [ , - ] @ EZK_26_17
+178	error	Multiple punctuation marks found [ , - ] @ EZK_27_8
+178	warn	Multiple punctuation marks found [ ) - ] @ EZK_27_11
+178	error	Multiple punctuation marks found [ , - ] @ EZK_27_13
+178	error	Multiple punctuation marks found [ , - ] @ EZK_27_36
+178	error	Multiple punctuation marks found [ , - ] @ EZK_28_2
+178	error	Multiple punctuation marks found [ , - ] @ EZK_28_5
+178	error	Multiple punctuation marks found [ , - ] @ EZK_28_13
+178	error	Multiple punctuation marks found [ , - ] @ EZK_31_10
+179	error	Multiple punctuation marks found [ , - ] @ EZK_32_6
+179	error	Multiple punctuation marks found [ . - ] @ EZK_32_12
+179	error	Multiple punctuation marks found [ , - ] @ EZK_32_23
+179	error	Multiple punctuation marks found [ , - ] @ EZK_32_24
+179	error	Multiple punctuation marks found [ , - ] @ EZK_32_31
+179	error	Multiple punctuation marks found [ , - ] @ EZK_33_3
+179	error	Multiple punctuation marks found [ , - ] @ EZK_33_5
+179	error	Multiple punctuation marks found [ , - ] @ EZK_33_8
+179	error	Multiple punctuation marks found [ , - ] @ EZK_33_10
+179	error	Multiple punctuation marks found [ , - ] @ EZK_33_15
+179	error	Multiple punctuation marks found [ , - ] @ EZK_33_25
+179	error	Multiple punctuation marks found [ , - ] @ EZK_33_27
+179	error	Multiple punctuation marks found [ , - ] @ EZK_33_33
+179	error	Multiple punctuation marks found [ , - ] @ EZK_34_8
+179	warn	Multiple punctuation marks found [ ), ] @ EZK_34_18
+179	error	Multiple punctuation marks found [ , - ] @ EZK_34_23
+179	error	Multiple punctuation marks found [ , - ] @ EZK_34_26
+179	error	Multiple punctuation marks found [ , - ] @ EZK_34_30
+179	error	Multiple punctuation marks found [ , - ] @ EZK_36_3
+179	warn	Multiple punctuation marks found [ ). ] @ EZK_36_8
+179	error	Multiple punctuation marks found [ , - ] @ EZK_36_13
+179	error	Multiple punctuation marks found [ , - ] @ EZK_36_32
+179	error	Multiple punctuation marks found [ , - ] @ EZK_36_34
+179	error	Multiple punctuation marks found [ , - ] @ EZK_37_26
+179	error	Multiple punctuation marks found [ , - ] @ EZK_38_4
+179	error	Multiple punctuation marks found [ , - ] @ EZK_38_5
+179	error	Multiple punctuation marks found [ , - ] @ EZK_38_7
+179	error	Multiple punctuation marks found [ , - ] @ EZK_38_11
+179	error	Punctuation mark found at beginning of verse [ ( ] @ EZK_38_12
+179	error	Multiple punctuation marks found [ , - ] @ EZK_38_13
+179	error	Multiple punctuation marks found [ , - ] @ EZK_38_15
+179	error	Multiple punctuation marks found [ , - ] @ EZK_38_16
+180	error	Multiple punctuation marks found [ , - ] @ EZK_39_8
+180	error	Multiple punctuation marks found [ , - ] @ EZK_39_11
+180	error	Multiple punctuation marks found [ , - ] @ EZK_39_14
+180	warn	Multiple punctuation marks found [ ). ] @ EZK_39_16
+180	error	Multiple punctuation marks found [ , - ] @ EZK_39_18
+180	error	Multiple punctuation marks found [ , - ] @ EZK_39_23
+180	error	Multiple punctuation marks found [ , - ] @ EZK_40_45
+180	error	Multiple punctuation marks found [ , - ] @ EZK_40_46
+180	error	Multiple punctuation marks found [ , - ] @ EZK_41_1
+180	error	Multiple punctuation marks found [ , - ] @ EZK_42_7
+180	error	Multiple punctuation marks found [ , - ] @ EZK_43_12
+180	error	Multiple punctuation marks found [ , - ] @ EZK_43_13
+181	warn	Multiple punctuation marks found [ ; ( ] @ EZK_44_7
+181	error	Multiple punctuation marks found [ , - ] @ EZK_44_10
+181	warn	Multiple punctuation marks found [ ), ] @ EZK_45_11
+181	warn	Multiple punctuation marks found [ ). ] @ EZK_45_12
+181	error	Multiple punctuation marks found [ : - ] @ EZK_45_15
+181	warn	Multiple punctuation marks found [ ), ] @ EZK_46_16
+181	error	Multiple punctuation marks found [ : - ] @ EZK_47_13
+182	error	Multiple punctuation marks found [ , - ] @ EZK_48_18
+182	error	Multiple punctuation marks found [ : - ] @ EZK_48_23
+183	warn	Multiple punctuation marks found [ ), ] @ DAN_1_3
+183	error	Multiple punctuation marks found [ , - ] @ DAN_2_31
+183	error	Multiple punctuation marks found [ , - ] @ DAN_2_37
+183	error	Multiple punctuation marks found [ , - ] @ DAN_3_12
+183	error	Multiple punctuation marks found [ , - ] @ DAN_3_15
+183	warn	Multiple punctuation marks found [ ). ] @ DAN_3_25
+183	warn	Multiple punctuation marks found [ ), ] @ DAN_3_28
+183	warn	Multiple punctuation marks found [ ). ] @ DAN_4_10
+183	warn	Multiple punctuation marks found [ ). ] @ DAN_4_13
+183	error	Multiple punctuation marks found [ , - ] @ DAN_4_20
+184	error	Multiple punctuation marks found [ , - ] @ DAN_5_3
+184	warn	Multiple punctuation marks found [ ). ] @ DAN_5_25
+184	error	Multiple punctuation marks found [ , - ] @ DAN_6_2
+184	error	Multiple punctuation marks found [ , - ] @ DAN_6_10
+184	error	Multiple punctuation marks found [ , - ] @ DAN_6_24
+184	error	Multiple punctuation marks found [ , - ] @ DAN_7_17
+184	error	Multiple punctuation marks found [ , - ] @ DAN_7_20
+184	error	Multiple punctuation marks found [ , - ] @ DAN_8_2
+184	warn	Multiple punctuation marks found [ ). ] @ DAN_8_17
+184	error	Multiple punctuation marks found [ , - ] @ DAN_8_20
+184	warn	Multiple punctuation marks found [ ). ] @ DAN_8_25
+184	error	Multiple punctuation marks found [ , - ] @ DAN_8_26
+184	error	Multiple punctuation marks found [ , - ] @ DAN_9_1
+184	warn	Multiple punctuation marks found [ , ( ] @ DAN_9_15
+184	error	Multiple punctuation marks found [ , - ] @ DAN_9_20
+184	error	Multiple punctuation marks found [ , - ] @ DAN_10_8
+184	warn	Multiple punctuation marks found [ ), ] @ DAN_11_6
+184	warn	Multiple punctuation marks found [ ), ] @ DAN_11_17
+185	error	Multiple punctuation marks found [ , - ] @ DAN_11_34
+185	warn	Multiple punctuation marks found [ ); ] @ DAN_12_10
+186	warn	Multiple punctuation marks found [ ); ] @ HOS_1_4
+186	warn	Multiple punctuation marks found [ ); ] @ HOS_1_6
+186	warn	Multiple punctuation marks found [ ): ] @ HOS_1_9
+186	error	Multiple punctuation marks found [ , - ] @ HOS_2_6
+186	error	Multiple punctuation marks found [ , - ] @ HOS_2_8
+186	warn	Multiple punctuation marks found [ ," ] @ HOS_2_16
+186	warn	Multiple punctuation marks found [ ). ] @ HOS_3_1
+186	warn	Multiple punctuation marks found [ ) - ] @ HOS_4_4
+186	warn	Multiple punctuation marks found [ ); ] @ HOS_4_6
+186	error	Multiple punctuation marks found [ ; - ] @ HOS_4_17
+186	error	Multiple punctuation marks found [ , - ] @ HOS_5_4
+186	warn	Multiple punctuation marks found [ ), ] @ HOS_5_8
+186	error	Multiple punctuation marks found [ , - ] @ HOS_5_14
+186	warn	Multiple punctuation marks found [ ), ] @ HOS_7_8
+186	warn	Multiple punctuation marks found [ ) - ] @ HOS_8_6
+186	warn	Multiple punctuation marks found [ ). ] @ HOS_8_13
+186	error	Multiple punctuation marks found [ , - ] @ HOS_8_14
+186	warn	Multiple punctuation marks found [ ). ] @ HOS_9_7
+186	warn	Multiple punctuation marks found [ - ( ] @ HOS_9_8
+186	error	Multiple punctuation marks found [ , - ] @ HOS_9_14
+186	error	Multiple punctuation marks found [ , - ] @ HOS_9_17
+186	error	Multiple punctuation marks found [ ! - ] @ HOS_11_1
+187	error	Punctuation mark found at beginning of verse [ ( ] @ HOS_11_10
+187	error	Multiple punctuation marks found [ , - ] @ HOS_11_10
+187	error	Punctuation mark found at beginning of verse [ ( ] @ HOS_11_12
+187	warn	Multiple punctuation marks found [ ). ] @ HOS_11_12
+187	error	Multiple punctuation marks found [ , - ] @ HOS_12_4
+187	warn	Multiple punctuation marks found [ ), ] @ HOS_12_11
+187	error	Multiple punctuation marks found [ , - ] @ HOS_13_2
+187	error	Multiple punctuation marks found [ , - ] @ HOS_13_8
+187	error	Multiple punctuation marks found [ , - ] @ HOS_13_15
+187	error	Multiple punctuation marks found [ , - ] @ JOL_1_7
+187	warn	Multiple punctuation marks found [ ); ] @ JOL_2_4
+187	error	Multiple punctuation marks found [ , - ] @ JOL_2_5
+187	error	Multiple punctuation marks found [ , - ] @ JOL_2_6
+187	error	Multiple punctuation marks found [ , - ] @ JOL_2_11
+187	error	Multiple punctuation marks found [ , - ] @ JOL_2_23
+187	error	Multiple punctuation marks found [ , - ] @ JOL_2_32
+187	error	Multiple punctuation marks found [ , - ] @ JOL_3_1
+187	error	Multiple punctuation marks found [ . - ] @ JOL_3_8
+187	warn	Multiple punctuation marks found [ ); ] @ JOL_3_11
+187	error	Multiple punctuation marks found [ , - ] @ JOL_3_13
+187	error	Multiple punctuation marks found [ ; - ] @ JOL_3_16
+188	error	Multiple punctuation marks found [ , - ] @ AMO_1_2
+188	error	Multiple punctuation marks found [ ; - ] @ AMO_2_11
+188	error	Multiple punctuation marks found [ , - ] @ AMO_3_12
+188	error	Multiple punctuation marks found [ , - ] @ AMO_4_1
+188	error	Multiple punctuation marks found [ , - ] @ AMO_5_2
+188	error	Multiple punctuation marks found [ , - ] @ AMO_5_8
+188	error	Multiple punctuation marks found [ , - ] @ AMO_5_16
+188	error	Multiple punctuation marks found [ , - ] @ AMO_5_17
+188	error	Multiple punctuation marks found [ , - ] @ AMO_5_18
+188	error	Multiple punctuation marks found [ , - ] @ AMO_5_26
+188	error	Multiple punctuation marks found [ , - ] @ AMO_6_3
+188	error	Multiple punctuation marks found [ , - ] @ AMO_6_12
+188	warn	Multiple punctuation marks found [ ); ] @ AMO_7_14
+188	error	Multiple punctuation marks found [ , - ] @ AMO_8_4
+189	error	Multiple punctuation marks found [ , - ] @ AMO_8_11
+189	error	Multiple punctuation marks found [ ! - ] @ AMO_8_14
+189	error	Multiple punctuation marks found [ , - ] @ AMO_9_4
+189	error	Multiple punctuation marks found [ , - ] @ AMO_9_12
+189	error	Multiple punctuation marks found [ . - ] @ OBA_1_1
+189	error	Multiple punctuation marks found [ , - ] @ OBA_1_21
+189	error	Multiple punctuation marks found [ , - ] @ JON_3_6
+190	error	Multiple punctuation marks found [ , - ] @ JON_4_10
+190	error	Multiple punctuation marks found [ , - ] @ MIC_1_8
+190	warn	Multiple punctuation marks found [ ), ] @ MIC_1_11
+190	error	Multiple punctuation marks found [ , - ] @ MIC_1_15
+190	error	Multiple punctuation marks found [ , - ] @ MIC_2_1
+190	error	Multiple punctuation marks found [ , - ] @ MIC_2_2
+190	error	Multiple punctuation marks found [ , - ] @ MIC_4_2
+191	warn	Multiple punctuation marks found [ ), ] @ MIC_4_13
+191	error	Multiple punctuation marks found [ ! - ] @ MIC_5_1
+191	warn	Multiple punctuation marks found [ ), ] @ MIC_5_3
+191	error	Multiple punctuation marks found [ , - ] @ MIC_6_7
+191	error	Multiple punctuation marks found [ , - ] @ MIC_6_16
+191	error	Multiple punctuation marks found [ , - ] @ MIC_7_6
+191	error	Multiple punctuation marks found [ , - ] @ MIC_7_9
+191	warn	Multiple punctuation marks found [ ), ] @ MIC_7_11
+191	error	Multiple punctuation marks found [ , - ] @ NAM_1_7
+191	error	Multiple punctuation marks found [ , - ] @ NAM_1_10
+191	warn	Multiple punctuation marks found [ ), ] @ NAM_1_14
+191	error	Multiple punctuation marks found [ , - ] @ NAM_2_5
+191	error	Multiple punctuation marks found [ , - ] @ NAM_2_12
+191	error	Multiple punctuation marks found [ . - ] @ NAM_3_13
+191	error	Multiple punctuation marks found [ , - ] @ NAM_3_17
+192	error	Multiple punctuation marks found [ , - ] @ HAB_1_2
+192	warn	Multiple punctuation marks found [ ), ] @ HAB_1_5
+192	error	Multiple punctuation marks found [ ? - ] @ HAB_2_6
+192	error	Multiple punctuation marks found [ , - ] @ HAB_2_18
+192	warn	Multiple punctuation marks found [ ), ] @ HAB_3_2
+192	error	Multiple punctuation marks found [ , - ] @ HAB_3_17
+192	warn	Multiple punctuation marks found [ ), ] @ ZEP_1_5
+192	error	Multiple punctuation marks found [ , - ] @ ZEP_1_12
+192	error	Multiple punctuation marks found [ , - ] @ ZEP_1_15
+192	error	Multiple punctuation marks found [ , - ] @ ZEP_2_2
+192	error	Multiple punctuation marks found [ , - ] @ ZEP_2_5
+192	error	Multiple punctuation marks found [ , - ] @ ZEP_2_9
+192	error	Multiple punctuation marks found [ ! - ] @ ZEP_2_15
+192	error	Multiple punctuation marks found [ , - ] @ ZEP_3_10
+193	error	Multiple punctuation marks found [ , - ] @ HAG_1_11
+193	error	Multiple punctuation marks found [ , - ] @ HAG_2_6
+193	error	Multiple punctuation marks found [ , - ] @ HAG_2_7
+193	error	Multiple punctuation marks found [ , - ] @ HAG_2_18
+194	error	Multiple punctuation marks found [ ,- ] @ ZEC_1_5
+194	error	Multiple punctuation marks found [ .: ] @ ZEC_2_8
+194	warn	Multiple punctuation marks found [ ), ] @ ZEC_3_4
+194	error	Multiple punctuation marks found [ , - ] @ ZEC_3_8
+194	error	Multiple punctuation marks found [ ,- ] @ ZEC_4_2
+194	error	Multiple punctuation marks found [ , - ] @ ZEC_4_6
+194	error	Multiple punctuation marks found [ ? - ] @ ZEC_4_10
+194	warn	Multiple punctuation marks found [ '. ] @ ZEC_4_14
+194	error	Multiple punctuation marks found [ ., ] @ ZEC_6_6
+194	warn	Multiple punctuation marks found [ ). ] @ ZEC_6_13
+194	error	Multiple punctuation marks found [ :- ] @ ZEC_7_3
+194	warn	Multiple punctuation marks found [ ,) ] @ ZEC_7_9
+194	error	Multiple punctuation marks found [ ! . ] @ ZEC_8_15
+194	warn	Multiple punctuation marks found [ ), ] @ ZEC_9_1
+194	warn	Multiple punctuation marks found [ ,' ] @ ZEC_10_2
+194	error	Multiple punctuation marks found [ , - ] @ ZEC_10_9
+194	error	Multiple punctuation marks found [ , - ] @ ZEC_10_11
+194	error	Multiple punctuation marks found [ , - ] @ ZEC_11_7
+194	error	Multiple punctuation marks found [ ; - ] @ ZEC_11_13
+195	warn	Multiple punctuation marks found [ - ' ] @ ZEC_14_4
+195	error	Multiple punctuation marks found [ ,- ] @ ZEC_14_13
+195	error	Multiple punctuation marks found [ ? - ] @ MAL_1_2
+195	error	Multiple punctuation marks found [ , - ] @ MAL_1_4
+195	error	Multiple punctuation marks found [ , - ] @ MAL_2_14
+195	error	Multiple punctuation marks found [ ? - ] @ MAL_2_15
+195	error	Punctuation mark found at beginning of verse [ ( ] @ MAL_2_16
+195	warn	Multiple punctuation marks found [ :) ] @ MAL_2_16
+195	error	Multiple punctuation marks found [ , - ] @ MAL_3_1
+198	warn	Multiple punctuation marks found [ ), ] @ MAT_5_25
+199	warn	Multiple punctuation marks found [ , ( ] @ MAT_9_6
+199	warn	Multiple punctuation marks found [ ), ] @ MAT_13_33
+200	warn	Multiple punctuation marks found [ ), ] @ MAT_15_5
+200	error	Multiple punctuation marks found [ , - ] @ MAT_19_4
+201	warn	Multiple punctuation marks found [ ), ] @ MAT_24_15
+205	warn	Multiple punctuation marks found [ :) ] @ MRK_2_10
+205	error	Punctuation mark found at beginning of verse [ ( ] @ MRK_5_8
+205	warn	Multiple punctuation marks found [ .) ] @ MRK_5_8
+205	warn	Multiple punctuation marks found [ , ( ] @ MRK_5_13
+206	warn	Multiple punctuation marks found [ ), ] @ MRK_6_14
+206	error	Multiple punctuation marks found [ , - ] @ MRK_6_35
+206	error	Punctuation mark found at beginning of verse [ ( ] @ MRK_7_3
+206	warn	Multiple punctuation marks found [ ). ] @ MRK_7_4
+206	warn	Multiple punctuation marks found [ ), ] @ MRK_7_11
+206	error	Multiple punctuation marks found [ , - ] @ MRK_8_27
+208	warn	Multiple punctuation marks found [ : " ] @ MRK_12_36
+208	warn	Multiple punctuation marks found [ ), ] @ MRK_13_14
+208	warn	Multiple punctuation marks found [ : ( ] @ MRK_13_35
+208	warn	Multiple punctuation marks found [ ); ] @ MRK_14_51
+215	error	Punctuation mark found at beginning of verse [ ( ] @ LUK_1_55
+215	error	Punctuation mark found at beginning of verse [ ( ] @ LUK_1_70
+215	warn	Multiple punctuation marks found [ ,) ] @ LUK_1_70
+215	warn	Multiple punctuation marks found [ : ( ] @ LUK_2_4
+215	error	Punctuation mark found at beginning of verse [ ( ] @ LUK_2_35
+215	warn	Multiple punctuation marks found [ ,) ] @ LUK_2_35
+216	warn	Multiple punctuation marks found [ , ( ] @ LUK_5_24
+217	error	Multiple punctuation marks found [ , - ] @ LUK_7_44
+217	warn	Multiple punctuation marks found [ ), ] @ LUK_8_41
+217	warn	Multiple punctuation marks found [ ), ] @ LUK_9_51
+218	warn	Multiple punctuation marks found [ ); ] @ LUK_12_29
+218	error	Multiple punctuation marks found [ ? - ] @ LUK_12_49
+220	error	Punctuation mark found at beginning of verse [ ( ] @ LUK_19_25
+220	warn	Multiple punctuation marks found [ .) ] @ LUK_19_25
+221	error	Punctuation mark found at beginning of verse [ ( ] @ LUK_23_17
+221	warn	Multiple punctuation marks found [ .) ] @ LUK_23_17
+222	error	Punctuation mark found at beginning of verse [ ( ] @ LUK_23_51
+222	warn	Multiple punctuation marks found [ ,) ] @ LUK_23_51
+222	warn	Multiple punctuation marks found [ ). ] @ LUK_24_42
+225	warn	Multiple punctuation marks found [ ), ] @ JHN_1_14
+225	warn	Multiple punctuation marks found [ ), ] @ JHN_1_38
+225	warn	Multiple punctuation marks found [ ). ] @ JHN_1_41
+225	warn	Multiple punctuation marks found [ ). ] @ JHN_1_42
+225	warn	Multiple punctuation marks found [ ), ] @ JHN_2_9
+226	error	Multiple punctuation marks found [ , — ] @ JHN_3_12
+226	error	Punctuation mark found at beginning of verse [ ( ] @ JHN_4_2
+226	warn	Multiple punctuation marks found [ ;) ] @ JHN_4_2
+226	warn	Multiple punctuation marks found [ ). ] @ JHN_4_25
+227	warn	Multiple punctuation marks found [ ); ] @ JHN_7_22
+228	warn	Multiple punctuation marks found [ ). ] @ JHN_9_7
+228	error	Multiple punctuation marks found [ , — ] @ JHN_10_35
+229	error	Multiple punctuation marks found [ , — ] @ JHN_13_1
+229	error	Multiple punctuation marks found [ , — ] @ JHN_13_29
+229	error	Multiple punctuation marks found [ , — ] @ JHN_16_15
+230	warn	Multiple punctuation marks found [ ), ] @ JHN_19_31
+230	warn	Multiple punctuation marks found [ ), ] @ JHN_19_38
+231	warn	Multiple punctuation marks found [ ), ] @ JHN_21_7
+231	warn	Multiple punctuation marks found [ ), ] @ JHN_21_8
+235	warn	Multiple punctuation marks found [ ): ] @ ACT_1_15
+235	error	Multiple punctuation marks found [ , - ] @ ACT_4_19
+235	warn	Multiple punctuation marks found [ ), ] @ ACT_4_36
+235	error	Multiple punctuation marks found [ , - ] @ ACT_5_14
+235	warn	Multiple punctuation marks found [ ), ] @ ACT_5_17
+236	error	Multiple punctuation marks found [ , - ] @ ACT_7_33
+236	warn	Multiple punctuation marks found [ ). ] @ ACT_7_35
+236	error	Punctuation mark found at beginning of verse [ ( ] @ ACT_8_16
+236	warn	Multiple punctuation marks found [ .) ] @ ACT_8_16
+236	warn	Multiple punctuation marks found [ ). ] @ ACT_9_5
+236	warn	Multiple punctuation marks found [ ). ] @ ACT_9_43
+236	warn	Multiple punctuation marks found [ ); ] @ ACT_10_36
+236	error	Multiple punctuation marks found [ , - ] @ ACT_10_41
+236	warn	Multiple punctuation marks found [ . ( ] @ ACT_12_3
+236	warn	Multiple punctuation marks found [ ). ] @ ACT_12_19
+236	warn	Multiple punctuation marks found [ ), ] @ ACT_13_8
+236	error	Multiple punctuation marks found [ , - ] @ ACT_13_9
+237	warn	Multiple punctuation marks found [ ), ] @ ACT_15_31
+237	error	Multiple punctuation marks found [ , - ] @ ACT_16_12
+237	warn	Multiple punctuation marks found [ ), ] @ ACT_17_10
+237	error	Multiple punctuation marks found [ , - ] @ ACT_17_18
+237	warn	Multiple punctuation marks found [ ), ] @ ACT_18_2
+237	warn	Multiple punctuation marks found [ ). ] @ ACT_18_14
+237	warn	Multiple punctuation marks found [ ), ] @ ACT_18_18
+238	warn	Multiple punctuation marks found [ ), ] @ ACT_18_22
+238	error	Multiple punctuation marks found [ , - ] @ ACT_19_10
+238	error	Multiple punctuation marks found [ , - ] @ ACT_20_33
+238	warn	Multiple punctuation marks found [ )? ] @ ACT_21_22
+238	error	Punctuation mark found at beginning of verse [ ( ] @ ACT_21_29
+238	warn	Multiple punctuation marks found [ .) ] @ ACT_21_29
+238	warn	Multiple punctuation marks found [ .) ] @ ACT_22_2
+239	warn	Multiple punctuation marks found [ ). ] @ ACT_22_28
+239	warn	Multiple punctuation marks found [ ), ] @ ACT_24_3
+239	error	Multiple punctuation marks found [ , - ] @ ACT_24_18
+239	error	Multiple punctuation marks found [ , - ] @ ACT_25_3
+239	warn	Multiple punctuation marks found [ ). ] @ ACT_25_4
+239	warn	Multiple punctuation marks found [ ), ] @ ACT_26_5
+239	warn	Multiple punctuation marks found [ ), ] @ ACT_26_8
+239	warn	Multiple punctuation marks found [ ). ] @ ACT_26_14
+239	warn	Multiple punctuation marks found [ ), ] @ ACT_27_17
+239	warn	Multiple punctuation marks found [ , ( ] @ ACT_27_21
+239	warn	Multiple punctuation marks found [ ); ] @ ACT_27_25
+239	error	Multiple punctuation marks found [ , - ] @ ACT_27_44
+239	warn	Multiple punctuation marks found [ ). ] @ ACT_28_10
+240	error	Punctuation mark found at beginning of verse [ ( ] @ ROM_1_2
+240	warn	Multiple punctuation marks found [ ,) ] @ ROM_1_2
+240	warn	Multiple punctuation marks found [ ), ] @ ROM_1_4
+240	error	Punctuation mark found at beginning of verse [ ( ] @ ROM_1_5
+240	warn	Multiple punctuation marks found [ ;) ] @ ROM_1_6
+240	warn	Multiple punctuation marks found [ ), ] @ ROM_1_13
+240	error	Multiple punctuation marks found [ , - ] @ ROM_1_28
+240	warn	Multiple punctuation marks found [ ). ] @ ROM_2_1
+241	warn	Multiple punctuation marks found [ , ( ] @ ROM_2_8
+241	warn	Multiple punctuation marks found [ , ( ] @ ROM_2_12
+241	error	Punctuation mark found at beginning of verse [ ( ] @ ROM_2_13
+241	warn	Multiple punctuation marks found [ ); ] @ ROM_2_15
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_2_18
+241	warn	Multiple punctuation marks found [ , ( ] @ ROM_2_29
+241	warn	Multiple punctuation marks found [ ). ] @ ROM_3_4
+241	warn	Multiple punctuation marks found [ ? ( ] @ ROM_3_5
+241	warn	Multiple punctuation marks found [ ). ] @ ROM_3_6
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_3_8
+241	warn	Multiple punctuation marks found [ ); ] @ ROM_3_9
+241	warn	Multiple punctuation marks found [ ). ] @ ROM_3_31
+241	error	Punctuation mark found at beginning of verse [ ( ] @ ROM_4_17
+241	warn	Multiple punctuation marks found [ ,) ] @ ROM_4_17
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_5_3
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_5_8
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_5_11
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_5_12
+241	warn	Multiple punctuation marks found [ ). ] @ ROM_6_1
+241	warn	Multiple punctuation marks found [ , ( ] @ ROM_6_13
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_7_1
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_7_18
+241	error	Multiple punctuation marks found [ , - ] @ ROM_8_5
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_8_23
+241	warn	Multiple punctuation marks found [ ? ( ] @ ROM_8_34
+241	warn	Multiple punctuation marks found [ ); ] @ ROM_9_10
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_9_11
+241	warn	Multiple punctuation marks found [ ). ] @ ROM_9_18
+241	warn	Multiple punctuation marks found [ ? ( ] @ ROM_10_6
+241	warn	Multiple punctuation marks found [ ? ( ] @ ROM_10_7
+241	warn	Multiple punctuation marks found [ )? ] @ ROM_10_8
+241	error	Punctuation mark found at beginning of verse [ ( ] @ ROM_11_8
+241	warn	Multiple punctuation marks found [ , ( ] @ ROM_11_21
+241	warn	Multiple punctuation marks found [ ), ] @ ROM_11_25
+241	warn	Multiple punctuation marks found [ ; ( ] @ ROM_12_1
+241	warn	Multiple punctuation marks found [ , ( ] @ ROM_12_8
+242	warn	Multiple punctuation marks found [ ), ] @ ROM_12_19
+242	warn	Multiple punctuation marks found [ ), ] @ ROM_13_5
+242	warn	Multiple punctuation marks found [ ), ] @ ROM_13_11
+242	warn	Multiple punctuation marks found [ , ( ] @ ROM_14_2
+242	warn	Multiple punctuation marks found [ ). ] @ ROM_14_5
+242	warn	Multiple punctuation marks found [ ), ] @ ROM_14_21
+242	error	Punctuation mark found at beginning of verse [ ( ] @ ROM_16_4
+242	warn	Multiple punctuation marks found [ ,) ] @ ROM_16_4
+242	error	Multiple punctuation marks found [ , - ] @ ROM_16_26
+243	warn	Multiple punctuation marks found [ ), ] @ 1CO_3_2
+243	error	Multiple punctuation marks found [ , - ] @ 1CO_3_12
+243	error	Multiple punctuation marks found [ , - ] @ 1CO_3_22
+243	warn	Multiple punctuation marks found [ )? ] @ 1CO_4_7
+243	warn	Multiple punctuation marks found [ ). ] @ 1CO_4_15
+243	warn	Multiple punctuation marks found [ ), ] @ 1CO_5_3
+243	warn	Multiple punctuation marks found [ )? ] @ 1CO_5_12
+243	warn	Multiple punctuation marks found [ , ( ] @ 1CO_7_28
+243	warn	Multiple punctuation marks found [ ); ] @ 1CO_8_5
+243	warn	Multiple punctuation marks found [ ), ] @ 1CO_8_6
+243	warn	Multiple punctuation marks found [ , ( ] @ 1CO_8_10
+243	warn	Multiple punctuation marks found [ , ( ] @ 1CO_9_10
+244	warn	Multiple punctuation marks found [ ? ( ] @ 1CO_9_18
+244	warn	Multiple punctuation marks found [ ), ] @ 1CO_9_19
+244	warn	Multiple punctuation marks found [ ), ] @ 1CO_9_21
+244	warn	Multiple punctuation marks found [ ); ] @ 1CO_10_13
+244	warn	Multiple punctuation marks found [ ), ] @ 1CO_10_30
+244	warn	Multiple punctuation marks found [ ). ] @ 1CO_12_10
+244	warn	Multiple punctuation marks found [ ). ] @ 1CO_12_27
+244	warn	Multiple punctuation marks found [ ). ] @ 1CO_13_3
+244	warn	Multiple punctuation marks found [ ); ] @ 1CO_13_8
+244	warn	Multiple punctuation marks found [ )? ] @ 1CO_14_15
+244	warn	Multiple punctuation marks found [ ), ] @ 1CO_14_26
+244	warn	Multiple punctuation marks found [ , ( ] @ 1CO_14_27
+244	warn	Multiple punctuation marks found [ ), ] @ 1CO_14_30
+244	error	Punctuation mark found at beginning of verse [ ( ] @ 1CO_15_40
+244	warn	Multiple punctuation marks found [ ), ] @ 1CO_15_46
+244	warn	Multiple punctuation marks found [ ). ] @ 1CO_16_5
+244	warn	Multiple punctuation marks found [ ), ] @ 1CO_16_15
+245	warn	Multiple punctuation marks found [ ". ] @ 2CO_1_18
+245	warn	Multiple punctuation marks found [ ", ] @ 2CO_1_19
+245	warn	Multiple punctuation marks found [ ", ] @ 2CO_1_20
+246	warn	Multiple punctuation marks found [ ?) ] @ 2CO_3_1
+246	error	Punctuation mark found at beginning of verse [ ( ] @ 2CO_3_3
+246	error	Punctuation mark found at beginning of verse [ ( ] @ 2CO_5_7
+246	warn	Multiple punctuation marks found [ .) ] @ 2CO_5_7
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_5_13
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_6_1
+246	error	Punctuation mark found at beginning of verse [ ( ] @ 2CO_6_2
+246	warn	Multiple punctuation marks found [ . ) ] @ 2CO_6_2
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_7_1
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_7_3
+246	warn	Multiple punctuation marks found [ )! ] @ 2CO_7_11
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_7_15
+246	error	Punctuation mark found at beginning of verse [ ( ] @ 2CO_8_13
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_9_7
+246	error	Punctuation mark found at beginning of verse [ ( ] @ 2CO_9_9
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_9_10
+246	error	Punctuation mark found at beginning of verse [ ( ] @ 2CO_10_4
+246	warn	Multiple punctuation marks found [ ,) ] @ 2CO_10_4
+246	error	Punctuation mark found at beginning of verse [ ( ] @ 2CO_10_9
+246	error	Multiple punctuation marks found [ , - ] @ 2CO_10_9
+246	error	Multiple punctuation marks found [ , - ] @ 2CO_10_10
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_10_11
+246	warn	Multiple punctuation marks found [ , ( ] @ 2CO_10_13
+246	warn	Multiple punctuation marks found [ , ( ] @ 2CO_11_3
+246	error	Punctuation mark found at beginning of verse [ ( ] @ 2CO_11_10
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_11_10
+246	warn	Multiple punctuation marks found [ ). ] @ 2CO_11_11
+246	warn	Multiple punctuation marks found [ , ( ] @ 2CO_11_12
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_11_20
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_11_21
+246	warn	Multiple punctuation marks found [ ? ( ] @ 2CO_11_23
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_12_2
+246	warn	Multiple punctuation marks found [ ), ] @ 2CO_12_3
+247	warn	Multiple punctuation marks found [ ), ] @ GAL_1_1
+247	warn	Multiple punctuation marks found [ ), ] @ GAL_1_10
+247	warn	Multiple punctuation marks found [ ); ] @ GAL_2_6
+247	error	Punctuation mark found at beginning of verse [ ( ] @ GAL_2_8
+247	warn	Multiple punctuation marks found [ ;) ] @ GAL_2_8
+247	warn	Multiple punctuation marks found [ , ( ] @ GAL_3_1
+247	warn	Multiple punctuation marks found [ , ( ] @ GAL_3_13
+247	warn	Multiple punctuation marks found [ ; ( ] @ GAL_3_19
+247	warn	Multiple punctuation marks found [ , ( ] @ GAL_3_24
+247	warn	Multiple punctuation marks found [ ), ] @ GAL_4_12
+247	warn	Multiple punctuation marks found [ , ( ] @ GAL_4_19
+247	warn	Multiple punctuation marks found [ ; ( ] @ GAL_5_4
+247	warn	Multiple punctuation marks found [ ), ] @ GAL_5_8
+247	warn	Multiple punctuation marks found [ , ( ] @ GAL_5_17
+248	warn	Multiple punctuation marks found [ ), ] @ EPH_1_13
+248	warn	Multiple punctuation marks found [ ), ] @ EPH_2_1
+248	warn	Multiple punctuation marks found [ ), ] @ EPH_2_5
+248	warn	Multiple punctuation marks found [ ), ] @ EPH_3_4
+248	error	Punctuation mark found at beginning of verse [ ( ] @ EPH_4_9
+248	warn	Multiple punctuation marks found [ .) ] @ EPH_4_10
+248	warn	Multiple punctuation marks found [ , ( ] @ EPH_4_16
+248	error	Punctuation mark found at beginning of verse [ ( ] @ EPH_5_9
+248	warn	Multiple punctuation marks found [ ,) ] @ EPH_5_9
+249	error	Punctuation mark found at beginning of verse [ ( ] @ PHP_1_4
+249	warn	Multiple punctuation marks found [ ,) ] @ PHP_1_4
+249	warn	Multiple punctuation marks found [ ), ] @ PHP_1_13
+249	warn	Multiple punctuation marks found [ ), ] @ PHP_1_23
+249	error	Multiple punctuation marks found [ , - ] @ PHP_3_4
+249	warn	Multiple punctuation marks found [ ), ] @ PHP_3_9
+249	warn	Multiple punctuation marks found [ ), ] @ PHP_3_13
+249	warn	Multiple punctuation marks found [ ), ] @ PHP_3_16
+249	error	Punctuation mark found at beginning of verse [ ( ] @ PHP_3_18
+249	warn	Multiple punctuation marks found [ .) ] @ PHP_3_19
+250	error	Multiple punctuation marks found [ , - ] @ COL_1_16
+250	warn	Multiple punctuation marks found [ ), ] @ COL_1_19
+250	error	Punctuation mark found at beginning of verse [ ( ] @ COL_2_15
+250	error	Punctuation mark found at beginning of verse [ ( ] @ COL_2_21
+250	warn	Multiple punctuation marks found [ ), ] @ COL_2_21
+250	warn	Multiple punctuation marks found [ , ( ] @ COL_2_23
+250	warn	Multiple punctuation marks found [ , ( ] @ COL_3_2
+250	warn	Multiple punctuation marks found [ ). ] @ COL_3_25
+250	warn	Multiple punctuation marks found [ ). ] @ COL_4_9
+250	warn	Multiple punctuation marks found [ ), ] @ COL_4_10
+250	warn	Multiple punctuation marks found [ ,) ] @ 1TH_2_13
+250	warn	Multiple punctuation marks found [ ). ] @ 1TH_2_16
+251	warn	Multiple punctuation marks found [ ), ] @ 1TH_4_12
+251	warn	Multiple punctuation marks found [ : " ] @ 1TH_5_3
+251	warn	Multiple punctuation marks found [ , ( ] @ 1TH_5_8
+251	warn	Multiple punctuation marks found [ ). ] @ 1TH_5_24
+251	warn	Multiple punctuation marks found [ , ( ] @ 2TH_2_7
+252	error	Punctuation mark found at beginning of verse [ ( ] @ 1TI_3_5
+252	warn	Multiple punctuation marks found [ ?) ] @ 1TI_3_5
+252	warn	Multiple punctuation marks found [ , ( ] @ 1TI_5_5
+252	warn	Multiple punctuation marks found [ ). ] @ 1TI_5_21
+252	warn	Multiple punctuation marks found [ ), ] @ 2TI_2_4
+252	warn	Multiple punctuation marks found [ , ( ] @ 2TI_2_14
+252	warn	Multiple punctuation marks found [ ), ] @ 2TI_2_17
+253	warn	Multiple punctuation marks found [ , ( ] @ TIT_1_8
+253	warn	Multiple punctuation marks found [ , ( ] @ TIT_2_3
+254	warn	Multiple punctuation marks found [ ): ] @ HEB_1_10
+254	warn	Multiple punctuation marks found [ ): ] @ HEB_3_7
+254	warn	Multiple punctuation marks found [ : " ] @ HEB_3_15
+254	warn	Multiple punctuation marks found [ ), ] @ HEB_3_16
+254	warn	Multiple punctuation marks found [ : " ] @ HEB_4_3
+254	warn	Multiple punctuation marks found [ : " ] @ HEB_4_4
+254	warn	Multiple punctuation marks found [ : " ] @ HEB_4_5
+254	warn	Multiple punctuation marks found [ , " ] @ HEB_4_7
+254	warn	Multiple punctuation marks found [ : " ] @ HEB_5_5
+254	warn	Multiple punctuation marks found [ : " ] @ HEB_5_6
+254	warn	Multiple punctuation marks found [ ). ] @ HEB_5_7
+254	warn	Multiple punctuation marks found [ ), ] @ HEB_5_12
+254	warn	Multiple punctuation marks found [ , ( ] @ HEB_5_13
+254	warn	Multiple punctuation marks found [ : " ] @ HEB_6_14
+254	error	Multiple punctuation marks found [ , - ] @ HEB_6_16
+254	warn	Multiple punctuation marks found [ ), ] @ HEB_7_2
+255	warn	Multiple punctuation marks found [ ), ] @ HEB_7_11
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_7_17
+255	error	Punctuation mark found at beginning of verse [ ( ] @ HEB_7_21
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_7_21
+255	warn	Multiple punctuation marks found [ , ( ] @ HEB_8_4
+255	warn	Multiple punctuation marks found [ . " ] @ HEB_8_5
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_8_8
+255	warn	Multiple punctuation marks found [ ." ] @ HEB_8_12
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_8_13
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_9_20
+255	warn	Multiple punctuation marks found [ ). ] @ HEB_9_22
+255	error	Punctuation mark found at beginning of verse [ ( ] @ HEB_9_26
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_10_5
+255	warn	Multiple punctuation marks found [ ." ] @ HEB_10_7
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_10_8
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_10_9
+255	error	Punctuation mark found at beginning of verse [ " ] @ HEB_10_16
+255	warn	Multiple punctuation marks found [ ", ] @ HEB_10_16
+255	warn	Multiple punctuation marks found [ ." ] @ HEB_10_17
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_10_30
+255	error	Punctuation mark found at beginning of verse [ " ] @ HEB_10_38
+255	warn	Multiple punctuation marks found [ ," ] @ HEB_10_38
+255	warn	Multiple punctuation marks found [ ), ] @ HEB_11_4
+255	warn	Multiple punctuation marks found [ ": ] @ HEB_11_5
+255	warn	Multiple punctuation marks found [ ); ] @ HEB_11_17
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_11_18
+255	warn	Multiple punctuation marks found [ ). ] @ HEB_11_19
+255	warn	Multiple punctuation marks found [ ". ] @ HEB_11_21
+255	error	Punctuation mark found at beginning of verse [ ( ] @ HEB_11_38
+255	warn	Multiple punctuation marks found [ ,) ] @ HEB_11_38
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_12_5
+255	warn	Multiple punctuation marks found [ ." ] @ HEB_12_6
+255	warn	Multiple punctuation marks found [ ), ] @ HEB_12_10
+255	warn	Multiple punctuation marks found [ ", ] @ HEB_12_12
+255	warn	Multiple punctuation marks found [ ", ] @ HEB_12_13
+255	error	Punctuation mark found at beginning of verse [ ( ] @ HEB_12_20
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_12_20
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_12_21
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_12_26
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_12_27
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_13_5
+255	warn	Multiple punctuation marks found [ : " ] @ HEB_13_6
+255	warn	Multiple punctuation marks found [ ", ] @ HEB_13_15
+255	warn	Multiple punctuation marks found [ ); ] @ HEB_13_17
+256	warn	Multiple punctuation marks found [ : " ] @ JAS_2_8
+256	warn	Multiple punctuation marks found [ : " ] @ JAS_2_11
+256	warn	Multiple punctuation marks found [ ). ] @ JAS_2_13
+256	warn	Multiple punctuation marks found [ : " ] @ JAS_2_23
+256	warn	Multiple punctuation marks found [ ), ] @ JAS_3_15
+256	warn	Multiple punctuation marks found [ : " ] @ JAS_4_5
+256	warn	Multiple punctuation marks found [ : " ] @ JAS_4_6
+256	warn	Multiple punctuation marks found [ ), ] @ JAS_4_8
+256	error	Punctuation mark found at beginning of verse [ ( ] @ JAS_4_14
+256	warn	Multiple punctuation marks found [ .) ] @ JAS_4_14
+256	warn	Multiple punctuation marks found [ ), ] @ 1PE_1_6
+257	warn	Multiple punctuation marks found [ ), ] @ 1PE_1_12
+257	warn	Multiple punctuation marks found [ : " ] @ 1PE_1_16
+257	warn	Multiple punctuation marks found [ ." ] @ 1PE_1_25
+257	warn	Multiple punctuation marks found [ : " ] @ 1PE_2_6
+257	error	Multiple punctuation marks found [ , - ] @ 1PE_2_7
+257	warn	Multiple punctuation marks found [ ), ] @ 1PE_2_12
+257	warn	Multiple punctuation marks found [ ". ] @ 1PE_2_24
+257	warn	Multiple punctuation marks found [ ). ] @ 1PE_3_2
+257	error	Punctuation mark found at beginning of verse [ " ] @ 1PE_3_10
+257	warn	Multiple punctuation marks found [ ." ] @ 1PE_3_12
+257	warn	Multiple punctuation marks found [ ), ] @ 1PE_3_21
+257	error	Multiple punctuation marks found [ , - ] @ 1PE_4_14
+257	warn	Multiple punctuation marks found [ ?" ] @ 1PE_4_18
+257	warn	Multiple punctuation marks found [ ." ] @ 1PE_5_5
+257	warn	Multiple punctuation marks found [ ). ] @ 1PE_5_10
+257	warn	Multiple punctuation marks found [ ), ] @ 2PE_1_3
+257	warn	Multiple punctuation marks found [ ). ] @ 2PE_1_7
+257	warn	Multiple punctuation marks found [ : " ] @ 2PE_1_17
+257	error	Punctuation mark found at beginning of verse [ ( ] @ 2PE_2_8
+257	warn	Multiple punctuation marks found [ ;) ] @ 2PE_2_8
+257	error	Multiple punctuation marks found [ , - ] @ 2PE_2_9
+257	warn	Multiple punctuation marks found [ : " ] @ 2PE_2_22
+258	error	Multiple punctuation marks found [ , - ] @ 1JN_1_1
+258	error	Punctuation mark found at beginning of verse [ ( ] @ 1JN_1_2
+258	warn	Multiple punctuation marks found [ ;) ] @ 1JN_1_2
+258	error	Multiple punctuation marks found [ , - ] @ 1JN_2_16
+258	error	Multiple punctuation marks found [ , - ] @ 1JN_2_25
+258	warn	Multiple punctuation marks found [ , ( ] @ 1JN_3_20
+258	error	Multiple punctuation marks found [ , - ] @ 1JN_3_24
+258	warn	Multiple punctuation marks found [ ), ] @ 2JN_1_1
+259	warn	Multiple punctuation marks found [ , ( ] @ 3JN_1_11
+259	error	Multiple punctuation marks found [ , - ] @ JUD_1_1
+259	warn	Multiple punctuation marks found [ : " ] @ JUD_1_14
+259	warn	Multiple punctuation marks found [ ." ] @ JUD_1_15
+259	warn	Multiple punctuation marks found [ ,) ] @ JUD_1_19
+262	error	Punctuation mark found at beginning of verse [ ( ] @ REV_1_6
+262	warn	Multiple punctuation marks found [ ,) ] @ REV_1_6
+262	warn	Multiple punctuation marks found [ ): ] @ REV_1_20
+262	warn	Multiple punctuation marks found [ ), ] @ REV_2_9
+262	warn	Multiple punctuation marks found [ ), ] @ REV_9_9
+262	warn	Multiple punctuation marks found [ ). ] @ REV_9_11
+262	warn	Multiple punctuation marks found [ ); ] @ REV_9_19
+263	error	Multiple punctuation marks found [ , - ] @ REV_12_1
+263	warn	Multiple punctuation marks found [ , ( ] @ REV_12_14
+263	warn	Multiple punctuation marks found [ , ( ] @ REV_13_3
+263	warn	Multiple punctuation marks found [ ), ] @ REV_14_8
+263	warn	Multiple punctuation marks found [ , ( ] @ REV_17_8
+263	error	Multiple punctuation marks found [ , - ] @ REV_17_11
+263	warn	Multiple punctuation marks found [ ), ] @ REV_18_2
+263	warn	Multiple punctuation marks found [ ,) ] @ REV_18_10
+263	warn	Multiple punctuation marks found [ ), ] @ REV_18_16
+263	warn	Multiple punctuation marks found [ ), ] @ REV_18_19
+263	warn	Multiple punctuation marks found [ ). ] @ REV_21_17
+263	warn	Multiple punctuation marks found [ ), ] @ REV_22_2
