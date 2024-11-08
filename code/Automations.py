@@ -191,24 +191,33 @@ def form_text_solid():
     except: pass
 
 def form_text_lined():
-    gls=[]
-    for fp in original_file_paths:
-        with open(fp,encoding='utf-8',mode='r') as f:
-            ls=f.readlines()
-        bn=ls[2][3:].strip()
-        cn=1
-        for l in ls:
-            if '\\p' in l or '\\id' in l or '\\h' in l or '\\toc1' in l or '\\toc2' in l or '\\toc3' in l or '\\mt1' in l:
+    avoid_these=[
+        'p',
+        'id',
+        'h',
+        'mt1',
+        'toc1',
+        'toc2',
+        'toc3',
+    ]
+    all_lines=[]
+    for file_path in original_file_paths:
+        with open(file_path,encoding='utf-8',mode='r') as f:
+            lines=f.readlines()
+        Book_name=lines[2][3:].strip()
+        chapter_number=1
+        for line in lines:
+            if any(tag in line for tag in avoid_these): continue
+            if '\\c ' in line:
+                chapter_number=line[3:].split()[0]
                 continue
-            elif '\\c ' in l:
-                cn=l[3:].split()[0]
-                continue
-            v=l[3:].strip()
-            r=f'{bn} {cn}:{remove_usfm_tags(re.sub(r'\\v\s\d+\s','',v))}'
-            gls.append(r)
+            # Remove the `\v ` tag from line
+            verse_text=line[3:].strip()
+            line=f'{Book_name} {chapter_number}:{remove_usfm_tags(verse_text)}'
+            all_lines.append(line)
     try:
         with open(os.path.join(text_lined_folder_path,'Lined.txt'),encoding='utf-8',mode='w') as f:
-            f.write('\n'.join(gls))
+            f.write('\n'.join(all_lines))
     except: pass
 
 def perform_automations():
