@@ -86,6 +86,7 @@ PSA,125,1,В поваючі,Вповаючі,Separated letter
 ZEC,1,5,"ваші,-","ваші -",Extra symbol
 ZEC,1,5,ваші -,ваші —,Wrong dash
 ZEC,2,4,сказав,І сказав,Missing letter
+ZEC,2,8,небесних.:,небесних:,Extra dot
 ZEC,2,8,обдерали.;,обдерали;,Extra dot
 ZEC,3,8,- сї,— сї,Wrong dash
 ZEC,4,1,вернувся,І вернувся,Missing letter
