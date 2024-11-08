@@ -4,36 +4,30 @@ import glob
 import time
 from shutil import copy2
 
-ROOT_PATH=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
-ORIGINAL_FILES_PATH=os.path.join(ROOT_PATH,"Original")
-ORIGINAL_FILES=glob.glob(ORIGINAL_FILES_PATH+"\\*.USFM")
-OUTPUT_FOLDER_PATH=os.path.join(ROOT_PATH,'Output')
-TEXT_TBS_FOLDER_PATH=os.path.join(OUTPUT_FOLDER_PATH,'TXT TBS')
-TEXT_SOLID_FOLDER_PATH=os.path.join(OUTPUT_FOLDER_PATH,'TXT SLD')
-LOG_FILES_PATH=os.path.join(ROOT_PATH,"logs")
-PARATEXT_PROJECT_PATH=os.path.join("C:\\My Paratext 9 Projects\\BKS")
-DEFAULT = '\033[0m'; BOLD = '\033[1m';ITALIC = '\033[3m';UNDERLINE = '\033[4m';UNDERLINE_THICK = '\033[21m';HIGHLIGHTED = '\033[7m';HIGHLIGHTED_BLACK = '\033[40m';HIGHLIGHTED_RED = '\033[41m';HIGHLIGHTED_GREEN = '\033[42m';HIGHLIGHTED_YELLOW = '\033[43m';HIGHLIGHTED_BLUE = '\033[44m';HIGHLIGHTED_PURPLE = '\033[45m';HIGHLIGHTED_CYAN = '\033[46m';HIGHLIGHTED_GREY = '\033[47m';HIGHLIGHTED_GREY_LIGHT = '\033[100m';HIGHLIGHTED_RED_LIGHT = '\033[101m';HIGHLIGHTED_GREEN_LIGHT = '\033[102m';HIGHLIGHTED_YELLOW_LIGHT = '\033[103m';HIGHLIGHTED_BLUE_LIGHT = '\033[104m';HIGHLIGHTED_PURPLE_LIGHT = '\033[105m';HIGHLIGHTED_CYAN_LIGHT = '\033[106m';HIGHLIGHTED_WHITE_LIGHT = '\033[107m';STRIKE_THROUGH = '\033[9m';MARGIN_1 = '\033[51m';MARGIN_2 = '\033[52m';BLACK = '\033[30m';RED_DARK = '\033[31m';GREEN_DARK = '\033[32m';YELLOW_DARK = '\033[33m';BLUE_DARK = '\033[34m';PURPLE_DARK = '\033[35m';CYAN_DARK = '\033[36m';GREY_DARK = '\033[37m';BLACK_LIGHT = '\033[90m';RED = '\033[91m';GREEN = '\033[92m';YELLOW = '\033[93m';BLUE = '\033[94m';PURPLE = '\033[95m';CYAN = '\033[96m';WHITE = '\033[97m';echo = lambda values, color=DEFAULT: print("%s%s%s" % (color, values, DEFAULT)) if color else print("%s%s" % (values, DEFAULT)) # source: https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal#:~:text=%2C%20color%3DCYAN)-,1%20Line,-Simply%20copy%20paste
-yes=lambda section,text:echo(f"{section.upper()}: {text}",color=CYAN_DARK)
-fail=lambda section,text:echo(f"{section.upper()}: fail {text}",color=RED_DARK)
-warn=lambda section,text:echo(f"{section.upper()}: {text}",color=BOLD)
+root=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
+original_folder_path=os.path.join(root,"Original")
+original_file_paths=glob.glob(original_folder_path+"\\*.USFM")
+output_folder_path=os.path.join(root,'Output')
+text_TBS_folder_path=os.path.join(output_folder_path,'TXT TBS')
+text_solid_folder_path=os.path.join(output_folder_path,'TXT SLD')
+logs_folder_path=os.path.join(root,"logs")
+paratext_folder_path=os.path.join("C:\\My Paratext 9 Projects\\BKS")
 
 def copy_to_paratext():
-    section="PARA"
     try:
-        for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
+        for full_file_name in os.listdir(original_folder_path):
             copy2(
-                os.path.join(ORIGINAL_FILES_PATH,full_file_name),
-                os.path.join(PARATEXT_PROJECT_PATH,full_file_name)
+                os.path.join(original_folder_path,full_file_name),
+                os.path.join(paratext_folder_path,full_file_name)
             )
     except: 
-        fail(section,"copying files")
-    yes(section,"copy files")
+        pass
 
 def write_file(
     section:str,
     file_name:str,
     lines:list,
-    root:str=ROOT_PATH,
+    root:str=root,
     tries:int=0
 ):
     # TODO remove this
@@ -85,10 +79,10 @@ def form_text_lined():
 
     section="HUGE"
     global_lines=[]
-    for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
+    for full_file_name in os.listdir(original_folder_path):
         try:
-            target_file_path=os.path.join(ORIGINAL_FILES_PATH,full_file_name)
-            with open(os.path.join(ORIGINAL_FILES_PATH,full_file_name),encoding='utf-8',mode='r') as f:
+            target_file_path=os.path.join(original_folder_path,full_file_name)
+            with open(os.path.join(original_folder_path,full_file_name),encoding='utf-8',mode='r') as f:
                 current_lines=f.readlines()
         except:
             fail(section,f"reading {full_file_name}")
@@ -128,7 +122,7 @@ def form_logs():
     QT=[header]
     F=[header]
 
-    for file_path in ORIGINAL_FILES:
+    for file_path in original_file_paths:
         with open(file_path,encoding='utf-8',mode='r') as f:
             lines=f.readlines()
 
@@ -164,16 +158,16 @@ def form_logs():
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     F.append(res)
 
-    write_file(section,"WJ.csv",combine_lines(WJ),LOG_FILES_PATH)
-    write_file(section,"ND.csv",combine_lines(ND),LOG_FILES_PATH)
-    write_file(section,"QT.csv",combine_lines(QT),LOG_FILES_PATH)
-    write_file(section,"F.csv",combine_lines(F),LOG_FILES_PATH)
+    write_file(section,"WJ.csv",combine_lines(WJ),logs_folder_path)
+    write_file(section,"ND.csv",combine_lines(ND),logs_folder_path)
+    write_file(section,"QT.csv",combine_lines(QT),logs_folder_path)
+    write_file(section,"F.csv",combine_lines(F),logs_folder_path)
     yes(section,"form files")
 
 def form_text_tbs():
     section="TEXT"
-    for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
-        target_file_path=os.path.join(ORIGINAL_FILES_PATH,full_file_name)
+    for full_file_name in os.listdir(original_folder_path):
+        target_file_path=os.path.join(original_folder_path,full_file_name)
         with open(file=target_file_path,encoding='utf-8',mode='r') as f:
             lines=f.readlines()
         
@@ -229,12 +223,12 @@ def form_text_tbs():
         file_extension="TXT"
         full_file_name=f'{file_name}.{file_extension}'
 
-        write_file(section,full_file_name,lines,TEXT_TBS_FOLDER_PATH)
+        write_file(section,full_file_name,lines,text_TBS_folder_path)
     yes(section,f"form files")
 
 def form_text_solid():
     all_lines=[]
-    for file_path in ORIGINAL_FILES:
+    for file_path in original_file_paths:
         with open(file_path,encoding='utf-8',mode='r') as filer:
             lines=filer.readlines()
         lines=[
@@ -258,7 +252,7 @@ def form_text_solid():
         # Replace all new line tags
         [line.replace('\n','') for line in all_lines]
     )
-    with open(os.path.join(TEXT_SOLID_FOLDER_PATH,'Solid.txt'),encoding='utf-8',mode='w') as filer:
+    with open(os.path.join(text_solid_folder_path,'Solid.txt'),encoding='utf-8',mode='w') as filer:
         filer.write(res)
 
 def perform_automations():
@@ -268,11 +262,11 @@ def perform_automations():
     form_logs()
 
 def monitor_files_for_changes():
-    latest_file=max(ORIGINAL_FILES,key=os.path.getmtime)
+    latest_file=max(original_file_paths,key=os.path.getmtime)
     last_modification_time=os.path.getmtime(latest_file)
     perform_automations()
     while 1:
-        latest_file=max(ORIGINAL_FILES,key=os.path.getmtime)
+        latest_file=max(original_file_paths,key=os.path.getmtime)
         current_modification_time=os.path.getmtime(latest_file)
         if last_modification_time!=current_modification_time:
             perform_automations()
