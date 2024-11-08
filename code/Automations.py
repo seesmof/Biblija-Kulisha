@@ -15,107 +15,20 @@ paratext_folder_path=os.path.join("C:\\My Paratext 9 Projects\\BKS")
 
 def copy_to_paratext():
     try:
-        for full_file_name in os.listdir(original_folder_path):
+        for file_path in original_file_paths:
             copy2(
-                os.path.join(original_folder_path,full_file_name),
-                os.path.join(paratext_folder_path,full_file_name)
+                file_path,
+                os.path.join(paratext_folder_path,file_path.split('\\')[-1])
             )
     except: 
         pass
 
-def write_file(
-    section:str,
-    file_name:str,
-    lines:list,
-    root:str=root,
-    tries:int=0
+def remove_usfm_tags(
+    line:str
 ):
-    # TODO remove this
-    if tries>=3:
-        fail(section,f"writing {file_name}")
-        return
-    try:
-        target_file_path=os.path.join(root,file_name)
-        with open(file=target_file_path,encoding='utf-8',mode='w') as f:
-            f.writelines(lines)
-    except:
-        write_file(section,file_name,lines,root,tries+1)
-
-def combine_lines(lines:list):
-    # TODO figure out why this is here
-    return [
-        f'{line}\n' if line_index!=len(lines)-1 else line for line_index,line in enumerate(lines)
-    ]
-
-def remove_usfm_tags(line:str):
     return line.replace("\\wj*","").replace("\\wj ","").replace("\\+wj*","").replace("\\+wj ","").replace("\\nd*","").replace("\\nd ","").replace("\\+nd*","").replace("\\+nd ","").replace("\\qt*","").replace("\\qt ","").replace("\\+qt*","").replace("\\+qt ","")
 
-def form_text_lined():
-    def handle_quotes(verse:str):
-        quote:bool=False
-        words=[]
-        for word in verse.split():
-            if word=='\\qt' or word=='\\+qt': quote=True
-            words.append(word.upper() if quote else word)
-            if '\\qt*' in word or '\\+qt*' in word: quote=False
-        return " ".join(words).replace("\\QT*","").replace("\\QT ","").replace("\\+QT*","").replace("\\+QT ","")
-
-    def replace_plain_quotes_with_proper(verse:str):
-        double_quotes="“ ”"
-        double_open,double_close=double_quotes.split()
-        # TODO add handling for nested quotes, try using stack somehow: JESUS THANK YOU LORD GOD ALMIGHTY HALLELUJAH AMEN
-        single_quotes="‘ ’"
-        single_open,single_close=single_quotes.split()
-
-        opened:bool=False
-        words=[]
-        for word in verse.split():
-            if '"' in word:
-                opened=not opened
-                words.append(word.replace('"',double_open if opened else double_close))
-            else: 
-                words.append(word)
-        return " ".join(words)
-
-    section="HUGE"
-    global_lines=[]
-    for full_file_name in os.listdir(original_folder_path):
-        try:
-            target_file_path=os.path.join(original_folder_path,full_file_name)
-            with open(os.path.join(original_folder_path,full_file_name),encoding='utf-8',mode='r') as f:
-                current_lines=f.readlines()
-        except:
-            fail(section,f"reading {full_file_name}")
-
-        Book=current_lines[2].replace("\\h ","").strip()
-        chapter=1
-        for line in current_lines:
-            if '\\c ' in line:
-                chapter=line[3:].strip()
-            elif '\\v ' in line:
-                # remove verse tag
-                verse=line[3:].strip()
-                # remove WJ tags 
-                verse=verse.replace("\\wj*","").replace("\\wj ","")
-                # handle ND tags 
-                verse="".join(
-                    match.upper() 
-                    if ' ' not in match 
-                    else match 
-                    for match in re.split(r'\\\+?nd (.*?)\\\+?nd\*',verse)
-                )
-                # handle QT tags
-                verse=handle_quotes(verse)
-                # handle Strong's numbers
-                verse=re.sub(r'\|strong=\"[GH]\d{4}\"\\w\*',"",verse).replace("\\w ","")
-                global_lines.append(f'{Book} {chapter}:{verse}')
-
-    write_file(section,"Original.txt",combine_lines(global_lines))
-    yes(section,"form file")
-
 def form_logs():
-    section="LOGS"
-
     header='Book,Chapter,Verse,Content'
     WJ=[header]
     ND=[header]
@@ -162,15 +75,12 @@ def form_logs():
     write_file(section,"ND.csv",combine_lines(ND),logs_folder_path)
     write_file(section,"QT.csv",combine_lines(QT),logs_folder_path)
     write_file(section,"F.csv",combine_lines(F),logs_folder_path)
-    yes(section,"form files")
 
 def form_text_tbs():
-    section="TEXT"
-    for full_file_name in os.listdir(original_folder_path):
-        target_file_path=os.path.join(original_folder_path,full_file_name)
-        with open(file=target_file_path,encoding='utf-8',mode='r') as f:
+    for file_path in original_file_paths:
+        with open(file_path,encoding='utf-8',mode='r') as f:
             lines=f.readlines()
-        
+
         lines=[
             line for line in lines 
             # Remove `\ide`
@@ -215,22 +125,21 @@ def form_text_tbs():
             for line in lines
         ]
 
-        file_name,file_extension=full_file_name.split(".")
+        file_name,file_extension=file_path.split('\\')[-1].split(".")
         # Remove number and BKS from filename
         # So `41MATBKS` will be `MAT`
         file_name=file_name[2:].replace("BKS","")
         # Change file extension and form full name
         file_extension="TXT"
-        full_file_name=f'{file_name}.{file_extension}'
+        file_path=f'{file_name}.{file_extension}'
 
-        write_file(section,full_file_name,lines,text_TBS_folder_path)
-    yes(section,f"form files")
+        write_file(section,file_path,lines,text_TBS_folder_path)
 
 def form_text_solid():
     all_lines=[]
     for file_path in original_file_paths:
-        with open(file_path,encoding='utf-8',mode='r') as filer:
-            lines=filer.readlines()
+        with open(file_path,encoding='utf-8',mode='r') as f:
+            lines=f.readlines()
         lines=[
             remove_usfm_tags(
                 # Match verse tags and numbers and remove them
@@ -252,8 +161,8 @@ def form_text_solid():
         # Replace all new line tags
         [line.replace('\n','') for line in all_lines]
     )
-    with open(os.path.join(text_solid_folder_path,'Solid.txt'),encoding='utf-8',mode='w') as filer:
-        filer.write(res)
+    with open(os.path.join(text_solid_folder_path,'Solid.txt'),encoding='utf-8',mode='w') as f:
+        f.write(res)
 
 def perform_automations():
     copy_to_paratext()
