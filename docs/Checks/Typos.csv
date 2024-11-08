@@ -110,6 +110,7 @@ ZEC,6,4,добродію ?,добродію?,Extra space
 ZEC,6,4,добродію,добродїю,Wrong letter
 ZEC,6,6,"полуденні.,",полуденні.,Extra symbol
 ZEC,6,7,повелів,повелїв,Wrong letter
+ZEC,6,7,землю !,землю!,Extra space
 ZEC,6,12,муж -,муж —,Wrong dash
 ZEC,7,1,четвертому,У четвертому,Missing letter
 ZEC,7,3,пророків:-,пророків:,Extra symbol
