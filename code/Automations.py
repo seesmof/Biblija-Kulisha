@@ -27,7 +27,17 @@ def copy_to_paratext():
 def remove_usfm_tags(
     line:str
 ):
-    return line.replace("\\wj*","").replace("\\wj ","").replace("\\+wj*","").replace("\\+wj ","").replace("\\nd*","").replace("\\nd ","").replace("\\+nd*","").replace("\\+nd ","").replace("\\qt*","").replace("\\qt ","").replace("\\+qt*","").replace("\\+qt ","")
+    tags_to_remove=[
+        'wj',
+        'nd',
+        'qt',
+    ]
+    for tag in tags_to_remove:
+        line=line.replace(f'\\{tag} ','').replace(f'\\{tag}*','')
+        line=line.replace(f'\\+{tag} ','').replace(f'\\+{tag}*','')
+    footnote_pattern=r'\\f(.*?)\\f\*'
+    line=re.sub(footnote_pattern,'',line)
+    return line
 
 def form_logs():
     header='Book,Chapter,Verse,Content'
@@ -207,11 +217,17 @@ def form_text_lined():
     except: pass
 
 def perform_automations():
+    print()
     copy_to_paratext()
+    print('Copied Bible files to Paratext')
     form_text_tbs()
+    print('Formed TBS Bible text file')
     form_text_solid()
+    print('Formed solid Bible text file')
     form_text_lined()
+    print('Formed lined Bible text file')
     form_logs()
+    print('Formed log files')
 
 def monitor_files_for_changes():
     latest_file=max(original_file_paths,key=os.path.getmtime)
