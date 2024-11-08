@@ -104,5 +104,6 @@ ZEC,9,10,поторошу,поторощу,Wrong letter
 ZEC,9,10,та в,та й,Wrong letter
 ZEC,9,14,зявитьея,зʼявитьея,Missing symbol
 ZEC,9,14,зʼявитьея,зʼявиться,Wrong letter
+ACT,22,20,Почувши,(Почувши,Missing opening bracket: at the end of this verse there is a closing circular bracket. The opening one is nowhere to be found. After checking English Bibles like KJV and DRA, they have this whole verse in brackets. Thus we also add an opening bracket at the beginning here.
 REV,22,20,хутко!  Амінь,хутко! Амінь,Extra space
 REV,22,20,Амінь.  О,Амінь. О,Extra space
