@@ -87,6 +87,7 @@ ZEC,1,3,ваc,вас,Wrong letter
 ZEC,1,5,"ваші,-","ваші -",Extra symbol
 ZEC,1,5,ваші -,ваші —,Wrong dash
 ZEC,1,5,- чи,— чи,Wrong dash
+ZEC,1,6,говорили :,говорили:,Extra space
 ZEC,2,4,сказав,І сказав,Missing letter
 ZEC,2,8,небесних.:,небесних:,Extra dot
 ZEC,2,8,обдерали.;,обдерали;,Extra dot
