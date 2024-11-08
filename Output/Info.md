@@ -1,0 +1,2 @@
+`TXT TBS` contains text files formatted with Trinitarian Bible Society standards described in `TBS.docx`
+`TXT SLD` contains a solid text file with no formatting or separation, and a generated .pdf with Verdana font
