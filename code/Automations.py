@@ -46,10 +46,7 @@ def write_file(
 
 def combine_lines(lines:list):
     return [
-        l+'\n' 
-        if i!=len(lines)-1 
-        else l 
-        for i,l in enumerate(lines)
+        f'{line}\n' if line_index!=len(lines)-1 else line for line_index,line in enumerate(lines)
     ]
 
 def remove_usfm_tags(line:str):
