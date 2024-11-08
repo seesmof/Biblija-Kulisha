@@ -104,6 +104,7 @@ ZEC,9,10,поторошу,поторощу,Wrong letter
 ZEC,9,10,та в,та й,Wrong letter
 ZEC,9,14,зявитьея,зʼявитьея,Missing symbol
 ZEC,9,14,зʼявитьея,зʼявиться,Wrong letter
+ZEC,9,16,часи],"часи,",Wrong symbol
 ZEC,11,14,Тоді,Тодї,Wrong letter
 ZEC,11,14,палицю -,палицю —,Wrong dash
 ZEC,11,14,(палицю,палицю,Extra symbol
