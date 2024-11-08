@@ -225,7 +225,7 @@ def perform_automations():
     copy_to_paratext()
     print('Copied Bible files to Paratext')
     form_text_tbs()
-    print('Formed TBS Bible text file')
+    print('Formed TBS Bible text files')
     form_text_solid()
     print('Formed solid Bible text file')
     form_text_lined()
