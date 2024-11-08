@@ -15,7 +15,7 @@ yes=lambda section,text:echo(f"{section.upper()}: {text}",color=CYAN_DARK)
 fail=lambda section,text:echo(f"{section.upper()}: fail {text}",color=RED_DARK)
 warn=lambda section,text:echo(f"{section.upper()}: {text}",color=BOLD)
 
-def copy_original_to_paratext():
+def copy_to_paratext():
     section="PARA"
     try:
         for full_file_name in os.listdir(ORIGINAL_FILES_PATH):
@@ -55,7 +55,7 @@ def combine_lines(lines:list):
 def remove_usfm_tags(line:str):
     return line.replace("\\wj*","").replace("\\wj ","").replace("\\+wj*","").replace("\\+wj ","").replace("\\nd*","").replace("\\nd ","").replace("\\+nd*","").replace("\\+nd ","").replace("\\qt*","").replace("\\qt ","").replace("\\+qt*","").replace("\\+qt ","")
 
-def make_single_text_file():
+def form_text_lined():
     def handle_quotes(verse:str):
         quote:bool=False
         words=[]
@@ -118,7 +118,7 @@ def make_single_text_file():
     write_file(section,"Original.txt",combine_lines(global_lines))
     yes(section,"form file")
 
-def form_log_files():
+def form_logs():
     section="LOGS"
 
     header='Book,Chapter,Verse,Content'
@@ -169,7 +169,7 @@ def form_log_files():
     write_file(section,"F.csv",combine_lines(F),LOG_FILES_PATH)
     yes(section,"form files")
 
-def form_text_files_from_original(source_path:str=ORIGINAL_FILES_PATH):
+def form_text_tbs(source_path:str=ORIGINAL_FILES_PATH):
     section="TEXT"
     for full_file_name in os.listdir(source_path):
         target_file_path=os.path.join(source_path,full_file_name)
@@ -236,7 +236,7 @@ def form_text_files_from_original(source_path:str=ORIGINAL_FILES_PATH):
         write_file(section,full_file_name,lines,TEXT_FILES_PATH)
     yes(section,f"form files")
 
-def form_solid_text_file():
+def form_text_solid():
     gls=[]
     for f in ORIGINAL_FILES:
         with open(f,encoding='utf-8',mode='r') as fr:
@@ -262,9 +262,9 @@ def perform_automations(last_time):
     print()
     # echo(time.ctime(last_time))
 
-    copy_original_to_paratext()
-    form_text_files_from_original()
-    form_log_files()
+    copy_to_paratext()
+    form_text_tbs()
+    form_logs()
     # make_single_text_file()
 
 def monitor_files_for_changes():
