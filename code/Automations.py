@@ -121,10 +121,11 @@ def make_single_text_file():
 def form_log_files():
     section="LOGS"
 
-    WJ=['Book,Chapter,Verse,Content']
-    ND=['Book,Chapter,Verse,Content']
-    QT=['Book,Chapter,Verse,Content']
-    F=['Book,Chapter,Verse,Content']
+    header='Book,Chapter,Verse,Content'
+    WJ=[header]
+    ND=[header]
+    QT=[header]
+    F=[header]
 
     for file_path in ORIGINAL_FILES:
         with open(file_path,encoding='utf-8',mode='r') as f:
