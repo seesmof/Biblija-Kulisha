@@ -120,6 +120,7 @@ ISA,63,19,М и,Ми,Separated letter
 JER,46,20,Е гипет,Египет,Separated letter
 EZK,31,16,найкрасшi,найкрасшi,Wrong letter
 HOS,2,16,"чоловіче,„чоловіче,Wrong quote
+HOS,2,16,"мій,"","мій,‟",Wrong quote
 ZEC,1,3,ваc,вас,Wrong letter
 ZEC,1,5,"ваші,-","ваші -",Extra symbol
 ZEC,1,5,ваші -,ваші —,Wrong dash
