@@ -127,7 +127,7 @@ JER,23,32,- на,— на,Wrong dash
 JER,46,20,Е гипет,Египет,Separated letter
 EZK,31,16,найкрасшi,найкрасшi,Wrong letter
 HOS,1,1,Cлово,Слово,Wrong letter
-HOS,2,16,"чоловіче,„чоловіче,Wrong quote
+HOS,2,16,""чоловіче",„чоловіче,Wrong quote
 HOS,2,16,"мій,"","мій,‟",Wrong quote
 HOS,2,16,"Баале,„Баале,Wrong quote
 HOS,2,16,Баале",Баале‟,Wrong quote
