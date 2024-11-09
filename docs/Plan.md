@@ -2,15 +2,10 @@
 - [x] Copy all 66 Books from Bolls.Life into USFM
 - [x] Check files integrity: compare chapters with original first and last words; check chapter numbers
 - [x] Place each tag on new line
-- [ ] Align text with printed Bible as closely as you can
-- [ ] Fix any additional typos
-- [ ] Replace "''" with “‘’”
-- [ ] Replace ' with ʼ
-- [ ] Replace - with — (em dash)
-  - `-` Маленький слеш можна для внутрішньослівних розділів: `Ісус-Христові`
-  - `–` Середній слеш можна для Біблійних посилань: `1 Мойсея 3:1–3`
-  - `—` Довгий слеш можна як знак пунктуації: `Господь — муж боїв страшенний, на імя Господь він.`
-- [ ] Add footnotes from physical Bible
+- [ ] Add F tags for footnotes from BIBLE Scans
+- [ ] Replace `" "` with `„ ‟`
+- [ ] Replace `'` with `ʼ`
+- [ ] Replace ` -` with ` —`
 
 ##### Revision
 - [x] WJ tags
@@ -26,7 +21,7 @@ Ideas:
   - footnote
   - replace () with []
   - remove
-- F tags (footnotes with cross-references)
+- F tags (with cross-references after QT)
 - R tags
 - Q tags
 - LI tags
