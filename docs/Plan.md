@@ -6,13 +6,15 @@
 - [ ] Replace `" "` with `„ ‟`
 - [ ] Replace `'` with `ʼ`
 - [ ] Replace ` -` with ` —`
+- [ ] Proofread everything chapter by chapter
 
 ##### Revision
 - [x] WJ tags
 - [ ] QT tags
 - [ ] ND tags
 - [ ] GOD's Pronouns capitalized
-- [ ] Quotes everywhere in direct speech
+- [ ] Change „ ‟ to  “ ‘ ’ ”
+- [ ] Add quotes everywhere in direct speech
 - [ ] P tags
 
 Ideas:
