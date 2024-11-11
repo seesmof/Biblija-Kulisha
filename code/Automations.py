@@ -41,11 +41,13 @@ def remove_usfm_tags(
 
 def form_logs():
     header='Book,Chapter,Verse,Content'
+    verse_number_pattern=r'\\v\s\d+'
     WJ=[header]
     ND=[header]
     QT=[header]
     F=[header]
     Quotes=[header]
+    Apostrophes=[header]
 
     for file_path in original_file_paths:
         with open(file_path,encoding='utf-8',mode='r') as f:
@@ -59,35 +61,41 @@ def form_logs():
                 chapter_number=line[3:].strip()
 
             if '\\wj' in line or '\\+wj' in line:
-                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                verse_number=re.findall(verse_number_pattern,line)[0][3:]
                 contents=re.findall(r'\\\+?wj(.*?)\\\+?wj\*',line)
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{remove_usfm_tags(c)}'
                     WJ.append(res)
             if '\\nd' in line or '\\+nd' in line:
-                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                verse_number=re.findall(verse_number_pattern,line)[0][3:]
                 contents=re.findall(r'\\\+?nd(.*?)\\\+?nd\*',line)
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{remove_usfm_tags(c)}'
                     ND.append(res)
             if '\\qt' in line or '\\+qt' in line:
-                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                verse_number=re.findall(verse_number_pattern,line)[0][3:]
                 contents=re.findall(r'\\\+?qt(.*?)\\\+?qt\*',line)
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{remove_usfm_tags(c)}'
                     QT.append(res)
             if '\\f' in line or '\\+f' in line:
-                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                verse_number=re.findall(verse_number_pattern,line)[0][3:]
                 contents=re.findall(r'\\\+?ft\s(.*?)\\\+?f\*',line)
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     F.append(res)
             if '„' in line or '‟' in line:
-                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                verse_number=re.findall(verse_number_pattern,line)[0][3:]
                 contents=[w for w in line.split() if '„' in w or '‟' in w]
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     Quotes.append(res)
+            if 'ʼ' in line:
+                verse_number=re.findall(verse_number_pattern,line)[0][3:]
+                contents=[w for w in line.split() if 'ʼ' in w]
+                for c in contents:
+                    res=f'{Book_name},{chapter_number},{verse_number},{c}'
+                    Apostrophes.append(res)
 
     try:
         with open(os.path.join(logs_folder_path,'WJ.csv'),encoding='utf-8',mode='w') as f:
@@ -112,6 +120,11 @@ def form_logs():
     try:
         with open(os.path.join(logs_folder_path,'Quotes.csv'),encoding='utf-8',mode='w') as f:
             f.write('\n'.join(Quotes))
+    except: pass
+
+    try:
+        with open(os.path.join(logs_folder_path,'Apostrophes.csv'),encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(Apostrophes))
     except: pass
 
 def form_text_tbs():
