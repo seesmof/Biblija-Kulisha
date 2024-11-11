@@ -45,6 +45,7 @@ def form_logs():
     ND=[header]
     QT=[header]
     F=[header]
+    Quotes=[header]
 
     for file_path in original_file_paths:
         with open(file_path,encoding='utf-8',mode='r') as f:
@@ -81,6 +82,12 @@ def form_logs():
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     F.append(res)
+            if '„' in line or '‟' in line:
+                verse_number=re.findall(r'\\v\s\d+',line)[0][3:]
+                contents=[w for w in line.split() if '„' in w or '‟' in w]
+                for c in contents:
+                    res=f'{Book_name},{chapter_number},{verse_number},{c}'
+                    Quotes.append(res)
 
     try:
         with open(os.path.join(logs_folder_path,'WJ.csv'),encoding='utf-8',mode='w') as f:
@@ -100,6 +107,11 @@ def form_logs():
     try:
         with open(os.path.join(logs_folder_path,'F.csv'),encoding='utf-8',mode='w') as f:
             f.write('\n'.join(F))
+    except: pass
+
+    try:
+        with open(os.path.join(logs_folder_path,'Quotes.csv'),encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(Quotes))
     except: pass
 
 def form_text_tbs():
