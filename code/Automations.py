@@ -48,6 +48,7 @@ def form_logs():
     F=[header]
     Quotes=[header]
     Apostrophes=[header]
+    Dashes=[header]
 
     for file_path in original_file_paths:
         with open(file_path,encoding='utf-8',mode='r') as f:
@@ -96,6 +97,12 @@ def form_logs():
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     Apostrophes.append(res)
+            if '—' in line:
+                verse_number=re.findall(verse_number_pattern,line)[0][3:]
+                contents=re.findall(r'\w+\s*—|\W\s*—',line)
+                for c in contents:
+                    res=f'{Book_name},{chapter_number},{verse_number},{c}'
+                    Dashes.append(res)
 
     try:
         with open(os.path.join(logs_folder_path,'WJ.csv'),encoding='utf-8',mode='w') as f:
@@ -125,6 +132,11 @@ def form_logs():
     try:
         with open(os.path.join(logs_folder_path,'Apostrophes.csv'),encoding='utf-8',mode='w') as f:
             f.write('\n'.join(Apostrophes))
+    except: pass
+
+    try:
+        with open(os.path.join(logs_folder_path,'Dashes.csv'),encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(Dashes))
     except: pass
 
 def form_text_tbs():
