@@ -1,4 +1,5 @@
-##### Original
+# Original (Біблія Куліша)
+
 - [x] Copy all 66 Books from Bolls.Life into USFM
 - [x] Check files integrity: compare chapters with original first and last words; check chapter numbers
 - [x] Place each tag on new line
@@ -8,16 +9,18 @@
 - [ ] Replace ` -` with ` —`
 - [ ] Proofread everything chapter by chapter
 
-##### Revision
+# Revision (Біблія свободи)
+
 - [x] WJ tags
 - [ ] QT tags
 - [ ] ND tags
 - [ ] GOD's Pronouns capitalized
-- [ ] Change „ ‟ to  “ ‘ ’ ”
+- [ ] Change „ ‟ to “ ‘ ’ ”
 - [ ] Add quotes everywhere in direct speech
 - [ ] P tags
 
 Ideas:
+
 - Align brackets with KJV:
   - ADD tag
   - footnote
@@ -32,13 +35,14 @@ Ideas:
 - W tags (Strong's numbers)
   - Make a spreadsheet (or an SQLite database) with all Ukrainian BIBLE words and their Strong's number
 
-###### Language update
-- [ ] Use KJV and YLT (and/or other TR public domain BIBLES) to make a language update for the Bible Kulish
+## Language update
+
+- [ ] Use KJV to make a language update for the Bible Kulish
   - [ ] When updating language always choose shortest words probably
-  - [ ] Add S tags for headings, take them from [Bible Outline](https://biblehub.com/outline/)
   - [ ] Переглянути знаки тире `-` і краще прибрати якомога більше
 
 Ideas:
+
 - 1 Мойсея 14 4 `чотирнайцятому` замість `тринайцятому`
 - 2 Мойсея 12 42 `в роди і роди їх`
 - 3 Мойсея 5 19 `дійсно` замість `існо`
