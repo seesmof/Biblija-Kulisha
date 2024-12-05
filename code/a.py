@@ -1,12 +1,4 @@
 import re
 
-def get_verse_number(line:str) -> int:
-    found_verses=re.findall(p,line)
-    verse=found_verses[0]
-    verse_number=verse[3:]
-    return int(verse_number)
-
-t=r'\v 1 In the beginning was the Word and the Word was with GOD and the Word was GOD.'
-p=r'\\v\s\d+'
-res=get_verse_number(t)
-print(res)
+text=r'This is not an actual BIBLE verse, just testing the regex pattern. Here i test dashes, here i test WJ tags, here i test ND tags, here i test C tags, here i test QT tags, here i test F tags, here i test quotes, here i test single quotes. AMEN'
+print(text)

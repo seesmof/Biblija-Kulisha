@@ -272,13 +272,6 @@ def form_text_lined():
             f.write('\n'.join(all_lines))
     except: pass
 
-def form_bolls_json():
-    a=[]
-    for fp in original_file_paths:
-        with open(fp,encoding='utf-8',mode='r') as f:
-            ls=f.readlines()
-        
-
 def perform_automations():
     print()
     copy_to_paratext()
