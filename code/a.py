@@ -1,9 +1,12 @@
-import glob
-import os
+import re
 
+def get_verse_number(line:str) -> int:
+    found_verses=re.findall(p,line)
+    verse=found_verses[0]
+    verse_number=verse[3:]
+    return int(verse_number)
 
-root=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
-original_folder_path=os.path.join(root,"Original")
-original_file_paths=glob.glob(original_folder_path+"\\*.USFM")
-
-a=[]
+t=r'\v 1 In the beginning was the Word and the Word was with GOD and the Word was GOD.'
+p=r'\\v\s\d+'
+res=get_verse_number(t)
+print(res)

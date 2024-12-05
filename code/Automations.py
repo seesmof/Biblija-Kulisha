@@ -1,4 +1,3 @@
-from calendar import c
 import os
 import re
 import glob
@@ -24,9 +23,8 @@ def copy_to_paratext():
             )
     except: pass
 
-def remove_usfm_tags(
-    line:str
-):
+def remove_usfm_tags(line:str):
+    # Remove WJ, ND, QT tags from the Bible verse line
     tags_to_remove=[
         'wj',
         'nd',
@@ -34,14 +32,31 @@ def remove_usfm_tags(
     ]
     for tag in tags_to_remove:
         line=line.replace(f'\\{tag} ','').replace(f'\\{tag}*','')
+        # Replace those if they are indented as well
+        # + sign marks an indented tag in USFM (a tag that is inside another tag)
+        #   for example: when JESUS quotes from the Old Testament:
+        #   Words of JESUS will be in \WJ and the quote will be in \QT
         line=line.replace(f'\\+{tag} ','').replace(f'\\+{tag}*','')
+
+    # Footnotes begin with \f and ends with \f* always
+    # Everything that is inbetween is selected also
     footnote_pattern=r'\\f(.*?)\\f\*'
     line=re.sub(footnote_pattern,'',line)
     return line
 
 def form_logs():
+    def get_verse_number(line:str) -> int:
+        verse_number_pattern=r'\\v\s\d+'
+        # Look for verses inside the line 
+        found_verses=re.findall(verse_number_pattern,line)
+        # Select first match because verse is usually at the beginning of the line 
+        verse=found_verses[0]
+        # Strip the '\v ' text from it
+        verse_number=verse[3:]
+        # And return the number as integer
+        return int(verse_number)
+
     header='Book,Chapter,Verse,Content'
-    verse_number_pattern=r'\\v\s\d+'
     WJ=[header]
     ND=[header]
     QT=[header]
@@ -62,43 +77,43 @@ def form_logs():
                 chapter_number=line[3:].strip()
 
             if '\\wj' in line or '\\+wj' in line:
-                verse_number=re.findall(verse_number_pattern,line)[0][3:]
+                verse_number=get_verse_number(line)
                 contents=re.findall(r'\\\+?wj(.*?)\\\+?wj\*',line)
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{remove_usfm_tags(c)}'
                     WJ.append(res)
             if '\\nd' in line or '\\+nd' in line:
-                verse_number=re.findall(verse_number_pattern,line)[0][3:]
+                verse_number=get_verse_number(line)
                 contents=re.findall(r'\\\+?nd(.*?)\\\+?nd\*',line)
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{remove_usfm_tags(c)}'
                     ND.append(res)
             if '\\qt' in line or '\\+qt' in line:
-                verse_number=re.findall(verse_number_pattern,line)[0][3:]
+                verse_number=get_verse_number(line)
                 contents=re.findall(r'\\\+?qt(.*?)\\\+?qt\*',line)
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{remove_usfm_tags(c)}'
                     QT.append(res)
             if '\\f' in line or '\\+f' in line:
-                verse_number=re.findall(verse_number_pattern,line)[0][3:]
+                verse_number=get_verse_number(line)
                 contents=re.findall(r'\\\+?ft\s(.*?)\\\+?f\*',line)
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     F.append(res)
             if '„' in line or '‟' in line:
-                verse_number=re.findall(verse_number_pattern,line)[0][3:]
+                verse_number=get_verse_number(line)
                 contents=[w for w in line.split() if '„' in w or '‟' in w]
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     Quotes.append(res)
             if 'ʼ' in line:
-                verse_number=re.findall(verse_number_pattern,line)[0][3:]
+                verse_number=get_verse_number(line)
                 contents=[w for w in line.split() if 'ʼ' in w]
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
                     Apostrophes.append(res)
             if '—' in line:
-                verse_number=re.findall(verse_number_pattern,line)[0][3:]
+                verse_number=get_verse_number(line)
                 contents=re.findall(r'\w+\s*—|\W\s*—',line)
                 for c in contents:
                     res=f'{Book_name},{chapter_number},{verse_number},{c}'
