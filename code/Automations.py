@@ -173,7 +173,7 @@ def form_text_tbs():
             and '\\p' not in line
         ]
         lines=[
-            remove_usfm_tags(line)
+            line
             # Remove ` - Biblija Kulisha Standartna`
             .replace(" - Biblija Kulisha Standartna","")
             # Change `\id ` to `###`
@@ -188,6 +188,10 @@ def form_text_tbs():
             .replace("\\v ","#")
             # Replace `[ ]` with `* *`
             .replace("[","*").replace("]",'*') 
+            # Remove USFM formatting tags
+            .replace('\\wj ','').replace('\\wj*','').replace('\\+wj ','').replace('\\+wj*','')
+            .replace('\\nd ','').replace('\\nd*','').replace('\\+nd ','').replace('\\+nd*','')
+            .replace('\\qt ','').replace('\\qt*','').replace('\\+qt ','').replace('\\+qt*','')
             for line in lines
         ]
         lines=[
@@ -195,6 +199,10 @@ def form_text_tbs():
             line[:-2]+'\n' if re.search(r'##\d+\s',line) 
             # If its not a chapter number, then write it as it is
             else line 
+            for line in lines
+        ]
+        lines=[
+            re.sub(r'\\f\s\+\s\\fr\s\d+\:\d+\s\\ft\s','[',line).replace('\\f*',']')
             for line in lines
         ]
 
