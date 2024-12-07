@@ -5,6 +5,7 @@ GEN,4,23,"смертю, -","смертю, —",Wrong dash
 GEN,7,19,попід,по під,Missing space
 GEN,8,3,перестану,перестанї,Wrong letter
 GEN,8,11,се -,се —,Wrong dash
+GEN,8,13,- вид,— вид,Wrong dash
 GEN,22,20,з'ясовано,зъясовано,Wrong symbol
 GEN,22,20,Авраамові,Абраамові,Wrong letter
 GEN,30,32,крапаcте,крапасте,Wrong letter
