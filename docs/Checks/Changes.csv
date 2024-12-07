@@ -2,6 +2,7 @@ Book,Chapter,Verse,Mistake,Correction,Reason
 GEN,3,21,коли б,колиб,Extra space
 GEN,4,16,'д,ʼд,Wrong apostrophe
 GEN,4,23,"смертю, -","смертю, —",Wrong dash
+GEN,7,19,попід,по під,Missing space
 GEN,22,20,з'ясовано,зъясовано,Wrong symbol
 GEN,22,20,Авраамові,Абраамові,Wrong letter
 GEN,30,32,крапаcте,крапасте,Wrong letter
