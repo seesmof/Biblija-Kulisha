@@ -70,9 +70,6 @@ Ukrainian_Bible_Book_name_to_English_abbrevation = {
     "Юди": "JUD",
     "Одкриттє": "REV",
 }
-English_Bible_Book_abbreviations = list(
-    Ukrainian_Bible_Book_name_to_English_abbrevation.values()
-)
 
 
 @dataclass
