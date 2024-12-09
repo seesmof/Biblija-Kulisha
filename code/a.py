@@ -1,5 +1,5 @@
 # TODO add all the logs to changes and sort changes.csv
-import csv
+from dataclasses import dataclass
 import os
 
 Ukrainian_Bible_Book_name_to_English_abbrevation = {
@@ -70,19 +70,28 @@ Ukrainian_Bible_Book_name_to_English_abbrevation = {
     "Юди": "JUD",
     "Одкриттє": "REV",
 }
-English_Bible_Book_abbreviations = (
+English_Bible_Book_abbreviations = list(
     Ukrainian_Bible_Book_name_to_English_abbrevation.values()
 )
 
 
-root_folder = os.path.dirname(os.path.abspath(__file__))
-target_path = os.path.join(root_folder, "..", "docs", "Checks", "Changes.csv")
-lines = []
-with open(target_path, encoding="utf-8", mode="r") as f:
-    csv_reader = csv.reader(f)
-    for row in csv_reader:
-        lines.append(row)
+@dataclass
+class Change:
+    Book: str
+    Chapter: int
+    Verse: int
+    Mistake: str
+    Correction: str
+    Reason: str
 
-for line in lines[1:]:
-    Book, chapter, verse, mistake, correction, reason = line
-    print(Book, chapter, verse)
+
+root_folder = os.path.dirname(os.path.abspath(__file__))
+target_path = os.path.join(root_folder, "..", "docs", "Checks", "Changes.md")
+with open(target_path, encoding="utf-8", mode="r") as f:
+    lines = f.readlines()
+
+changes = []
+for line in lines[2:]:
+    split_line = line.strip()[2:-2].split(" | ")
+    change = Change(*split_line)
+    changes.append(change)
