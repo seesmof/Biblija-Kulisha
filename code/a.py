@@ -1,7 +1,6 @@
 # TODO add all the logs to changes and sort changes.csv
 import os
 
-
 Ukrainian_Bible_Book_name_to_English_abbrevation = {
     "1 Мойсея": "GEN",
     "2 Мойсея": "EXO",
@@ -70,3 +69,12 @@ Ukrainian_Bible_Book_name_to_English_abbrevation = {
     "Юди": "JUD",
     "Одкриттє": "REV",
 }
+English_Bible_Book_abbreviations = (
+    Ukrainian_Bible_Book_name_to_English_abbrevation.values()
+)
+print(English_Bible_Book_abbreviations)
+
+root_folder = os.path.dirname(os.path.abspath(__file__))
+target_path = os.path.join(root_folder, "..", "docs", "Checks", "Changes.csv")
+with open(target_path, encoding="utf-8", mode="r") as f:
+    lines = f.readlines()
