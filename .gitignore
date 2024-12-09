@@ -1,3 +1,5 @@
 **/Scans/*.pdf
-**/.vscode/
 ~$*.*
+.venv
+.nicegui
+__pycache__

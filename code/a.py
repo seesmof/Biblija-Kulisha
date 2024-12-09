@@ -1,121 +1,45 @@
 # TODO add all the logs to changes and sort changes.csv
-from dataclasses import dataclass
 import os
-
-Ukrainian_Bible_Book_name_to_English_abbrevation = {
-    "1 Мойсея": "GEN",
-    "2 Мойсея": "EXO",
-    "3 Мойсея": "LEV",
-    "4 Мойсея": "NUM",
-    "5 Мойсея": "DEU",
-    "Иозея": "JOS",
-    "Суддїв": "JDG",
-    "Рути": "RUT",
-    "1 Самуїлова": "1SA",
-    "2 Самуїлова": "2SA",
-    "1 Царів": "1KI",
-    "2 Царів": "2KI",
-    "1 Паралипоменон": "1CH",
-    "2 Паралипоменон": "2CH",
-    "Ездри": "EZR",
-    "Неємії": "NEH",
-    "Естери": "EST",
-    "Йова": "JOB",
-    "Псалтирь": "PSA",
-    "Приповісток": "PRO",
-    "Екклезіаста": "ECC",
-    "Пісень": "SNG",
-    "Ісаїї": "ISA",
-    "Еремії": "JER",
-    "Плач": "LAM",
-    "Езекиїла": "EZK",
-    "Даниїла": "DAN",
-    "Осії": "HOS",
-    "Йоіла": "JOL",
-    "Амоса": "AMO",
-    "Авдія": "OBA",
-    "Йони": "JON",
-    "Михея": "MIC",
-    "Наума": "NAM",
-    "Аввакума": "HAB",
-    "Софонії": "ZEP",
-    "Аггея": "HAG",
-    "Захарії": "ZEC",
-    "Малахія": "MAL",
-    "Маттея": "MAT",
-    "Марка": "MRK",
-    "Луки": "LUK",
-    "Йоана": "JHN",
-    "Дїяння": "ACT",
-    "Римлян": "ROM",
-    "1 Коринтян": "1CO",
-    "2 Коринтян": "2CO",
-    "Галат": "GAL",
-    "Єфесян": "EPH",
-    "Филипян": "PHP",
-    "Колосян": "COL",
-    "1 Солунян": "1TH",
-    "2 Солунян": "2TH",
-    "1 Тимотея": "1TI",
-    "2 Тимотея": "2TI",
-    "Тита": "TIT",
-    "Филимона": "PHM",
-    "Жидів": "HEB",
-    "Якова": "JAS",
-    "1 Петра": "1PE",
-    "2 Петра": "2PE",
-    "1 Йоана": "1JN",
-    "2 Йоана": "2JN",
-    "3 Йоана": "3JN",
-    "Юди": "JUD",
-    "Одкриттє": "REV",
-}
+from Automations import Change, Ukrainian_Bible_Book_name_to_English_abbrevation
+from nicegui import ui, app
 
 
-@dataclass
-class Change:
-    Book: str
-    Chapter: int
-    Verse: int
-    Mistake: str
-    Correction: str
-    Reason: str
+def reset_local_storage():
+    app.storage.general["Book"] = ""
+    app.storage.general["Chapter"] = ""
+    app.storage.general["Verse"] = ""
+    app.storage.general["Mistake"] = ""
+    app.storage.general["Correction"] = ""
+    app.storage.general["Reason"] = ""
+
+
+def add_new_change_entry(changes_file_path: str):
+    entry_line = f"| {app.storage.general['Book']} | {app.storage.general['Chapter']} | {app.storage.general['Verse']} | {app.storage.general['Mistake']} | {app.storage.general['Correction']} | {app.storage.general['Reason']} |"
+    with open(changes_file_path, encoding="utf-8", mode="a") as f:
+        f.write("\n" + entry_line)
+    reset_local_storage()
 
 
 root_folder = os.path.dirname(os.path.abspath(__file__))
-target_path = os.path.join(root_folder, "..", "docs", "Checks", "Changes.md")
-with open(target_path, encoding="utf-8", mode="r") as f:
-    lines = f.readlines()
+changes_file_path = os.path.join(root_folder, "..", "docs", "Checks", "Changes.md")
+reasons_autocomplete = ["wrong", "missing", "letter", "symbol"]
 
-changes: list[Change] = []
-for line in lines[2:]:
-    split_line = line.strip()[2:-2].split(" | ")
-    change = Change(*split_line)
-    change.Chapter = int(change.Chapter)
-    change.Verse = int(change.Verse)
-    changes.append(change)
+Book_select = ui.select(
+    label="Book",
+    options=Ukrainian_Bible_Book_name_to_English_abbrevation,
+    with_input=True,
+).bind_value(app.storage.general, "Book")
+Chapter_input = ui.input(label="Chapter").bind_value(app.storage.general, "Chapter")
+Verse_input = ui.input(label="Verse").bind_value(app.storage.general, "Verse")
+Mistake_input = ui.input(label="Mistake").bind_value(app.storage.general, "Mistake")
+Correction_input = ui.input(label="Correction").bind_value(
+    app.storage.general, "Correction"
+)
+Reason_input = ui.input(label="Reason", autocomplete=reasons_autocomplete).bind_value(
+    app.storage.general, "Reason"
+)
+send_button = ui.button(
+    "Make", on_click=lambda: add_new_change_entry(changes_file_path)
+)
 
-for i, change in enumerate(changes):
-    if change.Book in Ukrainian_Bible_Book_name_to_English_abbrevation:
-        changes[i].Book = Ukrainian_Bible_Book_name_to_English_abbrevation[change.Book]
-
-table_lines: list[str] = [
-    "| Book | Chapter | Verse | Mistake | Correction | Reason |",
-    "| - | - | - | - | - | - |",
-]
-for Book in Ukrainian_Bible_Book_name_to_English_abbrevation.values():
-    found_changes_for_this_Book = [change for change in changes if change.Book == Book]
-    print(found_changes_for_this_Book)
-    found_changes = sorted(
-        found_changes_for_this_Book,
-        key=lambda change: (change.Chapter, change.Verse),
-        reverse=False,
-    )
-    for change in found_changes:
-        print(change.Book, change.Chapter, change.Verse)
-        line = f"| {change.Book} | {change.Chapter} | {change.Verse} | {change.Mistake} | {change.Correction} | {change.Reason} |"
-        table_lines.append(line)
-
-output_file = os.path.join(root_folder, "Table.md")
-with open(output_file, encoding="utf-8", mode="w") as f:
-    f.write("\n".join(table_lines))
+ui.run()
