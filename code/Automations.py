@@ -441,7 +441,7 @@ def sort_markdown_table(file_path: str):
                 change.Book
             ]
 
-    table_lines: list[str] = [
+    sorted_table_lines: list[str] = [
         "| Book | Chapter | Verse | Mistake | Correction | Reason |",
         "| - | - | - | - | - | - |",
     ]
@@ -456,10 +456,10 @@ def sort_markdown_table(file_path: str):
         )
         for change in found_changes:
             line = f"| {change.Book} | {change.Chapter} | {change.Verse} | {change.Mistake} | {change.Correction} | {change.Reason} |"
-            table_lines.append(line)
+            sorted_table_lines.append(line)
 
     with open(file_path, encoding="utf-8", mode="w") as f:
-        f.write("\n".join(table_lines))
+        f.write("\n".join(sorted_table_lines))
 
 
 def perform_automations():
