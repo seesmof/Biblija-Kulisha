@@ -79,7 +79,7 @@ class Change:
     Verse: int
     Mistake: str = ""
     Correction: str = ""
-    Reason: str = "Wrong apostrophe"
+    Reason: str = "Wrong dash"
 
 
 def sort_markdown_table(file_path: str, root_folder: str):
@@ -108,17 +108,15 @@ def sort_markdown_table(file_path: str, root_folder: str):
         found_changes_for_this_Book = [
             change for change in changes if change.Book == Book
         ]
-        print(found_changes_for_this_Book)
         found_changes = sorted(
             found_changes_for_this_Book,
             key=lambda change: (change.Chapter, change.Verse),
             reverse=False,
         )
         for change in found_changes:
-            line = f"| {change.Book} | {change.Chapter} | {change.Verse} | {change.Mistake.replace('ʼ','\'') if change.Reason == 'Wrong apostrophe' else change.Mistake} | {change.Mistake if change.Reason=='Wrong apostrophe' else change.Correction} | {change.Reason} |"
+            line = f"| {change.Book} | {change.Chapter} | {change.Verse} | {change.Mistake.replace('—','-') if change.Reason == 'Wrong dash' else change.Mistake} | {change.Mistake if change.Reason=='Wrong dash' else change.Correction} | {change.Reason} |"
             table_lines.append(line)
 
-    print(table_lines)
     output_file = os.path.join(root_folder, "Table.md")
     with open(output_file, encoding="utf-8", mode="w") as f:
         f.write("\n".join(table_lines))
