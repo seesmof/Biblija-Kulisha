@@ -32,5 +32,5 @@ def convert_csv_lines_to_markdown_table(file_path: str, root_folder: str):
 
 
 root_folder = os.path.dirname(os.path.abspath(__file__))
-target_path = os.path.join(root_folder, "..", "logs", "Dashes.csv")
+target_path = os.path.join(root_folder, "..", "logs", "Quotes.csv")
 convert_csv_lines_to_markdown_table(target_path, root_folder)

@@ -10,8 +10,6 @@
 | GEN | 10 | 29 | 'ці | ʼці | Wrong apostrophe |
 | GEN | 11 | 3 | 'дному: | ʼдному: | Wrong apostrophe |
 | GEN | 11 | 7 | 'дного. | ʼдного. | Wrong apostrophe |
-| GEN | 16 | 14 | "Криницею | „Криницею | Wrong quote |
-| GEN | 16 | 14 | бачить." | бачить.‟ | Wrong quote |
 | GEN | 17 | 21 | 'цїй | ʼцїй | Wrong apostrophe |
 | GEN | 22 | 16 | я - | я — | Wrong dash |
 | GEN | 22 | 16 | слово - | слово — | Wrong dash |
@@ -48,12 +46,9 @@
 | EXO | 15 | 3 | Господь - | Господь — | Wrong dash |
 | EXO | 15 | 12 | , - | , — | Wrong dash |
 | EXO | 16 | 28 | . І | І | Extra dot |
-| EXO | 22 | 9 | "Ось | „Ось | Wrong quote |
-| EXO | 22 | 9 | воно", | воно‟, | Wrong quote |
 | EXO | 29 | 22 | литку - | литку — | Wrong dash |
 | EXO | 32 | 13 | 'цю | ʼцю | Wrong apostrophe |
 | EXO | 32 | 16 | письмо - | письмо — | Wrong dash |
-| EXO | 34 | 5 | "Господь". | „Господь‟. | Wrong quote |
 | EXO | 36 | 6 | з'ясували | зʼясували | Wrong apostrophe |
 | LEV | 7 | 20 | з'їла | зʼїла | Wrong apostrophe |
 | LEV | 8 | 31 | з'їжте | зʼїжте | Wrong apostrophe |
@@ -133,7 +128,6 @@
 | JOS | 21 | 37 | його - | його — | Wrong dash |
 | JOS | 22 | 22 | Єгова - | Єгова — | Wrong dash |
 | JOS | 22 | 22 | Єгова - | Єгова — | Wrong dash |
-| JOS | 22 | 34 | "Ед", | „Ед‟, | Wrong quote |
 | JDG | 1 | 11 | Дабирських - | Дабирських — | Wrong dash |
 | JDG | 1 | 23 | Бетель - | Бетель — | Wrong dash |
 | JDG | 1 | 23 | Лузом - | Лузом — | Wrong dash |
@@ -187,10 +181,6 @@
 | 2SA | 1 | 6 | дивлюсь - | дивлюсь — | Wrong dash |
 | 2SA | 3 | 9 | так - | так — | Wrong dash |
 | 2SA | 5 | 7 | , - | , — | Wrong dash |
-| 2SA | 5 | 8 | "Слїпий | „Слїпий | Wrong quote |
-| 2SA | 5 | 8 | палату." | палату.‟ | Wrong quote |
-| 2SA | 6 | 8 | "Убиттє | „Убиттє | Wrong quote |
-| 2SA | 6 | 8 | Ози" | Ози‟ | Wrong quote |
 | 2SA | 7 | 26 | Саваот - | Саваот — | Wrong dash |
 | 2SA | 10 | 5 | їх - | їх — | Wrong dash |
 | 2SA | 10 | 5 | , - | , — | Wrong dash |
@@ -205,8 +195,6 @@
 | 2SA | 18 | 7 | тяжкий - | тяжкий — | Wrong dash |
 | 2SA | 18 | 10 | Абессалома - | Абессалома — | Wrong dash |
 | 2SA | 18 | 11 | 'д | ʼд | Wrong apostrophe |
-| 2SA | 18 | 18 | "Рука | „Рука | Wrong quote |
-| 2SA | 18 | 18 | Абессаломова". | Абессаломова‟. | Wrong quote |
 | 2SA | 18 | 24 | бачить - | бачить — | Wrong dash |
 | 2SA | 18 | 26 | сторож - | сторож — | Wrong dash |
 | 2SA | 19 | 6 | тебе - | тебе — | Wrong dash |
@@ -612,14 +600,10 @@
 | EZR | 2 | 58 | Усього - | Усього — | Wrong dash |
 | EZR | 2 | 59 | племя - | племя — | Wrong dash |
 | EZR | 2 | 66 | їх - | їх — | Wrong dash |
-| EZR | 3 | 11 | "Хвалїть" | „Хвалїть‟ | Wrong quote |
-| EZR | 3 | 11 | "Оповідайте | „Оповідайте | Wrong quote |
-| EZR | 3 | 11 | Ізраїля"; | Ізраїля‟; | Wrong quote |
 | EZR | 4 | 5 | дїло - | дїло — | Wrong dash |
 | EZR | 4 | 9 | , - | , — | Wrong dash |
 | EZR | 4 | 11 | Артаксерксові - | Артаксерксові — | Wrong dash |
 | EZR | 4 | 15 | місто - | місто — | Wrong dash |
-| EZR | 4 | 17 | "Мир" | „Мир‟ | Wrong quote |
 | EZR | 4 | 19 | , - | , — | Wrong dash |
 | EZR | 5 | 6 | товаришами - | товаришами — | Wrong dash |
 | EZR | 5 | 7 | цареві - | цареві — | Wrong dash |
@@ -895,8 +879,6 @@
 | PSA | 21 | 1 | С илою | Силою | Separated letter |
 | PSA | 21 | 11 | , - | , — | Wrong dash |
 | PSA | 22 | 1 | мене - | мене — | Wrong dash |
-| PSA | 22 | 1 | "Досьвітна | „Досьвітна | Wrong quote |
-| PSA | 22 | 1 | ланя"; | ланя‟; | Wrong quote |
 | PSA | 25 | 1 | Д о | До | Separated letter |
 | PSA | 25 | 10 | Господнї - | Господнї — | Wrong dash |
 | PSA | 26 | 1 | С уди | Суди | Separated letter |
@@ -939,18 +921,10 @@
 | PSA | 55 | 1 | В ислухай | Вислухай | Separated letter |
 | PSA | 55 | 21 | вони - | вони — | Wrong dash |
 | PSA | 56 | 1 | П омилуй | Помилуй | Separated letter |
-| PSA | 56 | 1 | "Голубка | „Голубка | Wrong quote |
-| PSA | 56 | 1 | дубравин"; | дубравин‟; | Wrong quote |
 | PSA | 57 | 1 | П омилуй | Помилуй | Separated letter |
-| PSA | 57 | 1 | "Не | „Не | Wrong quote |
-| PSA | 57 | 1 | пропадеш." | пропадеш.‟ | Wrong quote |
 | PSA | 57 | 4 | зуби - | зуби — | Wrong dash |
 | PSA | 58 | 1 | Ч и | Чи | Separated letter |
-| PSA | 58 | 1 | "Не | „Не | Wrong quote |
-| PSA | 58 | 1 | пропадеш!" | пропадеш!‟ | Wrong quote |
 | PSA | 59 | 1 | В изволь | Визволь | Separated letter |
-| PSA | 59 | 1 | "Не | „Не | Wrong quote |
-| PSA | 59 | 1 | пропадеш!" | пропадеш!‟ | Wrong quote |
 | PSA | 62 | 1 | Т ілько | Тілько | Separated letter |
 | PSA | 64 | 7 | нараз - | нараз — | Wrong dash |
 | PSA | 67 | 4 | землї - | землї — | Wrong dash |
@@ -972,8 +946,6 @@
 | PSA | 74 | 2 | , - | , — | Wrong dash |
 | PSA | 74 | 8 | ! - | ! — | Wrong dash |
 | PSA | 75 | 1 | С лавимо | Славимо | Separated letter |
-| PSA | 75 | 1 | "Не | „Не | Wrong quote |
-| PSA | 75 | 1 | запропасти"; | запропасти‟; | Wrong quote |
 | PSA | 75 | 4 | , - | , — | Wrong dash |
 | PSA | 75 | 4 | , - | , — | Wrong dash |
 | PSA | 76 | 1 | В ідомий | Відомий | Separated letter |
@@ -1041,14 +1013,10 @@
 | PSA | 129 | 1 | Ізраїль - | Ізраїль — | Wrong dash |
 | PSA | 130 | 3 | , - | , — | Wrong dash |
 | PSA | 132 | 1 | С погадай | Спогадай | Separated letter |
-| PSA | 132 | 3 | "Не | „Не | Wrong quote |
-| PSA | 132 | 5 | Якова!" | Якова!‟ | Wrong quote |
 | PSA | 133 | 1 | Г лянь | Глянь | Separated letter |
 | PSA | 135 | 4 | Ізраїля - | Ізраїля — | Wrong dash |
 | PSA | 135 | 15 | народів - | народів — | Wrong dash |
 | PSA | 136 | 1 | Х валїте | Хвалїте | Separated letter |
-| PSA | 137 | 3 | "Нуте, | „Нуте, | Wrong quote |
-| PSA | 137 | 3 | Сионських!" | Сионських!‟ | Wrong quote |
 | PSA | 139 | 6 | надто - | надто — | Wrong dash |
 | PSA | 139 | 8 | , - | , — | Wrong dash |
 | PSA | 139 | 12 | тьма - | тьма — | Wrong dash |
@@ -1258,8 +1226,6 @@
 | PRO | 20 | 14 | , - | , — | Wrong dash |
 | PRO | 20 | 15 | знадоба - | знадоба — | Wrong dash |
 | PRO | 20 | 22 | , - | , — | Wrong dash |
-| PRO | 20 | 22 | "За | „За | Wrong quote |
-| PRO | 20 | 22 | віддам"; | віддам‟; | Wrong quote |
 | PRO | 20 | 23 | міра - | міра — | Wrong dash |
 | PRO | 20 | 24 | ж - | ж — | Wrong dash |
 | PRO | 20 | 25 | людинї - | людинї — | Wrong dash |
@@ -1280,14 +1246,10 @@
 | PRO | 21 | 24 | його - | його — | Wrong dash |
 | PRO | 21 | 31 | побіда - | побіда — | Wrong dash |
 | PRO | 22 | 6 | , - | , — | Wrong dash |
-| PRO | 22 | 13 | "Он | „Он | Wrong quote |
-| PRO | 22 | 13 | мене!" | мене!‟ | Wrong quote |
 | PRO | 22 | 14 | уста - | уста — | Wrong dash |
 | PRO | 22 | 20 | нераз - | нераз — | Wrong dash |
 | PRO | 22 | 22 | , - | , — | Wrong dash |
 | PRO | 23 | 7 | ‟ - | ‟ — | Wrong dash |
-| PRO | 23 | 7 | "Іж | „Іж | Wrong quote |
-| PRO | 23 | 7 | пий!" | пий!‟ | Wrong quote |
 | PRO | 23 | 8 | з'їв, | зʼїв, | Wrong apostrophe |
 | PRO | 23 | 12 | твої - | твої — | Wrong dash |
 | PRO | 23 | 13 | лозиною - | лозиною — | Wrong dash |
@@ -1303,26 +1265,18 @@
 | PRO | 24 | 22 | , - | , — | Wrong dash |
 | PRO | 24 | 22 | обох - | обох — | Wrong dash |
 | PRO | 24 | 23 | особу - | особу — | Wrong dash |
-| PRO | 24 | 24 | "Ти | „Ти | Wrong quote |
-| PRO | 24 | 24 | невинен", | невинен‟, | Wrong quote |
 | PRO | 24 | 31 | Дивлюсь - | Дивлюсь — | Wrong dash |
 | PRO | 24 | 33 | довго - | довго — | Wrong dash |
 | PRO | 24 | 33 | , - | , — | Wrong dash |
 | PRO | 24 | 34 | твоя - | твоя — | Wrong dash |
 | PRO | 25 | 2 | царів - | царів — | Wrong dash |
 | PRO | 25 | 3 | царів - | царів — | Wrong dash |
-| PRO | 25 | 7 | "Ходи | „Ходи | Wrong quote |
-| PRO | 25 | 7 | висше", | висше‟, | Wrong quote |
 | PRO | 25 | 20 | , - | , — | Wrong dash |
 | PRO | 25 | 27 | слави - | слави — | Wrong dash |
 | PRO | 25 | 28 | те - | те — | Wrong dash |
 | PRO | 26 | 8 | саме - | саме — | Wrong dash |
 | PRO | 26 | 9 | , - | , — | Wrong dash |
-| PRO | 26 | 13 | "Лев | „Лев | Wrong quote |
-| PRO | 26 | 13 | царинї!" | царинї!‟ | Wrong quote |
 | PRO | 26 | 14 | легун - | легун — | Wrong dash |
-| PRO | 26 | 19 | "Я | „Я | Wrong quote |
-| PRO | 26 | 19 | жартував!" | жартував!‟ | Wrong quote |
 | PRO | 26 | 20 | , - | , — | Wrong dash |
 | PRO | 26 | 22 | підшепника - | підшепника — | Wrong dash |
 | PRO | 27 | 2 | , - | , — | Wrong dash |
@@ -1346,8 +1300,6 @@
 | PRO | 28 | 18 | , - | , — | Wrong dash |
 | PRO | 28 | 20 | чоловік - | чоловік — | Wrong dash |
 | PRO | 28 | 24 | , - | , — | Wrong dash |
-| PRO | 28 | 24 | "се | „се | Wrong quote |
-| PRO | 28 | 24 | гріх", | гріх‟, | Wrong quote |
 | PRO | 28 | 25 | , - | , — | Wrong dash |
 | PRO | 28 | 26 | мудростї - | мудростї — | Wrong dash |
 | PRO | 28 | 27 | , - | , — | Wrong dash |
@@ -1368,8 +1320,6 @@
 | PRO | 30 | 5 | він - | він — | Wrong dash |
 | PRO | 30 | 14 | челюстї - | челюстї — | Wrong dash |
 | PRO | 30 | 15 | навіть - | навіть — | Wrong dash |
-| PRO | 30 | 15 | "давай, | „давай, | Wrong quote |
-| PRO | 30 | 15 | давай!" | давай!‟ | Wrong quote |
 | PRO | 30 | 25 | , - | , — | Wrong dash |
 | PRO | 30 | 26 | , - | , — | Wrong dash |
 | PRO | 30 | 30 | , - | , — | Wrong dash |
@@ -1446,8 +1396,6 @@
 | ECC | 11 | 3 | 'к | ʼк | Wrong apostrophe |
 | ECC | 11 | 8 | , - | , — | Wrong dash |
 | ECC | 11 | 10 | молодощі - | молодощі — | Wrong dash |
-| ECC | 12 | 1 | "Не | „Не | Wrong quote |
-| ECC | 12 | 1 | менї", | менї‟, | Wrong quote |
 | ECC | 12 | 5 | ; - | ; — | Wrong dash |
 | ECC | 12 | 11 | мудрих - | мудрих — | Wrong dash |
 | ECC | 12 | 11 | , - | , — | Wrong dash |
@@ -1584,18 +1532,11 @@
 | ISA | 7 | 9 | Ремалїєнко - | Ремалїєнко — | Wrong dash |
 | ISA | 7 | 17 | , - | , — | Wrong dash |
 | ISA | 7 | 18 | , - | , — | Wrong dash |
-| ISA | 8 | 1 | "Квапся | „Квапся | Wrong quote |
-| ISA | 8 | 1 | користь." | користь.‟ | Wrong quote |
 | ISA | 8 | 2 | , - | , — | Wrong dash |
-| ISA | 8 | 3 | "квапся | „квапся | Wrong quote |
-| ISA | 8 | 3 | користь"; | користь‟; | Wrong quote |
 | ISA | 8 | 4 | з'уміє | зʼуміє | Wrong apostrophe |
-| ISA | 8 | 4 | "тату | „тату | Wrong quote |
-| ISA | 8 | 4 | мамо", | мамо‟, | Wrong quote |
 | ISA | 8 | 9 | В'оружуйтесь, | Вʼоружуйтесь, | Wrong apostrophe |
 | ISA | 8 | 10 | се - | се — | Wrong dash |
 | ISA | 8 | 11 | , - | , — | Wrong dash |
-| ISA | 8 | 12 | "Змова"! | „Змова‟! | Wrong quote |
 | ISA | 8 | 13 | небесних - | небесних — | Wrong dash |
 | ISA | 8 | 15 | впадуть - | впадуть — | Wrong dash |
 | ISA | 8 | 19 | , - | , — | Wrong dash |
@@ -1692,10 +1633,6 @@
 | ISA | 23 | 13 | ; - | ; — | Wrong dash |
 | ISA | 23 | 15 | , - | , — | Wrong dash |
 | ISA | 24 | 7 | , - | , — | Wrong dash |
-| ISA | 24 | 16 | "Слава | „Слава | Wrong quote |
-| ISA | 24 | 16 | Праведному!" | Праведному!‟ | Wrong quote |
-| ISA | 24 | 16 | "Нуждо | „Нуждо | Wrong quote |
-| ISA | 24 | 16 | лиходїйськи." | лиходїйськи.‟ | Wrong quote |
 | ISA | 25 | 1 | ; - | ; — | Wrong dash |
 | ISA | 25 | 2 | замки - | замки — | Wrong dash |
 | ISA | 25 | 5 | , - | , — | Wrong dash |
@@ -1709,15 +1646,9 @@
 | ISA | 27 | 2 | його - | його — | Wrong dash |
 | ISA | 27 | 13 | , - | , — | Wrong dash |
 | ISA | 28 | 4 | з'їдає. | зʼїдає. | Wrong apostrophe |
-| ISA | 28 | 9 | "Кого | „Кого | Wrong quote |
 | ISA | 28 | 10 | усе - | усе — | Wrong dash |
-| ISA | 28 | 10 | багато." | багато.‟ | Wrong quote |
-| ISA | 28 | 12 | "Оце | „Оце | Wrong quote |
-| ISA | 28 | 12 | потїха" | потїха‟ | Wrong quote |
 | ISA | 28 | 13 | , - | , — | Wrong dash |
 | ISA | 28 | 15 | , - | , — | Wrong dash |
-| ISA | 28 | 15 | "Ми | „Ми | Wrong quote |
-| ISA | 28 | 15 | надїйний." | надїйний.‟ | Wrong quote |
 | ISA | 28 | 16 | , - | , — | Wrong dash |
 | ISA | 28 | 17 | справедливість - | справедливість — | Wrong dash |
 | ISA | 28 | 20 | , - | , — | Wrong dash |
@@ -1731,14 +1662,6 @@
 | ISA | 29 | 10 | , - | , — | Wrong dash |
 | ISA | 29 | 10 | ваші - | ваші — | Wrong dash |
 | ISA | 29 | 11 | пророцтво - | пророцтво — | Wrong dash |
-| ISA | 29 | 11 | "прочитай | „прочитай | Wrong quote |
-| ISA | 29 | 11 | її"; | її‟; | Wrong quote |
-| ISA | 29 | 11 | "не | „не | Wrong quote |
-| ISA | 29 | 11 | запечатана"; | запечатана‟; | Wrong quote |
-| ISA | 29 | 12 | "прочитай | „прочитай | Wrong quote |
-| ISA | 29 | 12 | її"; | її‟; | Wrong quote |
-| ISA | 29 | 12 | "я | „я | Wrong quote |
-| ISA | 29 | 12 | вмію". | вмію‟. | Wrong quote |
 | ISA | 29 | 20 | з'обижали, | зʼобижали, | Wrong apostrophe |
 | ISA | 29 | 22 | , - | , — | Wrong dash |
 | ISA | 29 | 23 | , - | , — | Wrong dash |
@@ -1749,18 +1672,10 @@
 | ISA | 30 | 6 | горбах - | горбах — | Wrong dash |
 | ISA | 30 | 7 | поміч - | поміч — | Wrong dash |
 | ISA | 30 | 7 | їх - | їх — | Wrong dash |
-| ISA | 30 | 10 | "Нїчого | „Нїчого | Wrong quote |
-| ISA | 30 | 10 | бачте!" | бачте!‟ | Wrong quote |
-| ISA | 30 | 10 | "Не | „Не | Wrong quote |
-| ISA | 30 | 11 | Ізрайлевого!" | Ізрайлевого!‟ | Wrong quote |
 | ISA | 30 | 12 | , - | , — | Wrong dash |
 | ISA | 30 | 13 | , - | , — | Wrong dash |
 | ISA | 30 | 16 | , - | , — | Wrong dash |
 | ISA | 30 | 16 | , - | , — | Wrong dash |
-| ISA | 30 | 16 | "Нї, | „Нї, | Wrong quote |
-| ISA | 30 | 16 | утечемо", | утечемо‟, | Wrong quote |
-| ISA | 30 | 16 | "ми | „ми | Wrong quote |
-| ISA | 30 | 16 | побіжимо", | побіжимо‟, | Wrong quote |
 | ISA | 30 | 18 | Господь - | Господь — | Wrong dash |
 | ISA | 30 | 19 | , - | , — | Wrong dash |
 | ISA | 30 | 19 | , - | , — | Wrong dash |
@@ -1779,8 +1694,6 @@
 | ISA | 33 | 20 | , - | , — | Wrong dash |
 | ISA | 33 | 22 | Господь - | Господь — | Wrong dash |
 | ISA | 33 | 22 | Господь - | Господь — | Wrong dash |
-| ISA | 33 | 24 | "я | „я | Wrong quote |
-| ISA | 33 | 24 | здужаю", | здужаю‟, | Wrong quote |
 | ISA | 34 | 2 | його - | його — | Wrong dash |
 | ISA | 34 | 9 | йому - | йому — | Wrong dash |
 | ISA | 34 | 12 | будуть - | будуть — | Wrong dash |
@@ -1952,8 +1865,6 @@
 | ISA | 56 | 11 | Се - | Се — | Wrong dash |
 | ISA | 56 | 11 | се - | се — | Wrong dash |
 | ISA | 57 | 6 | вони - | вони — | Wrong dash |
-| ISA | 57 | 10 | "пуста | „пуста | Wrong quote |
-| ISA | 57 | 10 | надїя!" | надїя!‟ | Wrong quote |
 | ISA | 57 | 13 | , - | , — | Wrong dash |
 | ISA | 57 | 13 | ? - | ? — | Wrong dash |
 | ISA | 57 | 18 | без'утїшних | безʼутїшних | Wrong apostrophe |
@@ -1961,8 +1872,6 @@
 | ISA | 57 | 20 | безбожні - | безбожні — | Wrong dash |
 | ISA | 57 | 21 | безбожним - | безбожним — | Wrong dash |
 | ISA | 58 | 3 | , - | , — | Wrong dash |
-| ISA | 58 | 3 | "Чом | „Чом | Wrong quote |
-| ISA | 58 | 3 | знаєш?" | знаєш?‟ | Wrong quote |
 | ISA | 58 | 5 | , - | , — | Wrong dash |
 | ISA | 58 | 6 | Ось - | Ось — | Wrong dash |
 | ISA | 58 | 9 | заголосиш - | заголосиш — | Wrong dash |
@@ -2060,29 +1969,17 @@
 | JER | 2 | 23 | , - | , — | Wrong dash |
 | JER | 2 | 24 | , - | , — | Wrong dash |
 | JER | 2 | 26 | , - | , — | Wrong dash |
-| JER | 2 | 27 | "Устань, | „Устань, | Wrong quote |
-| JER | 2 | 27 | нас!" | нас!‟ | Wrong quote |
 | JER | 2 | 29 | , - | , — | Wrong dash |
 | JER | 2 | 32 | княгиня - | княгиня — | Wrong dash |
 | JER | 2 | 32 | мене - | мене — | Wrong dash |
-| JER | 2 | 35 | "невинна | „невинна | Wrong quote |
-| JER | 2 | 35 | мене". | мене‟. | Wrong quote |
-| JER | 2 | 35 | "Я | „Я | Wrong quote |
-| JER | 2 | 35 | согрішила." | согрішила.‟ | Wrong quote |
 | JER | 3 | 3 | , - | , — | Wrong dash |
 | JER | 3 | 8 | , - | , — | Wrong dash |
 | JER | 3 | 12 | , - | , — | Wrong dash |
 | JER | 3 | 16 | , - | , — | Wrong dash |
-| JER | 3 | 16 | "скриня | „скриня | Wrong quote |
-| JER | 3 | 16 | Господнього"; | Господнього‟; | Wrong quote |
 | JER | 3 | 25 | , - | , — | Wrong dash |
 | JER | 3 | 25 | , - | , — | Wrong dash |
-| JER | 4 | 2 | "Так | „Так | Wrong quote |
-| JER | 4 | 2 | Господь!" | Господь!‟ | Wrong quote |
 | JER | 4 | 6 | 'д | ʼд | Wrong apostrophe |
 | JER | 4 | 6 | , - | , — | Wrong dash |
-| JER | 4 | 10 | "Мир | „Мир | Wrong quote |
-| JER | 4 | 10 | вас"; | вас‟; | Wrong quote |
 | JER | 4 | 13 | його - | його — | Wrong dash |
 | JER | 4 | 20 | хвилину - | хвилину — | Wrong dash |
 | JER | 4 | 22 | безглуздий - | безглуздий — | Wrong dash |
@@ -2093,40 +1990,25 @@
 | JER | 4 | 30 | з'украшуй | зʼукрашуй | Wrong apostrophe |
 | JER | 4 | 30 | , - | , — | Wrong dash |
 | JER | 4 | 31 | , - | , — | Wrong dash |
-| JER | 4 | 31 | "Ой | „Ой | Wrong quote |
-| JER | 4 | 31 | убийцями!" | убийцями!‟ | Wrong quote |
 | JER | 5 | 1 | , - | , — | Wrong dash |
-| JER | 5 | 2 | "Як | „Як | Wrong quote |
-| JER | 5 | 2 | Господь!" | Господь!‟ | Wrong quote |
 | JER | 5 | 3 | каменя - | каменя — | Wrong dash |
 | JER | 5 | 7 | що - | що — | Wrong dash |
 | JER | 5 | 8 | Вони - | Вони — | Wrong dash |
 | JER | 5 | 10 | розвалюйте - | розвалюйте — | Wrong dash |
-| JER | 5 | 12 | "Нема | „Нема | Wrong quote |
-| JER | 5 | 13 | станеться." | станеться.‟ | Wrong quote |
 | JER | 5 | 14 | людей - | людей — | Wrong dash |
 | JER | 5 | 16 | вони - | вони — | Wrong dash |
 | JER | 5 | 17 | з'їдять | зʼїдять | Wrong apostrophe |
 | JER | 6 | 7 | лицем - | лицем — | Wrong dash |
 | JER | 6 | 10 | Господнє - | Господнє — | Wrong dash |
 | JER | 6 | 13 | сьвященника - | сьвященника — | Wrong dash |
-| JER | 6 | 14 | "Спасеннє!" | „Спасеннє!‟ | Wrong quote |
 | JER | 6 | 16 | З'упинїтесь | Зʼупинїтесь | Wrong apostrophe |
 | JER | 6 | 19 | , - | , — | Wrong dash |
 | JER | 6 | 28 | , - | , — | Wrong dash |
-| JER | 7 | 4 | "Храм | „Храм | Wrong quote |
-| JER | 7 | 4 | Господень!" | Господень!‟ | Wrong quote |
-| JER | 7 | 10 | "Ми | „Ми | Wrong quote |
-| JER | 7 | 10 | спасені," | спасені,‟ | Wrong quote |
 | JER | 7 | 13 | , - | , — | Wrong dash |
 | JER | 7 | 14 | , - | , — | Wrong dash |
 | JER | 7 | 19 | , - | , — | Wrong dash |
 | JER | 7 | 25 | , - | , — | Wrong dash |
-| JER | 8 | 6 | "Що | „Що | Wrong quote |
-| JER | 8 | 6 | вкоів?" | вкоів?‟ | Wrong quote |
 | JER | 8 | 10 | сьвященниками - | сьвященниками — | Wrong dash |
-| JER | 8 | 11 | "Спасеннє, | „Спасеннє, | Wrong quote |
-| JER | 8 | 11 | мир!" | мир!‟ | Wrong quote |
 | JER | 8 | 14 | , - | , — | Wrong dash |
 | JER | 8 | 15 | , - | , — | Wrong dash |
 | JER | 8 | 19 | ? - | ? — | Wrong dash |
@@ -2153,14 +2035,10 @@
 | JER | 12 | 6 | , - | , — | Wrong dash |
 | JER | 12 | 10 | , - | , — | Wrong dash |
 | JER | 12 | 16 | , - | , — | Wrong dash |
-| JER | 12 | 16 | "Так | „Так | Wrong quote |
-| JER | 12 | 16 | Господь", | Господь‟, | Wrong quote |
 | JER | 13 | 7 | з'огнив | зʼогнив | Wrong apostrophe |
 | JER | 13 | 7 | дивись - | дивись — | Wrong dash |
 | JER | 13 | 14 | , - | , — | Wrong dash |
 | JER | 13 | 20 | віддане - | віддане — | Wrong dash |
-| JER | 13 | 22 | "За | „За | Wrong quote |
-| JER | 13 | 22 | судилось?" | судилось?‟ | Wrong quote |
 | JER | 13 | 23 | пард - | пард — | Wrong dash |
 | JER | 13 | 23 | ви - | ви — | Wrong dash |
 | JER | 14 | 8 | ти - | ти — | Wrong dash |
@@ -2187,16 +2065,12 @@
 | JER | 17 | 16 | , - | , — | Wrong dash |
 | JER | 18 | 10 | , - | , — | Wrong dash |
 | JER | 18 | 15 | , - | , — | Wrong dash |
-| JER | 18 | 18 | "Нумо, | „Нумо, | Wrong quote |
-| JER | 18 | 18 | його." | його.‟ | Wrong quote |
 | JER | 18 | 21 | , - | , — | Wrong dash |
 | JER | 19 | 3 | , - | , — | Wrong dash |
 | JER | 19 | 13 | , - | , — | Wrong dash |
 | JER | 20 | 1 | сьвященник - | сьвященник — | Wrong dash |
 | JER | 20 | 1 | , - | , — | Wrong dash |
 | JER | 20 | 9 | з'упинити | зʼупинити | Wrong apostrophe |
-| JER | 20 | 10 | "Викажіть! | „Викажіть! | Wrong quote |
-| JER | 20 | 10 | його!" | його!‟ | Wrong quote |
 | JER | 20 | 13 | . - | . — | Wrong dash |
 | JER | 20 | 16 | , - | , — | Wrong dash |
 | JER | 20 | 17 | , - | , — | Wrong dash |
@@ -2226,15 +2100,7 @@
 | JER | 23 | 30 | , - | , — | Wrong dash |
 | JER | 23 | 31 | я - | я — | Wrong dash |
 | JER | 23 | 32 | , - | , — | Wrong dash |
-| JER | 23 | 35 | "Що | „Що | Wrong quote |
-| JER | 23 | 35 | Господь?" | Господь?‟ | Wrong quote |
-| JER | 23 | 35 | "Що | „Що | Wrong quote |
-| JER | 23 | 35 | Господь?" | Господь?‟ | Wrong quote |
-| JER | 23 | 36 | "вагота | „вагота | Wrong quote |
-| JER | 23 | 36 | Господня" | Господня‟ | Wrong quote |
 | JER | 23 | 38 | , - | , — | Wrong dash |
-| JER | 23 | 38 | "вагота | „вагота | Wrong quote |
-| JER | 23 | 38 | Господа", | Господа‟, | Wrong quote |
 | JER | 24 | 1 | Господнїм - | Господнїм — | Wrong dash |
 | JER | 24 | 3 | , - | , — | Wrong dash |
 | JER | 25 | 1 | , - | , — | Wrong dash |
@@ -2294,8 +2160,6 @@
 | JER | 33 | 10 | , - | , — | Wrong dash |
 | JER | 33 | 15 | , - | , — | Wrong dash |
 | JER | 33 | 16 | Господь - | Господь — | Wrong dash |
-| JER | 33 | 16 | "Господь | „Господь | Wrong quote |
-| JER | 33 | 16 | наше!" | наше!‟ | Wrong quote |
 | JER | 34 | 18 | , - | , — | Wrong dash |
 | JER | 35 | 7 | лиш - | лиш — | Wrong dash |
 | JER | 35 | 8 | , - | , — | Wrong dash |
@@ -2353,7 +2217,6 @@
 | JER | 46 | 11 | , - | , — | Wrong dash |
 | JER | 46 | 15 | ? - | ? — | Wrong dash |
 | JER | 46 | 16 | , - | , — | Wrong dash |
-| JER | 46 | 17 | "трівога", | „трівога‟, | Wrong quote |
 | JER | 46 | 18 | , - | , — | Wrong dash |
 | JER | 46 | 18 | , - | , — | Wrong dash |
 | JER | 46 | 20 | Е гипет | Египет | Separated letter |
@@ -2617,7 +2480,6 @@
 | EZK | 24 | 25 | , - | , — | Wrong dash |
 | EZK | 24 | 27 | я - | я — | Wrong dash |
 | EZK | 25 | 3 | , - | , — | Wrong dash |
-| EZK | 25 | 3 | "Ага"! | „Ага‟! | Wrong quote |
 | EZK | 25 | 5 | я - | я — | Wrong dash |
 | EZK | 25 | 6 | , - | , — | Wrong dash |
 | EZK | 25 | 7 | я - | я — | Wrong dash |
@@ -2865,7 +2727,8 @@
 | HOS | 2 | 8 | , - | , — | Wrong dash |
 | HOS | 2 | 16 | "чоловіче | „чоловіче | Wrong quote |
 | HOS | 2 | 16 | мій," | мій,‟ | Wrong quote |
-| HOS | 2 | 16 | "Баале" | „Баале‟ | Wrong quote |
+| HOS | 2 | 16 | "Баале | „Баале | Wrong quote |
+| HOS | 2 | 16 | Баале" | Баале‟ | Wrong quote |
 | HOS | 2 | 20 | я - | я — | Wrong dash |
 | HOS | 2 | 23 | Ти - | Ти — | Wrong dash |
 | HOS | 2 | 23 | Ти - | Ти — | Wrong dash |
@@ -3224,8 +3087,6 @@
 | MRK | 6 | 45 | 'д | ʼд | Wrong apostrophe |
 | MRK | 8 | 27 | , - | , — | Wrong dash |
 | MRK | 10 | 6 | творення - | творення — | Wrong dash |
-| MRK | 12 | 36 | "Рече | „Рече | Wrong quote |
-| MRK | 12 | 36 | твоїх." | твоїх.‟ | Wrong quote |
 | LUK | 6 | 5 | чоловічий - | чоловічий — | Wrong dash |
 | LUK | 6 | 40 | же - | же — | Wrong dash |
 | LUK | 7 | 14 | з'упинились. | зʼупинились. | Wrong apostrophe |
@@ -3314,7 +3175,6 @@
 | 1CO | 9 | 21 | беззаконним - | беззаконним — | Wrong dash |
 | 1CO | 11 | 3 | Христу - | Христу — | Wrong dash |
 | 1CO | 14 | 14 | без'овочне. | безʼовочне. | Wrong apostrophe |
-| 1CO | 14 | 16 | "амінь" | „амінь‟ | Wrong quote |
 | 1CO | 14 | 26 | , - | , — | Wrong dash |
 | 1CO | 15 | 26 | ся - | ся — | Wrong dash |
 | 1CO | 15 | 52 | трубою - | трубою — | Wrong dash |
@@ -3322,13 +3182,6 @@
 | 1CO | 15 | 56 | гріха - | гріха — | Wrong dash |
 | 2CO | 1 | 17 | так - | так — | Wrong dash |
 | 2CO | 1 | 17 | нї - | нї — | Wrong dash |
-| 2CO | 1 | 18 | "так" | „так‟ | Wrong quote |
-| 2CO | 1 | 18 | "нї". | „нї‟. | Wrong quote |
-| 2CO | 1 | 19 | "так" | „так‟ | Wrong quote |
-| 2CO | 1 | 19 | "нї", | „нї‟, | Wrong quote |
-| 2CO | 1 | 19 | "так". | „так‟. | Wrong quote |
-| 2CO | 1 | 20 | "так" | „так‟ | Wrong quote |
-| 2CO | 1 | 20 | "амінь", | „амінь‟, | Wrong quote |
 | 2CO | 1 | 21 | нас - | нас — | Wrong dash |
 | 2CO | 3 | 9 | осуду - | осуду — | Wrong dash |
 | 2CO | 6 | 2 | спасення. ) | спасення.) | Extra space |
@@ -3348,141 +3201,29 @@
 | COL | 1 | 16 | , - | , — | Wrong dash |
 | COL | 2 | 2 | з'єднавшись | зʼєднавшись | Wrong apostrophe |
 | COL | 2 | 17 | ж - | ж — | Wrong dash |
-| 1TH | 5 | 3 | "Упокій | „Упокій | Wrong quote |
-| 1TH | 5 | 3 | безпечність", | безпечність‟, | Wrong quote |
 | 1TI | 5 | 6 | жива - | жива — | Wrong dash |
 | 1TI | 6 | 5 | благочестє - | благочестє — | Wrong dash |
 | 2TI | 1 | 6 | під'огрівав | підʼогрівав | Wrong apostrophe |
 | HEB | 1 | 8 | правоти - | правоти — | Wrong dash |
 | HEB | 1 | 10 | небеса - | небеса — | Wrong dash |
-| HEB | 3 | 15 | "Сьогоднї, | „Сьогоднї, | Wrong quote |
-| HEB | 3 | 15 | прогнїванню." | прогнїванню.‟ | Wrong quote |
-| HEB | 4 | 3 | "Так | „Так | Wrong quote |
-| HEB | 4 | 3 | мій," | мій,‟ | Wrong quote |
-| HEB | 4 | 4 | "І | „І | Wrong quote |
-| HEB | 4 | 4 | своїх." | своїх.‟ | Wrong quote |
-| HEB | 4 | 5 | "Чи | „Чи | Wrong quote |
-| HEB | 4 | 5 | мій." | мій.‟ | Wrong quote |
-| HEB | 4 | 7 | "сьогоднї" | „сьогоднї‟ | Wrong quote |
-| HEB | 4 | 7 | "Сьогоднї, | „Сьогоднї, | Wrong quote |
-| HEB | 4 | 7 | ваших." | ваших.‟ | Wrong quote |
-| HEB | 5 | 5 | "Син | „Син | Wrong quote |
-| HEB | 5 | 5 | Тебе." | Тебе.‟ | Wrong quote |
-| HEB | 5 | 6 | "Ти | „Ти | Wrong quote |
-| HEB | 5 | 6 | Мелхиседековому." | Мелхиседековому.‟ | Wrong quote |
-| HEB | 6 | 14 | "Істинно | „Істинно | Wrong quote |
-| HEB | 6 | 14 | тебе." | тебе.‟ | Wrong quote |
 | HEB | 6 | 16 | , - | , — | Wrong dash |
 | HEB | 7 | 8 | там - | там — | Wrong dash |
-| HEB | 7 | 17 | "Що | „Що | Wrong quote |
-| HEB | 7 | 17 | Мелхиседековому." | Мелхиседековому.‟ | Wrong quote |
-| HEB | 7 | 21 | "Кляв | „Кляв | Wrong quote |
-| HEB | 7 | 21 | Мелхиседековому") | Мелхиседековому‟) | Wrong quote |
-| HEB | 8 | 5 | "Гледи | „Гледи | Wrong quote |
-| HEB | 8 | 5 | бо", | бо‟, | Wrong quote |
-| HEB | 8 | 5 | "зроби | „зроби | Wrong quote |
-| HEB | 8 | 5 | горі." | горі.‟ | Wrong quote |
-| HEB | 8 | 8 | "Ось | „Ось | Wrong quote |
-| HEB | 8 | 12 | більше." | більше.‟ | Wrong quote |
-| HEB | 8 | 13 | "новий", | „новий‟, | Wrong quote |
-| HEB | 9 | 20 | "Се | „Се | Wrong quote |
-| HEB | 9 | 20 | Бог." | Бог.‟ | Wrong quote |
-| HEB | 10 | 5 | "Жертви | „Жертви | Wrong quote |
-| HEB | 10 | 7 | Боже." | Боже.‟ | Wrong quote |
-| HEB | 10 | 8 | "Що | „Що | Wrong quote |
-| HEB | 10 | 8 | єси," | єси,‟ | Wrong quote |
-| HEB | 10 | 9 | "Ось, | „Ось, | Wrong quote |
-| HEB | 10 | 9 | Боже." | Боже.‟ | Wrong quote |
-| HEB | 10 | 16 | "Се | „Се | Wrong quote |
-| HEB | 10 | 16 | днїв", | днїв‟, | Wrong quote |
-| HEB | 10 | 16 | "Давши | „Давши | Wrong quote |
-| HEB | 10 | 17 | вже." | вже.‟ | Wrong quote |
-| HEB | 10 | 30 | "Менї | „Менї | Wrong quote |
-| HEB | 10 | 30 | Господь"; | Господь‟; | Wrong quote |
-| HEB | 10 | 30 | "Господь | „Господь | Wrong quote |
-| HEB | 10 | 30 | своїх." | своїх.‟ | Wrong quote |
-| HEB | 10 | 38 | "А | „А | Wrong quote |
-| HEB | 10 | 38 | буде," | буде,‟ | Wrong quote |
-| HEB | 10 | 38 | "Коли | „Коли | Wrong quote |
-| HEB | 10 | 38 | його." | його.‟ | Wrong quote |
-| HEB | 11 | 5 | "не | „не | Wrong quote |
-| HEB | 11 | 5 | Бог": | Бог‟: | Wrong quote |
-| HEB | 11 | 5 | "що | „що | Wrong quote |
-| HEB | 11 | 5 | Богу." | Богу.‟ | Wrong quote |
-| HEB | 11 | 18 | "Що | „Що | Wrong quote |
-| HEB | 11 | 18 | насїннє," | насїннє,‟ | Wrong quote |
-| HEB | 11 | 21 | "склонивсь | „склонивсь | Wrong quote |
-| HEB | 11 | 21 | свого". | свого‟. | Wrong quote |
-| HEB | 12 | 5 | "Сину | „Сину | Wrong quote |
-| HEB | 12 | 6 | приймає." | приймає.‟ | Wrong quote |
-| HEB | 12 | 12 | "зомлїлі | „зомлїлі | Wrong quote |
-| HEB | 12 | 12 | випростайте", | випростайте‟, | Wrong quote |
-| HEB | 12 | 13 | "стежки | „стежки | Wrong quote |
-| HEB | 12 | 13 | вашими", | вашими‟, | Wrong quote |
-| HEB | 12 | 20 | "Хоч | „Хоч | Wrong quote |
-| HEB | 12 | 20 | пробитий." | пробитий.‟ | Wrong quote |
-| HEB | 12 | 21 | "Я | „Я | Wrong quote |
-| HEB | 12 | 21 | трепетї.") | трепетї.‟) | Wrong quote |
-| HEB | 12 | 26 | "Ще | „Ще | Wrong quote |
-| HEB | 12 | 26 | небом." | небом.‟ | Wrong quote |
-| HEB | 12 | 27 | "ще | „ще | Wrong quote |
-| HEB | 12 | 27 | раз" | раз‟ | Wrong quote |
 | HEB | 12 | 29 | Бог - | Бог — | Wrong dash |
-| HEB | 13 | 5 | "Не | „Не | Wrong quote |
-| HEB | 13 | 5 | тебе." | тебе.‟ | Wrong quote |
-| HEB | 13 | 6 | "Господь | „Господь | Wrong quote |
-| HEB | 13 | 6 | чоловік?" | чоловік?‟ | Wrong quote |
-| HEB | 13 | 15 | "овощ | „овощ | Wrong quote |
-| HEB | 13 | 15 | уст", | уст‟, | Wrong quote |
-| JAS | 2 | 8 | "Люби | „Люби | Wrong quote |
-| JAS | 2 | 8 | самого", | самого‟, | Wrong quote |
-| JAS | 2 | 11 | "Не | „Не | Wrong quote |
-| JAS | 2 | 11 | перелюбу," | перелюбу,‟ | Wrong quote |
-| JAS | 2 | 11 | "Не | „Не | Wrong quote |
-| JAS | 2 | 11 | вбивай." | вбивай.‟ | Wrong quote |
-| JAS | 2 | 23 | "Увірував | „Увірував | Wrong quote |
-| JAS | 2 | 23 | його." | його.‟ | Wrong quote |
 | JAS | 3 | 5 | язик - | язик — | Wrong dash |
 | JAS | 4 | 4 | сього - | сього — | Wrong dash |
-| JAS | 4 | 5 | "До | „До | Wrong quote |
-| JAS | 4 | 5 | нас?" | нас?‟ | Wrong quote |
-| JAS | 4 | 6 | "Господь | „Господь | Wrong quote |
-| JAS | 4 | 6 | благодать." | благодать.‟ | Wrong quote |
 | JAS | 5 | 3 | з'їсть | зʼїсть | Wrong apostrophe |
-| 1PE | 1 | 16 | "Будьте | „Будьте | Wrong quote |
-| 1PE | 1 | 16 | сьвят." | сьвят.‟ | Wrong quote |
-| 1PE | 1 | 24 | "всяке | „всяке | Wrong quote |
 | 1PE | 1 | 25 | слово - | слово — | Wrong dash |
-| 1PE | 1 | 25 | вік." | вік.‟ | Wrong quote |
-| 1PE | 2 | 6 | "Ось, | „Ось, | Wrong quote |
-| 1PE | 2 | 6 | ся." | ся.‟ | Wrong quote |
 | 1PE | 2 | 7 | , - | , — | Wrong dash |
 | 1PE | 2 | 7 | , - | , — | Wrong dash |
-| 1PE | 2 | 7 | "камінь, | „камінь, | Wrong quote |
-| 1PE | 2 | 7 | поблазнї"; | поблазнї‟; | Wrong quote |
 | 1PE | 2 | 9 | ж - | ж — | Wrong dash |
-| 1PE | 2 | 24 | "ранами | „ранами | Wrong quote |
-| 1PE | 2 | 24 | сцїлились". | сцїлились‟. | Wrong quote |
 | 1PE | 3 | 1 | з'єднані, | зʼєднані, | Wrong apostrophe |
 | 1PE | 3 | 3 | з'одяганнє | зʼодяганнє | Wrong apostrophe |
 | 1PE | 3 | 7 | з'упинялись | зʼупинялись | Wrong apostrophe |
-| 1PE | 3 | 10 | "Хто | „Хто | Wrong quote |
-| 1PE | 3 | 12 | роблять." | роблять.‟ | Wrong quote |
 | 1PE | 4 | 14 | , - | , — | Wrong dash |
-| 1PE | 4 | 18 | "праведник | „праведник | Wrong quote |
-| 1PE | 4 | 18 | ся?" | ся?‟ | Wrong quote |
-| 1PE | 5 | 5 | "Бог | „Бог | Wrong quote |
-| 1PE | 5 | 5 | благодать." | благодать.‟ | Wrong quote |
-| 2PE | 1 | 17 | "Се | „Се | Wrong quote |
-| 2PE | 1 | 17 | Його." | Його.‟ | Wrong quote |
 | 2PE | 2 | 9 | , - | , — | Wrong dash |
 | 2PE | 2 | 13 | вони - | вони — | Wrong dash |
 | 2PE | 2 | 14 | се - | се — | Wrong dash |
 | 2PE | 2 | 20 | їх - | їх — | Wrong dash |
-| 2PE | 2 | 22 | "Пес | „Пес | Wrong quote |
-| 2PE | 2 | 22 | блювотини", | блювотини‟, | Wrong quote |
-| 2PE | 2 | 22 | "свиня, | „свиня, | Wrong quote |
-| 2PE | 2 | 22 | калюжу". | калюжу‟. | Wrong quote |
 | 1JN | 1 | 1 | , - | , — | Wrong dash |
 | 1JN | 2 | 16 | , - | , — | Wrong dash |
 | 1JN | 2 | 16 | , - | , — | Wrong dash |
@@ -3493,8 +3234,6 @@
 | 2JN | 1 | 1 | Старець - | Старець — | Wrong dash |
 | 3JN | 1 | 1 | Старець - | Старець — | Wrong dash |
 | JUD | 1 | 1 | , - | , — | Wrong dash |
-| JUD | 1 | 14 | "Ось, | „Ось, | Wrong quote |
-| JUD | 1 | 15 | безбожні." | безбожні.‟ | Wrong quote |
 | REV | 1 | 13 | з'одягненого | зʼодягненого | Wrong apostrophe |
 | REV | 3 | 5 | з'одягнеть | зʼодягнеть | Wrong apostrophe |
 | REV | 3 | 18 | з'одягнув | зʼодягнув | Wrong apostrophe |
