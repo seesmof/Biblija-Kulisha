@@ -70,69 +70,8 @@ English_Bible_Book_names_to_Ukrainian = {
     "Юди": "",
     "Одкриттє": "",
 }
-1CH
-1CO
-1JN
-1KI
-1PE
-1SA
-1TH
-1TI
-2CH
-2CO
-2JN
-2KI
-2PE
-2SA
-2TH
-2TI
-3JN
-ACT
-AMO
-COL
-DAN
-DEU
-ECC
-EPH
-EST
-EXO
-EZK
-EZR
-GAL
-GEN
-HAB
-HAG
-HEB
-HOS
-ISA
-JAS
-JDG
-JER
-JHN
-JOB
-JOL
-JON
-JOS
-JUD
-LAM
-LEV
-LUK
-MAL
-MAT
-MIC
-MRK
-NAM
-NEH
-NUM
-OBA
-PHM
-PHP
-PRO
-PSA
-REV
-ROM
-RUT
-SNG
-TIT
-ZEC
-ZEP
+root_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+target_folder = os.path.join(root_path, "Original")
+Bible_file_names = os.listdir(target_folder)
+for line in Bible_file_names:
+    print(line[2:].replace("BKS.USFM", ""))
