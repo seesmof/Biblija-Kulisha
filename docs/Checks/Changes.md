@@ -10,6 +10,7 @@
 | GEN | 10 | 29 | 'ці | ʼці | Wrong apostrophe |
 | GEN | 11 | 3 | 'дному: | ʼдному: | Wrong apostrophe |
 | GEN | 11 | 5 | чолвїчі | чоловїчі | Missing letter |
+| GEN | 11 | 6 | тільки | тількі | Wrong letter |
 | GEN | 11 | 7 | 'дного. | ʼдного. | Wrong apostrophe |
 | GEN | 16 | 14 | "Криницею | „Криницею | Wrong quote |
 | GEN | 16 | 14 | бачить." | бачить.‟ | Wrong quote |
