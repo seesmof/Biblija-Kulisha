@@ -90,8 +90,12 @@ target_path = os.path.join(root_folder, "..", "docs", "Checks", "Changes.md")
 with open(target_path, encoding="utf-8", mode="r") as f:
     lines = f.readlines()
 
-changes = []
+changes: list[Change] = []
 for line in lines[2:]:
     split_line = line.strip()[2:-2].split(" | ")
     change = Change(*split_line)
     changes.append(change)
+
+for i, change in enumerate(changes):
+    if change.Book in Ukrainian_Bible_Book_name_to_English_abbrevation:
+        changes[i].Book = Ukrainian_Bible_Book_name_to_English_abbrevation[change.Book]
