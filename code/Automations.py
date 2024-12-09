@@ -1,10 +1,81 @@
-import os
-import re
+from dataclasses import dataclass
+from shutil import copy2
 import glob
 import time
-from shutil import copy2
+import os
+import re
+
+Ukrainian_Bible_Book_name_to_English_abbrevation = {
+    "1 Мойсея": "GEN",
+    "2 Мойсея": "EXO",
+    "3 Мойсея": "LEV",
+    "4 Мойсея": "NUM",
+    "5 Мойсея": "DEU",
+    "Иозея": "JOS",
+    "Суддїв": "JDG",
+    "Рути": "RUT",
+    "1 Самуїлова": "1SA",
+    "2 Самуїлова": "2SA",
+    "1 Царів": "1KI",
+    "2 Царів": "2KI",
+    "1 Паралипоменон": "1CH",
+    "2 Паралипоменон": "2CH",
+    "Ездри": "EZR",
+    "Неємії": "NEH",
+    "Естери": "EST",
+    "Йова": "JOB",
+    "Псалтирь": "PSA",
+    "Приповісток": "PRO",
+    "Екклезіаста": "ECC",
+    "Пісень": "SNG",
+    "Ісаїї": "ISA",
+    "Еремії": "JER",
+    "Плач": "LAM",
+    "Езекиїла": "EZK",
+    "Даниїла": "DAN",
+    "Осії": "HOS",
+    "Йоіла": "JOL",
+    "Амоса": "AMO",
+    "Авдія": "OBA",
+    "Йони": "JON",
+    "Михея": "MIC",
+    "Наума": "NAM",
+    "Аввакума": "HAB",
+    "Софонії": "ZEP",
+    "Аггея": "HAG",
+    "Захарії": "ZEC",
+    "Малахія": "MAL",
+    "Маттея": "MAT",
+    "Марка": "MRK",
+    "Луки": "LUK",
+    "Йоана": "JHN",
+    "Дїяння": "ACT",
+    "Римлян": "ROM",
+    "1 Коринтян": "1CO",
+    "2 Коринтян": "2CO",
+    "Галат": "GAL",
+    "Єфесян": "EPH",
+    "Филипян": "PHP",
+    "Колосян": "COL",
+    "1 Солунян": "1TH",
+    "2 Солунян": "2TH",
+    "1 Тимотея": "1TI",
+    "2 Тимотея": "2TI",
+    "Тита": "TIT",
+    "Филимона": "PHM",
+    "Жидів": "HEB",
+    "Якова": "JAS",
+    "1 Петра": "1PE",
+    "2 Петра": "2PE",
+    "1 Йоана": "1JN",
+    "2 Йоана": "2JN",
+    "3 Йоана": "3JN",
+    "Юди": "JUD",
+    "Одкриттє": "REV",
+}
 
 root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+code_folder_path = os.path.dirname(os.path.abspath(__file__))
 original_folder_path = os.path.join(root, "Original")
 original_file_paths = glob.glob(original_folder_path + "\\*.USFM")
 output_folder_path = os.path.join(root, "Output")
@@ -13,6 +84,17 @@ text_solid_folder_path = os.path.join(output_folder_path, "TXT SLD")
 text_lined_folder_path = os.path.join(output_folder_path, "TXT LND")
 logs_folder_path = os.path.join(root, "logs")
 paratext_folder_path = os.path.join("C:\\My Paratext 9 Projects\\BKS")
+changes_table_file_path = os.path.join(root, "docs", "Checks", "Changes.md")
+
+
+@dataclass
+class Change:
+    Book: str
+    Chapter: int
+    Verse: int
+    Mistake: str
+    Correction: str
+    Reason: str
 
 
 def copy_to_paratext():
@@ -341,6 +423,45 @@ def form_text_lined():
         pass
 
 
+def sort_markdown_table(file_path: str):
+    with open(file_path, encoding="utf-8", mode="r") as f:
+        lines = f.readlines()
+
+    changes: list[Change] = []
+    for line in lines[2:]:
+        split_line = line.strip()[2:-2].split(" | ")
+        change = Change(*split_line)
+        change.Chapter = int(change.Chapter)
+        change.Verse = int(change.Verse)
+        changes.append(change)
+
+    for i, change in enumerate(changes):
+        if change.Book in Ukrainian_Bible_Book_name_to_English_abbrevation:
+            changes[i].Book = Ukrainian_Bible_Book_name_to_English_abbrevation[
+                change.Book
+            ]
+
+    table_lines: list[str] = [
+        "| Book | Chapter | Verse | Mistake | Correction | Reason |",
+        "| - | - | - | - | - | - |",
+    ]
+    for Book in Ukrainian_Bible_Book_name_to_English_abbrevation.values():
+        found_changes_for_this_Book = [
+            change for change in changes if change.Book == Book
+        ]
+        found_changes = sorted(
+            found_changes_for_this_Book,
+            key=lambda change: (change.Chapter, change.Verse),
+            reverse=False,
+        )
+        for change in found_changes:
+            line = f"| {change.Book} | {change.Chapter} | {change.Verse} | {change.Mistake} | {change.Correction} | {change.Reason} |"
+            table_lines.append(line)
+
+    with open(file_path, encoding="utf-8", mode="w") as f:
+        f.write("\n".join(table_lines))
+
+
 def perform_automations():
     print()
     copy_to_paratext()
@@ -353,6 +474,8 @@ def perform_automations():
     print("Formed lined Bible text file")
     form_logs()
     print("Formed log files")
+    sort_markdown_table(changes_table_file_path)
+    print("Sorted changes table")
 
 
 def monitor_files_for_changes():
