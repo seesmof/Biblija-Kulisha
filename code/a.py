@@ -96,3 +96,7 @@ for line in lines[2:]:
 for i, change in enumerate(changes):
     if change.Book in Ukrainian_Bible_Book_name_to_English_abbrevation:
         changes[i].Book = Ukrainian_Bible_Book_name_to_English_abbrevation[change.Book]
+
+for Book in Ukrainian_Bible_Book_name_to_English_abbrevation.values():
+    found_changes_for_this_Book = [change for change in changes if change.Book == Book]
+    print(found_changes_for_this_Book)

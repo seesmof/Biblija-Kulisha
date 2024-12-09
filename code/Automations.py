@@ -103,6 +103,7 @@ def form_logs():
                 for c in contents:
                     res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
                     F.append(res)
+            line = remove_usfm_tags(line)
             if "„" in line or "‟" in line:
                 verse_number = get_verse_number(line)
                 contents = [w for w in line.split() if "„" in w or "‟" in w]
@@ -117,7 +118,8 @@ def form_logs():
                     Apostrophes.append(res)
             if "—" in line:
                 verse_number = get_verse_number(line)
-                contents = re.findall(r"\w+\s*—|\W\s*—", line)
+                pattern = r"\w+\s*—|\W\s*—"
+                contents = re.findall(pattern, line)
                 for c in contents:
                     res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
                     Dashes.append(res)
