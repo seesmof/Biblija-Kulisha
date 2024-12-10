@@ -171,6 +171,7 @@
 | JDG | 1 | 23 | Лузом - | Лузом — | Wrong dash |
 | JDG | 2 | 1 | з'явивсь | зʼявивсь | Wrong apostrophe |
 | JDG | 2 | 5 | Бохим*. | Бохим. | Extra footnote caller |
+| JDG | 2 | 5 | прізвище | призвіще | Wrong letters |
 | JDG | 2 | 6 | державу - | державу — | Wrong dash |
 | JDG | 3 | 9 | , - | , — | Wrong dash |
 | JDG | 3 | 15 | лївака.Через | лївака. Через | Missing space |
