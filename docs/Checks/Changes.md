@@ -3271,6 +3271,7 @@
 | ZEC | 14 | 4 | 'д | ʼд | Wrong apostrophe |
 | ZEC | 14 | 4 | друга - | друга — | Wrong dash |
 | ZEC | 14 | 8 | їх - | їх — | Wrong dash |
+| ZEC | 14 | 12 | Госпбдь | Господь | Wrong letter |
 | ZEC | 14 | 13 | Господа,- | Господа, -  | Missing spaces |
 | ZEC | 14 | 13 | , - | , — | Wrong dash |
 | MAL | 1 | 2 | ? - | ? — | Wrong dash |
