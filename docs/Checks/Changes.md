@@ -239,6 +239,7 @@
 | 2SA | 11 | 22 | з'ясував | зʼясував | Wrong apostrophe |
 | 2SA | 12 | 7 | той - | той — | Wrong dash |
 | 2SA | 12 | 25 | Едидіа* | Едидіа | Extra footnote caller |
+| 2SA | 13 | 3 | брата. | брата | Extra dot |
 | 2SA | 13 | 6 | ізз'їсти! | іззʼїсти! | Wrong apostrophe |
 | 2SA | 13 | 16 | мене - | мене — | Wrong dash |
 | 2SA | 13 | 20 | сестро - | сестро — | Wrong dash |
