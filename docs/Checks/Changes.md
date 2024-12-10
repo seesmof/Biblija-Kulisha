@@ -71,6 +71,7 @@
 | LEV | 8 | 31 | з'їжте | зʼїжте | Wrong apostrophe |
 | LEV | 13 | 48 | переплїтцї* | переплїтцї | Extra footnote caller |
 | LEV | 13 | 55 | того як | того, як | Missing comma |
+| LEV | 13 | 55 | не змінилась | незмінилась | Extra space |
 | LEV | 14 | 12 | логом* | логом | Extra footnote caller |
 | LEV | 14 | 44 | в'їдлива | вʼїдлива | Wrong apostrophe |
 | LEV | 17 | 14 | з'їсть | зʼїсть | Wrong apostrophe |
