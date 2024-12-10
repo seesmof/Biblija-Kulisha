@@ -70,6 +70,7 @@
 | LEV | 7 | 20 | з'їла | зʼїла | Wrong apostrophe |
 | LEV | 8 | 31 | з'їжте | зʼїжте | Wrong apostrophe |
 | LEV | 13 | 48 | переплїтцї* | переплїтцї | Extra footnote caller |
+| LEV | 13 | 54 | удруге | у друге | Missing space |
 | LEV | 13 | 55 | того як | того, як | Missing comma |
 | LEV | 13 | 55 | не змінилась | незмінилась | Extra space |
 | LEV | 13 | 55 | ча | чи | Wrong letter |
