@@ -293,6 +293,7 @@
 | 1KI | 7 | 49 | сьвітильники - | сьвітильники — | Wrong dash |
 | 1KI | 7 | 50 | храму - | храму — | Wrong dash |
 | 1KI | 8 | 2 | , - | , — | Wrong dash |
+| 1KI | 8 | 17 | панопя | паноця | Wrong letter |
 | 1KI | 8 | 22 | 'д | ʼд | Wrong apostrophe |
 | 1KI | 8 | 27 | 'біймуть, | ʼбіймуть, | Wrong apostrophe |
 | 1KI | 8 | 35 | , - | , — | Wrong dash |
