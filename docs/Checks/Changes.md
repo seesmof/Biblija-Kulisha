@@ -266,6 +266,7 @@
 | 2SA | 22 | 45 | Люди - | Люди — | Wrong dash |
 | 2SA | 23 | 32 | Яшена - | Яшена — | Wrong dash |
 | 2SA | 24 | 17 | вівцї - | вівцї — | Wrong dash |
+| 1KI | 1 | 33 | в | й | Wrong letter |
 | 1KI | 1 | 36 | Аминь - | Аминь — | Wrong dash |
 | 1KI | 1 | 46 | престолї | престолї. | Missing dot |
 | 1KI | 2 | 17 | Соломона - | Соломона — | Wrong dash |
