@@ -20,6 +20,7 @@
 | GEN | 22 | 20 | з'ясовано | зъясовано | Wrong symbol |
 | GEN | 22 | 20 | Авраамові | Абраамові | Wrong letter |
 | GEN | 24 | 28 | з'ясувала | зʼясувала | Wrong apostrophe |
+| GEN | 25 | 30 | Єдом*. | Єдом. | Extra footnote caller |
 | GEN | 26 | 20 | Есек - | Есек — | Wrong dash |
 | GEN | 26 | 21 | Ситна - | Ситна — | Wrong dash |
 | GEN | 26 | 22 | Рехобот - | Рехобот — | Wrong dash |
@@ -35,6 +36,8 @@
 | GEN | 41 | 24 | з'ясувати. | зʼясувати. | Wrong apostrophe |
 | GEN | 41 | 26 | гарних - | гарних — | Wrong dash |
 | GEN | 41 | 26 | доброго - | доброго — | Wrong dash |
+| GEN | 41 | 45 | Панеях*, | Панеях, | Extra footnote caller |
+| GEN | 41 | 45 | Онського**. | Онського. | Extra footnote caller |
 | GEN | 43 | 5 | коди | коли | Wrong letter |
 | GEN | 43 | 11 | гостиньця : | гостиньця: | Extra space |
 | GEN | 48 | 14 | , - | , — | Wrong dash |
@@ -47,18 +50,27 @@
 | GEN | 50 | 18 | Се - | Се — | Wrong dash |
 | EXO | 7 | 9 | . Як | Як | Extra dot |
 | EXO | 10 | 23 | 'дного, | ʼдного, | Wrong apostrophe |
+| EXO | 13 | 4 | Абиб*. | Абиб. | Extra footnote caller |
 | EXO | 15 | 3 | Господь - | Господь — | Wrong dash |
 | EXO | 15 | 12 | , - | , — | Wrong dash |
 | EXO | 16 | 28 | . І | І | Extra dot |
+| EXO | 17 | 15 | Єгова-Нїссі*. | Єгова-Нїссі. | Extra footnote caller |
 | EXO | 22 | 9 | "Ось | „Ось | Wrong quote |
 | EXO | 22 | 9 | воно", | воно‟, | Wrong quote |
+| EXO | 28 | 4 | хитон* | хитон | Extra footnote caller |
+| EXO | 28 | 4 | кедар** | кедар | Extra footnote caller |
+| EXO | 28 | 30 | туммім*, | туммім, | Extra footnote caller |
+| EXO | 28 | 37 | кедара*; | кедара; | Extra footnote caller |
 | EXO | 29 | 22 | литку - | литку — | Wrong dash |
+| EXO | 32 | 2 | сережки* | сережки | Extra footnote caller |
 | EXO | 32 | 13 | 'цю | ʼцю | Wrong apostrophe |
 | EXO | 32 | 16 | письмо - | письмо — | Wrong dash |
 | EXO | 34 | 5 | "Господь". | „Господь‟. | Wrong quote |
 | EXO | 36 | 6 | з'ясували | зʼясували | Wrong apostrophe |
 | LEV | 7 | 20 | з'їла | зʼїла | Wrong apostrophe |
 | LEV | 8 | 31 | з'їжте | зʼїжте | Wrong apostrophe |
+| LEV | 13 | 48 | переплїтцї* | переплїтцї | Extra footnote caller |
+| LEV | 14 | 12 | логом* | логом | Extra footnote caller |
 | LEV | 14 | 44 | в'їдлива | вʼїдлива | Wrong apostrophe |
 | LEV | 17 | 14 | з'їсть | зʼїсть | Wrong apostrophe |
 | LEV | 18 | 29 | , - | , — | Wrong dash |
@@ -69,22 +81,32 @@
 | LEV | 25 | 39 | з'убожіє | зʼубожіє | Wrong apostrophe |
 | LEV | 25 | 47 | з'убожіє | зʼубожіє | Wrong apostrophe |
 | LEV | 26 | 32 | з'жахнуться, | зʼжахнуться, | Wrong apostrophe |
+| NUM | 5 | 22 | амінь*! | амінь! | Extra footnote caller |
 | NUM | 7 | 9 | , - | , — | Wrong dash |
 | NUM | 9 | 20 | : - | : — | Wrong dash |
+| NUM | 11 | 3 | Табера*, | Табера, | Extra footnote caller |
 | NUM | 11 | 33 | з'їли | зʼїли | Wrong apostrophe |
+| NUM | 11 | 34 | Киброт-Гаттаава*; | Киброт-Гаттаава; | Extra footnote caller |
+| NUM | 13 | 24 | Єсколь* | Єсколь | Extra footnote caller |
 | NUM | 14 | 44 | з'осьмілились | зʼосьмілились | Wrong apostrophe |
+| NUM | 21 | 3 | Горма*. | Горма. | Extra footnote caller |
+| NUM | 27 | 21 | урім* | урім | Extra footnote caller |
 | NUM | 30 | 14 | з'обовязання | зʼобовязання | Wrong apostrophe |
 | DEU | 3 | 19 | ваша - | ваша — | Wrong dash |
 | DEU | 3 | 19 | скотини - | скотини — | Wrong dash |
 | DEU | 4 | 22 | 'цїй | ʼцїй | Wrong apostrophe |
+| DEU | 4 | 48 | Сійон* | Сійон | Extra footnote caller |
 | DEU | 11 | 2 | , - | , — | Wrong dash |
 | DEU | 11 | 2 | , - | , — | Wrong dash |
 | DEU | 13 | 1 | з'явиться | зʼявиться | Wrong apostrophe |
 | DEU | 16 | 3 | ; - | ; — | Wrong dash |
 | DEU | 16 | 21 | ашерім - | ашерім — | Wrong dash |
+| DEU | 16 | 21 | ашерім* | ашерім | Extra footnote caller |
+| DEU | 17 | 3 | небесним**, | небесним, | Extra footnote caller |
 | DEU | 17 | 5 | Тоді | Тодї | Wrong letter |
 | DEU | 17 | 5 | вкоїли | вкоіли | Wrong letter |
 | DEU | 22 | 5 | з'одягається | зʼодягається | Wrong apostrophe |
+| DEU | 22 | 8 | ворінки,* | ворінки, | Extra footnote caller |
 | DEU | 23 | 19 | твойму - | твойму — | Wrong dash |
 | DEU | 26 | 10 | . І | І | Extra dot |
 | DEU | 28 | 2 | 'цї | ʼцї | Wrong apostrophe |
@@ -97,6 +119,8 @@
 | DEU | 29 | 27 | 'сїй | ʼсїй | Wrong apostrophe |
 | DEU | 32 | 22 | гір | гір. | Missing dot |
 | DEU | 32 | 42 | тїлом - | тїлом — | Wrong dash |
+| DEU | 33 | 8 | тумим* | тумим | Extra footnote caller |
+| DEU | 33 | 8 | урим* | урим | Extra footnote caller |
 | DEU | 33 | 16 | ; - | ; — | Wrong dash |
 | JOS | 2 | 18 | в'цю | вʼцю | Wrong apostrophe |
 | JOS | 2 | 20 | 'цїй | ʼцїй | Wrong apostrophe |
@@ -136,10 +160,12 @@
 | JOS | 22 | 22 | Єгова - | Єгова — | Wrong dash |
 | JOS | 22 | 22 | Єгова - | Єгова — | Wrong dash |
 | JOS | 22 | 34 | "Ед", | „Ед‟, | Wrong quote |
+| JOS | 22 | 34 | "Ед"*, | "Ед", | Extra footnote caller |
 | JDG | 1 | 11 | Дабирських - | Дабирських — | Wrong dash |
 | JDG | 1 | 23 | Бетель - | Бетель — | Wrong dash |
 | JDG | 1 | 23 | Лузом - | Лузом — | Wrong dash |
 | JDG | 2 | 1 | з'явивсь | зʼявивсь | Wrong apostrophe |
+| JDG | 2 | 5 | Бохим*. | Бохим. | Extra footnote caller |
 | JDG | 2 | 6 | державу - | державу — | Wrong dash |
 | JDG | 3 | 9 | , - | , — | Wrong dash |
 | JDG | 3 | 15 | лївака.Через | лївака. Через | Missing space |
@@ -163,11 +189,16 @@
 | JDG | 21 | 11 | з'орудуйте: | зʼорудуйте: | Wrong apostrophe |
 | JDG | 21 | 19 | Силомі - | Силомі — | Wrong dash |
 | JDG | 21 | 19 | Лебони - | Лебони — | Wrong dash |
+| RUT | 1 | 20 | Ноемою*, | Ноемою, | Extra footnote caller |
+| RUT | 1 | 20 | Марою**, | Марою, | Extra footnote caller |
 | RUT | 2 | 15 | з'обижайте | зʼобижайте | Wrong apostrophe |
 | RUT | 3 | 10 | ! - | ! — | Wrong dash |
+| RUT | 4 | 17 | Обид*. | Обид. | Extra footnote caller |
+| 1SA | 1 | 3 | Саваотом**, | Саваотом, | Extra footnote caller |
 | 1SA | 3 | 18 | Він - | Він — | Wrong dash |
 | 1SA | 6 | 4 | Филистійських - | Филистійських — | Wrong dash |
 | 1SA | 6 | 9 | 'д | ʼд | Wrong apostrophe |
+| 1SA | 7 | 12 | Авен-Езер*, | Авен-Езер, | Extra footnote caller |
 | 1SA | 10 | 8 | з'ясую | зʼясую | Wrong apostrophe |
 | 1SA | 11 | 5 | з'ясували | зʼясували | Wrong apostrophe |
 | 1SA | 12 | 4 | з'обиджав | зʼобиджав | Wrong apostrophe |
@@ -177,6 +208,7 @@
 | 1SA | 18 | 11 | Давида'д | Давидаʼд | Wrong apostrophe |
 | 1SA | 19 | 7 | 'цю | ʼцю | Wrong apostrophe |
 | 1SA | 20 | 3 | часом - | часом — | Wrong dash |
+| 1SA | 21 | 5 | посуди* | посуди | Extra footnote caller |
 | 1SA | 22 | 8 | з'ясував | зʼясував | Wrong apostrophe |
 | 1SA | 24 | 2 | з'ясовано | зʼясовано | Wrong apostrophe |
 | 1SA | 25 | 26 | з'упинив | зʼупинив | Wrong apostrophe |
@@ -191,6 +223,7 @@
 | 2SA | 5 | 7 | , - | , — | Wrong dash |
 | 2SA | 5 | 8 | "Слїпий | „Слїпий | Wrong quote |
 | 2SA | 5 | 8 | палату." | палату.‟ | Wrong quote |
+| 2SA | 5 | 10 | Саваот*, | Саваот, | Extra footnote caller |
 | 2SA | 6 | 8 | "Убиттє | „Убиттє | Wrong quote |
 | 2SA | 6 | 8 | Ози" | Ози‟ | Wrong quote |
 | 2SA | 7 | 26 | Саваот - | Саваот — | Wrong dash |
@@ -199,10 +232,12 @@
 | 2SA | 11 | 18 | з'ясував | зʼясував | Wrong apostrophe |
 | 2SA | 11 | 22 | з'ясував | зʼясував | Wrong apostrophe |
 | 2SA | 12 | 7 | той - | той — | Wrong dash |
+| 2SA | 12 | 25 | Едидіа* | Едидіа | Extra footnote caller |
 | 2SA | 13 | 6 | ізз'їсти! | іззʼїсти! | Wrong apostrophe |
 | 2SA | 13 | 16 | мене - | мене — | Wrong dash |
 | 2SA | 13 | 20 | сестро - | сестро — | Wrong dash |
 | 2SA | 13 | 34 | з'ясував | зʼясував | Wrong apostrophe |
+| 2SA | 15 | 18 | Фелетеї* | Фелетеї | Extra footnote caller |
 | 2SA | 18 | 3 | один - | один — | Wrong dash |
 | 2SA | 18 | 7 | тяжкий - | тяжкий — | Wrong dash |
 | 2SA | 18 | 10 | Абессалома - | Абессалома — | Wrong dash |
@@ -212,7 +247,11 @@
 | 2SA | 18 | 24 | бачить - | бачить — | Wrong dash |
 | 2SA | 18 | 26 | сторож - | сторож — | Wrong dash |
 | 2SA | 19 | 6 | тебе - | тебе — | Wrong dash |
+| 2SA | 19 | 8 | ж* | ж | Extra footnote caller |
 | 2SA | 19 | 42 | з'їли | зʼїли | Wrong apostrophe |
+| 2SA | 21 | 2 | заклялись*; | заклялись; | Extra footnote caller |
+| 2SA | 21 | 20 | пучок*, | пучок, | Extra footnote caller |
+| 2SA | 22 | 1 | промовив:* | промовив: | Extra footnote caller |
 | 2SA | 22 | 2 | Господь - | Господь — | Wrong dash |
 | 2SA | 22 | 2 | захищає - | захищає — | Wrong dash |
 | 2SA | 22 | 12 | шату - | шату — | Wrong dash |
@@ -257,6 +296,7 @@
 | 1KI | 8 | 46 | , - | , — | Wrong dash |
 | 1KI | 8 | 65 | , - | , — | Wrong dash |
 | 1KI | 9 | 11 | , - | , — | Wrong dash |
+| 1KI | 9 | 28 | талантів*, | талантів, | Extra footnote caller |
 | 1KI | 11 | 14 | , - | , — | Wrong dash |
 | 1KI | 11 | 15 | , - | , — | Wrong dash |
 | 1KI | 11 | 16 | , - | , — | Wrong dash |
@@ -302,8 +342,10 @@
 | 2KI | 17 | 36 | , - | , — | Wrong dash |
 | 2KI | 18 | 4 | , - | , — | Wrong dash |
 | 2KI | 18 | 4 | йому - | йому — | Wrong dash |
+| 2KI | 18 | 4 | Нехуштан*. | Нехуштан. | Extra footnote caller |
 | 2KI | 18 | 21 | , - | , — | Wrong dash |
 | 2KI | 19 | 12 | , - | , — | Wrong dash |
+| 2KI | 19 | 25 | чував*, | чував, | Extra footnote caller |
 | 2KI | 19 | 33 | , - | , — | Wrong dash |
 | 2KI | 20 | 17 | , - | , — | Wrong dash |
 | 2KI | 21 | 12 | те - | те — | Wrong dash |
@@ -359,6 +401,7 @@
 | 1CH | 6 | 44 | , - | , — | Wrong dash |
 | 1CH | 6 | 60 | Беняминового - | Беняминового — | Wrong dash |
 | 1CH | 6 | 60 | родинах - | родинах — | Wrong dash |
+| 1CH | 6 | 65 | своїм*. | своїм. | Extra footnote caller |
 | 1CH | 6 | 70 | поколїння - | поколїння — | Wrong dash |
 | 1CH | 6 | 72 | поколїння - | поколїння — | Wrong dash |
 | 1CH | 6 | 74 | поколїння - | поколїння — | Wrong dash |
@@ -505,6 +548,7 @@
 | 2CH | 1 | 17 | коня - | коня — | Wrong dash |
 | 2CH | 2 | 14 | , - | , — | Wrong dash |
 | 2CH | 2 | 14 | , - | , — | Wrong dash |
+| 2CH | 3 | 3 | міри*, | міри, | Extra footnote caller |
 | 2CH | 3 | 4 | завширшки - | завширшки — | Wrong dash |
 | 2CH | 3 | 13 | К рила | Крила | Separated letter |
 | 2CH | 3 | 14 | з'образив | зʼобразив | Wrong apostrophe |
@@ -595,6 +639,8 @@
 | 2CH | 32 | 9 | , - | , — | Wrong dash |
 | 2CH | 32 | 9 | , - | , — | Wrong dash |
 | 2CH | 32 | 19 | , - | , — | Wrong dash |
+| 2CH | 32 | 31 | землї*, | землї, | Extra footnote caller |
+| 2CH | 34 | 14 | Господнього*, | Господнього, | Extra footnote caller |
 | 2CH | 34 | 22 | , - | , — | Wrong dash |
 | 2CH | 34 | 22 | , - | , — | Wrong dash |
 | 2CH | 34 | 27 | , - | , — | Wrong dash |
@@ -614,6 +660,7 @@
 | EZR | 2 | 58 | Усього - | Усього — | Wrong dash |
 | EZR | 2 | 59 | племя - | племя — | Wrong dash |
 | EZR | 2 | 66 | їх - | їх — | Wrong dash |
+| EZR | 2 | 69 | срібла*, | срібла, | Extra footnote caller |
 | EZR | 3 | 11 | "Хвалїть" | „Хвалїть‟ | Wrong quote |
 | EZR | 3 | 11 | "Оповідайте | „Оповідайте | Wrong quote |
 | EZR | 3 | 11 | Ізраїля"; | Ізраїля‟; | Wrong quote |
@@ -647,11 +694,13 @@
 | EZR | 8 | 25 | , - | , — | Wrong dash |
 | EZR | 8 | 28 | золото - | золото — | Wrong dash |
 | EZR | 8 | 35 | гріх - | гріх — | Wrong dash |
+| EZR | 8 | 36 | сатрапам* | сатрапам | Extra footnote caller |
 | EZR | 9 | 11 | їй - | їй — | Wrong dash |
 | EZR | 9 | 13 | наші - | наші — | Wrong dash |
 | EZR | 9 | 13 | , - | , — | Wrong dash |
 | EZR | 10 | 18 | чужоплеміннїх - | чужоплеміннїх — | Wrong dash |
 | EZR | 10 | 25 | Ізрайлитян - | Ізрайлитян — | Wrong dash |
+| NEH | 1 | 1 | року*, | року, | Extra footnote caller |
 | NEH | 1 | 6 | согрішили - | согрішили — | Wrong dash |
 | NEH | 1 | 11 | , - | , — | Wrong dash |
 | NEH | 2 | 18 | , - | , — | Wrong dash |
@@ -663,9 +712,11 @@
 | NEH | 7 | 6 | , - | , — | Wrong dash |
 | NEH | 7 | 45 | Шовайові - | Шовайові — | Wrong dash |
 | NEH | 7 | 62 | Некодині - | Некодині — | Wrong dash |
+| NEH | 7 | 65 | Тиршата* | Тиршата | Extra footnote caller |
 | NEH | 7 | 68 | їх - | їх — | Wrong dash |
 | NEH | 9 | 5 | левіти - | левіти — | Wrong dash |
 | NEH | 9 | 17 | довготерпеливий | довготерпіливий | Wrong letter |
+| NEH | 9 | 38 | обіцянку* | обіцянку | Extra footnote caller |
 | NEH | 10 | 34 | , - | , — | Wrong dash |
 | NEH | 11 | 3 | , - | , — | Wrong dash |
 | NEH | 11 | 8 | , - | , — | Wrong dash |
@@ -695,6 +746,7 @@
 | NEH | 12 | 21 | Едаїїного - | Едаїїного — | Wrong dash |
 | NEH | 12 | 24 | Божого - | Божого — | Wrong dash |
 | NEH | 12 | 25 | Аккув - | Аккув — | Wrong dash |
+| NEH | 13 | 15 | точилах*, | точилах, | Extra footnote caller |
 | EST | 1 | 1 | , - | , — | Wrong dash |
 | EST | 1 | 1 | , - | , — | Wrong dash |
 | EST | 1 | 10 | Каркасові - | Каркасові — | Wrong dash |
@@ -708,6 +760,8 @@
 | EST | 2 | 14 | , - | , — | Wrong dash |
 | EST | 2 | 15 | , - | , — | Wrong dash |
 | EST | 2 | 18 | , - | , — | Wrong dash |
+| EST | 2 | 19 | дївчата*, | дївчата, | Extra footnote caller |
+| EST | 3 | 4 | Юдей*. | Юдей. | Extra footnote caller |
 | EST | 3 | 7 | , - | , — | Wrong dash |
 | EST | 3 | 7 | , - | , — | Wrong dash |
 | EST | 3 | 7 | , - | , — | Wrong dash |
@@ -727,12 +781,14 @@
 | JOB | 2 | 5 | , - | , — | Wrong dash |
 | JOB | 3 | 6 | тая - | тая — | Wrong dash |
 | JOB | 3 | 7 | тая - | тая — | Wrong dash |
+| JOB | 3 | 8 | день*, | день, | Extra footnote caller |
 | JOB | 4 | 2 | , - | , — | Wrong dash |
 | JOB | 4 | 6 | твоїх - | твоїх — | Wrong dash |
 | JOB | 4 | 16 | хтось - | хтось — | Wrong dash |
 | JOB | 4 | 16 | , - | , — | Wrong dash |
 | JOB | 4 | 16 | повів - | повів — | Wrong dash |
 | JOB | 5 | 20 | війнї - | війнї — | Wrong dash |
+| JOB | 5 | 24 | согрішиш*. | согрішиш. | Extra footnote caller |
 | JOB | 6 | 21 | тепер - | тепер — | Wrong dash |
 | JOB | 6 | 29 | , - | , — | Wrong dash |
 | JOB | 7 | 7 | моє - | моє — | Wrong dash |
@@ -775,10 +831,13 @@
 | JOB | 17 | 13 | гріб - | гріб — | Wrong dash |
 | JOB | 18 | 13 | З'їсть | Зʼїсть | Wrong apostrophe |
 | JOB | 18 | 13 | з'їсть | зʼїсть | Wrong apostrophe |
+| JOB | 18 | 14 | страхів*. | страхів. | Extra footnote caller |
 | JOB | 19 | 6 | 'д | ʼд | Wrong apostrophe |
+| JOB | 19 | 12 | його* | його | Extra footnote caller |
 | JOB | 19 | 16 | , - | , — | Wrong dash |
 | JOB | 19 | 23 | , - | , — | Wrong dash |
 | JOB | 19 | 25 | знаю - | знаю — | Wrong dash |
+| JOB | 19 | 25 | знаю** | знаю | Extra footnote caller |
 | JOB | 20 | 4 | , - | , — | Wrong dash |
 | JOB | 20 | 4 | , - | , — | Wrong dash |
 | JOB | 20 | 6 | , - | , — | Wrong dash |
@@ -797,6 +856,7 @@
 | JOB | 22 | 23 | , - | , — | Wrong dash |
 | JOB | 22 | 23 | , - | , — | Wrong dash |
 | JOB | 22 | 24 | каміннєм - | каміннєм — | Wrong dash |
+| JOB | 22 | 30 | твоїх*. | твоїх. | Extra footnote caller |
 | JOB | 23 | 7 | ним - | ним — | Wrong dash |
 | JOB | 23 | 8 | вперед - | вперед — | Wrong dash |
 | JOB | 23 | 10 | , - | , — | Wrong dash |
@@ -812,12 +872,17 @@
 | JOB | 24 | 24 | , - | , — | Wrong dash |
 | JOB | 25 | 6 | чоловік - | чоловік — | Wrong dash |
 | JOB | 25 | 6 | , - | , — | Wrong dash |
+| JOB | 26 | 5 | Рефаїми* | Рефаїми | Extra footnote caller |
+| JOB | 26 | 6 | Аваддон**. | Аваддон. | Extra footnote caller |
+| JOB | 26 | 11 | небес* | небес | Extra footnote caller |
+| JOB | 26 | 13 | скорпіона**. | скорпіона. | Extra footnote caller |
 | JOB | 27 | 18 | , - | , — | Wrong dash |
 | JOB | 28 | 6 | її - | її — | Wrong dash |
 | JOB | 28 | 18 | премудрість - | премудрість — | Wrong dash |
 | JOB | 28 | 26 | , - | , — | Wrong dash |
 | JOB | 28 | 28 | Господень - | Господень — | Wrong dash |
 | JOB | 28 | 28 | злого - | злого — | Wrong dash |
+| JOB | 29 | 7 | міста*, | міста, | Extra footnote caller |
 | JOB | 29 | 24 | них - | них — | Wrong dash |
 | JOB | 30 | 2 | їх - | їх — | Wrong dash |
 | JOB | 30 | 4 | , - | , — | Wrong dash |
@@ -829,6 +894,7 @@
 | JOB | 31 | 5 | , - | , — | Wrong dash |
 | JOB | 31 | 17 | з'їдав | зʼїдав | Wrong apostrophe |
 | JOB | 31 | 19 | , - | , — | Wrong dash |
+| JOB | 31 | 37 | його*, | його, | Extra footnote caller |
 | JOB | 31 | 40 | ячменю - | ячменю — | Wrong dash |
 | JOB | 32 | 11 | , - | , — | Wrong dash |
 | JOB | 32 | 16 | з'упинились | зʼупинились | Wrong apostrophe |
@@ -849,21 +915,28 @@
 | JOB | 36 | 8 | нужди - | нужди — | Wrong dash |
 | JOB | 36 | 12 | , - | , — | Wrong dash |
 | JOB | 36 | 13 | же - | же — | Wrong dash |
+| JOB | 36 | 15 | його*. | його. | Extra footnote caller |
 | JOB | 36 | 17 | присуд - | присуд — | Wrong dash |
 | JOB | 36 | 19 | , - | , — | Wrong dash |
 | JOB | 37 | 3 | його - | його — | Wrong dash |
 | JOB | 37 | 4 | з'упиняє | зʼупиняє | Wrong apostrophe |
+| JOB | 37 | 7 | руки**, | руки, | Extra footnote caller |
 | JOB | 37 | 9 | ж - | ж — | Wrong dash |
+| JOB | 38 | 3 | твої*, | твої, | Extra footnote caller |
 | JOB | 38 | 29 | воздусї - | воздусї — | Wrong dash |
+| JOB | 38 | 31 | Орійона*? | Орійона? | Extra footnote caller |
 | JOB | 38 | 35 | 'д | ʼд | Wrong apostrophe |
 | JOB | 39 | 7 | Сьміх - | Сьміх — | Wrong dash |
+| JOB | 39 | 16 | його* | його | Extra footnote caller |
 | JOB | 39 | 18 | , - | , — | Wrong dash |
 | JOB | 39 | 35 | говорив - | говорив — | Wrong dash |
 | JOB | 39 | 35 | ; - | ; — | Wrong dash |
 | JOB | 40 | 4 | з'умієш | зʼумієш | Wrong apostrophe |
+| JOB | 40 | 10 | бегемот*: | бегемот: | Extra footnote caller |
 | JOB | 40 | 12 | його - | його — | Wrong dash |
 | JOB | 40 | 13 | костї - | костї — | Wrong dash |
 | JOB | 40 | 14 | Се - | Се — | Wrong dash |
+| JOB | 40 | 20 | левіятана* | левіятана | Extra footnote caller |
 | JOB | 40 | 27 | , - | , — | Wrong dash |
 | JOB | 41 | 6 | його - | його — | Wrong dash |
 | JOB | 41 | 7 | його - | його — | Wrong dash |
@@ -1011,6 +1084,7 @@
 | PSA | 103 | 15 | , - | , — | Wrong dash |
 | PSA | 104 | 4 | твої - | твої — | Wrong dash |
 | PSA | 104 | 18 | скелї - | скелї — | Wrong dash |
+| PSA | 104 | 35 | Аллилуя*! | Аллилуя! | Extra footnote caller |
 | PSA | 106 | 40 | з'огидїло | зʼогидїло | Wrong apostrophe |
 | PSA | 107 | 1 | Х валїте | Хвалїте | Separated letter |
 | PSA | 107 | 17 | Безумні - | Безумні — | Wrong dash |
@@ -1045,6 +1119,7 @@
 | PSA | 132 | 1 | С погадай | Спогадай | Separated letter |
 | PSA | 132 | 3 | "Не | „Не | Wrong quote |
 | PSA | 132 | 5 | Якова!" | Якова!‟ | Wrong quote |
+| PSA | 132 | 6 | Яарських*. | Яарських. | Extra footnote caller |
 | PSA | 133 | 1 | Г лянь | Глянь | Separated letter |
 | PSA | 135 | 4 | Ізраїля - | Ізраїля — | Wrong dash |
 | PSA | 135 | 15 | народів - | народів — | Wrong dash |
@@ -1217,6 +1292,7 @@
 | PRO | 17 | 24 | мудрість - | мудрість — | Wrong dash |
 | PRO | 17 | 24 | очі - | очі — | Wrong dash |
 | PRO | 17 | 25 | син - | син — | Wrong dash |
+| PRO | 17 | 26 | бити* | бити | Extra footnote caller |
 | PRO | 17 | 27 | Розумний - | Розумний — | Wrong dash |
 | PRO | 17 | 28 | , - | , — | Wrong dash |
 | PRO | 18 | 3 | безчесним - | безчесним — | Wrong dash |
@@ -1287,6 +1363,7 @@
 | PRO | 22 | 14 | уста - | уста — | Wrong dash |
 | PRO | 22 | 20 | нераз - | нераз — | Wrong dash |
 | PRO | 22 | 22 | , - | , — | Wrong dash |
+| PRO | 22 | 22 | воротах*, | воротах, | Extra footnote caller |
 | PRO | 23 | 7 | ‟ - | ‟ — | Wrong dash |
 | PRO | 23 | 7 | "Іж | „Іж | Wrong quote |
 | PRO | 23 | 7 | пий!" | пий!‟ | Wrong quote |
@@ -1298,6 +1375,7 @@
 | PRO | 23 | 27 | Блудниця - | Блудниця — | Wrong dash |
 | PRO | 23 | 27 | колодїзь - | колодїзь — | Wrong dash |
 | PRO | 24 | 7 | мудрість - | мудрість — | Wrong dash |
+| PRO | 24 | 7 | брамі* | брамі | Extra footnote caller |
 | PRO | 24 | 9 | дурноти - | дурноти — | Wrong dash |
 | PRO | 24 | 9 | зрадник - | зрадник — | Wrong dash |
 | PRO | 24 | 11 | страченнє - | страченнє — | Wrong dash |
@@ -1362,6 +1440,7 @@
 | PRO | 29 | 9 | , - | , — | Wrong dash |
 | PRO | 29 | 15 | огроза - | огроза — | Wrong dash |
 | PRO | 29 | 20 | ? - | ? — | Wrong dash |
+| PRO | 29 | 24 | закляттє*, | закляттє, | Extra footnote caller |
 | PRO | 29 | 26 | людською - | людською — | Wrong dash |
 | PRO | 29 | 27 | праведним - | праведним — | Wrong dash |
 | PRO | 29 | 27 | гидота - | гидота — | Wrong dash |
@@ -1375,6 +1454,7 @@
 | PRO | 30 | 25 | , - | , — | Wrong dash |
 | PRO | 30 | 26 | , - | , — | Wrong dash |
 | PRO | 30 | 30 | , - | , — | Wrong dash |
+| PRO | 31 | 2 | сину?* | сину? | Extra footnote caller |
 | PRO | 31 | 16 | поля - | поля — | Wrong dash |
 | PRO | 31 | 21 | ; - | ; — | Wrong dash |
 | PRO | 31 | 22 | пурпур - | пурпур — | Wrong dash |
@@ -1404,6 +1484,7 @@
 | ECC | 4 | 4 | се - | се — | Wrong dash |
 | ECC | 4 | 8 | се - | се — | Wrong dash |
 | ECC | 4 | 11 | , - | , — | Wrong dash |
+| ECC | 4 | 17 | твою*, | твою, | Extra footnote caller |
 | ECC | 5 | 6 | словах - | словах — | Wrong dash |
 | ECC | 5 | 8 | країнї - | країнї — | Wrong dash |
 | ECC | 5 | 9 | се - | се — | Wrong dash |
@@ -1444,6 +1525,7 @@
 | ECC | 10 | 13 | його - | його — | Wrong dash |
 | ECC | 10 | 13 | його - | його — | Wrong dash |
 | ECC | 10 | 16 | царь - | царь — | Wrong dash |
+| ECC | 11 | 1 | воду*, | воду, | Extra footnote caller |
 | ECC | 11 | 3 | 'к | ʼк | Wrong apostrophe |
 | ECC | 11 | 3 | 'к | ʼк | Wrong apostrophe |
 | ECC | 11 | 8 | , - | , — | Wrong dash |
@@ -1451,6 +1533,7 @@
 | ECC | 12 | 1 | "Не | „Не | Wrong quote |
 | ECC | 12 | 1 | менї", | менї‟, | Wrong quote |
 | ECC | 12 | 5 | ; - | ; — | Wrong dash |
+| ECC | 12 | 8 | марнота*! | марнота! | Extra footnote caller |
 | ECC | 12 | 11 | мудрих - | мудрих — | Wrong dash |
 | ECC | 12 | 11 | , - | , — | Wrong dash |
 | ECC | 12 | 12 | книг - | книг — | Wrong dash |
