@@ -2424,6 +2424,7 @@
 | LAM | 3 | 63 | все - | все — | Wrong dash |
 | LAM | 4 | 2 | , - | , — | Wrong dash |
 | LAM | 4 | 20 | , - | , — | Wrong dash |
+| LAM | 5 | 1 | С погадай | Спогадай | Extra space |
 | LAM | 5 | 2 | наші - | наші — | Wrong dash |
 | LAM | 5 | 3 | сироти - | сироти — | Wrong dash |
 | LAM | 5 | 3 | наші - | наші — | Wrong dash |
