@@ -330,8 +330,7 @@ def form_text_tbs():
             for line in lines
         ]
         lines = [
-            re.sub(r"\\f\s\+\s\\fr\s\d+\:\d+\s\\ft\s", "[", line).replace("\\f*", "]")
-            for line in lines
+            re.sub(r"\\f\s\+\s\\ft\s", "[", line).replace("\\f*", "]") for line in lines
         ]
 
         file_name, file_extension = file_path.split("\\")[-1].split(".")
