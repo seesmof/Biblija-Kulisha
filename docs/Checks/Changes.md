@@ -1148,6 +1148,7 @@
 | PSA | 144 | 15 | Господь - | Господь — | Wrong dash |
 | PSA | 145 | 9 | понад | по над | Extra space |
 | PSA | 146 | 1 | Х вали | Хвали | Separated letter |
+| PSA | 147 | 4 | звізд | зьвізд | Missing letter |
 | PSA | 148 | 7 | , - | , — | Wrong dash |
 | PRO | 1 | 7 | премудростї - | премудростї — | Wrong dash |
 | PRO | 1 | 11 | чесного - | чесного — | Wrong dash |
