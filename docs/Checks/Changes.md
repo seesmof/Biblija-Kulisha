@@ -1140,6 +1140,7 @@
 | PSA | 139 | 8 | , - | , — | Wrong dash |
 | PSA | 139 | 12 | тьма - | тьма — | Wrong dash |
 | PSA | 139 | 19 | мене!.. | мене!... | Missing dot |
+| PSA | 139 | 19 | мене!... | мене!… | Wrong symbol |
 | PSA | 140 | 1 | В изволи | Визволи | Separated letter |
 | PSA | 140 | 7 | Господь - | Господь — | Wrong dash |
 | PSA | 141 | 5 | , - | , — | Wrong dash |
