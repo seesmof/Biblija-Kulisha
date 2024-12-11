@@ -134,7 +134,6 @@ def form_logs():
         verse_number_pattern = r"\\v\s\d+"
         # Look for verses inside the line
         found_verses = re.findall(verse_number_pattern, line)
-        print(found_verses)
         # Select first match because verse is usually at the beginning of the line
         verse = found_verses[0]
         # Strip the '\v ' text from it

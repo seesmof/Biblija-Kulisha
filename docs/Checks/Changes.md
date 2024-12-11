@@ -1146,6 +1146,7 @@
 | PSA | 141 | 5 | , - | , — | Wrong dash |
 | PSA | 141 | 7 | з'орана | зʼорана | Wrong apostrophe |
 | PSA | 144 | 15 | Господь - | Господь — | Wrong dash |
+| PSA | 145 | 9 | понад | по над | Extra space |
 | PSA | 146 | 1 | Х вали | Хвали | Separated letter |
 | PSA | 148 | 7 | , - | , — | Wrong dash |
 | PRO | 1 | 7 | премудростї - | премудростї — | Wrong dash |
