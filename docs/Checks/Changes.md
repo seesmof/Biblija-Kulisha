@@ -55,6 +55,7 @@
 | EXO | 15 | 12 | , - | , — | Wrong dash |
 | EXO | 16 | 28 | . І | І | Extra dot |
 | EXO | 17 | 15 | Єгова-Нїссі*. | Єгова-Нїссі. | Extra footnote caller |
+| EXO | 17 | 15 | Єгова-Нїссі | Егова-Нїссі | Wrong letter |
 | EXO | 22 | 9 | "Ось | „Ось | Wrong quote |
 | EXO | 22 | 9 | воно", | воно‟, | Wrong quote |
 | EXO | 28 | 4 | хитон* | хитон | Extra footnote caller |
