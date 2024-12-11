@@ -180,11 +180,15 @@ def form_logs():
                     res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
                     QT.append(res)
             if "\\f" in line or "\\+f" in line:
-                verse_number = get_verse_number(line)
                 contents = re.findall(r"\\\+?ft\s(.*?)\\\+?f\*", line)
-                for c in contents:
-                    res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
-                    F.append(res)
+                if "\\mt" in line:
+                    for entry in contents:
+                        F.append(f'{Book_name},0,0,"{remove_usfm_tags(entry)}"')
+                else:
+                    verse_number = get_verse_number(line)
+                    for c in contents:
+                        res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
+                        F.append(res)
             line = remove_usfm_tags(line)
             if "„" in line or "‟" in line:
                 verse_number = get_verse_number(line)
@@ -279,8 +283,8 @@ def form_text_tbs():
             and "\\h" not in line
             # Remove `\toc3`
             and "\\toc3" not in line
-            # Remove `\mt1`
-            and "\\mt1" not in line
+            # Remove `\mt`
+            and "\\mt" not in line
             # Remove `\p`
             and "\\p" not in line
         ]
@@ -367,7 +371,7 @@ def form_text_solid():
             and "\\toc1" not in line
             and "\\toc2" not in line
             and "\\toc3" not in line
-            and "\\mt1" not in line
+            and "\\mt" not in line
         ]
         all_lines += lines
     # Join everything into one solid wall of text, ALLELUJAH JESUS THANK YOU LORD GOD ALMIGHTY!
@@ -391,7 +395,7 @@ def form_text_lined():
         "p",
         "id",
         "h",
-        "mt1",
+        "mt",
         "toc1",
         "toc2",
         "toc3",
