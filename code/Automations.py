@@ -5,86 +5,17 @@ import time
 import os
 import re
 
-Ukrainian_Bible_Book_name_to_English_abbrevation = {
-    "1 Мойсея": "GEN",
-    "2 Мойсея": "EXO",
-    "3 Мойсея": "LEV",
-    "4 Мойсея": "NUM",
-    "5 Мойсея": "DEU",
-    "Иозея": "JOS",
-    "Суддїв": "JDG",
-    "Рути": "RUT",
-    "1 Самуїлова": "1SA",
-    "2 Самуїлова": "2SA",
-    "1 Царів": "1KI",
-    "2 Царів": "2KI",
-    "1 Паралипоменон": "1CH",
-    "2 Паралипоменон": "2CH",
-    "Ездри": "EZR",
-    "Неємії": "NEH",
-    "Естери": "EST",
-    "Йова": "JOB",
-    "Псалтирь": "PSA",
-    "Приповісток": "PRO",
-    "Екклезіаста": "ECC",
-    "Пісень": "SNG",
-    "Ісаїї": "ISA",
-    "Еремії": "JER",
-    "Плач": "LAM",
-    "Езекиїла": "EZK",
-    "Даниїла": "DAN",
-    "Осії": "HOS",
-    "Йоіла": "JOL",
-    "Амоса": "AMO",
-    "Авдія": "OBA",
-    "Йони": "JON",
-    "Михея": "MIC",
-    "Наума": "NAM",
-    "Аввакума": "HAB",
-    "Софонії": "ZEP",
-    "Аггея": "HAG",
-    "Захарії": "ZEC",
-    "Малахія": "MAL",
-    "Маттея": "MAT",
-    "Марка": "MRK",
-    "Луки": "LUK",
-    "Йоана": "JHN",
-    "Дїяння": "ACT",
-    "Римлян": "ROM",
-    "1 Коринтян": "1CO",
-    "2 Коринтян": "2CO",
-    "Галат": "GAL",
-    "Єфесян": "EPH",
-    "Филипян": "PHP",
-    "Колосян": "COL",
-    "1 Солунян": "1TH",
-    "2 Солунян": "2TH",
-    "1 Тимотея": "1TI",
-    "2 Тимотея": "2TI",
-    "Тита": "TIT",
-    "Филимона": "PHM",
-    "Жидів": "HEB",
-    "Якова": "JAS",
-    "1 Петра": "1PE",
-    "2 Петра": "2PE",
-    "1 Йоана": "1JN",
-    "2 Йоана": "2JN",
-    "3 Йоана": "3JN",
-    "Юди": "JUD",
-    "Одкриттє": "REV",
-}
-
 root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-code_folder_path = os.path.dirname(os.path.abspath(__file__))
-original_folder_path = os.path.join(root, "Original")
-original_file_paths = glob.glob(original_folder_path + "\\*.USFM")
-output_folder_path = os.path.join(root, "Output")
-text_TBS_folder_path = os.path.join(output_folder_path, "TXT TBS")
-text_solid_folder_path = os.path.join(output_folder_path, "TXT SLD")
-text_lined_folder_path = os.path.join(output_folder_path, "TXT LND")
-logs_folder_path = os.path.join(root, "logs")
-paratext_folder_path = os.path.join("C:\\My Paratext 9 Projects\\BKS")
-changes_table_file_path = os.path.join(root, "docs", "Checks", "Changes.md")
+code_folder = os.path.dirname(os.path.abspath(__file__))
+original_folder = os.path.join(root, "Original")
+original_files = glob.glob(original_folder + "\\*.USFM")
+output_folder = os.path.join(root, "Output")
+TBS_text_folder = os.path.join(output_folder, "TXT TBS")
+solid_text_folder = os.path.join(output_folder, "TXT SLD")
+lined_text_folder = os.path.join(output_folder, "TXT LND")
+logs_folder = os.path.join(root, "logs")
+paratext_folder = os.path.join("C:\\My Paratext 9 Projects\\BKS")
+changes_file = os.path.join(root, "docs", "Checks", "Changes.md")
 
 
 @dataclass
@@ -99,10 +30,8 @@ class Change:
 
 def copy_to_paratext():
     try:
-        for file_path in original_file_paths:
-            copy2(
-                file_path, os.path.join(paratext_folder_path, file_path.split("\\")[-1])
-            )
+        for file_path in original_files:
+            copy2(file_path, os.path.join(paratext_folder, file_path.split("\\")[-1]))
     except:
         pass
 
@@ -150,7 +79,7 @@ def form_logs():
     Apostrophes = [header]
     Dashes = [header]
 
-    for file_path in original_file_paths:
+    for file_path in original_files:
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
 
@@ -211,40 +140,32 @@ def form_logs():
                     Dashes.append(res)
 
     try:
-        with open(
-            os.path.join(logs_folder_path, "WJ.csv"), encoding="utf-8", mode="w"
-        ) as f:
+        with open(os.path.join(logs_folder, "WJ.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(WJ))
     except:
         pass
 
     try:
-        with open(
-            os.path.join(logs_folder_path, "ND.csv"), encoding="utf-8", mode="w"
-        ) as f:
+        with open(os.path.join(logs_folder, "ND.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(ND))
     except:
         pass
 
     try:
-        with open(
-            os.path.join(logs_folder_path, "QT.csv"), encoding="utf-8", mode="w"
-        ) as f:
+        with open(os.path.join(logs_folder, "QT.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(QT))
     except:
         pass
 
     try:
-        with open(
-            os.path.join(logs_folder_path, "F.csv"), encoding="utf-8", mode="w"
-        ) as f:
+        with open(os.path.join(logs_folder, "F.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(F))
     except:
         pass
 
     try:
         with open(
-            os.path.join(logs_folder_path, "Quotes.csv"), encoding="utf-8", mode="w"
+            os.path.join(logs_folder, "Quotes.csv"), encoding="utf-8", mode="w"
         ) as f:
             f.write("\n".join(Quotes))
     except:
@@ -252,7 +173,7 @@ def form_logs():
 
     try:
         with open(
-            os.path.join(logs_folder_path, "Apostrophes.csv"),
+            os.path.join(logs_folder, "Apostrophes.csv"),
             encoding="utf-8",
             mode="w",
         ) as f:
@@ -262,7 +183,7 @@ def form_logs():
 
     try:
         with open(
-            os.path.join(logs_folder_path, "Dashes.csv"), encoding="utf-8", mode="w"
+            os.path.join(logs_folder, "Dashes.csv"), encoding="utf-8", mode="w"
         ) as f:
             f.write("\n".join(Dashes))
     except:
@@ -270,7 +191,7 @@ def form_logs():
 
 
 def form_text_tbs():
-    for file_path in original_file_paths:
+    for file_path in original_files:
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
 
@@ -343,7 +264,7 @@ def form_text_tbs():
 
         try:
             with open(
-                os.path.join(text_TBS_folder_path, full_name),
+                os.path.join(TBS_text_folder, full_name),
                 encoding="utf-8",
                 mode="w",
             ) as f:
@@ -354,7 +275,7 @@ def form_text_tbs():
 
 def form_text_solid():
     all_lines = []
-    for file_path in original_file_paths:
+    for file_path in original_files:
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
         lines = [
@@ -380,7 +301,7 @@ def form_text_solid():
     )
     try:
         with open(
-            os.path.join(text_solid_folder_path, "Solid.txt"),
+            os.path.join(solid_text_folder, "Solid.txt"),
             encoding="utf-8",
             mode="w",
         ) as f:
@@ -400,7 +321,7 @@ def form_text_lined():
         "toc3",
     ]
     all_lines = []
-    for file_path in original_file_paths:
+    for file_path in original_files:
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
         Book_name = lines[2][3:].strip()
@@ -417,7 +338,7 @@ def form_text_lined():
             all_lines.append(line)
     try:
         with open(
-            os.path.join(text_lined_folder_path, "Lined.txt"),
+            os.path.join(lined_text_folder, "Lined.txt"),
             encoding="utf-8",
             mode="w",
         ) as f:
@@ -438,17 +359,17 @@ def sort_markdown_table(file_path: str):
         change.Verse = int(change.Verse)
         changes.append(change)
 
-    for i, change in enumerate(changes):
-        if change.Book in Ukrainian_Bible_Book_name_to_English_abbrevation:
-            changes[i].Book = Ukrainian_Bible_Book_name_to_English_abbrevation[
-                change.Book
-            ]
-
     sorted_table_lines: list[str] = [
         "| Book | Chapter | Verse | Mistake | Correction | Reason |",
         "| - | - | - | - | - | - |",
     ]
-    for Book in Ukrainian_Bible_Book_name_to_English_abbrevation.values():
+
+    # get all Book names
+    Book_names: list[str] = []
+    for file in os.listdir(original_folder):
+        Book_names.append(file[2:5])
+
+    for Book in Book_names:
         found_changes_for_this_Book = [
             change for change in changes if change.Book == Book
         ]
@@ -477,16 +398,16 @@ def perform_automations():
     print("Formed lined Bible text file")
     form_logs()
     print("Formed log files")
-    sort_markdown_table(changes_table_file_path)
+    sort_markdown_table(changes_file)
     print("Sorted changes table")
 
 
 def monitor_files_for_changes():
-    latest_file = max(original_file_paths, key=os.path.getmtime)
+    latest_file = max(original_files, key=os.path.getmtime)
     last_modification_time = os.path.getmtime(latest_file)
     perform_automations()
     while 1:
-        latest_file = max(original_file_paths, key=os.path.getmtime)
+        latest_file = max(original_files, key=os.path.getmtime)
         current_modification_time = os.path.getmtime(latest_file)
         if last_modification_time != current_modification_time:
             perform_automations()
