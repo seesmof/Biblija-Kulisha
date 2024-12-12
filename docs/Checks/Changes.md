@@ -1095,6 +1095,7 @@
 | PSA | 104 | 4 | твої - | твої — | Wrong dash |
 | PSA | 104 | 18 | скелї - | скелї — | Wrong dash |
 | PSA | 104 | 35 | Аллилуя*! | Аллилуя! | Extra footnote caller |
+| PSA | 104 | 35 | щезнуть | счезнуть | Wrong letters |
 | PSA | 106 | 40 | з'огидїло | зʼогидїло | Wrong apostrophe |
 | PSA | 107 | 1 | Х валїте | Хвалїте | Separated letter |
 | PSA | 107 | 17 | Безумні - | Безумні — | Wrong dash |
