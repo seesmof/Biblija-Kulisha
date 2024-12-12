@@ -2252,6 +2252,7 @@
 | JER | 11 | 6 | З'ясуй | Зʼясуй | Wrong apostrophe |
 | JER | 12 | 6 | , - | , — | Wrong dash |
 | JER | 12 | 10 | , - | , — | Wrong dash |
+| JER | 12 | 10 | дїленицю мою | дїленицю, мою | Missing comma |
 | JER | 12 | 16 | , - | , — | Wrong dash |
 | JER | 12 | 16 | "Так | „Так | Wrong quote |
 | JER | 12 | 16 | Господь", | Господь‟, | Wrong quote |
