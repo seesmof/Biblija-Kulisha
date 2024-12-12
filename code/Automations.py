@@ -154,7 +154,7 @@ def form_logs():
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
 
-        Book_name = lines[2].replace("\\h ", "").strip()
+        Book_name = file_path.split("\\")[-1][2:5]
         chapter_number = 0
 
         for line in lines:
