@@ -241,16 +241,6 @@ def form_text_tbs():
             for line in lines
         ]
         lines = [
-            # Put chapter number lines on a separate line
-            (
-                line[:-1] + "\n"
-                if re.search(r"##\d+\s", line)
-                # If its not a chapter number, then write it as it is
-                else line
-            )
-            for line in lines
-        ]
-        lines = [
             re.sub(r"\\f\s\+\s\\ft\s", "[", line).replace("\\f*", "]") for line in lines
         ]
 
