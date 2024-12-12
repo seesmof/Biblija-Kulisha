@@ -1786,6 +1786,7 @@
 | ISA | 22 | 24 | , - | , — | Wrong dash |
 | ISA | 22 | 25 | , - | , — | Wrong dash |
 | ISA | 22 | 25 | Саваот - | Саваот — | Wrong dash |
+| ISA | 23 | 1 | нїкому | нї-кому | Missing symbol |
 | ISA | 23 | 8 | його - | його — | Wrong dash |
 | ISA | 23 | 12 | , - | , — | Wrong dash |
 | ISA | 23 | 13 | ; - | ; — | Wrong dash |
