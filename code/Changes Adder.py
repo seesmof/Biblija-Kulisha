@@ -1,7 +1,8 @@
 # TODO add all the logs to changes and sort changes.csv
 import os
-from Automations import Ukrainian_Bible_Book_name_to_English_abbrevation
 from nicegui import ui, app
+
+from Automations import original_folder
 
 
 def reset_local_storage():
@@ -33,9 +34,13 @@ root_folder = os.path.dirname(os.path.abspath(__file__))
 changes_file_path = os.path.join(root_folder, "..", "docs", "Checks", "Changes.md")
 reasons_autocomplete = ["wrong", "missing", "letter", "symbol"]
 
+Book_names: list[str] = []
+for file in os.listdir(original_folder):
+    Book_names.append(file[2:5])
+
 Book_select = ui.select(
     label="Book",
-    options=Ukrainian_Bible_Book_name_to_English_abbrevation,
+    options=Book_names,
     with_input=True,
 ).bind_value(app.storage.general, "Book")
 Chapter_input = ui.input(label="Chapter").bind_value(app.storage.general, "Chapter")
