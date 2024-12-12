@@ -1,3 +1,0 @@
-- `TXT TBS/`: text files formatted by Trinitarian Bible Society standards described in [TBS.docx](./TBS.docx)
-- `TXT SLD/`: a solid Bible text file with no formatting or separation, with a .pdf (Verdana font)
-- `TXT LND/`: one Bible text file with each verse on its own line with references in format `Book Chapter:Verse`
