@@ -289,6 +289,7 @@ def form_text_lined():
         "toc1",
         "toc2",
         "toc3",
+        'rem',
     ]
     all_lines = []
     for file_name in os.listdir(original_folder):
