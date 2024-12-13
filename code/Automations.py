@@ -15,8 +15,7 @@ solid_text_folder = os.path.join(output_folder, "TXT SLD")
 lined_text_folder = os.path.join(output_folder, "TXT LND")
 logs_folder = os.path.join(root, "logs")
 paratext_folder = os.path.join("C:\\My Paratext 9 Projects\\BKS")
-changes_file = os.path.join(root, "docs", "Checks", "Changes.md")
-
+changes_file = os.path.join(root, "docs", "Changes.md")
 
 @dataclass
 class Change:
@@ -27,13 +26,11 @@ class Change:
     Correction: str
     Reason: str
 
-
 def copy_to_paratext():
     try:
         for file_path in original_files:
             copy2(file_path, os.path.join(paratext_folder, file_path.split("\\")[-1]))
-    except:
-        pass
+    except: pass
 
 
 def remove_usfm_tags(line: str):
@@ -142,34 +139,29 @@ def form_logs():
     try:
         with open(os.path.join(logs_folder, "WJ.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(WJ))
-    except:
-        pass
+    except: pass
 
     try:
         with open(os.path.join(logs_folder, "ND.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(ND))
-    except:
-        pass
+    except: pass
 
     try:
         with open(os.path.join(logs_folder, "QT.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(QT))
-    except:
-        pass
+    except: pass
 
     try:
         with open(os.path.join(logs_folder, "F.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(F))
-    except:
-        pass
+    except: pass
 
     try:
         with open(
             os.path.join(logs_folder, "Quotes.csv"), encoding="utf-8", mode="w"
         ) as f:
             f.write("\n".join(Quotes))
-    except:
-        pass
+    except: pass
 
     try:
         with open(
@@ -178,16 +170,14 @@ def form_logs():
             mode="w",
         ) as f:
             f.write("\n".join(Apostrophes))
-    except:
-        pass
+    except: pass
 
     try:
         with open(
             os.path.join(logs_folder, "Dashes.csv"), encoding="utf-8", mode="w"
         ) as f:
             f.write("\n".join(Dashes))
-    except:
-        pass
+    except: pass
 
 
 def form_text_tbs():
@@ -226,18 +216,9 @@ def form_text_tbs():
             # Replace `[ ]` with `* *`
             .replace("[", "*").replace("]", "*")
             # Remove USFM formatting tags
-            .replace("\\wj ", "")
-            .replace("\\wj*", "")
-            .replace("\\+wj ", "")
-            .replace("\\+wj*", "")
-            .replace("\\nd ", "")
-            .replace("\\nd*", "")
-            .replace("\\+nd ", "")
-            .replace("\\+nd*", "")
-            .replace("\\qt ", "")
-            .replace("\\qt*", "")
-            .replace("\\+qt ", "")
-            .replace("\\+qt*", "")
+            .replace("\\wj ", "").replace("\\wj*", "").replace("\\+wj ", "").replace("\\+wj*", "")
+            .replace("\\nd ", "").replace("\\nd*", "").replace("\\+nd ", "").replace("\\+nd*", "")
+            .replace("\\qt ", "").replace("\\qt*", "").replace("\\+qt ", "").replace("\\+qt*", "")
             for line in lines
         ]
         lines = [
@@ -259,8 +240,7 @@ def form_text_tbs():
                 mode="w",
             ) as f:
                 f.writelines(lines)
-        except:
-            pass
+        except: pass
 
 
 def form_text_solid():
@@ -296,8 +276,7 @@ def form_text_solid():
             mode="w",
         ) as f:
             f.write(res)
-    except:
-        pass
+    except: pass
 
 
 def form_text_lined():
@@ -333,8 +312,7 @@ def form_text_lined():
             mode="w",
         ) as f:
             f.write("\n".join(all_lines))
-    except:
-        pass
+    except: pass
 
 
 def sort_markdown_table(file_path: str):
@@ -403,7 +381,6 @@ def monitor_files_for_changes():
             perform_automations()
             last_modification_time = current_modification_time
         time.sleep(1)
-
 
 if __name__ == "__main__":
     monitor_files_for_changes()
