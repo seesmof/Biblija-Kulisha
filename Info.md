@@ -1,5 +1,0 @@
-- `Original/`: original BIBLE text with typo fixes
-- `Output/`: BIBLE text in different formats ([/Output/Info.md](./Output/Info.md))
-- `code/`: scripts for automating boring tasks 
-- `docs/`: different text files, Bible scans, files for checking the typos 
-- `logs/`: keeps track of different formatting tags or places in the Bible text 
