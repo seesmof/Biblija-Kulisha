@@ -1,4 +1,4 @@
-**/Scans/*.pdf
+*.pdf
 ~$*.*
 .venv
 .nicegui

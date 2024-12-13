@@ -1,3 +1,0 @@
-- `25-10-2024 Editorial checks/`: files with BIBLE Text checks by brothers from Trinitarian Bible Society
-- `Changes.csv`: list of changse to the HOLY BIBLE's Text
-- `Chapters.csv`: list of proofread chapters of the BIBLE Text
