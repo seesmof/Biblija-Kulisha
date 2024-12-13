@@ -11,7 +11,6 @@ current_folder=os.path.dirname(os.path.abspath(__file__))
 original_folder=os.path.join(current_folder, "Original")
 
 paratext_folder=os.path.join(r'C:\My Paratext 9 Projects\BKS')
-
 Bible_text_for_each_Book=dict()
 for file_name in os.listdir(original_folder):
     original_file_path=os.path.join(original_folder,file_name)
@@ -22,3 +21,7 @@ for file_name in os.listdir(original_folder):
     with open(original_file_path,encoding='utf-8',mode='r') as file:
         lines=file.readlines()
     Bible_text_for_each_Book[Book_name]=lines
+
+for Book_name in Bible_text_for_each_Book:
+    Bible_text=Bible_text_for_each_Book[Book_name]
+    print(Bible_text)
