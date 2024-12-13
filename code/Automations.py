@@ -10,7 +10,7 @@ code_folder = os.path.dirname(os.path.abspath(__file__))
 original_folder = os.path.join(root, "Original")
 original_files = glob.glob(original_folder + "\\*.USFM")
 output_folder = os.path.join(root, "Output")
-TBS_text_folder = os.path.join(output_folder, "TXT TBS")
+TBS_text_folder = os.path.join(root, "TXT TBS")
 solid_text_folder = os.path.join(output_folder, "TXT SLD")
 lined_text_folder = os.path.join(output_folder, "TXT LND")
 logs_folder = os.path.join(root, "logs")
@@ -213,6 +213,8 @@ def form_text_tbs():
             .replace("\\c ", "##")
             # Change `\v ` to `#`
             .replace("\\v ", "#")
+            # Change `\s1 ` to `##!`
+            .replace("\\s1", "##!")
             # Replace `[ ]` with `* *`
             .replace("[", "*").replace("]", "*")
             # Remove USFM formatting tags
@@ -360,10 +362,6 @@ def perform_automations():
     print("Copied Bible files to Paratext")
     form_text_tbs()
     print("Formed TBS Bible text files")
-    form_text_solid()
-    print("Formed solid Bible text file")
-    form_text_lined()
-    print("Formed lined Bible text file")
     form_logs()
     print("Formed log files")
     sort_markdown_table(changes_file)
