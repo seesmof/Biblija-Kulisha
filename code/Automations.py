@@ -12,7 +12,6 @@ original_files = glob.glob(original_folder + "\\*.USFM")
 output_folder = os.path.join(root, "Output")
 TBS_text_folder = os.path.join(root, "TXT TBS")
 solid_text_folder = os.path.join(output_folder, "TXT SLD")
-lined_text_folder = os.path.join(output_folder, "TXT LND")
 logs_folder = os.path.join(root, "logs")
 paratext_folder = os.path.join("C:\\My Paratext 9 Projects\\BKS")
 changes_file = os.path.join(root, "docs", "Changes.md")
@@ -292,10 +291,11 @@ def form_text_lined():
         "toc3",
     ]
     all_lines = []
-    for file_path in original_files:
+    for file_name in os.listdir(original_folder):
+        file_path=os.path.join(original_folder,file_name)
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
-        Book_name = lines[2][3:].strip()
+        Book_name = file_name[2:5]
         chapter_number = 1
         for line in lines:
             if any(tag in line for tag in avoid_these):
@@ -309,7 +309,7 @@ def form_text_lined():
             all_lines.append(line)
     try:
         with open(
-            os.path.join(lined_text_folder, "Lined.txt"),
+            os.path.join(os.path.join(root,'docs'), "Lined.txt"),
             encoding="utf-8",
             mode="w",
         ) as f:
@@ -359,13 +359,15 @@ def sort_markdown_table(file_path: str):
 def perform_automations():
     print()
     copy_to_paratext()
-    print("Copied Bible files to Paratext")
+    print("Paratext")
     form_text_tbs()
-    print("Formed TBS Bible text files")
+    print("TBS")
+    form_text_lined()
+    print("TXT")
     form_logs()
-    print("Formed log files")
+    print("Logs")
     sort_markdown_table(changes_file)
-    print("Sorted changes table")
+    print("Changes")
 
 
 def monitor_files_for_changes():
