@@ -3381,7 +3381,6 @@
 | ACT | 19 | 10 | , - | , — | Wrong dash |
 | ACT | 20 | 33 | , - | , — | Wrong dash |
 | ACT | 21 | 23 | З роби | Зроби | Separated letter |
-| ACT | 22 | 2 | Почувши | (Почувши | Missing opening bracket: at the end of this verse there is a closing bracket, but no opening one. KJV has this whole verse in brackets. |
 | ACT | 24 | 18 | , - | , — | Wrong dash |
 | ACT | 24 | 18 | , - | , — | Wrong dash |
 | ACT | 25 | 3 | , - | , — | Wrong dash |
