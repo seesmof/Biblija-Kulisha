@@ -6,16 +6,20 @@
 - [x] Replace `'` with `ʼ`
 - [x] Replace ` -` with ` —`
 - [x] Replace `" "` with `„ ‟`
+- [x] Add F tags for footnotes from BIBLE Scans
 - [ ] Proofread everything chapter by chapter
-  - [ ] Add F tags for footnotes from BIBLE Scans
+- [ ] Fix everything that differs from the scan
+- [ ] Pray about everything that you think is a mistake and it is this way in the scan
 
 # Revision (Біблія свободи)
 
+- [ ] Copy Original folder, rename to Revision
+- [ ] Remove all formatting tags with `\\(\+*)(WJ|QT|ND)(\s|\*)`
+- [ ] Replace „ ‟ with “ ‘ ’ ”
 - [x] WJ tags
 - [ ] QT tags
 - [ ] ND tags
 - [ ] GOD's Pronouns capitalized
-- [ ] Change „ ‟ to “ ‘ ’ ”
 - [ ] Add quotes everywhere in direct speech
 - [ ] P tags
 
@@ -34,19 +38,16 @@ Ideas:
 - Numbers in digits
 - W tags (Strong's numbers)
   - Make a spreadsheet (or an SQLite database) with all Ukrainian BIBLE words and their Strong's number
-
-## Language update
-
-- [ ] Use KJV to make a language update for the Bible Kulish
-  - [ ] When updating language always choose shortest words probably
-  - [ ] Переглянути знаки тире `-` і краще прибрати якомога більше
-
-Ideas:
+- Переглянути знаки пунктуації, особливо тире
+- `нїчо` замість `ніщо`
+- `ріжниця` замість `різниця`
+- `видко` замість `видно`
+- Поєднати слова як `стало ся` на `сталося`
 
 - 1 Мойсея 14 4 `чотирнайцятому` замість `тринайцятому`
 - 2 Мойсея 12 42 `в роди і роди їх`
 - 3 Мойсея 5 19 `дійсно` замість `існо`
-- 5 Мойсея 17 8 та
+- 5 Мойсея 17 8 `та`
 - 5 Мойсея 16 22 verse missing
 - 1 Самуїлова 14 42 `.` замість `:`: `І повелїв Саул. Жеребуйте`
 - Рути 4 14 `жінки` замість `жінка`
@@ -63,10 +64,6 @@ Ideas:
 - 2 Солунян 3 4 переписати `що що`
 - Одкриттє 15 6 `лнянку` замість `льняну`
 - Одкриттє 17 7 `Длячого` замість `Для чого`
-- `нїчо` замість `ніщо`
-- `ріжниця` замість `різниця`
-- `видко` замість `видно`
-- Поєднати слова як `стало ся` на `сталося`
 - GEN 9 29 `деватьсот`
 - GEN 11 3 нема коми перед а
 - ECC 4 5 може не має бути `приговорюючи:`
