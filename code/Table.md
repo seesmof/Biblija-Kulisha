@@ -1,4 +1,4 @@
-| Book | Chapter | Verse | Content |
+| Book | Chapter | Verse | Mistake |
 | - | - | - | - |
 | EXO | 37 | 29 | на кадило робом **мастиєльників**. |
 | LEV | 10 | 17 | не **ззїли** ви жертви |
