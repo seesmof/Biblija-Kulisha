@@ -287,9 +287,7 @@ def form_text_lined():
         "id",
         "h",
         "mt",
-        "toc1",
-        "toc2",
-        "toc3",
+        "toc",
         'rem',
     ]
     all_lines = []
@@ -310,11 +308,8 @@ def form_text_lined():
             line = f"{Book_name} {chapter_number}:{remove_usfm_tags(verse_text)}"
             all_lines.append(line)
     try:
-        with open(
-            os.path.join(os.path.join(root,'docs'), "Lined.txt"),
-            encoding="utf-8",
-            mode="w",
-        ) as f:
+        target_path=os.path.join(os.path.join(root,'docs'), "Lined.txt")
+        with open(target_path,encoding="utf-8",mode="w") as f:
             f.write("\n".join(all_lines))
     except: pass
 
