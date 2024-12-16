@@ -32,7 +32,6 @@ def copy_to_paratext():
             copy2(file_path, os.path.join(paratext_folder, file_path.split("\\")[-1]))
     except: pass
 
-
 def remove_usfm_tags(line: str):
     # Remove WJ, ND, QT tags from the Bible verse line
     tags_to_remove = [
