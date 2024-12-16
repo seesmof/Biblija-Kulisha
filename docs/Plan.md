@@ -7,8 +7,11 @@
 - [x] Replace ` -` with ` —`
 - [x] Replace `" "` with `„ ‟`
 - [x] Add F tags for footnotes from BIBLE Scans
+- [ ] Add Book translators with `rem`
+- [ ] Align running header `h`
+- [ ] Align Bible Book names `toc`
+- [ ] Align Book Book intros `mt`
 - [ ] Proofread everything chapter by chapter
-- [ ] Fix everything that differs from the scan
 - [ ] Pray about everything that you think is a mistake and it is this way in the scan
 
 # Revision (Біблія свободи)
