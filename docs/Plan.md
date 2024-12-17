@@ -11,14 +11,14 @@
 - [ ] Align running header `h`
 - [ ] Align Bible Book names `toc`
 - [ ] Align Book Book intros `mt`
-- [ ] Proofread everything chapter by chapter
-- [ ] Pray about everything that you think is a mistake and it is this way in the scan
+- [ ] Proofread each verse, align everything with the scan
 
 # Revision (Біблія свободи)
 
 - [ ] Copy Original folder, rename to Revision
 - [ ] Remove all formatting tags with `\\(\+*)(WJ|QT|ND)(\s|\*)`
 - [ ] Replace „ ‟ with “ ‘ ’ ”
+- [ ] Fix any mistakes that are in the scan as well
 - [x] WJ tags
 - [ ] QT tags
 - [ ] ND tags
