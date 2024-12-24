@@ -21,6 +21,7 @@
 | GEN | 17 | 20 | князїв | князів | Wrong letter |
 | GEN | 17 | 21 | 'цїй | ʼцїй | Wrong apostrophe |
 | GEN | 18 | 26 | Коди | Коли | Wrong letter |
+| GEN | 19 | 1 | увечорі | у вечорі | Missing space |
 | GEN | 22 | 16 | я - | я — | Wrong dash |
 | GEN | 22 | 16 | слово - | слово — | Wrong dash |
 | GEN | 22 | 20 | з'ясовано | зъясовано | Wrong symbol |
