@@ -27,6 +27,7 @@
 | GEN | 19 | 34 | уранцї | у ранцї | Missing space |
 | GEN | 19 | 38 | Аммонїїв | Аммоніїв | Wrong letter |
 | GEN | 20 | 14 | Узяв | Узав | Wrong letter |
+| GEN | 21 | 14 | уранцї | у ранцї | Missing space |
 | GEN | 22 | 16 | я - | я — | Wrong dash |
 | GEN | 22 | 16 | слово - | слово — | Wrong dash |
 | GEN | 22 | 20 | з'ясовано | зъясовано | Wrong symbol |
