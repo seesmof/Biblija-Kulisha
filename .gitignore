@@ -3,3 +3,4 @@
 .venv
 .nicegui
 __pycache__
+.vscode
