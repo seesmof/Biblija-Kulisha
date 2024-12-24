@@ -18,6 +18,7 @@
 | GEN | 16 | 14 | "Криницею | „Криницею | Wrong quote |
 | GEN | 16 | 14 | бачить." | бачить.‟ | Wrong quote |
 | GEN | 17 | 6 | виходитимуть | виходити муть | Missing space |
+| GEN | 17 | 20 | князїв | князів | Wrong letter |
 | GEN | 17 | 21 | 'цїй | ʼцїй | Wrong apostrophe |
 | GEN | 22 | 16 | я - | я — | Wrong dash |
 | GEN | 22 | 16 | слово - | слово — | Wrong dash |
