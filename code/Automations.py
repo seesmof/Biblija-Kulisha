@@ -156,25 +156,17 @@ def form_logs():
     except: pass
 
     try:
-        with open(
-            os.path.join(logs_folder, "Quotes.csv"), encoding="utf-8", mode="w"
-        ) as f:
+        with open(os.path.join(logs_folder, "Quotes.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(Quotes))
     except: pass
 
     try:
-        with open(
-            os.path.join(logs_folder, "Apostrophes.csv"),
-            encoding="utf-8",
-            mode="w",
-        ) as f:
+        with open(os.path.join(logs_folder, "Apostrophes.csv"),encoding="utf-8",mode="w",) as f:
             f.write("\n".join(Apostrophes))
     except: pass
 
     try:
-        with open(
-            os.path.join(logs_folder, "Dashes.csv"), encoding="utf-8", mode="w"
-        ) as f:
+        with open(os.path.join(logs_folder, "Dashes.csv"), encoding="utf-8", mode="w") as f:
             f.write("\n".join(Dashes))
     except: pass
 
@@ -351,7 +343,6 @@ def sort_markdown_table(file_path: str):
     with open(file_path, encoding="utf-8", mode="w") as f:
         f.write("\n".join(sorted_table_lines))
 
-
 def perform_automations():
     print()
     copy_to_paratext()
@@ -364,9 +355,6 @@ def perform_automations():
     print("Logs")
     sort_markdown_table(changes_file)
     print("Changes")
-    sort_markdown_table(deviations_file)
-    print("Deviations")
-
 
 def monitor_files_for_changes():
     latest_file = max(original_files, key=os.path.getmtime)
