@@ -3633,3 +3633,4 @@
 | REV | 22 | 16 | Я - | Я — | Wrong dash |
 | REV | 22 | 20 | хутко!  Амінь | хутко! Амінь | Extra space |
 | REV | 22 | 20 | Амінь.  О | Амінь. О | Extra space |
+| GEN | 15 | 14 | ізійдуть | ізийдуть | Wrong letter |
