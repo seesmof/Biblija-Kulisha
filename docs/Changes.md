@@ -13,6 +13,8 @@
 | GEN | 11 | 6 | тільки | тількі | Wrong letter |
 | GEN | 11 | 7 | 'дного. | ʼдного. | Wrong apostrophe |
 | GEN | 14 | 17 | назустріч | на зустріч | Missing space |
+| GEN | 15 | 14 | ізійдуть | ізийдуть | Wrong letter |
+| GEN | 15 | 21 | Ебусеїв. | Ебусеїв | Extra dot |
 | GEN | 16 | 14 | "Криницею | „Криницею | Wrong quote |
 | GEN | 16 | 14 | бачить." | бачить.‟ | Wrong quote |
 | GEN | 17 | 21 | 'цїй | ʼцїй | Wrong apostrophe |
@@ -3633,4 +3635,3 @@
 | REV | 22 | 16 | Я - | Я — | Wrong dash |
 | REV | 22 | 20 | хутко!  Амінь | хутко! Амінь | Extra space |
 | REV | 22 | 20 | Амінь.  О | Амінь. О | Extra space |
-| GEN | 15 | 14 | ізійдуть | ізийдуть | Wrong letter |
