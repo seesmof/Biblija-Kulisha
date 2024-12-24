@@ -25,6 +25,7 @@
 | GEN | 19 | 26 | стовпа | стовна | Wrong letter |
 | GEN | 19 | 27 | уранцї | у ранцї | Missing space |
 | GEN | 19 | 34 | уранцї | у ранцї | Missing space |
+| GEN | 19 | 38 | Аммонїїв | Аммоніїв | Wrong letter |
 | GEN | 22 | 16 | я - | я — | Wrong dash |
 | GEN | 22 | 16 | слово - | слово — | Wrong dash |
 | GEN | 22 | 20 | з'ясовано | зъясовано | Wrong symbol |
