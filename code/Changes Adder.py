@@ -22,7 +22,7 @@ def add_new_change_entry(changes_file_path: str):
     reset_local_storage()
 
 root_folder=os.path.dirname(os.path.abspath(__file__))
-changes_file_path=os.path.join(root_folder,'..','docs','Checks','Changes.md')
+changes_file_path=os.path.join(root_folder,'..','docs','Changes.md')
 reasons_autocomplete=['wrong','missing','letter','symbol']
 
 Book_names=[]

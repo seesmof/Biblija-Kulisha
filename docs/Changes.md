@@ -12,6 +12,7 @@
 | GEN | 11 | 5 | чолвїчі | чоловїчі | Missing letter |
 | GEN | 11 | 6 | тільки | тількі | Wrong letter |
 | GEN | 11 | 7 | 'дного. | ʼдного. | Wrong apostrophe |
+| GEN | 14 | 17 | назустріч | на зустріч | Missing space |
 | GEN | 16 | 14 | "Криницею | „Криницею | Wrong quote |
 | GEN | 16 | 14 | бачить." | бачить.‟ | Wrong quote |
 | GEN | 17 | 21 | 'цїй | ʼцїй | Wrong apostrophe |
