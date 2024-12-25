@@ -5,5 +5,3 @@ add ability to get Book name for current file name or path
 '''
 
 import os
-
-from constants import Constants as c

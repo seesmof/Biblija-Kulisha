@@ -15,7 +15,6 @@ solid_text_folder = os.path.join(output_folder, "TXT SLD")
 logs_folder = os.path.join(root, "logs")
 paratext_folder = os.path.join("C:\\My Paratext 9 Projects\\BKS")
 changes_file = os.path.join(root, "docs", "Changes.md")
-deviations_file = os.path.join(root, "docs", "Deviations.md")
 
 @dataclass
 class Change:
