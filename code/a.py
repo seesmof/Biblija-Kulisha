@@ -37,4 +37,6 @@ for full_file_name in os.listdir(c.original_folder_path):
     for word in current_words.split():
         words.add(word)
 words=sorted(list(words))
-print(words)
+output_file_path=os.path.join(c.code_folder_path,'Table.md')
+with open(output_file_path,encoding='utf-8',mode='w') as f:
+    f.writelines('\n'.join(words))

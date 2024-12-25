@@ -3257,6 +3257,7 @@
 | ZEC | 9 | 14 | зявитьея | зʼявитьея | Missing symbol |
 | ZEC | 9 | 14 | зʼявитьея | зʼявиться | Wrong letter |
 | ZEC | 9 | 14 | з'явиться | зʼявиться | Wrong apostrophe |
+| ZEC | 9 | 15 | углі | угли | Wrong letter |
 | ZEC | 9 | 16 | часи] | часи, | Wrong symbol |
 | ZEC | 9 | 16 | камені | каменї | Wrong letter |
 | ZEC | 9 | 17 | вино - | вино — | Wrong dash |
