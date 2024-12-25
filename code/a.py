@@ -4,11 +4,37 @@ wanting to extract all Words from the Ukrainian Bible Kulish
 
 import os
 import re
+import string
 
-from Automations import original_folder
+from constants import constants as c
 
-texts=dict()
-for full_file_name in os.listdir(original_folder):
-    file_path=os.path.join(original_folder,full_file_name)
+words=set()
+for full_file_name in os.listdir(c.original_folder_path):
+    file_path=os.path.join(c.original_folder_path,full_file_name)
     with open(file_path,encoding='utf-8',mode='r') as f:
-        text=f.read()
+        lines=f.readlines()
+
+    # remove unnecessary tags
+    tags_to_avoid=['mt','s','p','toc','h','id','c']
+    lines=[line for line in lines if not any(f'\\{tag}' in line for tag in tags_to_avoid)]
+
+    # remove formatting tags
+    tags_to_remove=r'\\(\+*)(wj|qt|nd)(\s|\*)'
+    lines=[re.sub(tags_to_remove,'',line) for line in lines]
+
+    # remove verses
+    verses_pattern=r'\\v\s\d+\s'
+    lines=[re.sub(verses_pattern,'',line).strip() for line in lines]
+
+    # remove footnotes
+    footnote_pattern=r'\\(\+*)f(.*?)\\(\+*)f\*'
+    lines=[re.sub(footnote_pattern,'',line).strip() for line in lines]
+
+    # remove punctuation
+    lines=[re.sub(r'[^\w\s\-]','',l) for l in lines]
+
+    current_words=' '.join(lines)
+    for word in current_words.split():
+        words.add(word)
+words=sorted(list(words))
+print(words)
