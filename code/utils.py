@@ -17,7 +17,3 @@ class Utilities:
         return re.sub(verse_tag_and_number_pattern,'',verse_line)
 
 utilities=Utilities()
-
-input_verse_line=r'\v 31 \wj Сказано ж: \+qt Що хто розводить ся з жінкою своєю, нехай дасть їй розвідний лист.\+qt*\wj*'
-res=utilities.remove_formatting_usfm_tags(input_verse_line)
-print(res)
