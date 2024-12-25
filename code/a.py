@@ -1,3 +1,7 @@
+'''
+wanting to extract all Words from the Ukrainian Bible Kulish 
+'''
+
 import os
 import re
 

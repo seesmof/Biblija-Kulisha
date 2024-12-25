@@ -13,3 +13,6 @@ class ChangeEntry(BibleReference):
     Correction:str
     Reason:str
 
+@dataclass
+class TypoEntry(BibleReference):
+    Contents:str
