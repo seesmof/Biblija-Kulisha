@@ -34,6 +34,7 @@
 | GEN | 22 | 20 | з'ясовано | зъясовано | Wrong symbol |
 | GEN | 22 | 20 | Авраамові | Абраамові | Wrong letter |
 | GEN | 24 | 28 | з'ясувала | зʼясувала | Wrong apostrophe |
+| GEN | 24 | 54 | вранцї | в ранцї | Missing space |
 | GEN | 25 | 30 | Єдом*. | Єдом. | Extra footnote caller |
 | GEN | 26 | 20 | Есек - | Есек — | Wrong dash |
 | GEN | 26 | 21 | Ситна - | Ситна — | Wrong dash |
