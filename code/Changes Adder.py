@@ -2,7 +2,7 @@
 import os
 from nicegui import ui,app
 
-from code.Original_Automations import original_folder
+import util
 
 def reset_local_storage():
     app.storage.general['Book']=''
@@ -25,10 +25,7 @@ root_folder=os.path.dirname(os.path.abspath(__file__))
 changes_file_path=os.path.join(root_folder,'..','docs','Changes.md')
 reasons_autocomplete=['wrong','missing','letter','symbol']
 
-Book_names=[]
-for file in os.listdir(original_folder):
-    Book_names.append(file[2:5])
-
+Book_names=util.get_ordered_Bible_Book_names()
 ui.select(label='Book',options=Book_names,with_input=True,).bind_value(app.storage.general,'Book')
 ui.input(label='Chapter').bind_value(app.storage.general,'Chapter')
 ui.input(label='Verse').bind_value(app.storage.general,'Verse')
