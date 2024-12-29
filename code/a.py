@@ -42,11 +42,8 @@ def make_tbs_text_files(
         lines=[line for line in lines if any(tag in line for tag in needed_tags)]
         for i,line in enumerate(lines):
             lines[i]=lines[i].replace('[','*').replace(']','*')
-            footnote_opening_pattern=r'\\f\s\+\s\\ft\s'
-            footnote_closing_pattern=r'\f*'
-            lines[i]=re.sub(footnote_opening_pattern,'[',lines[i]).replace(footnote_closing_pattern,']').replace(r'\v ','#').replace(r'\c ','##').replace(r'\toc2','###!').replace(r'\toc1','###!!')
-            heading_pattern=r'\\s\d+'
-            lines[i]=re.sub(heading_pattern,'##!',lines[i])
+            lines[i]=re.sub(r'\\f\s\+\s\\ft\s','[',lines[i]).replace(r'\f*',']').replace(r'\v ','#').replace(r'\c ','##').replace(r'\toc2','###!').replace(r'\toc1','###!!')
+            lines[i]=re.sub(r'\\s\d+','##!',lines[i])
         lines=[f'###{Book_name}']+lines
     
         output_file_path=os.path.join(util.docs_folder_path,'Original','TBS',file_name[2:].replace('USFM','TXT'))
