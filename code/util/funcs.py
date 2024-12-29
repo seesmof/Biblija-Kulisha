@@ -29,6 +29,7 @@ def get_ordered_Bible_Book_names(
     '''
     Book_names=[]
     for full_file_name in os.listdir(folder_path):
-        file_name_without_extension=full_file_name.split('.')[0]
+        # [2:] means remove the 2-number prefix
+        file_name_without_extension=full_file_name[2:].split('.')[0]
         Book_names.append(file_name_without_extension)
     return Book_names
