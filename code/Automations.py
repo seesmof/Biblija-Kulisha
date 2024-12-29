@@ -53,7 +53,6 @@ def remove_usfm_tags(line: str):
     line = re.sub(footnote_pattern, "", line)
     return line
 
-
 def form_logs():
     def get_verse_number(line: str) -> int:
         verse_number_pattern = r"\\v\s\d+"

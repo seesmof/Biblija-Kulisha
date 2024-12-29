@@ -1,14 +1,12 @@
 from dataclasses import dataclass
 import os
 
-
 @dataclass
 class Entry:
     Book: str
     Chapter: int
     Verse: int
     Content: str
-
 
 def convert_csv_lines_to_markdown_table(file_path: str, root_folder: str):
     with open(file_path, encoding="utf-8", mode="r") as f:

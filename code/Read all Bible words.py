@@ -6,7 +6,7 @@ import os
 import re
 import string
 
-from constants import constants as c
+from code.consts import constants as c
 
 words=set()
 for full_file_name in os.listdir(c.original_folder_path):
