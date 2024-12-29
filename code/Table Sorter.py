@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 import os
 
-from Automations import root,code_folder,original_folder
+from code.Original_Automations import root,code_folder,original_folder
 
 target_file=os.path.join(root,'docs','Typos.md')
 with open(target_file, encoding="utf-8", mode="r") as f:

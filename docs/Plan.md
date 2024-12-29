@@ -15,7 +15,7 @@
 
 # Revision (Біблія свободи)
 
-- [ ] Copy Original folder, rename to Revision
+- [x] Copy Original folder, rename to Revision
 - [ ] Remove all formatting tags with `\\(\+*)(WJ|QT|ND)(\s|\*)`
 - [ ] Replace „ ‟ with “ ‘ ’ ”
 - [ ] Fix any mistakes that are in the scan as well

@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import os
 import re
 
-from Automations import original_folder,code_folder
+from code.Original_Automations import original_folder,code_folder
 
 t='''
 EXO 37:29 на кадило робом **мастиєльників**.

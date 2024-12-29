@@ -1,5 +1,5 @@
 from code.consts import constants as c
-from Automations import remove_usfm_tags
+from code.Original_Automations import remove_usfm_tags
 
 import os 
 

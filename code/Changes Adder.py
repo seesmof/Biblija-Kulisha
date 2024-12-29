@@ -2,7 +2,7 @@
 import os
 from nicegui import ui,app
 
-from Automations import original_folder
+from code.Original_Automations import original_folder
 
 def reset_local_storage():
     app.storage.general['Book']=''
