@@ -23,15 +23,15 @@ class Change:
     Correction: str
     Reason: str
 
-def copy_files_to_paratext_project(project_abbreviation: str = 'UFB', files_folder_path: str = util.original_folder_path):
-    for file_name in os.listdir(files_folder_path):
-        print(file_name)
-
-def copy_to_paratext():
-    try:
-        for file_path in original_files:
-            copy2(file_path, os.path.join(paratext_folder, file_path.split("\\")[-1]))
-    except: pass
+def copy_files_to_paratext_project(
+    project_abbreviation: str = 'UBK', 
+    local_files_folder_path: str = util.original_folder_path,
+):
+    paratext_project_folder_path=os.path.join(util.paratext_projects_folder_path,project_abbreviation)
+    for file_name in os.listdir(local_files_folder_path):
+        paratext_file_path=os.path.join(paratext_project_folder_path,file_name)
+        local_file_path=os.path.join(local_files_folder_path,file_name)
+        copy2(local_file_path,paratext_file_path)
 
 def remove_usfm_tags(line: str):
     # Remove WJ, ND, QT tags from the Bible verse line
@@ -241,8 +241,8 @@ def form_text_lined():
         'rem',
     ]
     all_lines = []
-    for file_name in os.listdir(original_folder):
-        file_path=os.path.join(original_folder,file_name)
+    for file_name in os.listdir(util.original_folder_path):
+        file_path=os.path.join(util.original_folder_path,file_name)
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
         Book_name = file_name[2:5]
@@ -281,7 +281,7 @@ def sort_markdown_table(file_path: str):
 
     # get all Book names
     Book_names: list[str] = []
-    for file in os.listdir(original_folder):
+    for file in os.listdir(util.original_folder_path):
         Book_names.append(file[2:5])
 
     for Book in Book_names:
@@ -302,7 +302,7 @@ def sort_markdown_table(file_path: str):
 
 def perform_automations():
     print()
-    copy_to_paratext()
+    copy_files_to_paratext_project()
     print("Paratext")
     form_text_tbs()
     print("TBS")
