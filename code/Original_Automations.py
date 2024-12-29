@@ -75,11 +75,12 @@ def form_logs():
     Apostrophes = [header]
     Dashes = [header]
 
-    for file_path in original_files:
+    for file_name in os.listdir(util.revision_folder_path):
+        file_path=os.path.join(util.revision_folder_path,file_name)
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
 
-        Book_name = file_path.split("\\")[-1][2:5]
+        Book_name = file_name[2:].replace('.USFM','')
         chapter_number = 0
 
         for line in lines:
