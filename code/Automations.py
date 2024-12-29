@@ -5,17 +5,14 @@ import time
 import os
 import re
 
-root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-docs_folder_path=os.path.join(root,'docs')
-code_folder = os.path.dirname(os.path.abspath(__file__))
-original_folder = os.path.join(root, "Original")
-original_files = glob.glob(original_folder + "\\*.USFM")
-output_folder = os.path.join(root, "Output")
-TBS_text_folder = os.path.join(docs_folder_path, "Original_TXT_TBS")
-solid_text_folder = os.path.join(output_folder, "TXT SLD")
-logs_folder = os.path.join(docs_folder_path,'Original_Logs')
-paratext_folder = os.path.join("C:\\My Paratext 9 Projects\\BKS")
-changes_file = os.path.join(root, "docs", "Changes.md")
+import util
+
+original_files = glob.glob(util.original_folder_path + "\\*.USFM")
+original_docs_folder_path=os.path.join(util.docs_folder_path,'Original')
+TBS_text_folder = os.path.join(original_docs_folder_path,'TBS')
+logs_folder = os.path.join(original_docs_folder_path,'Logs')
+changes_file = os.path.join(original_docs_folder_path,'Changes.md')
+lined_output_file_path=os.path.join(original_docs_folder_path,'Output_Lined.txt')
 
 @dataclass
 class Change:
@@ -25,6 +22,10 @@ class Change:
     Mistake: str
     Correction: str
     Reason: str
+
+def copy_files_to_paratext_project(project_abbreviation: str = 'UFB', files_folder_path: str = util.original_folder_path):
+    for file_name in os.listdir(files_folder_path):
+        print(file_name)
 
 def copy_to_paratext():
     try:
@@ -230,43 +231,6 @@ def form_text_tbs():
                 f.writelines(lines)
         except: pass
 
-
-def form_text_solid():
-    all_lines = []
-    for file_path in original_files:
-        with open(file_path, encoding="utf-8", mode="r") as f:
-            lines = f.readlines()
-        lines = [
-            remove_usfm_tags(
-                # Match verse tags and numbers and remove them
-                re.sub(r"\\v\s\d+\s", "", line)
-            )
-            for line in lines
-            if "\\p" not in line
-            and "\\c" not in line
-            and "\\id" not in line
-            and "\\h" not in line
-            and "\\toc1" not in line
-            and "\\toc2" not in line
-            and "\\toc3" not in line
-            and "\\mt" not in line
-        ]
-        all_lines += lines
-    # Join everything into one solid wall of text, ALLELUJAH JESUS THANK YOU LORD GOD ALMIGHTY!
-    res = " ".join(
-        # Replace all new line tags
-        [line.replace("\n", "") for line in all_lines]
-    )
-    try:
-        with open(
-            os.path.join(solid_text_folder, "Solid.txt"),
-            encoding="utf-8",
-            mode="w",
-        ) as f:
-            f.write(res)
-    except: pass
-
-
 def form_text_lined():
     avoid_these = [
         "p",
@@ -294,11 +258,9 @@ def form_text_lined():
             line = f"{Book_name} {chapter_number}:{remove_usfm_tags(verse_text)}"
             all_lines.append(line)
     try:
-        target_path=os.path.join(os.path.join(root,'docs'), "Lined.txt")
-        with open(target_path,encoding="utf-8",mode="w") as f:
+        with open(lined_output_file_path,encoding="utf-8",mode="w") as f:
             f.write("\n".join(all_lines))
     except: pass
-
 
 def sort_markdown_table(file_path: str):
     with open(file_path, encoding="utf-8", mode="r") as f:
