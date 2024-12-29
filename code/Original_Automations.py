@@ -1,37 +1,33 @@
-from dataclasses import dataclass
-from shutil import copy2
-import glob
+import shutil
 import time
 import os
 import re
 
 import util
 
-original_files = glob.glob(util.original_folder_path + "\\*.USFM")
 original_docs_folder_path=os.path.join(util.docs_folder_path,'Original')
 TBS_text_folder = os.path.join(original_docs_folder_path,'TBS')
 logs_folder = os.path.join(original_docs_folder_path,'Logs')
 changes_file = os.path.join(original_docs_folder_path,'Changes.md')
 lined_output_file_path=os.path.join(original_docs_folder_path,'Output_Lined.txt')
 
-@dataclass
-class Change:
-    Book: str
-    Chapter: int
-    Verse: int
-    Mistake: str
-    Correction: str
-    Reason: str
-
 def copy_files_to_paratext_project(
     project_abbreviation: str = 'UBK', 
     local_files_folder_path: str = util.original_folder_path,
+    remove_comenting_rem_tags: bool = False,
 ):
     paratext_project_folder_path=os.path.join(util.paratext_projects_folder_path,project_abbreviation)
     for file_name in os.listdir(local_files_folder_path):
         paratext_file_path=os.path.join(paratext_project_folder_path,file_name)
         local_file_path=os.path.join(local_files_folder_path,file_name)
-        copy2(local_file_path,paratext_file_path)
+        shutil.copy2(local_file_path,paratext_file_path)
+
+        if remove_comenting_rem_tags:
+            with open(paratext_file_path,encoding='utf-8',mode='r') as f:
+                lines=f.readlines()
+            lines=[l for l in lines if not l.startswith(r'\rem ')]
+            with open(paratext_file_path,encoding='utf-8',mode='w') as f:
+                f.write('\n'.join([l.strip() for l in lines]))
 
 def remove_usfm_tags(line: str):
     # Remove WJ, ND, QT tags from the Bible verse line
@@ -171,66 +167,26 @@ def form_logs():
             f.write("\n".join(Dashes))
     except: pass
 
+def make_tbs_text_files(
+    folder_path:str=util.original_folder_path,
+):
+    for file_name in os.listdir(folder_path):
+        Book_name=file_name[2:].replace('.USFM','')
+        file_path=os.path.join(folder_path,file_name)
+        with open(file_path,encoding='utf-8',mode='r') as f:
+            lines=f.readlines()
 
-def form_text_tbs():
-    for file_path in original_files:
-        with open(file_path, encoding="utf-8", mode="r") as f:
-            lines = f.readlines()
-
-        lines = [
-            line
-            for line in lines
-            # Remove `\ide`
-            if "\\ide" not in line
-            # Remove `\h`
-            and "\\h" not in line
-            # Remove `\toc3`
-            and "\\toc3" not in line
-            # Remove `\mt`
-            and "\\mt" not in line
-            # Remove `\p`
-            and "\\p" not in line
-        ]
-        lines = [
-            line
-            # Remove ` - Biblija Kulisha Standartna`
-            .replace(" - Biblija Kulisha Standartna", "")
-            # Change `\id ` to `###`
-            .replace("\\id ", "###")
-            # Change `\toc1 ` to `###!!`
-            .replace("\\toc1", "###!!")
-            # Change `\toc2 ` to `###!`
-            .replace("\\toc2", "###!")
-            # Change `\c ` to `##`
-            .replace("\\c ", "##")
-            # Change `\v ` to `#`
-            .replace("\\v ", "#")
-            # Change `\s1 ` to `##!`
-            .replace("\\s1", "##!")
-            # Replace `[ ]` with `* *`
-            .replace("[", "*").replace("]", "*")
-            # Remove USFM formatting tags
-            .replace("\\wj ", "").replace("\\wj*", "").replace("\\+wj ", "").replace("\\+wj*", "")
-            .replace("\\nd ", "").replace("\\nd*", "").replace("\\+nd ", "").replace("\\+nd*", "")
-            .replace("\\qt ", "").replace("\\qt*", "").replace("\\+qt ", "").replace("\\+qt*", "")
-            for line in lines
-        ]
-        lines = [
-            re.sub(r"\\f\s\+\s\\ft\s", "[", line).replace("\\f*", "]") for line in lines
-        ]
-
-        file_name, file_extension = file_path.split("\\")[-1].split(".")
-        # Remove number and BKS from filename
-        # So `41MATBKS` will be `MAT`
-        file_name = file_name[2:].replace("BKS", "")
-        # Change file extension and form full name
-        file_extension = "TXT"
-        full_name = f"{file_name}.{file_extension}"
-
-        try:
-            with open(os.path.join(TBS_text_folder, full_name),encoding="utf-8",mode="w") as f:
-                f.writelines(lines)
-        except: pass
+        needed_tags=['toc','v','s','c']
+        lines=[line for line in lines if any(tag in line for tag in needed_tags)]
+        for i,line in enumerate(lines):
+            lines[i]=lines[i].replace('[','*').replace(']','*')
+            lines[i]=re.sub(r'\\f\s\+\s\\ft\s','[',lines[i]).replace(r'\f*',']').replace(r'\v ','#').replace(r'\c ','##').replace(r'\toc2','###!').replace(r'\toc1','###!!')
+            lines[i]=re.sub(r'\\s\d+','##!',lines[i])
+        lines=[f'###{Book_name}']+lines
+    
+        output_file_path=os.path.join(original_docs_folder_path,'TBS',file_name[2:].replace('USFM','TXT'))
+        with open(output_file_path,encoding='utf-8',mode='w') as f:
+            f.write('\n'.join([l.strip() for l in lines]))
 
 def form_text_lined():
     avoid_these = [
@@ -267,10 +223,10 @@ def sort_markdown_table(file_path: str):
     with open(file_path, encoding="utf-8", mode="r") as f:
         lines = f.readlines()
 
-    changes: list[Change] = []
+    changes: list[util.ChangeEntry] = []
     for line in lines[2:]:
         split_line = line.strip()[2:-2].split(" | ")
-        change = Change(*split_line)
+        change = util.ChangeEntry(*split_line)
         change.Chapter = int(change.Chapter)
         change.Verse = int(change.Verse)
         changes.append(change)
@@ -302,29 +258,33 @@ def sort_markdown_table(file_path: str):
         f.write("\n".join(sorted_table_lines))
 
 def perform_automations():
-    print()
+    print('Copy Original files to Paratext')
     copy_files_to_paratext_project()
-    print("Paratext")
-    form_text_tbs()
-    print("TBS")
+    print('Copy Revision files to Paratext')
+    copy_files_to_paratext_project('UFB',util.revision_folder_path,True)
+    print('Form TBS text files')
+    make_tbs_text_files()
+    print("Make lined text file")
     form_text_lined()
-    print("TXT")
+    print("Form logs for formatting tags")
     form_logs()
-    print("Logs")
+    print("Sort the changes table")
     sort_markdown_table(changes_file)
-    print("Changes")
 
-def monitor_files_for_changes():
-    latest_file = max(original_files, key=os.path.getmtime)
-    last_modification_time = os.path.getmtime(latest_file)
+def watch_folder_for_changes(
+    folder_path:str=util.original_folder_path,
+):
+    file_paths=[os.path.join(folder_path,file_name) for file_name in os.listdir(folder_path)]
+    last_modified_file = max(file_paths, key=os.path.getmtime)
+    last_modification_time = os.path.getmtime(last_modified_file)
     perform_automations()
     while 1:
-        latest_file = max(original_files, key=os.path.getmtime)
-        current_modification_time = os.path.getmtime(latest_file)
+        last_modified_file = max(file_paths, key=os.path.getmtime)
+        current_modification_time = os.path.getmtime(last_modified_file)
         if last_modification_time != current_modification_time:
             perform_automations()
             last_modification_time = current_modification_time
         time.sleep(1)
 
 if __name__ == "__main__":
-    monitor_files_for_changes()
+    watch_folder_for_changes()
