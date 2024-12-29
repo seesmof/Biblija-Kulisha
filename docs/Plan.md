@@ -16,7 +16,7 @@
 # Revision (Біблія свободи)
 
 - [x] Copy Original folder, rename to Revision
-- [ ] Remove all formatting tags with `\\(\+*)(WJ|QT|ND)(\s|\*)`
+- [ ] Remove all formatting tags from Original with `\\(\+*)(WJ|QT|ND)(\s|\*)` pattern using find and replace
 - [ ] Replace „ ‟ with “ ‘ ’ ”
 - [ ] Fix any mistakes that are in the scan as well
 - [x] WJ tags
