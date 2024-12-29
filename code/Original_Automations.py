@@ -50,7 +50,9 @@ def remove_usfm_tags(line: str):
     line = re.sub(footnote_pattern, "", line)
     return line
 
-def form_logs():
+def form_logs(
+    folder_path: str = util.original_folder_path,
+):
     def get_verse_number(line: str) -> int:
         verse_number_pattern = r"\\v\s\d+"
         # Look for verses inside the line
@@ -71,8 +73,8 @@ def form_logs():
     Apostrophes = [header]
     Dashes = [header]
 
-    for file_name in os.listdir(util.revision_folder_path):
-        file_path=os.path.join(util.revision_folder_path,file_name)
+    for file_name in os.listdir(folder_path):
+        file_path=os.path.join(folder_path,file_name)
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
 
@@ -189,34 +191,24 @@ def make_tbs_text_files(
             f.write('\n'.join([l.strip() for l in lines]))
 
 def form_text_lined():
-    avoid_these = [
-        "p",
-        "id",
-        "h",
-        "mt",
-        "toc",
-        'rem',
-    ]
-    all_lines = []
+    text_lines = []
     for file_name in os.listdir(util.original_folder_path):
         file_path=os.path.join(util.original_folder_path,file_name)
         with open(file_path, encoding="utf-8", mode="r") as f:
             lines = f.readlines()
-        Book_name = file_name[2:5]
+        Book_name = file_name[2:].split('.')[0]
         chapter_number = 1
+
         for line in lines:
-            if any(tag in line for tag in avoid_these):
-                continue
             if "\\c " in line:
                 chapter_number = line[3:].split()[0]
-                continue
-            # Remove the `\v ` tag from line
-            verse_text = line[3:].strip()
-            line = f"{Book_name} {chapter_number}:{remove_usfm_tags(verse_text)}"
-            all_lines.append(line)
+            elif r'\v ' in line:
+                verse_text = line[3:].strip()
+                line = f"{Book_name} {chapter_number}:{remove_usfm_tags(verse_text)}"
+                text_lines.append(line)
     try:
         with open(lined_output_file_path,encoding="utf-8",mode="w") as f:
-            f.write("\n".join(all_lines))
+            f.write("\n".join(text_lines))
     except: pass
 
 def sort_markdown_table(file_path: str):
@@ -260,8 +252,8 @@ def sort_markdown_table(file_path: str):
 def perform_automations():
     print('Copy Original files to Paratext')
     copy_files_to_paratext_project()
-    print('Copy Revision files to Paratext')
-    copy_files_to_paratext_project('UFB',util.revision_folder_path,True)
+    # print('Copy Revision files to Paratext')
+    # copy_files_to_paratext_project('UFB',util.revision_folder_path,True)
     print('Form TBS text files')
     make_tbs_text_files()
     print("Make lined text file")
