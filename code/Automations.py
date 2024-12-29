@@ -6,13 +6,13 @@ import os
 import re
 
 root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+docs_folder_path=os.path.join(root,'docs')
 code_folder = os.path.dirname(os.path.abspath(__file__))
 original_folder = os.path.join(root, "Original")
 original_files = glob.glob(original_folder + "\\*.USFM")
 output_folder = os.path.join(root, "Output")
-TBS_text_folder = os.path.join(root, "TXT TBS")
+TBS_text_folder = os.path.join(docs_folder_path, "Original_TXT_TBS")
 solid_text_folder = os.path.join(output_folder, "TXT SLD")
-docs_folder_path=os.path.join(root,'docs')
 logs_folder = os.path.join(docs_folder_path,'Original_Logs')
 paratext_folder = os.path.join("C:\\My Paratext 9 Projects\\BKS")
 changes_file = os.path.join(root, "docs", "Changes.md")
@@ -227,11 +227,7 @@ def form_text_tbs():
         full_name = f"{file_name}.{file_extension}"
 
         try:
-            with open(
-                os.path.join(TBS_text_folder, full_name),
-                encoding="utf-8",
-                mode="w",
-            ) as f:
+            with open(os.path.join(TBS_text_folder, full_name),encoding="utf-8",mode="w") as f:
                 f.writelines(lines)
         except: pass
 
