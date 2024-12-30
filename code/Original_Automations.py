@@ -261,6 +261,7 @@ def form_markdown_output(
             lines=f.readlines()
         
         Book_name=file_name[2:].split('.')[0]
+        output_lines.append(f'# {Book_name}')
         for line in lines:
             if r'\c ' in line:
                 chapter_number=line[3:].strip()
