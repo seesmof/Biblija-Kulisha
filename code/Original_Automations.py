@@ -13,7 +13,7 @@ lined_output_file_path=os.path.join(original_docs_folder_path,'Output_Lined.txt'
 formatted_output_file_path=os.path.join(original_docs_folder_path,'Output_Formatted.md')
 
 def copy_files_to_paratext_project(
-    project_abbreviation: str = 'UBK', 
+    project_abbreviation: str = 'UBK',
     local_files_folder_path: str = util.original_folder_path,
     remove_comenting_rem_tags: bool = False,
 ):
@@ -272,7 +272,7 @@ def form_markdown_output(
                 WJ_COLOR='#7e1717'
                 line=line[3:].strip()
                 verse_number,contents=line.split(maxsplit=1)
-                contents=re.sub(r'\\(\+?)qt\s',f'<span style="font-variant: small-caps">',contents)
+                contents=re.sub(r'\\(\+?)(qt|nd)\s',f'<span style="font-variant: small-caps">',contents)
                 contents=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',contents)
                 contents=re.sub(r'\\(\+?)add\s','<em>',contents)
                 contents=contents.replace('\\add*','</em>')
