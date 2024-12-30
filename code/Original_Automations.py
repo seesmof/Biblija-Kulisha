@@ -10,6 +10,7 @@ TBS_text_folder = os.path.join(original_docs_folder_path,'TBS')
 logs_folder = os.path.join(original_docs_folder_path,'Logs')
 changes_file = os.path.join(original_docs_folder_path,'Changes.md')
 lined_output_file_path=os.path.join(original_docs_folder_path,'Output_Lined.txt')
+formatted_output_file_path=os.path.join(original_docs_folder_path,'Output_Formatted.md')
 
 def copy_files_to_paratext_project(
     project_abbreviation: str = 'UBK', 
@@ -249,6 +250,40 @@ def sort_markdown_table(file_path: str):
     with open(file_path, encoding="utf-8", mode="w") as f:
         f.write("\n".join(sorted_table_lines))
 
+def form_markdown_output(
+    folder_path:str = util.original_folder_path,
+):
+    output_lines=[]
+
+    for file_name in os.listdir(folder_path):
+        file_path=os.path.join(folder_path,file_name)
+        with open(file_path,encoding='utf-8',mode='r') as f:
+            lines=f.readlines()
+        
+        Book_name=file_name[2:].split('.')[0]
+        for line in lines:
+            if r'\c ' in line:
+                chapter_number=line[3:].strip()
+                res=f'### {Book_name} {chapter_number}'
+                output_lines.append(res)
+            elif r'\p' in line:
+                output_lines.append('')
+            elif r'\v ' in line:
+                WJ_COLOR='#7e1717'
+                line=line[3:].strip()
+                verse_number,contents=line.split(maxsplit=1)
+                contents=re.sub(r'\\(\+?)qt\s',f'<span style="font-variant: small-caps">',contents)
+                contents=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',contents)
+                contents=re.sub(r'\\(\+?)add\s','<em>',contents)
+                contents=contents.replace('\\add*','</em>')
+                # all other closing tags
+                contents=re.sub(r'\\(\+?)\w+\*','</span>',contents)
+                res=f'<sup>{verse_number}</sup> {contents}'
+                output_lines.append(res)
+
+    with open(formatted_output_file_path,encoding='utf-8',mode='w') as f:
+        f.write('\n'.join(output_lines))
+
 def perform_automations():
     print('Copy Original files to Paratext')
     copy_files_to_paratext_project()
@@ -258,6 +293,8 @@ def perform_automations():
     make_tbs_text_files()
     print("Make lined text file")
     form_text_lined()
+    print('Make formatted Bible in markdown')
+    form_markdown_output()
     print("Form logs for formatting tags")
     form_logs()
     print("Sort the changes table")
