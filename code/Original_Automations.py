@@ -283,8 +283,8 @@ def form_markdown_output(
 def perform_automations():
     print('Copy Original files to Paratext')
     copy_files_to_paratext_project()
-    # print('Copy Revision files to Paratext')
-    # copy_files_to_paratext_project('UFB',util.revision_folder_path,True)
+    print('Copy Revision files to Paratext')
+    copy_files_to_paratext_project('UFB',util.revision_folder_path,True)
     print('Form TBS text files')
     make_tbs_text_files()
     print("Make lined text file")

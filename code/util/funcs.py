@@ -43,7 +43,7 @@ def read_file_lines(
 def get_Book_name_from_full_file_name(
     file_name:str
 ):
-    if 'USFM' not in file_name.lower(): 
-        print('Wrong file name when trying to get Book name')
+    if 'usfm' not in file_name.lower(): 
+        print(f'When trying to get Book name from file name: File format is not USFM for file named {file_name}')
         return 'ERROR Wrong file name'
     return file_name[2:].split('.')[0] if '.' in file_name else file_name[2:]
