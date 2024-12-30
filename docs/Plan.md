@@ -16,36 +16,20 @@
 # Revision (Біблія свободи)
 
 - [x] Copy Original folder, rename to Revision
-- [ ] Remove all formatting tags from Original with `\\(\+*)(WJ|QT|ND)(\s|\*)` pattern using find and replace
-- [ ] Replace „ ‟ with “ ‘ ’ ”
-- [ ] Fix any mistakes that are in the scan as well
-- [x] WJ tags
-- [ ] QT tags
-- [ ] ND tags
-- [ ] GOD's Pronouns capitalized
-- [ ] Add quotes everywhere in direct speech
-- [ ] P tags
+- [ ] Remove all formatting tags from Original using `\\(\+*)(wj|qt|nd)(\s|\*)`
+- [ ] Remove all footnotes from Revision using `\\f(.*?)\\f\*`
+- [ ] Add QT tags with F notes with cross-references
 
 Ideas:
 
-- Align brackets with KJV:
-  - ADD tag
-  - footnote
-  - replace () with []
-  - remove
-- F tags (with cross-references after QT)
-- R tags
-- Q tags
-- LI tags
-- D tags
-- Numbers in digits
-- W tags (Strong's numbers)
-  - Make a spreadsheet (or an SQLite database) with all Ukrainian BIBLE words and their Strong's number
-- Переглянути знаки пунктуації, особливо тире
-- `нїчо` замість `ніщо`
-- `ріжниця` замість `різниця`
-- `видко` замість `видно`
-- Поєднати слова як `стало ся` на `сталося`
+- Public domain from start to finish and forever
+- Literal translation, so that when translated backwards (Ukrainian to English) it gives the KJV verse approximately (by meaning exactly). Translate all the phrases literally
+- Not adding apostrophes nor dashes in words
+- Punctuation as in the KJV, no changes
+- Formatting tags and words' capitalizaiton (except 'i' not in the beginning of sentence) exactly as in the KJV
+- Translate names as clearly as possible, avoid transliteration when an understandable Ukrainian alternative can be found
+
+Known issues in Bible Kulish (Original):
 
 - 1 Мойсея 14 4 `чотирнайцятому` замість `тринайцятому`
 - 2 Мойсея 12 42 `в роди і роди їх`
