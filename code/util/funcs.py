@@ -3,7 +3,7 @@ import re
 
 from .consts import original_folder_path
 
-def remove_footnotes_with_text(verse: str):
+def remove_footnotes_with_contents(verse: str):
     footnote_pattern=r'\\(\+*)f(.*?)\\(\+*)f\*'
     return re.sub(footnote_pattern,'',verse)
 

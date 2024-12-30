@@ -254,7 +254,6 @@ def form_markdown_output(
     folder_path:str = util.original_folder_path,
 ):
     output_lines=[]
-
     for file_name in os.listdir(folder_path):
         file_path=os.path.join(folder_path,file_name)
         with open(file_path,encoding='utf-8',mode='r') as f:
@@ -277,13 +276,16 @@ def form_markdown_output(
                 contents=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',contents)
                 contents=re.sub(r'\\(\+?)add\s','<em>',contents)
                 contents=contents.replace('\\add*','</em>')
+                contents=util.remove_footnotes_with_contents(contents)
                 # all other closing tags
                 contents=re.sub(r'\\(\+?)\w+\*','</span>',contents)
                 res=f'<sup>{verse_number}</sup> {contents}'
                 output_lines.append(res)
 
-    with open(formatted_output_file_path,encoding='utf-8',mode='w') as f:
-        f.write('\n'.join(output_lines))
+    vault_output_file_path=os.path.join(r"E:\Notatnyk\Біблія Куліша.md")
+    with open(formatted_output_file_path,encoding='utf-8',mode='w') as local_file, open(vault_output_file_path,encoding='utf-8',mode='w') as vault_file:
+        local_file.write('\n'.join(output_lines))
+        vault_file.write('\n'.join(output_lines)) if os.path.exists(vault_output_file_path) else None
 
 def perform_automations():
     print('Copy Original files to Paratext')
