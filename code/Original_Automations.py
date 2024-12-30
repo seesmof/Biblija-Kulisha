@@ -75,7 +75,7 @@ def form_logs(
     for file_name in os.listdir(folder_path):
         file_path=os.path.join(folder_path,file_name)
         lines=util.read_file_lines(file_path)
-        Book_name = file_name[2:].replace('.USFM','')
+        Book_name=util.get_Book_name_from_full_file_name(file_name)
         chapter_number = 0
 
         for line in lines:
@@ -170,7 +170,7 @@ def make_tbs_text_files(
     folder_path:str=util.original_folder_path,
 ):
     for file_name in os.listdir(folder_path):
-        Book_name=file_name[2:].replace('.USFM','')
+        Book_name=util.get_Book_name_from_full_file_name(file_name)
         file_path=os.path.join(folder_path,file_name)
         lines=util.read_file_lines(file_path)
 
@@ -191,7 +191,7 @@ def form_text_lined():
     for file_name in os.listdir(util.original_folder_path):
         file_path=os.path.join(util.original_folder_path,file_name)
         lines=util.read_file_lines(file_path)
-        Book_name = file_name[2:].split('.')[0]
+        Book_name=util.get_Book_name_from_full_file_name(file_name)
         chapter_number = 1
 
         for line in lines:
@@ -251,7 +251,7 @@ def form_markdown_output(
     for file_name in os.listdir(folder_path):
         file_path=os.path.join(folder_path,file_name)
         lines=util.read_file_lines(file_path)
-        Book_name=file_name[2:].split('.')[0]
+        Book_name=util.get_Book_name_from_full_file_name(file_name)
         output_lines.append(f'# {Book_name}')
         
         for line in lines:

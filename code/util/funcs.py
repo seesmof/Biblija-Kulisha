@@ -39,3 +39,11 @@ def read_file_lines(
 ):
     with open(file_path,encoding='utf-8',mode='r') as f:
         return f.readlines()
+    
+def get_Book_name_from_full_file_name(
+    file_name:str
+):
+    if 'USFM' not in file_name.lower(): 
+        print('Wrong file name when trying to get Book name')
+        return 'ERROR Wrong file name'
+    return file_name[2:].split('.')[0] if '.' in file_name else file_name[2:]
