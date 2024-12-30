@@ -74,9 +74,7 @@ def form_logs(
 
     for file_name in os.listdir(folder_path):
         file_path=os.path.join(folder_path,file_name)
-        with open(file_path, encoding="utf-8", mode='r') as f:
-            lines = f.readlines()
-
+        lines=util.read_file_lines(file_path)
         Book_name = file_name[2:].replace('.USFM','')
         chapter_number = 0
 
@@ -174,8 +172,7 @@ def make_tbs_text_files(
     for file_name in os.listdir(folder_path):
         Book_name=file_name[2:].replace('.USFM','')
         file_path=os.path.join(folder_path,file_name)
-        with open(file_path,encoding='utf-8',mode='r') as f:
-            lines=f.readlines()
+        lines=util.read_file_lines(file_path)
 
         needed_tags=['toc','v','s','c']
         lines=[line for line in lines if any(tag in line for tag in needed_tags)]
@@ -193,8 +190,7 @@ def form_text_lined():
     text_lines = []
     for file_name in os.listdir(util.original_folder_path):
         file_path=os.path.join(util.original_folder_path,file_name)
-        with open(file_path, encoding="utf-8", mode='r') as f:
-            lines = f.readlines()
+        lines=util.read_file_lines(file_path)
         Book_name = file_name[2:].split('.')[0]
         chapter_number = 1
 
@@ -210,10 +206,10 @@ def form_text_lined():
             f.write("\n".join(text_lines))
     except: pass
 
-def sort_markdown_table(file_path: str):
-    with open(file_path, encoding="utf-8", mode='r') as f:
-        lines = f.readlines()
-
+def sort_markdown_table(
+    file_path: str
+):
+    lines=util.read_file_lines(file_path)
     changes: list[util.ChangeEntry] = []
     for line in lines[2:]:
         split_line = line.strip()[2:-2].split(" | ")
@@ -254,11 +250,10 @@ def form_markdown_output(
     output_lines=[]
     for file_name in os.listdir(folder_path):
         file_path=os.path.join(folder_path,file_name)
-        with open(file_path,encoding='utf-8',mode='r') as f:
-            lines=f.readlines()
-        
+        lines=util.read_file_lines(file_path)
         Book_name=file_name[2:].split('.')[0]
         output_lines.append(f'# {Book_name}')
+        
         for line in lines:
             if r'\c ' in line:
                 chapter_number=line[3:].strip()
