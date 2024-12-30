@@ -24,9 +24,7 @@ def copy_files_to_paratext_project(
         shutil.copy2(local_file_path,paratext_file_path)
 
         if remove_comenting_rem_tags:
-            with open(paratext_file_path,encoding='utf-8',mode='r') as f:
-                lines=f.readlines()
-            lines=[l for l in lines if not l.startswith(r'\rem ')]
+            lines=[l for l in util.read_file_lines(paratext_file_path) if not l.startswith(r'\rem ')]
             with open(paratext_file_path,encoding='utf-8',mode='w') as f:
                 f.write('\n'.join([l.strip() for l in lines]))
 
@@ -76,7 +74,7 @@ def form_logs(
 
     for file_name in os.listdir(folder_path):
         file_path=os.path.join(folder_path,file_name)
-        with open(file_path, encoding="utf-8", mode="r") as f:
+        with open(file_path, encoding="utf-8", mode='r') as f:
             lines = f.readlines()
 
         Book_name = file_name[2:].replace('.USFM','')
@@ -136,37 +134,37 @@ def form_logs(
                     Dashes.append(res)
 
     try:
-        with open(os.path.join(logs_folder, "WJ.csv"), encoding="utf-8", mode="w") as f:
+        with open(os.path.join(logs_folder, "WJ.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(WJ))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "ND.csv"), encoding="utf-8", mode="w") as f:
+        with open(os.path.join(logs_folder, "ND.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(ND))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "QT.csv"), encoding="utf-8", mode="w") as f:
+        with open(os.path.join(logs_folder, "QT.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(QT))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "F.csv"), encoding="utf-8", mode="w") as f:
+        with open(os.path.join(logs_folder, "F.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(F))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "Quotes.csv"), encoding="utf-8", mode="w") as f:
+        with open(os.path.join(logs_folder, "Quotes.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(Quotes))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "Apostrophes.csv"),encoding="utf-8",mode="w",) as f:
+        with open(os.path.join(logs_folder, "Apostrophes.csv"),encoding="utf-8",mode='w',) as f:
             f.write("\n".join(Apostrophes))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "Dashes.csv"), encoding="utf-8", mode="w") as f:
+        with open(os.path.join(logs_folder, "Dashes.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(Dashes))
     except: pass
 
@@ -195,7 +193,7 @@ def form_text_lined():
     text_lines = []
     for file_name in os.listdir(util.original_folder_path):
         file_path=os.path.join(util.original_folder_path,file_name)
-        with open(file_path, encoding="utf-8", mode="r") as f:
+        with open(file_path, encoding="utf-8", mode='r') as f:
             lines = f.readlines()
         Book_name = file_name[2:].split('.')[0]
         chapter_number = 1
@@ -208,12 +206,12 @@ def form_text_lined():
                 line = f"{Book_name} {chapter_number}:{remove_usfm_tags(verse_text)}"
                 text_lines.append(line)
     try:
-        with open(lined_output_file_path,encoding="utf-8",mode="w") as f:
+        with open(lined_output_file_path,encoding="utf-8",mode='w') as f:
             f.write("\n".join(text_lines))
     except: pass
 
 def sort_markdown_table(file_path: str):
-    with open(file_path, encoding="utf-8", mode="r") as f:
+    with open(file_path, encoding="utf-8", mode='r') as f:
         lines = f.readlines()
 
     changes: list[util.ChangeEntry] = []
@@ -247,7 +245,7 @@ def sort_markdown_table(file_path: str):
             line = f"| {change.Book} | {change.Chapter} | {change.Verse} | {change.Mistake} | {change.Correction} | {change.Reason} |"
             sorted_table_lines.append(line)
 
-    with open(file_path, encoding="utf-8", mode="w") as f:
+    with open(file_path, encoding="utf-8", mode='w') as f:
         f.write("\n".join(sorted_table_lines))
 
 def form_markdown_output(

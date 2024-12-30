@@ -33,3 +33,9 @@ def get_ordered_Bible_Book_names(
         file_name_without_extension=full_file_name[2:].split('.')[0]
         Book_names.append(file_name_without_extension)
     return Book_names
+
+def read_file_lines(
+    file_path:str
+):
+    with open(file_path,encoding='utf-8',mode='r') as f:
+        return f.readlines()
