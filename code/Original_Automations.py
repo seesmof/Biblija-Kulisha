@@ -281,25 +281,24 @@ def form_markdown_output(
         vault_file.write('\n'.join(output_lines)) if os.path.exists(vault_output_file_path) else None
 
 def perform_automations():
-    print('Copy Original files to Paratext')
+    print()
     copy_files_to_paratext_project()
-    print('Copy Revision files to Paratext')
+    print('Copy Original files to Paratext')
     copy_files_to_paratext_project('UFB',util.revision_folder_path,True)
-    print('Form TBS text files')
+    print('Copy Revision files to Paratext')
     make_tbs_text_files()
-    print("Make lined text file")
+    print('Form TBS text files from Original')
     form_text_lined()
-    print('Make formatted Bible in markdown')
+    print('Make lined text file from Original')
     form_markdown_output()
-    print("Form logs for formatting tags")
+    print('Make formatted markdown Bible from Original')
     form_logs()
-    print("Sort the changes table")
+    print('Form logs for formatting tags from Original')
     sort_markdown_table(changes_file)
+    print('Sort the changes table for Original')
 
-def watch_folder_for_changes(
-    folder_path:str=util.original_folder_path,
-):
-    file_paths=[os.path.join(folder_path,file_name) for file_name in os.listdir(folder_path)]
+def watch_folder_for_changes():
+    file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
     last_modified_file = max(file_paths, key=os.path.getmtime)
     last_modification_time = os.path.getmtime(last_modified_file)
     perform_automations()
