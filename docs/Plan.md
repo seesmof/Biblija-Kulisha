@@ -7,10 +7,10 @@
 - [x] Replace ` -` with ` —`
 - [x] Replace `" "` with `„ ‟`
 - [x] Add F tags for footnotes from BIBLE Scans
+- [x] Align all `toc1` tags with tables of content. For OT page 12, for NT page 837
 - [ ] Align running header `h`
-- [ ] Align all `toc1` tags with tables of content. For OT page 12, for NT page 837
-- [ ] Keep `toc2` as they are, orient on the `toc1` and just use shorter versions of that, because translators used different Bible Book abbreviations when referencing them in footnotes.
 - [ ] Align Book Book intros `mt`
+- [ ] Keep `toc2` as they are, orient on the `toc1` and just use shorter versions of that, because translators used different Bible Book abbreviations when referencing them in footnotes.
 - [ ] Proofread each verse, align everything with the scan
 
 # Revision (Біблія свободи)
