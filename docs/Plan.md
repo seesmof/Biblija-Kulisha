@@ -18,7 +18,7 @@
 - [x] Copy Original folder, rename to Revision
 - [ ] Remove all formatting tags from Original using `\\(\+*)(wj|qt|nd)(\s|\*)`
 - [ ] Remove all footnotes from Revision using `\\f(.*?)\\f\*`
-- [ ] Translate each verse literally
+- [ ] Translate each verse literally, translate in order of biggest file downwards (PSA to 2JN)
 - [ ] Add QT tags with F notes with cross-references from [here](https://www.blueletterbible.org/study/misc/quotes.cfm)
 
 Ideas:
