@@ -7,11 +7,12 @@ import util
 
 original_docs_folder_path=os.path.join(util.docs_folder_path,'Original')
 TBS_text_folder = os.path.join(original_docs_folder_path,'TBS')
-logs_folder = os.path.join(original_docs_folder_path,'Logs')
+original_logs_folder = os.path.join(original_docs_folder_path,'Logs')
 changes_file = os.path.join(original_docs_folder_path,'Changes.md')
 lined_output_file_path=os.path.join(original_docs_folder_path,'Output_Lined.txt')
 formatted_original_output_file_path=os.path.join(original_docs_folder_path,'Output_Formatted.md')
 revision_docs_folder_path=os.path.join(util.docs_folder_path,'Revision')
+revision_logs_folder = os.path.join(revision_docs_folder_path,'Logs')
 formatted_revision_output_file_path=os.path.join(revision_docs_folder_path,'Output_Formatted.md')
 
 def copy_files_to_paratext_project(
@@ -54,7 +55,8 @@ def remove_usfm_tags(line: str):
     return line
 
 def form_logs(
-    folder_path: str = util.original_folder_path,
+    source_folder_path:str=util.revision_folder_path,
+    output_folder_path:str=revision_logs_folder,
 ):
     def get_verse_number(line: str) -> int:
         verse_number_pattern = r"\\v\s\d+"
@@ -76,8 +78,8 @@ def form_logs(
     Apostrophes = [header]
     Dashes = [header]
 
-    for file_name in os.listdir(folder_path):
-        file_path=os.path.join(folder_path,file_name)
+    for file_name in os.listdir(source_folder_path):
+        file_path=os.path.join(source_folder_path,file_name)
         lines=util.read_file_lines(file_path)
         Book_name=util.get_Book_name_from_full_file_name(file_name)
         chapter_number = 0
@@ -136,37 +138,37 @@ def form_logs(
                     Dashes.append(res)
 
     try:
-        with open(os.path.join(logs_folder, "WJ.csv"), encoding="utf-8", mode='w') as f:
+        with open(os.path.join(output_folder_path, "WJ.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(WJ))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "ND.csv"), encoding="utf-8", mode='w') as f:
+        with open(os.path.join(output_folder_path, "ND.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(ND))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "QT.csv"), encoding="utf-8", mode='w') as f:
+        with open(os.path.join(output_folder_path, "QT.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(QT))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "F.csv"), encoding="utf-8", mode='w') as f:
+        with open(os.path.join(output_folder_path, "F.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(F))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "Quotes.csv"), encoding="utf-8", mode='w') as f:
+        with open(os.path.join(output_folder_path, "Quotes.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(Quotes))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "Apostrophes.csv"),encoding="utf-8",mode='w',) as f:
+        with open(os.path.join(output_folder_path, "Apostrophes.csv"),encoding="utf-8",mode='w',) as f:
             f.write("\n".join(Apostrophes))
     except: pass
 
     try:
-        with open(os.path.join(logs_folder, "Dashes.csv"), encoding="utf-8", mode='w') as f:
+        with open(os.path.join(output_folder_path, "Dashes.csv"), encoding="utf-8", mode='w') as f:
             f.write("\n".join(Dashes))
     except: pass
 
@@ -301,14 +303,16 @@ def perform_automations():
     print('Copy Revision files to Paratext')
     make_tbs_text_files()
     print('Form TBS text files from Original')
-    form_text_lined()
-    print('Make lined text file from Original')
+    # form_text_lined()
+    # print('Make lined text file from Original')
     form_markdown_output()
     print('Make formatted markdown Bible from Original')
     form_markdown_output(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.md')
     print('Make formatted markdown Bible from Revision')
-    form_logs()
+    form_logs(util.original_folder_path,original_logs_folder)
     print('Form logs for formatting tags from Original')
+    form_logs()
+    print('Form logs for formatting tags from Revision')
     sort_markdown_table(changes_file)
     print('Sort the changes table for Original')
 
