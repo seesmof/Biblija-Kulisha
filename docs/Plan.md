@@ -19,6 +19,7 @@
 - [ ] Remove all formatting tags from Original using `\\(\+*)(wj|qt|nd)(\s|\*)`
 - [ ] Remove all footnotes from Revision using `\\f(.*?)\\f\*`
 - [ ] Translate each verse literally, translate in order of biggest file downwards (PSA to 2JN)
+  - [ ] Dont worry about Ukrainian readability, translate as much as possible as literally as possible: make sure the text translates back into Original verse
 - [ ] Add QT tags with F notes with cross-references from [here](https://www.blueletterbible.org/study/misc/quotes.cfm)
 
 Ideas:
