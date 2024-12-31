@@ -10,7 +10,9 @@ TBS_text_folder = os.path.join(original_docs_folder_path,'TBS')
 logs_folder = os.path.join(original_docs_folder_path,'Logs')
 changes_file = os.path.join(original_docs_folder_path,'Changes.md')
 lined_output_file_path=os.path.join(original_docs_folder_path,'Output_Lined.txt')
-formatted_output_file_path=os.path.join(original_docs_folder_path,'Output_Formatted.md')
+formatted_original_output_file_path=os.path.join(original_docs_folder_path,'Output_Formatted.md')
+revision_docs_folder_path=os.path.join(util.docs_folder_path,'Revision')
+formatted_revision_output_file_path=os.path.join(revision_docs_folder_path,'Output_Formatted.md')
 
 def copy_files_to_paratext_project(
     project_abbreviation: str = 'UBK',
@@ -246,7 +248,7 @@ def sort_markdown_table(
 
 def form_markdown_output(
     folder_path:str = util.original_folder_path,
-    local_output_file_path:str=formatted_output_file_path,
+    local_output_file_path:str=formatted_original_output_file_path,
     vault_output_file_path:str=r'E:\Notatnyk\Біблія Куліша.md',
 ):
     output_lines=[]
@@ -267,7 +269,8 @@ def form_markdown_output(
                 WJ_COLOR='#7e1717'
                 line=line[3:].strip()
                 verse_number,contents=line.split(maxsplit=1)
-                contents=re.sub(r'\\(\+?)(qt|nd)\s',f'<span style="font-variant: small-caps">',contents)
+                contents=re.sub(r'\\(\+?)qt\s',f'<span style="font-variant: small-caps">',contents)
+                contents=re.sub(r'\\(\+?)nd\s',f'<span style="font-variant: small-caps; font-weight:bold">',contents)
                 contents=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',contents)
                 contents=re.sub(r'\\(\+?)add\s','<em>',contents)
                 contents=contents.replace('\\add*','</em>')
@@ -294,6 +297,8 @@ def perform_automations():
     print('Make lined text file from Original')
     form_markdown_output()
     print('Make formatted markdown Bible from Original')
+    form_markdown_output(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.md')
+    print('Make formatted markdown Bible from Revision')
     form_logs()
     print('Form logs for formatting tags from Original')
     sort_markdown_table(changes_file)
