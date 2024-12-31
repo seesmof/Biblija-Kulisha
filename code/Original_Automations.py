@@ -246,6 +246,8 @@ def sort_markdown_table(
 
 def form_markdown_output(
     folder_path:str = util.original_folder_path,
+    local_output_file_path:str=formatted_output_file_path,
+    vault_output_file_path:str=r'E:\Notatnyk\Біблія Куліша.md',
 ):
     output_lines=[]
     for file_name in os.listdir(folder_path):
@@ -275,8 +277,8 @@ def form_markdown_output(
                 res=f'<sup>{verse_number}</sup> {contents}'
                 output_lines.append(res)
 
-    vault_output_file_path=os.path.join(r"E:\Notatnyk\Біблія Куліша.md")
-    with open(formatted_output_file_path,encoding='utf-8',mode='w') as local_file, open(vault_output_file_path,encoding='utf-8',mode='w') as vault_file:
+    vault_output_file_path=os.path.join(vault_output_file_path)
+    with open(local_output_file_path,encoding='utf-8',mode='w') as local_file, open(vault_output_file_path,encoding='utf-8',mode='w') as vault_file:
         local_file.write('\n'.join(output_lines))
         vault_file.write('\n'.join(output_lines)) if os.path.exists(vault_output_file_path) else None
 
