@@ -27,8 +27,10 @@ def copy_files_to_paratext_project(
 
         if remove_comenting_rem_tags:
             lines=[l for l in util.read_file_lines(paratext_file_path) if not l.startswith(r'\rem ')]
-            with open(paratext_file_path,encoding='utf-8',mode='w') as f:
-                f.write('\n'.join([l.strip() for l in lines]))
+            try:
+                with open(paratext_file_path,encoding='utf-8',mode='w') as f:
+                    f.write('\n'.join([l.strip() for l in lines]))
+            except: pass
 
 def remove_usfm_tags(line: str):
     # Remove WJ, ND, QT tags from the Bible verse line
@@ -185,8 +187,10 @@ def make_tbs_text_files(
         lines=[f'###{Book_name}']+lines
     
         output_file_path=os.path.join(original_docs_folder_path,'TBS',file_name[2:].replace('USFM','TXT'))
-        with open(output_file_path,encoding='utf-8',mode='w') as f:
-            f.write('\n'.join([l.strip() for l in lines]))
+        try:
+            with open(output_file_path,encoding='utf-8',mode='w') as f:
+                f.write('\n'.join([l.strip() for l in lines]))
+        except: pass
 
 def form_text_lined():
     text_lines = []
@@ -243,8 +247,10 @@ def sort_markdown_table(
             line = f"| {change.Book} | {change.Chapter} | {change.Verse} | {change.Mistake} | {change.Correction} | {change.Reason} |"
             sorted_table_lines.append(line)
 
-    with open(file_path, encoding="utf-8", mode='w') as f:
-        f.write("\n".join(sorted_table_lines))
+    try:
+        with open(file_path, encoding="utf-8", mode='w') as f:
+            f.write("\n".join(sorted_table_lines))
+    except: pass
 
 def form_markdown_output(
     folder_path:str = util.original_folder_path,
@@ -281,9 +287,11 @@ def form_markdown_output(
                 output_lines.append(res)
 
     vault_output_file_path=os.path.join(vault_output_file_path)
-    with open(local_output_file_path,encoding='utf-8',mode='w') as local_file, open(vault_output_file_path,encoding='utf-8',mode='w') as vault_file:
-        local_file.write('\n'.join(output_lines))
-        vault_file.write('\n'.join(output_lines)) if os.path.exists(vault_output_file_path) else None
+    try:
+        with open(local_output_file_path,encoding='utf-8',mode='w') as local_file, open(vault_output_file_path,encoding='utf-8',mode='w') as vault_file:
+            local_file.write('\n'.join(output_lines))
+            vault_file.write('\n'.join(output_lines)) if os.path.exists(vault_output_file_path) else None
+    except: pass
 
 def perform_automations():
     print()
