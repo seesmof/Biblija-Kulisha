@@ -16,8 +16,7 @@
 # Revision (Біблія свободи)
 
 - [x] Copy Original folder, rename to Revision
-- [ ] Translate each verse literally, translate in order of biggest file downwards (PSA to 2JN)
-  - [ ] Dont worry about Ukrainian readability, translate as much as possible as literally as possible: make sure the text translates back into Original verse
+- [ ] Update Book names for each
 - [ ] Remove all formatting tags from Original using `\\(\+*)(wj|qt|nd)(\s|\*)`
 - [ ] Remove all footnotes from Revision using `\\f(.*?)\\f\*`
 - [ ] Add WJ and ND tags from KJV Authorized Version
