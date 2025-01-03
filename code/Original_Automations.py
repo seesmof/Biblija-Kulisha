@@ -186,6 +186,7 @@ def make_tbs_text_files(
             lines[i]=lines[i].replace('[','*').replace(']','*')
             lines[i]=re.sub(r'\\f\s\+\s\\ft\s','[',lines[i]).replace(r'\f*',']').replace(r'\v ','#').replace(r'\c ','##').replace(r'\toc2','###!').replace(r'\toc1','###!!')
             lines[i]=re.sub(r'\\s\d+','##!',lines[i])
+            lines[i]=util.remove_formatting_usfm_tags(lines[i])
         lines=[f'###{Book_name}']+lines
     
         output_file_path=os.path.join(original_docs_folder_path,'TBS',file_name[2:].replace('USFM','TXT'))
