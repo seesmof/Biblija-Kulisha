@@ -8,8 +8,13 @@ def remove_footnotes_with_contents(verse: str):
     return re.sub(footnote_pattern,'',verse)
 
 def remove_formatting_usfm_tags(verse: str):
-    tags_pattern=r'\\(\+*)(wj|qt|nd)(\s|\*)'
+    tags_pattern=r'\\(\+*)(wj|qt|nd|add)(\s|\*)'
     return re.sub(tags_pattern,'',verse)
+
+def remove_strongs_numbers(verse: str):
+    strongs_number_closing_tag_pattern=r'\|strong=\"[GH]\d{4}\"\\(\+?)w\*'
+    verse=verse.replace(r'\w ','').replace(r'\+w ','')
+    return re.sub(strongs_number_closing_tag_pattern,'',verse)
 
 def remove_verse_tags_and_numbers(verse: str):
     verse_tag_and_number_pattern=r'\\v\s\d+\s'
@@ -46,4 +51,8 @@ def get_Book_name_from_full_file_name(
     if 'usfm' not in file_name.lower(): 
         print(f'When trying to get Book name from file name: File format is not USFM for file named {file_name}')
         return 'ERROR Wrong file name'
-    return file_name[2:].split('.')[0] if '.' in file_name else file_name[2:]
+    res=''
+    if '-' in file_name: res = file_name[3:6]
+    elif '.' in file_name: res = file_name[2:].split('.')[0]
+    else: res = file_name[2:]
+    return res

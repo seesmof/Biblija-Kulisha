@@ -2,6 +2,7 @@ import shutil
 import time
 import os
 import re
+from tkinter import S
 
 import util
 
@@ -195,25 +196,6 @@ def make_tbs_text_files(
                 f.write('\n'.join([l.strip() for l in lines]))
         except: pass
 
-def form_text_lined():
-    text_lines = []
-    for file_name in os.listdir(util.original_folder_path):
-        file_path=os.path.join(util.original_folder_path,file_name)
-        lines=util.read_file_lines(file_path)
-        Book_name=util.get_Book_name_from_full_file_name(file_name)
-        chapter_number = 1
-
-        for line in lines:
-            if "\\c " in line:
-                chapter_number = line[3:].split()[0]
-            elif r'\v ' in line:
-                verse_text = line[3:].strip()
-                line = f"{Book_name} {chapter_number}:{remove_usfm_tags(verse_text)}"
-                text_lines.append(line)
-    try:
-        with open(lined_output_file_path,encoding="utf-8",mode='w') as f:
-            f.write("\n".join(text_lines))
-    except: pass
 
 def sort_markdown_table(
     file_path: str
@@ -255,14 +237,48 @@ def sort_markdown_table(
             f.write("\n".join(sorted_table_lines))
     except: pass
 
+
+def form_text_lined(
+    source_folder_path:str=util.original_folder_path,
+    vault_output_file_path:str=r"E:\Notatnyk\Біблія Куліша.txt",
+    local_output_file_path:str=None,
+):
+    output_lines = []
+    for file_name in os.listdir(source_folder_path):
+        file_path=os.path.join(source_folder_path,file_name)
+        lines=util.read_file_lines(file_path)
+        Book_name=util.get_Book_name_from_full_file_name(file_name)
+        chapter_number = 1
+
+        for line in lines:
+            if "\\c " in line:
+                chapter_number = line[3:].split()[0]
+            elif r'\v ' in line:
+                verse_text = line[3:].strip()
+                stripped_formatting_tags=util.remove_formatting_usfm_tags(verse_text)
+                removed_footnotes=util.remove_footnotes_with_contents(stripped_formatting_tags)
+                removed_strongs_numbres=util.remove_strongs_numbers(removed_footnotes).strip().replace('  ',' ')
+                line = f"{Book_name} {chapter_number}:{removed_strongs_numbres}"
+                output_lines.append(line)
+    try:
+        if local_output_file_path:
+            with open(local_output_file_path,encoding='utf-8',mode='w') as f:
+                f.write('\n'.join(output_lines))
+        if 'Notatnyk' not in vault_output_file_path:
+            vault_output_file_path=os.path.join(r'E:\Notatnyk',vault_output_file_path)
+        with open(vault_output_file_path,encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(output_lines))
+    except: pass
+
+
 def form_markdown_output(
-    folder_path:str = util.original_folder_path,
+    source_folder_path:str = util.original_folder_path,
     local_output_file_path:str=formatted_original_output_file_path,
     vault_output_file_path:str=r'E:\Notatnyk\Біблія Куліша.md',
 ):
     output_lines=[]
-    for file_name in os.listdir(folder_path):
-        file_path=os.path.join(folder_path,file_name)
+    for file_name in os.listdir(source_folder_path):
+        file_path=os.path.join(source_folder_path,file_name)
         lines=util.read_file_lines(file_path)
         Book_name=util.get_Book_name_from_full_file_name(file_name)
         output_lines.append(f'# {Book_name}')
@@ -278,6 +294,7 @@ def form_markdown_output(
                 WJ_COLOR='#7e1717'
                 line=line[3:].strip()
                 verse_number,contents=line.split(maxsplit=1)
+                contents=util.remove_strongs_numbers(contents)
                 contents=re.sub(r'\\(\+?)qt\s',f'<span style="font-variant: small-caps">',contents)
                 contents=re.sub(r'\\(\+?)nd\s',f'<span style="font-variant: small-caps; font-weight:bold">',contents)
                 contents=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',contents)
@@ -289,11 +306,14 @@ def form_markdown_output(
                 res=f'<sup>{verse_number}</sup> {contents}'
                 output_lines.append(res)
 
-    vault_output_file_path=os.path.join(vault_output_file_path)
     try:
-        with open(local_output_file_path,encoding='utf-8',mode='w') as local_file, open(vault_output_file_path,encoding='utf-8',mode='w') as vault_file:
-            local_file.write('\n'.join(output_lines))
-            vault_file.write('\n'.join(output_lines)) if os.path.exists(vault_output_file_path) else None
+        if local_output_file_path:
+            with open(local_output_file_path,encoding='utf-8',mode='w') as f:
+                f.write('\n'.join(output_lines))
+        if 'Notatnyk' not in vault_output_file_path:
+            vault_output_file_path=os.path.join(r'E:\Notatnyk',vault_output_file_path)
+        with open(vault_output_file_path,encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(output_lines))
     except: pass
 
 def perform_automations():
@@ -310,6 +330,12 @@ def perform_automations():
     print('Make formatted markdown Bible from Original')
     form_markdown_output(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.md')
     print('Make formatted markdown Bible from Revision')
+    form_markdown_output(source_folder_path=r"E:\Pisochnycja-Projektiv\Bible Kulish\KJV_Strongs",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія Короля Якова.md')
+    print('Make formatted markdown Bible from KJV')
+    form_text_lined(vault_output_file_path=r'Біблія Куліша.txt')
+    print('Formed vault lined Bible Kulish from Original')
+    form_text_lined(source_folder_path=r"E:\Pisochnycja-Projektiv\Bible Kulish\KJV_Strongs",vault_output_file_path=r'Біблія Короля Якова.txt')
+    print('Formed vault lined Bible King James Version from KJV')
     form_logs(util.original_folder_path,original_logs_folder)
     print('Form logs for formatting tags from Original')
     form_logs()
