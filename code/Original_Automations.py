@@ -299,7 +299,7 @@ def form_markdown_output(
                 contents=re.sub(r'\\(\+?)nd\s',f'<span style="font-variant: small-caps; font-weight:bold">',contents)
                 contents=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',contents)
                 contents=re.sub(r'\\(\+?)add\s','<em>',contents)
-                contents=contents.replace('\\add*','</em>')
+                contents=contents.replace('\\add*','</em>').replace('\\+add*','</em>')
                 contents=util.remove_footnotes_with_contents(contents)
                 # all other closing tags
                 contents=re.sub(r'\\(\+?)\w+\*','</span>',contents)
