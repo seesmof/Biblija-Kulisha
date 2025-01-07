@@ -2,7 +2,6 @@ import shutil
 import time
 import os
 import re
-from tkinter import S
 
 import util
 
