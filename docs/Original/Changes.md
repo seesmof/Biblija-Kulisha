@@ -24,8 +24,8 @@
 | GEN | 24 | 54 | вранцї | в ранцї | Missing space |
 | GEN | 26 | 3 | тій | тїй | Wrong letter |
 | GEN | 27 | 11 | чоловік | половік | Wrong letter |
-| GEN | 30 | 32 | крапаcте | крапасте | Wrong letter |
-| GEN | 30 | 32 | крапаcте | крапасте | Wrong letter |
+| GEN | 30 | 32 | крапаcте | крапасте | Wrong letter (English C) |
+| GEN | 30 | 33 | крапаcте | крапасте | Wrong letter (English C) |
 | GEN | 31 | 25 | горах | горах. | Missing dot |
 | GEN | 43 | 5 | коди | коли | Wrong letter |
 | GEN | 43 | 11 | гостиньця : | гостиньця: | Extra space |
@@ -50,11 +50,11 @@
 | 1KI | 4 | 11 | НаФат | Нафат | Wrong capitalization |
 | 1KI | 8 | 17 | панопя | паноця | Wrong letter |
 | 2CH | 3 | 13 | К рила | Крила | Separated letter |
-| 2CH | 6 | 13 | - , | -, | Extra space |
+| 2CH | 6 | 13 | двора — , й | двора —, й | Extra space |
 | 2CH | 7 | 5 | дім  царь | дім царь | Extra space |
 | 2CH | 7 | 5 | дім царь | дім Божій царь | Missing word |
-| 2CH | 7 | 6 | — , | —, | Extra space |
-| 2CH | 7 | 6 | — , | —, | Extra space |
+| 2CH | 7 | 6 | Господа — , бо | Господа —, бо | Extra space |
+| 2CH | 7 | 6 | ними — , а | ними —, а | Extra space |
 | NEH | 9 | 17 | довготерпеливий | довготерпіливий | Wrong letter |
 | JOB | 9 | 9 | cкриті | скриті | Wrong letter |
 | PSA | 9 | 1 | С лавити | Славити | Separated letter |
@@ -203,7 +203,7 @@
 | ZEC | 14 | 3 | тоді | тодї | Wrong letter |
 | ZEC | 14 | 12 | Госпбдь | Господь | Wrong letter |
 | ZEC | 14 | 13 | Господа,- | Господа, -  | Missing spaces |
-| MRK | 3 | 6 | Iродиянами | Іродиянами | Wrong letter |
+| MRK | 3 | 6 | Iродиянами | Іродиянами | Wrong letter (English i) |
 | ACT | 15 | 12 | ІІавел | Павел | Wrong letter |
 | ACT | 21 | 23 | З роби | Зроби | Separated letter |
 | 2CO | 6 | 2 | спасення. ) | спасення.) | Extra space |
