@@ -315,6 +315,23 @@ def form_markdown_output(
             f.write('\n'.join(output_lines))
     except: pass
 
+
+def copy_Original_to_Revision(
+    source_folder_path:str = util.original_folder_path,
+    revision_folder_path:str= util.revision_folder_path,
+):
+    for original_file_name in os.listdir(source_folder_path):
+        original_file_path=os.path.join(source_folder_path,original_file_name)
+        revision_file_path=os.path.join(revision_folder_path,original_file_name)
+        shutil.copy2(original_file_path,revision_file_path)
+
+        if 'PSA' in original_file_name:
+            # add Q1 tags before each verse in Psalms
+            lines=['\\q1\n'+line.strip() if r'\v ' in line else line.strip() for line in util.read_file_lines(revision_file_path)]
+            with open(revision_file_path,encoding='utf-8',mode='w') as f:
+                f.write('\n'.join(lines))
+
+
 def perform_automations():
     print()
     copy_files_to_paratext_project()
@@ -339,9 +356,12 @@ def perform_automations():
     print('Logs Revision')
     sort_markdown_table(changes_file)
     print('Original Changes')
+    copy_Original_to_Revision()
+    print('Original to Revision TEMPORARY')
 
 def watch_folder_for_changes():
-    file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
+    # file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
+    file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]
     last_modified_file = max(file_paths, key=os.path.getmtime)
     last_modification_time = os.path.getmtime(last_modified_file)
     perform_automations()
