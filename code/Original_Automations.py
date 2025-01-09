@@ -337,8 +337,8 @@ def perform_automations():
     print('Logs Original')
     form_logs()
     print('Logs Revision')
-    # sort_markdown_table(changes_file)
-    # print('Sort the changes table for Original')
+    sort_markdown_table(changes_file)
+    print('Original Changes')
 
 def watch_folder_for_changes():
     file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
