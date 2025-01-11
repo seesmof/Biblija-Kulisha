@@ -1,5 +1,3 @@
-# TODO add all the logs to changes and sort changes.csv
-import os
 from nicegui import ui,app
 
 import util
@@ -22,7 +20,7 @@ def add_new_change_entry(changes_file_path: str):
         f.write('\n' + entry_line)
     reset_local_storage()
 
-reasons_autocomplete=['wrong','missing','letter','symbol']
+reasons_autocomplete=['wrong','missing','extra','letter','symbol','space']
 Book_names=util.get_ordered_Bible_Book_names()
 ui.select(label='Book',options=Book_names,with_input=True,).bind_value(app.storage.general,'Book')
 ui.input(label='Chapter').bind_value(app.storage.general,'Chapter')
