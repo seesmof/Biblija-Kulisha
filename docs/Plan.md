@@ -16,11 +16,12 @@
 # Revision (Біблія свободи)
 
 - [x] Copy Original folder, rename to Revision
-- [ ] Update Book names for each
 - [ ] Remove all formatting tags from Original using `\\(\+*)(wj|qt|nd)(\s|\*)`
 - [ ] Remove all footnotes from Revision using `\\f(.*?)\\f\*`
+- [ ] Update Book names for each
+- [ ] Add paragraph tags from WEB
+- [ ] Change quotes to corner (squared) ones, add all from WEB
 - [ ] Add WJ and ND tags from KJV Authorized Version
-- [ ] Add QT tags with F notes with cross-references from [here](https://www.blueletterbible.org/study/misc/quotes.cfm)
 
 Ideas:
 
