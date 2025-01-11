@@ -24,6 +24,7 @@
 | GEN | 24 | 54 | вранцї | в ранцї | Missing space |
 | GEN | 26 | 3 | тій | тїй | Wrong letter |
 | GEN | 27 | 11 | чоловік | половік | Wrong letter |
+| GEN | 27 | 29 | хмари | хмарі | Wrong letter |
 | GEN | 30 | 32 | крапаcте | крапасте | Wrong letter (English C) |
 | GEN | 30 | 33 | крапаcте | крапасте | Wrong letter (English C) |
 | GEN | 31 | 25 | горах | горах. | Missing dot |
