@@ -8,8 +8,11 @@ https://archive.org/details/the_bible_1912/page/n235/mode/2up
 pdf files:
 
 Texted Low Weight https://ia601000.us.archive.org/29/items/the_bible_1912/The%20Bible%201912_text.pdf
-Clearer https://ia801603.us.archive.org/7/items/20230417_20230417_1007/%D0%A1%D1%8C%D0%B2%D1%8F%D1%82%D0%B5%20%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%2C%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D0%B3%D0%BE%20%D1%96%20%D0%9D%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%97%D0%B0%D0%B2%D1%96%D1%82%D1%83.pdf
-Original Highest Weight https://ia801000.us.archive.org/29/items/the_bible_1912/The%20Bible%201912.pdf
-
 OT starts page 12
 NT starts page 837
+
+Clearer https://ia801603.us.archive.org/7/items/20230417_20230417_1007/%D0%A1%D1%8C%D0%B2%D1%8F%D1%82%D0%B5%20%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%2C%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D0%B3%D0%BE%20%D1%96%20%D0%9D%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%97%D0%B0%D0%B2%D1%96%D1%82%D1%83.pdf
+OT starts page 15
+NT starts page 840
+
+Original Highest Weight, same as Texted it seems https://ia801000.us.archive.org/29/items/the_bible_1912/The%20Bible%201912.pdf
