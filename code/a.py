@@ -1,3 +1,12 @@
-from Original_Automations import form_markdown_output
+import subprocess 
 
-form_markdown_output(source_folder_path=r"E:\Pisochnycja-Projektiv\Bible Kulish\KJV_Strongs",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія Короля Якова.md')
+def copy2clip(txt):
+    cmd='echo '+txt.strip()+'|clip'
+    return subprocess.check_call(cmd, shell=True)
+
+combined='\u0301'
+raw='´'
+word='госпо́дї'
+word=word[:5]+combined+word[5:]
+print(word)
+copy2clip(combined)
