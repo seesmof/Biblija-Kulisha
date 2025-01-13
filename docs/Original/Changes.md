@@ -29,6 +29,7 @@
 | GEN | 30 | 32 | крапаcте | крапасте | Wrong letter (English C) |
 | GEN | 30 | 33 | крапаcте | крапасте | Wrong letter (English C) |
 | GEN | 31 | 25 | горах | горах. | Missing dot |
+| GEN | 31 | 55 | вранцї | в ранцї | Missing space |
 | GEN | 43 | 5 | коди | коли | Wrong letter |
 | GEN | 43 | 11 | гостиньця : | гостиньця: | Extra space |
 | GEN | 48 | 17 | Манассїєву | Манассїєву. | Missing dot |
