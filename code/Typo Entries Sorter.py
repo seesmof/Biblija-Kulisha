@@ -1,73 +1,67 @@
 from dataclasses import dataclass
 import os
-import re
 
-from code.Original_Automations import original_folder,code_folder
+from util import *
 
 t='''
-EXO 37:29 на кадило робом **мастиєльників**.
-LEV 10:17 не **ззїли** ви жертви
-LEV 16:18 **веред** Господом
-LEV 22:14 коли хто ненароком **зʼість** сьвятого
-NUM 32:9 добрались до долини **Эсколя** і розглянули землю;
-DEU 11:25 вами **нагшле** Господь
-1SA 14:42 повелїв **Саул. Жеребуйте** [крапка замість двокрапки]
-1SA 18:11 Прибю **Давидаʼд** стїнї [немає пробіла перед 'д]
-EST 2:4 було до **сподоби** се слово
-JOB 13:8 вам **притворювятись** перед
-JOB 15:10 **Е** й проміж нами
-JOB 18:2 братись **за за** ум
-JOB 21:3 як виговорюсь, **насьмівайтесь**.
-JOB 27:20 прийде **ва** його неждано
-JOB 33:23
-JOB 41:22
-PRO 16:33
-ISA 6:2 **Кр угом** його стояли
-ISA 49:20
-ISA 63:19
-JER 7:5
-JER 14:10
-JER 22:8
-JER 23:40
-JER 26:5
-JER 30:20
-JER 30:20
-JER 31:13
-JER 31:25
-JER 32:2
-JER 46:20
-JER 48:3
-JER 51:45
-ZEC 1:15
-ZEC 9:10
-ZEC 10:6
-ZEC 13:8 зіетанеться
-ZEC 13:9 ймя мов
-ZEC 14:5
-ZEC 14:12
-MAT 1:18
-LUK 13:17 сталось від **Него?** [знак питання замість крапки]
-ACT 6:14
-ACT 14:26
-ACT 21:16
-ACT 17:24 землї Господь, не в рукотворних **хмарах** домує, [замість храмах]
-ACT 22:2 говорив до них, ще більш **утихомирились.)** [немає відкриваючої дужки]
-ROM 1:9
-1CO 2:7
-2CO 1:19
-2CO 3:15
-1TI 1:1
-TIT 1:12
-HEB 8:12
-JAS 5:11
-1PE 2:6
-1PE 2:22
-REV 11:8
+GEN 9:29 `деватьсот`
+GEN 11:3 нема коми перед а
+GEN 43:19 нема символу пунктуації на кінці
+EXO 12:42 `в роди і роди їх`
+EXO 26:3 `калїми` і `келіїми`
+EXO 34:22 `держатя меш`
+LEV 5:23 `видусив`
+LEV 21:1 `не опоганюєть`
+NUM 27:20 `достойньства`
+NUM 31:46 `людьких`
+DEU 17:8 `та`
+RUT 4:14 `жінки` замість `жінка`
+1SA 30:15 `тото`
+1SA 30:15 `горду`
+2SA 7:12 `спочнеш` замість `спочинеш`
+2SA 8:1 `данини (Гет)`
+2SA 19:32 не знак питання на кінці мабуть
+1KI 11:41 `Инчі`
+1KI 11:41 `Саломонових`
+1KI 18:19 `Ізраїляа`
+1KI 19:2 `те, саме` зайва кома
+1CH 1:32 `(Сини Деданові: Рагуїл, Навдеїл, Ассурим, Летусим, Леюмим (Астусіїм, Асомин).` додано, а в ній додана `(Астусіїм, Асомин)`: прибрати другу дужку відкриваючу
+PSA 62:9 Відсутня крапочка на кінці
+ISA 41:4 крапочка в кінці
+ISA 41:4 має бути не знак питання на кінці
+ISA 42:2 `гнівний`
+JER 18:13 `таке? (давна) дїва`
+MAT 27:43 Слова Ісусові цитуються
+MAT 27:63 Ісусові Слова цитуються
+MRK 12:28 `пруступивши` замість `приступивши`
+ACT 9:22 `у силу та в силу`
+HEB 13:17 вони бо **пильнують** душ ваших
+1KI 20:29 сто **тисячей** чоловіка
+2KI 1:18 книзї **лїстописній** царів
+SNG 5:14 тїло **—** його [зайва риска мабуть]
+ACT 9:8 Савло **в** землї
+EZK 1:14 І **ввихаллись** животини
+EZK 4:15 тобі **товарячий** гній
+1CH 18:6 скрізь, **киди** він
+1CH 22:15 спосібних **ло** всякої
+1CH 24:5 й **киязями** Божими
+1CH 6:19 Сини **Мераріїиі**: Махлі
+DEU 21:3 міста, **пізьмуть** ялівку
+DEU 2:24 і **землею** його
+ZEC 9:2 Емат **примежнии**, на
+ZEC 9:4 Господь **вробить** його
+ZEC 9:5 Аскалон **и** здрігнеться
+ZEC 9:9 моїми очима **застим**.
+ZEC 14:15 язва **побе** конї
+EZK 41:2 по **дру-гім** боцї
+NUM 14:11 Господь Мойсейов**і. А** докіль [має бути двокрапка мабуть]
+DAN 5:13 панотець **мій-царь** привів
+HEB 8:5 скин**ю.** „Гледи [зайва крапка мабуть]
 '''.strip()
 lines=t.split('\n')
 
 Book_names=[]
-for file_name in os.listdir(original_folder):
+for file_name in os.listdir(original_folder_path):
     Book=file_name[2:5]
     Book_names.append(Book)
 
@@ -82,11 +76,7 @@ entries:list[Entry]=[]
 for line in lines:
     Book,other=line.split(maxsplit=1)
     chapter,others=other.split(':',maxsplit=1)
-    try:
-        verse,contents=others.split(' ',maxsplit=1)
-    except:
-        verse=others
-        contents=''
+    verse,contents=others.split(' ',maxsplit=1)
     entry=Entry(Book,int(chapter),int(verse),contents)
     entries.append(entry)
 
@@ -96,7 +86,8 @@ for Book in Book_names:
     sorted_found_entries=sorted(found_entries,key=lambda e:(e.chapter,e.verse),reverse=False)
     sorted_entries+=sorted_found_entries
 
-target_path=os.path.join(code_folder,'Table.md')
+code_folder_path=os.path.join(root_folder_path,'code')
+target_path=os.path.join(code_folder_path,'Table.md')
 with open(target_path,encoding='utf-8',mode='w') as f:
     for entry in sorted_entries:
         f.write(f'{entry.Book} {entry.chapter}:{entry.verse}{" " if entry.content else ""}{entry.content}\n')
