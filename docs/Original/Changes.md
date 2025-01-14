@@ -32,6 +32,7 @@
 | GEN | 31 | 55 | вранцї | в ранцї | Missing space |
 | GEN | 32 | 15 | Верблюдиць | Берблюдиць | Wrong letter |
 | GEN | 32 | 15 | дійних | дїйних | Wrong letter |
+| GEN | 32 | 22 | синів | синїв | Wrong letter |
 | GEN | 43 | 5 | коди | коли | Wrong letter |
 | GEN | 43 | 11 | гостиньця : | гостиньця: | Extra space |
 | GEN | 48 | 17 | Манассїєву | Манассїєву. | Missing dot |
