@@ -209,7 +209,7 @@
 | ZEC | 14 | 3 | тоді | І тоді | Missing letter |
 | ZEC | 14 | 3 | тоді | тодї | Wrong letter |
 | ZEC | 14 | 12 | Госпбдь | Господь | Wrong letter |
-| ZEC | 14 | 13 | Господа,- | Господа, -  | Missing spaces |
+| ZEC | 14 | 13 | Господа,-так | Господа, - так | Missing spaces |
 | MRK | 3 | 6 | Iродиянами | Іродиянами | Wrong letter (English i) |
 | ACT | 15 | 12 | ІІавел | Павел | Wrong letter |
 | ACT | 21 | 23 | З роби | Зроби | Separated letter |
