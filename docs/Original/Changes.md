@@ -33,6 +33,7 @@
 | GEN | 32 | 15 | Верблюдиць | Берблюдиць | Wrong letter |
 | GEN | 32 | 15 | дійних | дїйних | Wrong letter |
 | GEN | 32 | 22 | синів | синїв | Wrong letter |
+| GEN | 33 | 18 | Мезопотамиї | Мезопотамїї | Wrong letter |
 | GEN | 43 | 5 | коди | коли | Wrong letter |
 | GEN | 43 | 11 | гостиньця : | гостиньця: | Extra space |
 | GEN | 48 | 17 | Манассїєву | Манассїєву. | Missing dot |
