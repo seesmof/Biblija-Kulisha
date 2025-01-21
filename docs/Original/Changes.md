@@ -36,6 +36,8 @@
 | GEN | 33 | 18 | Мезопотамиї | Мезопотамїї | Wrong letter |
 | GEN | 34 | 4 | говорючи: Возьми | говорючи. Возьми | Wrong symbol |
 | GEN | 34 | 12 | скільки | скількі | Wrong letter |
+| GEN | 36 | 6 | іх задля | їх задля | Wrong letter |
+| GEN | 36 | 6 | скотини іх | скотини їх | Wrong letter |
 | GEN | 43 | 5 | коди | коли | Wrong letter |
 | GEN | 43 | 11 | гостиньця : | гостиньця: | Extra space |
 | GEN | 48 | 17 | Манассїєву | Манассїєву. | Missing dot |
