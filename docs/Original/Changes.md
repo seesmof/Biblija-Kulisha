@@ -64,6 +64,7 @@
 | 2CH | 7 | 5 | дім царь | дім Божій царь | Missing word |
 | 2CH | 7 | 6 | Господа — , бо | Господа —, бо | Extra space |
 | 2CH | 7 | 6 | ними — , а | ними —, а | Extra space |
+| 2CH | 27 | 7 | парів | царів | Wrong letter |
 | NEH | 9 | 17 | довготерпеливий | довготерпіливий | Wrong letter |
 | JOB | 9 | 9 | cкриті | скриті | Wrong letter |
 | PSA | 9 | 1 | С лавити | Славити | Separated letter |
