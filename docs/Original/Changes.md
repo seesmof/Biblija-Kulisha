@@ -58,6 +58,7 @@
 | 1KI | 1 | 46 | престолї | престолї. | Missing dot |
 | 1KI | 4 | 11 | НаФат | Нафат | Wrong capitalization |
 | 1KI | 8 | 17 | панопя | паноця | Wrong letter |
+| 1CH | 6 | 19 | Мераріїиі | Мераріїні | Wrong letter |
 | 2CH | 3 | 13 | К рила | Крила | Separated letter |
 | 2CH | 6 | 13 | двора — , й | двора —, й | Extra space |
 | 2CH | 7 | 5 | дім  царь | дім царь | Extra space |
