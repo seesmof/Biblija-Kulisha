@@ -405,6 +405,8 @@ def copy_Original_to_Revision(
 
 def perform_automations():
     print()
+    copy_Original_to_Revision()
+    print('Original to Revision TEMPORARY')
     copy_files_to_paratext_project()
     print('Paratext Original')
     copy_files_to_paratext_project('UFB',util.revision_folder_path,True)
@@ -427,8 +429,6 @@ def perform_automations():
     print('Logs Revision')
     sort_markdown_table(changes_file)
     print('Original Changes')
-    copy_Original_to_Revision()
-    print('Original to Revision TEMPORARY')
 
 def watch_folder_for_changes():
     # file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
