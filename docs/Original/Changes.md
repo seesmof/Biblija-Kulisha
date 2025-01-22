@@ -222,5 +222,6 @@
 | ACT | 21 | 23 | З роби | Зроби | Separated letter |
 | 2CO | 6 | 2 | спасення. ) | спасення.) | Extra space |
 | EPH | 3 | 1 | ІсусХристів | Ісус-Христів | Missing dash |
+| 1JN | 5 | 15 | прощення | прошення | Wrong letter |
 | REV | 22 | 20 | хутко!  Амінь | хутко! Амінь | Extra space |
 | REV | 22 | 20 | Амінь.  О | Амінь. О | Extra space |
