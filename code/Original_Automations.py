@@ -340,10 +340,18 @@ def mark_text(
         DOUBLE_OPENING='«'
         DOUBLE_CLOSING='»'
         '''
+
+        SINGLE_OPENING='‚'
+        SINGLE_CLOSING='‛'
+        DOUBLE_OPENING='„'
+        DOUBLE_CLOSING='‟'
+
+        '''
         SINGLE_OPENING='‘'
         SINGLE_CLOSING='’'
         DOUBLE_OPENING='“'
         DOUBLE_CLOSING='”'
+        '''
 
         def replace_at_index(text,index=0,replacement=''):
             return f'{text[:index]}{replacement}{text[index+1:]}'
