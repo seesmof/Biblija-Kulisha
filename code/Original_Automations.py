@@ -429,8 +429,7 @@ def perform_automations():
     print('Original Changes')
 
 def watch_folder_for_changes():
-    # file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
-    file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]
+    file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
     last_modified_file = max(file_paths, key=os.path.getmtime)
     last_modification_time = os.path.getmtime(last_modified_file)
     perform_automations()
