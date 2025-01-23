@@ -405,8 +405,6 @@ def copy_Original_to_Revision(
 
 def perform_automations():
     print()
-    copy_Original_to_Revision()
-    print('Original to Revision TEMPORARY')
     copy_files_to_paratext_project()
     print('Paratext Original')
     copy_files_to_paratext_project('UFB',util.revision_folder_path,True)
