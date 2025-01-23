@@ -39,6 +39,7 @@
 | GEN | 36 | 6 | іх задля | їх задля | Wrong letter |
 | GEN | 36 | 6 | скотини іх | скотини їх | Wrong letter |
 | GEN | 36 | 10 | імення | іммення | Missing letter |
+| GEN | 36 | 28 | Се ж | Сеж | Extra space |
 | GEN | 43 | 5 | коди | коли | Wrong letter |
 | GEN | 43 | 11 | гостиньця : | гостиньця: | Extra space |
 | GEN | 48 | 17 | Манассїєву | Манассїєву. | Missing dot |
