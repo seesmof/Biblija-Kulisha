@@ -220,6 +220,7 @@
 | ZEC | 14 | 13 | Господа,-так | Господа, - так | Missing spaces |
 | MRK | 3 | 6 | Iродиянами | Іродиянами | Wrong letter (English i) |
 | ACT | 15 | 12 | ІІавел | Павел | Wrong letter |
+| ACT | 17 | 24 | хмарах | храмах | Wrong letters |
 | ACT | 21 | 23 | З роби | Зроби | Separated letter |
 | 2CO | 6 | 2 | спасення. ) | спасення.) | Extra space |
 | EPH | 3 | 1 | ІсусХристів | Ісус-Христів | Missing dash |
