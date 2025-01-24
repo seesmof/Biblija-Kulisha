@@ -310,11 +310,12 @@ def form_markdown_output(
                 formatted_line=format_text_line(contents)
                 res=f'<sup>{last_verse_number}</sup> {formatted_line}'
                 output_lines.append(res)
-            elif '\\q2 ' in line:
+            elif '\\q' in line:
                 line=line[3:].strip()
-                res=f'   {line}'
+                if not line: continue
+                formatted_line=format_text_line(line)
+                res=f'   {formatted_line}'
                 output_lines.append(res)
-
 
     try:
         if local_output_file_path:
