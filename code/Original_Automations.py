@@ -83,28 +83,31 @@ def form_logs(
         lines=util.read_file_lines(file_path)
         Book_name=util.get_Book_name_from_full_file_name(file_name)
         chapter_number = 0
+        last_verse_number=1
 
         for line in lines:
+            try:
+                verse_number=get_verse_number(line)
+                last_verse_number=verse_number
+            except: ...
             if "\\c " in line:
                 chapter_number = line[3:].strip()
+            elif '\\ms' in line: continue
 
             if "\\wj" in line or "\\+wj" in line:
-                verse_number = get_verse_number(line)
                 contents = re.findall(r"\\\+?wj\s(.*?)\\\+?wj\*", line)
                 for c in contents:
-                    res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
+                    res = f'{Book_name},{chapter_number},{last_verse_number},"{remove_usfm_tags(c)}"'
                     WJ.append(res)
             if "\\nd" in line or "\\+nd" in line:
-                verse_number = get_verse_number(line)
                 contents = re.findall(r"\\\+?nd\s(.*?)\\\+?nd\*", line)
                 for c in contents:
-                    res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
+                    res = f'{Book_name},{chapter_number},{last_verse_number},"{remove_usfm_tags(c)}"'
                     ND.append(res)
             if "\\qt" in line or "\\+qt" in line:
-                verse_number = get_verse_number(line)
                 contents = re.findall(r"\\\+?qt\s(.*?)\\\+?qt\*", line)
                 for c in contents:
-                    res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
+                    res = f'{Book_name},{chapter_number},{last_verse_number},"{remove_usfm_tags(c)}"'
                     QT.append(res)
             if "\\f" in line or "\\+f" in line:
                 contents = re.findall(r"\\\+?ft\s(.*?)\\\+?f\*", line)
@@ -112,29 +115,25 @@ def form_logs(
                     for entry in contents:
                         F.append(f'{Book_name},0,0,"{remove_usfm_tags(entry)}"')
                 else:
-                    verse_number = get_verse_number(line)
                     for c in contents:
-                        res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
+                        res = f'{Book_name},{chapter_number},{last_verse_number},"{remove_usfm_tags(c)}"'
                         F.append(res)
             line = remove_usfm_tags(line)
             if "„" in line or "‟" in line:
-                verse_number = get_verse_number(line)
                 contents = [w for w in line.split() if "„" in w or "‟" in w]
                 for c in contents:
-                    res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
+                    res = f'{Book_name},{chapter_number},{last_verse_number},"{remove_usfm_tags(c)}"'
                     Quotes.append(res)
             if "ʼ" in line:
-                verse_number = get_verse_number(line)
                 contents = [w for w in line.split() if "ʼ" in w]
                 for c in contents:
-                    res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
+                    res = f'{Book_name},{chapter_number},{last_verse_number},"{remove_usfm_tags(c)}"'
                     Apostrophes.append(res)
             if "—" in line:
-                verse_number = get_verse_number(line)
                 pattern = r"\w+\s*—|\W\s*—"
                 contents = re.findall(pattern, line)
                 for c in contents:
-                    res = f'{Book_name},{chapter_number},{verse_number},"{remove_usfm_tags(c)}"'
+                    res = f'{Book_name},{chapter_number},{last_verse_number},"{remove_usfm_tags(c)}"'
                     Dashes.append(res)
 
     try:
