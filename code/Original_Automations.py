@@ -274,12 +274,26 @@ def form_markdown_output(
     local_output_file_path:str=formatted_original_output_file_path,
     vault_output_file_path:str=r'E:\Notatnyk\Біблія Куліша.md',
 ):
+    def format_text_line(line):
+        Strongs_numbers_removed=util.remove_strongs_numbers(line)
+        QT_tags_handled=re.sub(r'\\(\+?)qt\s',f'<span style="font-variant: small-caps">',Strongs_numbers_removed)
+        ND_tags_handled=re.sub(r'\\(\+?)nd\s',f'<span style="font-variant: small-caps; font-weight:bold">',QT_tags_handled)
+        WJ_tags_handled=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',ND_tags_handled)
+        add_opening_tags=re.sub(r'\\(\+?)add\s','<em>',WJ_tags_handled)
+        add_closing_tags=add_opening_tags.replace('\\add*','</em>').replace('\\+add*','</em>')
+        footnotes_removed=util.remove_footnotes_with_contents(add_closing_tags)
+        other_tags_closed=re.sub(r'\\(\+?)\w+\*','</span>',footnotes_removed)
+        return other_tags_closed
+
+    WJ_COLOR='#7e1717'
     output_lines=[]
+
     for file_name in os.listdir(source_folder_path):
         file_path=os.path.join(source_folder_path,file_name)
         lines=util.read_file_lines(file_path)
         Book_name=util.get_Book_name_from_full_file_name(file_name)
         output_lines.append(f'# {Book_name}')
+        last_verse_number=1
         
         for line in lines:
             if r'\c ' in line:
@@ -291,20 +305,16 @@ def form_markdown_output(
                 res=f'\n{line}' if line else ''
                 output_lines.append(res)
             elif r'\v ' in line:
-                WJ_COLOR='#7e1717'
                 line=line[3:].strip()
-                verse_number,contents=line.split(maxsplit=1)
-                contents=util.remove_strongs_numbers(contents)
-                contents=re.sub(r'\\(\+?)qt\s',f'<span style="font-variant: small-caps">',contents)
-                contents=re.sub(r'\\(\+?)nd\s',f'<span style="font-variant: small-caps; font-weight:bold">',contents)
-                contents=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',contents)
-                contents=re.sub(r'\\(\+?)add\s','<em>',contents)
-                contents=contents.replace('\\add*','</em>').replace('\\+add*','</em>')
-                contents=util.remove_footnotes_with_contents(contents)
-                # all other closing tags
-                contents=re.sub(r'\\(\+?)\w+\*','</span>',contents)
-                res=f'<sup>{verse_number}</sup> {contents}'
+                last_verse_number,contents=line.split(maxsplit=1)
+                formatted_line=format_text_line(contents)
+                res=f'<sup>{last_verse_number}</sup> {formatted_line}'
                 output_lines.append(res)
+            elif '\\q2 ' in line:
+                line=line[3:].strip()
+                res=f'   {line}'
+                output_lines.append(res)
+
 
     try:
         if local_output_file_path:
