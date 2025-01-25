@@ -300,7 +300,7 @@ def form_markdown_output(
                 chapter_number=line[3:].strip()
                 res=f'### {Book_name} {chapter_number}'
                 output_lines.append(res)
-            elif r'\p' in line:
+            elif r'\p' in line or '\\b' in line:
                 line=line[3:].strip()
                 res=f'\n{line}' if line else ''
                 output_lines.append(res)
