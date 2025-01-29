@@ -158,6 +158,7 @@
 | LAM | 5 | 1 | С погадай | Спогадай | Extra space |
 | EZK | 31 | 16 | найкрасшi | найкрасшi | Wrong letter |
 | HOS | 1 | 1 | Cлово | Слово | Wrong letter |
+| HAB | 3 | 8 | гаїв твій | гнїв твій | Wrong letter |
 | ZEC | 1 | 3 | ваc | вас | Wrong letter |
 | ZEC | 1 | 5 | ваші,- | ваші - | Extra symbol |
 | ZEC | 1 | 6 | говорили : | говорили: | Extra space |
