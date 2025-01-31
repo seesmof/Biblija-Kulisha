@@ -289,6 +289,7 @@ def form_markdown_output(
     output_lines=[]
 
     for file_name in os.listdir(source_folder_path):
+        if 'FRT' in file_name: continue
         file_path=os.path.join(source_folder_path,file_name)
         lines=util.read_file_lines(file_path)
         Book_name=util.get_Book_name_from_full_file_name(file_name)
@@ -418,6 +419,34 @@ def copy_Original_to_Revision(
             with open(revision_file_path,encoding='utf-8',mode='w') as f:
                 f.write('\n'.join(lines))
 
+def make_solid_file(
+    source_folder_path = util.original_folder_path,
+    vault_output_file_path = r'E:\Notatnyk\Біблія Куліша.log',
+):
+    output=[]
+    for file_name in os.listdir(source_folder_path):
+        if 'FRT' in file_name: continue
+        res=[]
+        file_path=os.path.join(source_folder_path,file_name)
+        lines=util.read_file_lines(file_path)
+        avoided_tags='h,toc,c,p,id,mt,s'
+        avoided_tags=avoided_tags.split(',')
+        cleared_lines=[l for l in lines if not any(t in l for t in avoided_tags)]
+        for l in cleared_lines:
+            v,c=l[3:].split(' ',maxsplit=1)
+            c=util.remove_formatting_usfm_tags(c).strip()
+            c=util.remove_footnotes_with_contents(c)
+            res.append(c)
+        res=' '.join(res)
+        output.append(res)
+    output=' '.join(output)
+        
+    try:
+        if 'Notatnyk' not in vault_output_file_path:
+            vault_output_file_path=os.path.join(r'E:\Notatnyk',vault_output_file_path)
+        with open(vault_output_file_path,encoding='utf-8',mode='w') as f:
+            f.write(output.strip())
+    except: pass
 
 def perform_automations():
     print()
@@ -428,15 +457,25 @@ def perform_automations():
     make_tbs_text_files()
     print('TBS Original')
     form_markdown_output()
+
     print('Formatted Original')
     form_markdown_output(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.md')
     print('Formatted Revision')
     form_markdown_output(source_folder_path=r"E:\Playground-Pisochnycja-projektiv\Bible Kulish\KJV_Strongs",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія Короля Якова.md')
     print('Formatted KJV')
+    form_markdown_output(source_folder_path=r"E:\Playground-Pisochnycja-projektiv\Bible Kulish\WEB",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія світова.md')
+    print('Formatted WEB')
+
     form_text_lined(vault_output_file_path=r'Біблія Куліша.txt')
     print('Lined Original')
     form_text_lined(source_folder_path=r"E:\Playground-Pisochnycja-projektiv\Bible Kulish\KJV_Strongs",vault_output_file_path=r'Біблія Короля Якова.txt')
     print('Lined KJV')
+
+    make_solid_file(util.original_folder_path)
+    print('Solid Original')
+    make_solid_file(util.original_folder_path,r'Біблія Короля Якова.log')
+    print('Solid KJV')
+
     form_logs(util.original_folder_path,original_logs_folder)
     print('Logs Original')
     form_logs()
