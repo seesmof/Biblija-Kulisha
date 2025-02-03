@@ -449,6 +449,19 @@ def make_solid_file(
             f.write(output.strip())
     except: pass
 
+
+def format_edited_file(
+    file_name='GAL',
+):
+    selected_Book=[B for B in os.listdir(util.revision_folder_path) if file_name in B][0]
+    Book_path=os.path.join(util.revision_folder_path,selected_Book)
+    with open(Book_path,encoding='utf-8',mode='r') as f:
+        text=f.read()
+    formatted_text=mark_text(text)
+    with open(Book_path,encoding='utf-8',mode='w') as f:
+        f.write(formatted_text)
+
+
 def perform_automations():
     print()
     copy_files_to_paratext_project()
