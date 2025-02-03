@@ -3,12 +3,12 @@ import re
 
 from .consts import original_folder_path
 
-def remove_footnotes_with_contents(verse: str):
-    footnote_pattern=r'\\(\+*)f(.*?)\\(\+*)f\*'
+def remove_footnotes_and_crossreferences_with_contents(verse: str):
+    footnote_pattern=r'\\(\+*)(f|x)(.*?)\\(\+*)(f|x)\*'
     return re.sub(footnote_pattern,'',verse)
 
 def remove_formatting_usfm_tags(verse: str):
-    tags_pattern=r'\\(\+*)(wj|qt|nd|add)(\s|\*)'
+    tags_pattern=r'\\(\+*)(wj|qt|nd|add|qs)(\s|\*)'
     return re.sub(tags_pattern,'',verse)
 
 def remove_strongs_numbers(verse: str):

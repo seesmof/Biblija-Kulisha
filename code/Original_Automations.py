@@ -254,7 +254,7 @@ def form_text_lined(
             elif r'\v ' in line:
                 verse_text = line[3:].strip()
                 stripped_formatting_tags=util.remove_formatting_usfm_tags(verse_text)
-                removed_footnotes=util.remove_footnotes_with_contents(stripped_formatting_tags)
+                removed_footnotes=util.remove_footnotes_and_crossreferences_with_contents(stripped_formatting_tags)
                 removed_strongs_numbres=util.remove_strongs_numbers(removed_footnotes).strip().replace('  ',' ')
                 line = f"{Book_name} {chapter_number}:{removed_strongs_numbres}"
                 output_lines.append(line)
@@ -281,8 +281,9 @@ def form_markdown_output(
         WJ_tags_handled=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',ND_tags_handled)
         add_opening_tags=re.sub(r'\\(\+?)add\s','<em>',WJ_tags_handled)
         add_closing_tags=add_opening_tags.replace('\\add*','</em>').replace('\\+add*','</em>')
-        footnotes_removed=util.remove_footnotes_with_contents(add_closing_tags)
-        other_tags_closed=re.sub(r'\\(\+?)\w+\*','</span>',footnotes_removed)
+        footnotes_removed=util.remove_footnotes_and_crossreferences_with_contents(add_closing_tags)
+        qs_tags_removed=footnotes_removed.replace('\\qs ','').replace('\\qs*','')
+        other_tags_closed=re.sub(r'\\(\+?)\w+\*','</span>',qs_tags_removed)
         return other_tags_closed
 
     WJ_COLOR='#7e1717'
@@ -435,7 +436,7 @@ def make_solid_file(
         for l in cleared_lines:
             v,c=l[3:].split(' ',maxsplit=1)
             c=util.remove_formatting_usfm_tags(c).strip()
-            c=util.remove_footnotes_with_contents(c)
+            c=util.remove_footnotes_and_crossreferences_with_contents(c)
             res.append(c)
         res=' '.join(res)
         output.append(res)
@@ -456,25 +457,23 @@ def perform_automations():
     print('Paratext Revision')
     make_tbs_text_files()
     print('TBS Original')
-    form_markdown_output()
 
-    print('Formatted Original')
     form_markdown_output(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.md')
     print('Formatted Revision')
-    form_markdown_output(source_folder_path=r"E:\Playground-Pisochnycja-projektiv\Bible Kulish\KJV_Strongs",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія Короля Якова.md')
-    print('Formatted KJV')
-    form_markdown_output(source_folder_path=r"E:\Playground-Pisochnycja-projektiv\Bible Kulish\WEB",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія світова.md')
-    print('Formatted WEB')
+    # form_markdown_output(source_folder_path=r"E:\Playground-Pisochnycja-projektiv\Bible Kulish\KJV_Strongs",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія Короля Якова.md')
+    # print('Formatted KJV')
+    # form_markdown_output(source_folder_path=r"E:\Playground-Pisochnycja-projektiv\Bible Kulish\WEB",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія світова.md')
+    # print('Formatted WEB')
 
     form_text_lined(vault_output_file_path=r'Біблія Куліша.txt')
     print('Lined Original')
     form_text_lined(source_folder_path=r"E:\Playground-Pisochnycja-projektiv\Bible Kulish\KJV_Strongs",vault_output_file_path=r'Біблія Короля Якова.txt')
     print('Lined KJV')
 
-    make_solid_file(util.original_folder_path)
-    print('Solid Original')
-    make_solid_file(util.original_folder_path,r'Біблія Короля Якова.log')
-    print('Solid KJV')
+    # make_solid_file(util.original_folder_path)
+    # print('Solid Original')
+    # make_solid_file(util.original_folder_path,r'Біблія Короля Якова.log')
+    # print('Solid KJV')
 
     form_logs(util.original_folder_path,original_logs_folder)
     print('Logs Original')
