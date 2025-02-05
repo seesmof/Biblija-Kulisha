@@ -318,6 +318,10 @@ def form_markdown_output(
                 formatted_line=format_text_line(line)
                 res=f'   {formatted_line}'
                 output_lines.append(res)
+            elif '\\s1' in line:
+                line=line[3:].strip()
+                res=f'##### {line}'
+                output_lines.append(res)
 
     try:
         if local_output_file_path:

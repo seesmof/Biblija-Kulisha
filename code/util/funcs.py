@@ -12,8 +12,8 @@ def remove_formatting_usfm_tags(verse: str):
     return re.sub(tags_pattern,'',verse)
 
 def remove_strongs_numbers(verse: str):
-    strongs_number_closing_tag_pattern=r'\|strong=\"[GH]\d{4}\"\\(\+?)w\*'
-    verse=verse.replace(r'\w ','').replace(r'\+w ','')
+    strongs_number_closing_tag_pattern=r'\|strong=\"[GH]\d*?\"\\(\+?)w\*'
+    verse=verse.replace('\\w ','').replace('\\+w ','')
     return re.sub(strongs_number_closing_tag_pattern,'',verse)
 
 def remove_verse_tags_and_numbers(verse: str):
