@@ -161,6 +161,7 @@
 | HOS | 1 | 1 | Cлово | Слово | Wrong letter |
 | HAB | 3 | 8 | гаїв твій | гнїв твій | Wrong letter |
 | ZEC | 1 | 3 | ваc | вас | Wrong letter |
+| ZEC | 1 | 4 | Зверніте | Звернїте | Wrong letter |
 | ZEC | 1 | 5 | ваші,- | ваші - | Extra symbol |
 | ZEC | 1 | 6 | говорили : | говорили: | Extra space |
 | ZEC | 2 | 4 | сказав | І сказав | Missing letter |
