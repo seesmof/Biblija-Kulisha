@@ -217,6 +217,7 @@
 | ZEC | 13 | 6 | спитав | спитає | Wrong letter |
 | ZEC | 13 | 6 | руках ? | руках? | Extra space |
 | ZEC | 13 | 8 | зіетанеться | зістанеться | Wrong letter |
+| ZEC | 13 | 9 | ймя мов | ймя моє | Wrong letter |
 | ZEC | 14 | 3 | тоді | І тоді | Missing letter |
 | ZEC | 14 | 3 | тоді | тодї | Wrong letter |
 | ZEC | 14 | 12 | Госпбдь | Господь | Wrong letter |
