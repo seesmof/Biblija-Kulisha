@@ -491,8 +491,6 @@ def perform_automations():
 
     make_solid_file(util.original_folder_path)
     print('Solid Original')
-    make_solid_file(util.original_folder_path,r'Біблія Короля Якова.log')
-    print('Solid KJV')
 
     form_logs(util.original_folder_path,original_logs_folder)
     print('Logs Original')
