@@ -486,6 +486,8 @@ def perform_automations():
 
     form_text_lined(vault_output_file_path=r'Біблія Куліша.txt')
     print('Lined Original')
+    form_text_lined(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.txt')
+    print('Lined Revision')
     form_text_lined(source_folder_path=r"E:\Pereklad-Bibliji\KJV_Strongs",vault_output_file_path=r'Біблія Короля Якова.txt')
     print('Lined KJV')
 
