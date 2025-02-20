@@ -294,7 +294,8 @@ def form_markdown_output(
         file_path=os.path.join(source_folder_path,file_name)
         lines=util.read_file_lines(file_path)
         Book_name=util.get_Book_name_from_full_file_name(file_name)
-        output_lines.append(f'# {Book_name}')
+        short_Bible_Book_name=[l[6:].strip() for l in lines if '\\toc2 ' in l][0]
+        output_lines.append(f'# {Book_name} {short_Bible_Book_name}')
         last_verse_number=1
         
         for line in lines:
@@ -310,7 +311,7 @@ def form_markdown_output(
                 line=line[3:].strip()
                 last_verse_number,contents=line.split(maxsplit=1)
                 formatted_line=format_text_line(contents)
-                res=f'<sup>{last_verse_number}</sup> {formatted_line}'
+                res=f'<small>{last_verse_number}</small> {formatted_line}'
                 output_lines.append(res)
             elif '\\q' in line:
                 line=line[3:].strip()
