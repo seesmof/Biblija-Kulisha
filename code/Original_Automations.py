@@ -273,6 +273,7 @@ def form_markdown_output(
     source_folder_path:str = util.original_folder_path,
     local_output_file_path:str=formatted_original_output_file_path,
     vault_output_file_path:str=r'E:\Notatnyk\Біблія Куліша.md',
+    for_print: bool = False,
 ):
     def format_text_line(line):
         Strongs_numbers_removed=util.remove_strongs_numbers(line)
@@ -297,12 +298,14 @@ def form_markdown_output(
         short_Bible_Book_name=[l[6:].strip() for l in lines if '\\toc2 ' in l][0]
         output_lines.append(f'# {Book_name} {short_Bible_Book_name}')
         last_verse_number=1
+        new_chapter=False
         
         for line in lines:
             if r'\c ' in line:
                 chapter_number=line[3:].strip()
-                res=f'### {Book_name} {chapter_number}'
-                output_lines.append(res)
+                new_chapter=True
+                res=f'### {Book_name} {chapter_number}' if not for_print else ''
+                output_lines.append(res) if not for_print else None
             elif r'\p' in line or '\\b' in line:
                 line=line[3:].strip()
                 res=f'\n{line}' if line else ''
@@ -311,8 +314,9 @@ def form_markdown_output(
                 line=line[3:].strip()
                 last_verse_number,contents=line.split(maxsplit=1)
                 formatted_line=format_text_line(contents)
-                res=f'<small>{last_verse_number}</small> {formatted_line}'
+                res=f'<small>{last_verse_number}</small> {formatted_line}' if not (for_print and new_chapter) else f'<strong>{chapter_number}</strong> {formatted_line}'
                 output_lines.append(res)
+                new_chapter=False
             elif '\\q' in line:
                 line=line[3:].strip()
                 if not line: continue
@@ -321,7 +325,7 @@ def form_markdown_output(
                 output_lines.append(res)
             elif '\\s1' in line:
                 line=line[3:].strip()
-                res=f'##### {line}'
+                res=f'##### {line}' if not for_print else f'\n**{line}**'
                 output_lines.append(res)
 
     try:
@@ -484,6 +488,9 @@ def perform_automations():
     print('Formatted KJV')
     form_markdown_output(source_folder_path=r"E:\Pereklad-Bibliji\WEB",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія світова.md')
     print('Formatted WEB')
+
+    form_markdown_output(for_print=True,local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія читальна.md')
+    print('Formatted Original for print')
 
     form_text_lined(vault_output_file_path=r'Біблія Куліша.txt')
     print('Lined Original')
