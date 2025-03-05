@@ -503,14 +503,15 @@ def make_json_Bible(
                 Bible_dictionary[Book_number][chapter_number]=dict()
             elif "\\v " in line:
                 line_without_tag = line[3:].strip()
-                clean_line = util.remove_formatting_usfm_tags(line_without_tag)
+                clean_line = remove_usfm_tags(line_without_tag)
                 verse_number, verse_content = clean_line.split(" ",maxsplit=1)
                 verse_number = int(verse_number)
                 Bible_dictionary[Book_number][chapter_number][verse_number]=verse_content
 
     try:
+        local_output_file_path=os.path.join(original_docs_folder_path,"UBK.py")
         with open(local_output_file_path,encoding='utf-8',mode='w') as f:
-            json.dump(Bible_dictionary,f,indent=2,ensure_ascii=False)
+            f.write("UBK ="+str(Bible_dictionary)[27:-1])
     except: pass
 
 
