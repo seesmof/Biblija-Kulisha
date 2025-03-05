@@ -486,7 +486,6 @@ def make_json_Bible(
         return int(Book_number)
 
     Bible_dictionary: defaultdict = defaultdict(dict)
-    output_lines: str = "{ "
 
     for file_name in os.listdir(source_folder_path):
         if 'FRT' in file_name or "GLO" in file_name: continue
@@ -496,31 +495,22 @@ def make_json_Bible(
 
         Book_number: int = get_Book_number(file_name)
         Bible_dictionary[Book_number]=dict()
-        if Book_number!=1:
-            output_lines+="}}, "
-        output_lines+=f"{Book_number}: {{ "
 
         chapter_number: int = 0
         for line in lines:
             if "\\c" in line:
                 chapter_number: int = int(line[3:].strip())
                 Bible_dictionary[Book_number][chapter_number]=dict()
-                if chapter_number!=1:
-                    output_lines+="}}, "
-                output_lines+=f"{chapter_number}: {{ "
             elif "\\v " in line:
                 line_without_tag = line[3:].strip()
                 clean_line = util.remove_formatting_usfm_tags(line_without_tag)
                 verse_number, verse_content = clean_line.split(" ",maxsplit=1)
                 verse_number = int(verse_number)
                 Bible_dictionary[Book_number][chapter_number][verse_number]=verse_content
-                output_lines+=f"{verse_number}: \"{verse_content}\", "
-        if Book_number==66:
-            output_lines+="}}"
 
     try:
         with open(local_output_file_path,encoding='utf-8',mode='w') as f:
-            f.write(output_lines)
+            json.dump(Bible_dictionary,f,indent=2,ensure_ascii=False)
     except: pass
 
 
@@ -564,9 +554,6 @@ def perform_automations():
 
     make_json_Bible()
     print("UBK in Json")
-
-def perform_automations():
-    make_json_Bible()
 
 def watch_folder_for_changes():
     file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
