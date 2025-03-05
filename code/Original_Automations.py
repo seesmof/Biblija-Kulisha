@@ -1,8 +1,11 @@
+from collections import defaultdict
 import shutil
 import time
+import json
 import os
 import re
 
+from util.consts import BIBLE_ABBREVIATION_TO_BOOK_NUMBER
 import util
 
 original_docs_folder_path=os.path.join(util.docs_folder_path,'Original')
@@ -14,6 +17,7 @@ formatted_original_output_file_path=os.path.join(original_docs_folder_path,'Outp
 revision_docs_folder_path=os.path.join(util.docs_folder_path,'Revision')
 revision_logs_folder = os.path.join(revision_docs_folder_path,'Logs')
 formatted_revision_output_file_path=os.path.join(revision_docs_folder_path,'Output_Formatted.md')
+json_Bible_path=os.path.join(original_docs_folder_path,"UBK.json")
 
 def copy_files_to_paratext_project(
     project_abbreviation: str = 'UBK',
@@ -414,6 +418,18 @@ def mark_text(
     return accents_fixed
 
 
+def format_edited_file(
+    file_name='GAL',
+):
+    selected_Book=[B for B in os.listdir(util.revision_folder_path) if file_name in B][0]
+    Book_path=os.path.join(util.revision_folder_path,selected_Book)
+    with open(Book_path,encoding='utf-8',mode='r') as f:
+        text=f.read()
+    formatted_text=mark_text(text)
+    with open(Book_path,encoding='utf-8',mode='w') as f:
+        f.write(formatted_text)
+
+
 def copy_Original_to_Revision(
     source_folder_path:str = util.original_folder_path,
     revision_folder_path:str= util.revision_folder_path,
@@ -459,16 +475,43 @@ def make_solid_file(
     except: pass
 
 
-def format_edited_file(
-    file_name='GAL',
+def make_json_Bible(
+    source_folder_path = util.original_folder_path,
+    local_output_file_path = json_Bible_path,
 ):
-    selected_Book=[B for B in os.listdir(util.revision_folder_path) if file_name in B][0]
-    Book_path=os.path.join(util.revision_folder_path,selected_Book)
-    with open(Book_path,encoding='utf-8',mode='r') as f:
-        text=f.read()
-    formatted_text=mark_text(text)
-    with open(Book_path,encoding='utf-8',mode='w') as f:
-        f.write(formatted_text)
+    def get_Book_number(file_name: str) -> int:
+        Book_without_numbers_prefix=file_name[2:]
+        Book_abbreviation=Book_without_numbers_prefix.split(".")[0]
+        Book_number=BIBLE_ABBREVIATION_TO_BOOK_NUMBER[Book_abbreviation]
+        return int(Book_number)
+
+    Bible_dictionary: defaultdict = defaultdict(dict)
+
+    for file_name in os.listdir(source_folder_path):
+        if 'FRT' in file_name or "GLO" in file_name: continue
+
+        file_path=os.path.join(source_folder_path,file_name)
+        lines=util.read_file_lines(file_path)
+
+        Book_number: int = get_Book_number(file_name)
+        Bible_dictionary[Book_number]=dict()
+
+        chapter_number: int = 0
+        for line in lines:
+            if "\\c" in line:
+                chapter_number: int = int(line[3:].strip())
+                Bible_dictionary[Book_number][chapter_number]=dict()
+            elif "\\v " in line:
+                line_without_tag = line[3:].strip()
+                clean_line = util.remove_formatting_usfm_tags(line_without_tag)
+                verse_number, verse_content = clean_line.split(" ",maxsplit=1)
+                verse_number = int(verse_number)
+                Bible_dictionary[Book_number][chapter_number][verse_number]=verse_content
+
+    try:
+        with open(local_output_file_path,encoding='utf-8',mode='w') as f:
+            f.write(Bible_dictionary)
+    except: pass
 
 
 def perform_automations():
@@ -508,6 +551,12 @@ def perform_automations():
     print('Logs Revision')
     sort_markdown_table(changes_file)
     print('Original Changes')
+
+    make_json_Bible()
+    print("UBK in Json")
+
+def perform_automations():
+    make_json_Bible()
 
 def watch_folder_for_changes():
     file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
