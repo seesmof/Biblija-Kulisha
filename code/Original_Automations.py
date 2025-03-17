@@ -273,75 +273,6 @@ def form_text_lined(
     except: pass
 
 
-def form_markdown_output(
-    source_folder_path:str = util.original_folder_path,
-    local_output_file_path:str=formatted_original_output_file_path,
-    vault_output_file_path:str=r'E:\Notatnyk\Біблія Куліша.md',
-    for_print: bool = False,
-):
-    def format_text_line(line):
-        Strongs_numbers_removed=util.remove_strongs_numbers(line)
-        QT_tags_handled=re.sub(r'\\(\+?)qt\s',f'<span style="font-variant: small-caps">',Strongs_numbers_removed)
-        ND_tags_handled=re.sub(r'\\(\+?)nd\s',f'<span style="font-variant: small-caps; font-weight:bold">',QT_tags_handled)
-        WJ_tags_handled=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',ND_tags_handled)
-        add_opening_tags=re.sub(r'\\(\+?)add\s','<em>',WJ_tags_handled)
-        add_closing_tags=add_opening_tags.replace('\\add*','</em>').replace('\\+add*','</em>')
-        footnotes_removed=util.remove_footnotes_and_crossreferences_with_contents(add_closing_tags)
-        qs_tags_removed=footnotes_removed.replace('\\qs ','').replace('\\qs*','')
-        other_tags_closed=re.sub(r'\\(\+?)\w+\*','</span>',qs_tags_removed)
-        return other_tags_closed
-
-    WJ_COLOR='#7e1717'
-    output_lines=[]
-
-    for file_name in os.listdir(source_folder_path):
-        if 'FRT' in file_name: continue
-        file_path=os.path.join(source_folder_path,file_name)
-        lines=util.read_file_lines(file_path)
-        Book_name=util.get_Book_name_from_full_file_name(file_name)
-        short_Bible_Book_name=[l[6:].strip() for l in lines if '\\toc2 ' in l][0]
-        output_lines.append(f'# {Book_name} {short_Bible_Book_name}')
-        last_verse_number=1
-        new_chapter=False
-        
-        for line in lines:
-            if r'\c ' in line:
-                chapter_number=line[3:].strip()
-                new_chapter=True
-                res=f'### {Book_name} {chapter_number}' if not for_print else ''
-                output_lines.append(res) if not for_print else None
-            elif r'\p' in line or '\\b' in line:
-                line=line[3:].strip()
-                res=f'\n{line}' if line else ''
-                output_lines.append(res)
-            elif r'\v ' in line:
-                line=line[3:].strip()
-                last_verse_number,contents=line.split(maxsplit=1)
-                formatted_line=format_text_line(contents)
-                res=f'<small>{last_verse_number}</small> {formatted_line}' if not (for_print and new_chapter) else f'<strong>{chapter_number}</strong> {formatted_line}'
-                output_lines.append(res)
-                new_chapter=False
-            elif '\\q' in line:
-                line=line[3:].strip()
-                if not line: continue
-                formatted_line=format_text_line(line)
-                res=f'   {formatted_line}'
-                output_lines.append(res)
-            elif '\\s1' in line:
-                line=line[3:].strip()
-                res=f'##### {line}' if not for_print else f'\n**{line}**'
-                output_lines.append(res)
-
-    try:
-        if local_output_file_path:
-            with open(local_output_file_path,encoding='utf-8',mode='w') as f:
-                f.write('\n'.join(output_lines))
-        if 'Notatnyk' not in vault_output_file_path:
-            vault_output_file_path=os.path.join(r'E:\Notatnyk',vault_output_file_path)
-        with open(vault_output_file_path,encoding='utf-8',mode='w') as f:
-            f.write('\n'.join(output_lines))
-    except: pass
-
 
 def mark_text(
     given_text:str,
@@ -515,6 +446,81 @@ def make_json_Bible(
     except: pass
 
 
+
+def form_markdown_output(
+    source = util.original_folder_path,
+    local = formatted_original_output_file_path,
+    vault = r'E:\Notatnyk\Біблія.md',
+    browser = False,
+):
+    def format_text_line(line):
+        Strongs_numbers_removed=util.remove_strongs_numbers(line)
+        QT_tags_handled=re.sub(r'\\(\+?)qt\s',f'<span style="font-variant: small-caps">',Strongs_numbers_removed)
+        ND_tags_handled=re.sub(r'\\(\+?)nd\s',f'<span style="font-variant: small-caps; font-weight:bold">',QT_tags_handled)
+        WJ_tags_handled=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',ND_tags_handled)
+        add_opening_tags=re.sub(r'\\(\+?)add\s','<em>',WJ_tags_handled)
+        add_closing_tags=add_opening_tags.replace('\\add*','</em>').replace('\\+add*','</em>')
+        footnotes_removed=util.remove_footnotes_and_crossreferences_with_contents(add_closing_tags)
+        qs_tags_removed=footnotes_removed.replace('\\qs ','').replace('\\qs*','')
+        other_tags_closed=re.sub(r'\\(\+?)\w+\*','</span>',qs_tags_removed)
+        return other_tags_closed
+
+    WJ_COLOR='#7e1717'
+    output_lines=[]
+
+    for file_name in os.listdir(source):
+        if 'FRT' in file_name: continue
+        file_path=os.path.join(source,file_name)
+        lines=util.read_file_lines(file_path)
+        Book_name=util.get_Book_name_from_full_file_name(file_name)
+        short_Bible_Book_name=[l[6:].strip() for l in lines if '\\toc2 ' in l][0]
+        output_lines.append(f'### {Book_name} {short_Bible_Book_name}' if not browser else '')
+        last_verse_number=1
+        new_chapter=False
+        
+        for line in lines:
+            if r'\c ' in line:
+                chapter_number=line[3:].strip()
+                new_chapter=True
+            elif r'\p' in line or '\\b' in line:
+                line=line[3:].strip()
+                res=f'\n{line}' if line else ''
+                output_lines.append(res) if not browser else None
+            elif r'\v ' in line:
+                line=line[3:].strip()
+                last_verse_number,contents=line.split(maxsplit=1)
+                if not browser:
+                    formatted_line=format_text_line(contents)
+                    res=f'<small>{last_verse_number}</small> {formatted_line}' if not new_chapter else f'<strong>{chapter_number}</strong> {formatted_line}'
+                else:
+                    stripped_formatting_tags=util.remove_formatting_usfm_tags(contents)
+                    removed_footnotes=util.remove_footnotes_and_crossreferences_with_contents(stripped_formatting_tags)
+                    bare_line=util.remove_strongs_numbers(removed_footnotes).strip().replace('  ',' ')
+                    res=f"{Book_name} {chapter_number}:{last_verse_number} {bare_line}"
+                output_lines.append(res)
+                new_chapter=False
+            elif '\\q' in line:
+                line=line[3:].strip()
+                if not line: continue
+                formatted_line=format_text_line(line)
+                res=f'   {formatted_line}'
+                output_lines.append(res)
+            elif '\\s1' in line:
+                line=line[3:].strip()
+                res=f'\n**{line}**' if not browser else ""
+                output_lines.append(res)
+
+    try:
+        if local:
+            with open(local,encoding='utf-8',mode='w') as f:
+                f.write('\n'.join(output_lines))
+        if 'Notatnyk' not in vault:
+            vault=os.path.join(r'E:\Notatnyk',vault)
+        with open(vault,encoding='utf-8',mode='w') as f:
+            f.write('\n'.join(output_lines))
+    except: pass
+
+
 def perform_automations():
     print()
     copy_files_to_paratext_project()
@@ -524,27 +530,30 @@ def perform_automations():
     make_tbs_text_files()
     print('TBS Original')
 
-    form_markdown_output()
-    print('Formatted Original')
-    form_markdown_output(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.md')
-    print('Formatted Revision')
-    form_markdown_output(source_folder_path=r"E:\Pereklad-Bibliji\KJV_Strongs",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія Короля Якова.md')
-    print('Formatted KJV')
-    form_markdown_output(source_folder_path=r"E:\Pereklad-Bibliji\WEB",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія світова.md')
-    print('Formatted WEB')
+    form_markdown_output(vault='Біблія.md')
+    print('Original reader')
+    form_markdown_output(source=r"E:\Pereklad-Bibliji\KJV_Strongs",local=None,vault='Bible.md')
+    print('KJV reader')
 
-    form_markdown_output(for_print=True,local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія читальна.md')
-    print('Formatted Original for print')
+    form_markdown_output(vault='Біблія.txt',browser=True)
+    print('Original browser')
+    form_markdown_output(source=r"E:\Pereklad-Bibliji\KJV_Strongs",local=None,vault='Bible.txt',browser=True)
+    print('KJV browser')
 
-    form_text_lined(vault_output_file_path=r'Біблія Куліша.txt')
-    print('Lined Original')
-    form_text_lined(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.txt')
-    print('Lined Revision')
-    form_text_lined(source_folder_path=r"E:\Pereklad-Bibliji\KJV_Strongs",vault_output_file_path=r'Біблія Короля Якова.txt')
-    print('Lined KJV')
+    # form_markdown_output(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.md')
+    # print('Formatted Revision')
+    # form_markdown_output(source_folder_path=r"E:\Pereklad-Bibliji\WEB",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія світова.md')
+    # print('Formatted WEB')
 
-    make_solid_file(util.original_folder_path)
-    print('Solid Original')
+    # form_text_lined(vault_output_file_path=r'Біблія Куліша.txt')
+    # print('Lined Original')
+    # form_text_lined(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.txt')
+    # print('Lined Revision')
+    # form_text_lined(source_folder_path=r"E:\Pereklad-Bibliji\KJV_Strongs",vault_output_file_path=r'Біблія Короля Якова.txt')
+    # print('Lined KJV')
+
+    # make_solid_file(util.original_folder_path)
+    # print('Solid Original')
 
     form_logs(util.original_folder_path,original_logs_folder)
     print('Logs Original')
