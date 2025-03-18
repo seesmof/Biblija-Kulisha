@@ -474,7 +474,7 @@ def form_markdown_output(
         lines=util.read_file_lines(file_path)
         Book_name=util.get_Book_name_from_full_file_name(file_name)
         short_Bible_Book_name=[l[6:].strip() for l in lines if '\\toc2 ' in l][0]
-        output_lines.append(f'### {Book_name} {short_Bible_Book_name}' if not browser else '')
+        output_lines.append(f'### {Book_name} {short_Bible_Book_name}')  if not browser else None
         last_verse_number=1
         new_chapter=False
         
