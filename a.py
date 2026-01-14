@@ -1,6 +1,6 @@
 import os
 
-import util
+from code import util
 
 source_folder_path: str = util.original_folder_path
 output_lines = []
@@ -26,8 +26,4 @@ for file_name in os.listdir(source_folder_path):
             )
             line = f"{Book_name} {chapter_number}:{removed_strongs_numbres}"
             output_lines.append(line)
-
-print("\n".join(output_lines))
-file_path = os.path.join(util.original_folder_path, "..", "Bible.txt")
-with open(file_path, encoding="utf-8", mode="w") as f:
-    f.write("\n".join(output_lines))
+print(output_lines)
