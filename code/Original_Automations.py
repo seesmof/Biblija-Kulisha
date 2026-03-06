@@ -1,41 +1,53 @@
 from collections import defaultdict
 import shutil
 import time
-import json
 import os
 import re
 
 from util.consts import BIBLE_ABBREVIATION_TO_BOOK_NUMBER
 import util
 
-original_docs_folder_path=os.path.join(util.docs_folder_path,'Original')
-TBS_text_folder = os.path.join(original_docs_folder_path,'TBS')
-original_logs_folder = os.path.join(original_docs_folder_path,'Logs')
-changes_file = os.path.join(original_docs_folder_path,'Changes.md')
-lined_output_file_path=os.path.join(original_docs_folder_path,'Output_Lined.txt')
-formatted_original_output_file_path=os.path.join(original_docs_folder_path,'Output_Formatted.md')
-revision_docs_folder_path=os.path.join(util.docs_folder_path,'Revision')
-revision_logs_folder = os.path.join(revision_docs_folder_path,'Logs')
-formatted_revision_output_file_path=os.path.join(revision_docs_folder_path,'Output_Formatted.md')
-json_Bible_path=os.path.join(original_docs_folder_path,"UBK.json")
+original_docs_folder_path = os.path.join(util.docs_folder_path, "Original")
+TBS_text_folder = os.path.join(original_docs_folder_path, "TBS")
+original_logs_folder = os.path.join(original_docs_folder_path, "Logs")
+changes_file = os.path.join(original_docs_folder_path, "Changes.md")
+lined_output_file_path = os.path.join(original_docs_folder_path, "Output_Lined.txt")
+formatted_original_output_file_path = os.path.join(
+    original_docs_folder_path, "Output_Formatted.md"
+)
+revision_docs_folder_path = os.path.join(util.docs_folder_path, "Revision")
+revision_logs_folder = os.path.join(revision_docs_folder_path, "Logs")
+formatted_revision_output_file_path = os.path.join(
+    revision_docs_folder_path, "Output_Formatted.md"
+)
+json_Bible_path = os.path.join(original_docs_folder_path, "UBK.json")
+
 
 def copy_files_to_paratext_project(
-    project_abbreviation: str = 'UBK',
+    project_abbreviation: str = "UBK",
     local_files_folder_path: str = util.original_folder_path,
     remove_comenting_rem_tags: bool = False,
 ):
-    paratext_project_folder_path=os.path.join(util.paratext_projects_folder_path,project_abbreviation)
+    paratext_project_folder_path = os.path.join(
+        util.paratext_projects_folder_path, project_abbreviation
+    )
     for file_name in os.listdir(local_files_folder_path):
-        paratext_file_path=os.path.join(paratext_project_folder_path,file_name)
-        local_file_path=os.path.join(local_files_folder_path,file_name)
-        shutil.copy2(local_file_path,paratext_file_path)
+        paratext_file_path = os.path.join(paratext_project_folder_path, file_name)
+        local_file_path = os.path.join(local_files_folder_path, file_name)
+        shutil.copy2(local_file_path, paratext_file_path)
 
         if remove_comenting_rem_tags:
-            lines=[l for l in util.read_file_lines(paratext_file_path) if not l.startswith(r'\rem ')]
+            lines = [
+                line
+                for line in util.read_file_lines(paratext_file_path)
+                if not line.startswith(r"\rem ")
+            ]
             try:
-                with open(paratext_file_path,encoding='utf-8',mode='w') as f:
-                    f.write('\n'.join([l.strip() for l in lines]))
-            except: pass
+                with open(paratext_file_path, encoding="utf-8", mode="w") as f:
+                    f.write("\n".join([line.strip() for line in lines]))
+            except Exception:
+                print("Something went wrong when writing to files.")
+
 
 def remove_usfm_tags(line: str):
     # Remove WJ, ND, QT tags from the Bible verse line
@@ -58,9 +70,10 @@ def remove_usfm_tags(line: str):
     line = re.sub(footnote_pattern, "", line)
     return line
 
+
 def form_logs(
-    source_folder_path:str=util.revision_folder_path,
-    output_folder_path:str=revision_logs_folder,
+    source_folder_path: str = util.revision_folder_path,
+    output_folder_path: str = revision_logs_folder,
 ):
     def get_verse_number(line: str) -> int:
         verse_number_pattern = r"\\v\s\d+"
@@ -83,20 +96,22 @@ def form_logs(
     Dashes = [header]
 
     for file_name in os.listdir(source_folder_path):
-        file_path=os.path.join(source_folder_path,file_name)
-        lines=util.read_file_lines(file_path)
-        Book_name=util.get_Book_name_from_full_file_name(file_name)
+        file_path = os.path.join(source_folder_path, file_name)
+        lines = util.read_file_lines(file_path)
+        Book_name = util.get_Book_name_from_full_file_name(file_name)
         chapter_number = 0
-        last_verse_number=1
+        last_verse_number = 1
 
         for line in lines:
             try:
-                verse_number=get_verse_number(line)
-                last_verse_number=verse_number
-            except: ...
+                verse_number = get_verse_number(line)
+                last_verse_number = verse_number
+            except Exception as e:
+                print(f"ERROR: {e}")
             if "\\c " in line:
                 chapter_number = line[3:].strip()
-            elif '\\ms' in line: continue
+            elif "\\ms" in line:
+                continue
 
             if "\\wj" in line or "\\+wj" in line:
                 contents = re.findall(r"\\\+?wj\s(.*?)\\\+?wj\*", line)
@@ -141,68 +156,100 @@ def form_logs(
                     Dashes.append(res)
 
     try:
-        with open(os.path.join(output_folder_path, "WJ.csv"), encoding="utf-8", mode='w') as f:
+        with open(
+            os.path.join(output_folder_path, "WJ.csv"), encoding="utf-8", mode="w"
+        ) as f:
             f.write("\n".join(WJ))
-    except: pass
+    except Exception:
+        print("Something went wrong when writing to files.")
 
     try:
-        with open(os.path.join(output_folder_path, "ND.csv"), encoding="utf-8", mode='w') as f:
+        with open(
+            os.path.join(output_folder_path, "ND.csv"), encoding="utf-8", mode="w"
+        ) as f:
             f.write("\n".join(ND))
-    except: pass
+    except Exception:
+        print("Something went wrong when writing to files.")
 
     try:
-        with open(os.path.join(output_folder_path, "QT.csv"), encoding="utf-8", mode='w') as f:
+        with open(
+            os.path.join(output_folder_path, "QT.csv"), encoding="utf-8", mode="w"
+        ) as f:
             f.write("\n".join(QT))
-    except: pass
+    except Exception:
+        print("Something went wrong when writing to files.")
 
     try:
-        with open(os.path.join(output_folder_path, "F.csv"), encoding="utf-8", mode='w') as f:
+        with open(
+            os.path.join(output_folder_path, "F.csv"), encoding="utf-8", mode="w"
+        ) as f:
             f.write("\n".join(F))
-    except: pass
+    except Exception:
+        print("Something went wrong when writing to files.")
 
     try:
-        with open(os.path.join(output_folder_path, "Quotes.csv"), encoding="utf-8", mode='w') as f:
+        with open(
+            os.path.join(output_folder_path, "Quotes.csv"), encoding="utf-8", mode="w"
+        ) as f:
             f.write("\n".join(Quotes))
-    except: pass
+    except Exception:
+        print("Something went wrong when writing to files.")
 
     try:
-        with open(os.path.join(output_folder_path, "Apostrophes.csv"),encoding="utf-8",mode='w',) as f:
+        with open(
+            os.path.join(output_folder_path, "Apostrophes.csv"),
+            encoding="utf-8",
+            mode="w",
+        ) as f:
             f.write("\n".join(Apostrophes))
-    except: pass
+    except Exception:
+        print("Something went wrong when writing to files.")
 
     try:
-        with open(os.path.join(output_folder_path, "Dashes.csv"), encoding="utf-8", mode='w') as f:
+        with open(
+            os.path.join(output_folder_path, "Dashes.csv"), encoding="utf-8", mode="w"
+        ) as f:
             f.write("\n".join(Dashes))
-    except: pass
+    except Exception:
+        print("Something went wrong when writing to files.")
+
 
 def make_tbs_text_files(
-    folder_path:str=util.original_folder_path,
+    folder_path: str = util.original_folder_path,
 ):
     for file_name in os.listdir(folder_path):
-        Book_name=util.get_Book_name_from_full_file_name(file_name)
-        file_path=os.path.join(folder_path,file_name)
-        lines=util.read_file_lines(file_path)
+        Book_name = util.get_Book_name_from_full_file_name(file_name)
+        file_path = os.path.join(folder_path, file_name)
+        lines = util.read_file_lines(file_path)
 
-        needed_tags=['toc','v','s','c']
-        lines=[line for line in lines if any(tag in line for tag in needed_tags)]
-        for i,line in enumerate(lines):
-            lines[i]=lines[i].replace('[','*').replace(']','*')
-            lines[i]=re.sub(r'\\f\s\+\s\\ft\s','[',lines[i]).replace(r'\f*',']').replace(r'\v ','#').replace(r'\c ','##').replace(r'\toc2','###!').replace(r'\toc1','###!!')
-            lines[i]=re.sub(r'\\s\d+','##!',lines[i])
-            lines[i]=util.remove_formatting_usfm_tags(lines[i])
-        lines=[f'###{Book_name}']+lines
-    
-        output_file_path=os.path.join(original_docs_folder_path,'TBS',file_name[2:].replace('USFM','TXT'))
+        needed_tags = ["toc", "v", "s", "c"]
+        lines = [line for line in lines if any(tag in line for tag in needed_tags)]
+        for i, line in enumerate(lines):
+            lines[i] = lines[i].replace("[", "*").replace("]", "*")
+            lines[i] = (
+                re.sub(r"\\f\s\+\s\\ft\s", "[", lines[i])
+                .replace(r"\f*", "]")
+                .replace(r"\v ", "#")
+                .replace(r"\c ", "##")
+                .replace(r"\toc2", "###!")
+                .replace(r"\toc1", "###!!")
+            )
+            lines[i] = re.sub(r"\\s\d+", "##!", lines[i])
+            lines[i] = util.remove_formatting_usfm_tags(lines[i])
+        lines = [f"###{Book_name}"] + lines
+
+        output_file_path = os.path.join(
+            original_docs_folder_path, "TBS", file_name[2:].replace("USFM", "TXT")
+        )
         try:
-            with open(output_file_path,encoding='utf-8',mode='w') as f:
-                f.write('\n'.join([l.strip() for l in lines]))
-        except: pass
+            with open(output_file_path, encoding="utf-8", mode="w") as f:
+                f.write("\n".join([line.strip() for line in lines]))
+        except Exception as e:
+            print(f"ERROR: {e}")
 
 
-def sort_markdown_table(
-    file_path: str
-):
-    lines=util.read_file_lines(file_path)
+def sort_markdown_table(file_path: str):
+    lines = util.read_file_lines(file_path)
     changes: list[util.ChangeEntry] = []
     for line in lines[2:]:
         split_line = line.strip()[2:-2].split(" | ")
@@ -235,310 +282,388 @@ def sort_markdown_table(
             sorted_table_lines.append(line)
 
     try:
-        with open(file_path, encoding="utf-8", mode='w') as f:
+        with open(file_path, encoding="utf-8", mode="w") as f:
             f.write("\n".join(sorted_table_lines))
-    except: pass
+    except Exception:
+        print("Something went wrong when trying to write to file.")
 
 
 def form_text_lined(
-    source_folder_path:str=util.original_folder_path,
-    vault_output_file_path:str=r"E:\Notatnyk\Біблія Куліша.txt",
-    local_output_file_path:str=None,
+    source_folder_path: str = util.original_folder_path,
+    vault_output_file_path: str = r"E:\Notatnyk\Біблія Куліша.txt",
+    local_output_file_path: str = None,
 ):
     output_lines = []
     for file_name in os.listdir(source_folder_path):
-        file_path=os.path.join(source_folder_path,file_name)
-        lines=util.read_file_lines(file_path)
-        Book_name=util.get_Book_name_from_full_file_name(file_name)
+        file_path = os.path.join(source_folder_path, file_name)
+        lines = util.read_file_lines(file_path)
+        Book_name = util.get_Book_name_from_full_file_name(file_name)
         chapter_number = 1
 
         for line in lines:
             if "\\c " in line:
                 chapter_number = line[3:].split()[0]
-            elif r'\v ' in line:
+            elif r"\v " in line:
                 verse_text = line[3:].strip()
-                stripped_formatting_tags=util.remove_formatting_usfm_tags(verse_text)
-                removed_footnotes=util.remove_footnotes_and_crossreferences_with_contents(stripped_formatting_tags)
-                removed_strongs_numbres=util.remove_strongs_numbers(removed_footnotes).strip().replace('  ',' ')
+                stripped_formatting_tags = util.remove_formatting_usfm_tags(verse_text)
+                removed_footnotes = (
+                    util.remove_footnotes_and_crossreferences_with_contents(
+                        stripped_formatting_tags
+                    )
+                )
+                removed_strongs_numbres = (
+                    util.remove_strongs_numbers(removed_footnotes)
+                    .strip()
+                    .replace("  ", " ")
+                )
                 line = f"{Book_name} {chapter_number}:{removed_strongs_numbres}"
                 output_lines.append(line)
     try:
         if local_output_file_path:
-            with open(local_output_file_path,encoding='utf-8',mode='w') as f:
-                f.write('\n'.join(output_lines))
-        if 'Notatnyk' not in vault_output_file_path:
-            vault_output_file_path=os.path.join(r'E:\Notatnyk',vault_output_file_path)
-        with open(vault_output_file_path,encoding='utf-8',mode='w') as f:
-            f.write('\n'.join(output_lines))
-    except: pass
-
+            with open(local_output_file_path, encoding="utf-8", mode="w") as f:
+                f.write("\n".join(output_lines))
+        if "Notatnyk" not in vault_output_file_path:
+            vault_output_file_path = os.path.join(
+                r"E:\Notatnyk", vault_output_file_path
+            )
+        with open(vault_output_file_path, encoding="utf-8", mode="w") as f:
+            f.write("\n".join(output_lines))
+    except Exception:
+        print("Something went wrong when trying to write to a file.")
 
 
 def mark_text(
-    given_text:str,
+    given_text: str,
 ):
-    PUNCTUATION=r"!”#’$%&'()*+,-./:;<?=@>[\]^_`{|}~"
+    PUNCTUATION = r"!”#’$%&'()*+,-./:;<?=@>[\]^_`{|}~"
 
     def make_dashes_typographical(text):
-        text=re.sub(r'(\s)-',r'\1—',text)
-        text=re.sub(r'-(\s)',r'—\1',text)
+        text = re.sub(r"(\s)-", r"\1—", text)
+        text = re.sub(r"-(\s)", r"—\1", text)
         return text
 
     def render_accent_marks(text):
-        ACCENT_MARK='\u0301'
-        return re.sub(rf'([аеєиіїоуюяАЕЄИІЇОУЮЯ])!([\w{PUNCTUATION}])',rf'\1{ACCENT_MARK}\2',text)
+        ACCENT_MARK = "\u0301"
+        return re.sub(
+            rf"([аеєиіїоуюяАЕЄИІЇОУЮЯ])!([\w{PUNCTUATION}])",
+            rf"\1{ACCENT_MARK}\2",
+            text,
+        )
 
     def make_apostrophes_typographical(text):
-        return re.sub(rf'(\w)\'([\w{PUNCTUATION}])',r'\1ʼ\2',text)
+        return re.sub(rf"(\w)\'([\w{PUNCTUATION}])", r"\1ʼ\2", text)
 
     def make_quotes_typographical(text):
-        '''
+        """
         SINGLE_OPENING='‹'
         SINGLE_CLOSING='›'
-        '''
-        SINGLE_OPENING='“'
-        SINGLE_CLOSING='”'
-        DOUBLE_OPENING='«'
-        DOUBLE_CLOSING='»'
+        """
+        SINGLE_OPENING = "“"
+        SINGLE_CLOSING = "”"
+        DOUBLE_OPENING = "«"
+        DOUBLE_CLOSING = "»"
 
-        '''
+        """
         SINGLE_OPENING='‚'
         SINGLE_CLOSING='‛'
         DOUBLE_OPENING='„'
         DOUBLE_CLOSING='‟'
-        '''
+        """
 
-        '''
+        """
         SINGLE_OPENING='‘'
         SINGLE_CLOSING='’'
         DOUBLE_OPENING='“'
         DOUBLE_CLOSING='”'
-        '''
+        """
 
-        def replace_at_index(text,index=0,replacement=''):
-            return f'{text[:index]}{replacement}{text[index+1:]}'
+        def replace_at_index(text, index=0, replacement=""):
+            return f"{text[:index]}{replacement}{text[index + 1 :]}"
 
-        single_last_closing=False
-        double_last_closing=False
-        for i,symbol in enumerate(text):
-            if symbol==DOUBLE_OPENING: double_last_closing=True
-            elif symbol==SINGLE_OPENING: single_last_closing=True
-            if symbol==DOUBLE_CLOSING: double_last_closing=False
-            elif symbol==SINGLE_CLOSING: single_last_closing=False
+        single_last_closing = False
+        double_last_closing = False
+        for i, symbol in enumerate(text):
+            if symbol == DOUBLE_OPENING:
+                double_last_closing = True
+            elif symbol == SINGLE_OPENING:
+                single_last_closing = True
+            if symbol == DOUBLE_CLOSING:
+                double_last_closing = False
+            elif symbol == SINGLE_CLOSING:
+                single_last_closing = False
 
-            elif symbol=="'":
-                if not single_last_closing: 
-                    text=replace_at_index(text,i,SINGLE_OPENING)
-                    single_last_closing=True
-                else: 
-                    text=replace_at_index(text,i,SINGLE_CLOSING)
-                    single_last_closing=False
-            elif symbol=='"':
-                if not double_last_closing: 
-                    text=replace_at_index(text,i,DOUBLE_OPENING)
-                    double_last_closing=True
-                else: 
-                    text=replace_at_index(text,i,DOUBLE_CLOSING)
-                    double_last_closing=False
+            elif symbol == "'":
+                if not single_last_closing:
+                    text = replace_at_index(text, i, SINGLE_OPENING)
+                    single_last_closing = True
+                else:
+                    text = replace_at_index(text, i, SINGLE_CLOSING)
+                    single_last_closing = False
+            elif symbol == '"':
+                if not double_last_closing:
+                    text = replace_at_index(text, i, DOUBLE_OPENING)
+                    double_last_closing = True
+                else:
+                    text = replace_at_index(text, i, DOUBLE_CLOSING)
+                    double_last_closing = False
         return text
 
-    dashes_fixed=make_dashes_typographical(given_text)
-    apostrophes_fixed=make_apostrophes_typographical(dashes_fixed)
-    quotes_fixed=make_quotes_typographical(apostrophes_fixed)
-    accents_fixed=render_accent_marks(quotes_fixed)
+    dashes_fixed = make_dashes_typographical(given_text)
+    apostrophes_fixed = make_apostrophes_typographical(dashes_fixed)
+    quotes_fixed = make_quotes_typographical(apostrophes_fixed)
+    accents_fixed = render_accent_marks(quotes_fixed)
     return accents_fixed
 
 
 def format_edited_file(
-    file_name='GAL',
+    file_name="GAL",
 ):
-    selected_Book=[B for B in os.listdir(util.revision_folder_path) if file_name in B][0]
-    Book_path=os.path.join(util.revision_folder_path,selected_Book)
-    with open(Book_path,encoding='utf-8',mode='r') as f:
-        text=f.read()
-    formatted_text=mark_text(text)
-    with open(Book_path,encoding='utf-8',mode='w') as f:
+    selected_Book = [
+        B for B in os.listdir(util.revision_folder_path) if file_name in B
+    ][0]
+    Book_path = os.path.join(util.revision_folder_path, selected_Book)
+    with open(Book_path, encoding="utf-8", mode="r") as f:
+        text = f.read()
+    formatted_text = mark_text(text)
+    with open(Book_path, encoding="utf-8", mode="w") as f:
         f.write(formatted_text)
 
 
 def copy_Original_to_Revision(
-    source_folder_path:str = util.original_folder_path,
-    revision_folder_path:str= util.revision_folder_path,
+    source_folder_path: str = util.original_folder_path,
+    revision_folder_path: str = util.revision_folder_path,
 ):
     for original_file_name in os.listdir(source_folder_path):
-        original_file_path=os.path.join(source_folder_path,original_file_name)
-        revision_file_path=os.path.join(revision_folder_path,original_file_name)
-        shutil.copy2(original_file_path,revision_file_path)
+        original_file_path = os.path.join(source_folder_path, original_file_name)
+        revision_file_path = os.path.join(revision_folder_path, original_file_name)
+        shutil.copy2(original_file_path, revision_file_path)
 
-        if 'PSA' in original_file_name:
+        if "PSA" in original_file_name:
             # add Q1 tags before each verse in Psalms
-            lines=['\\q1\n'+line.strip() if r'\v ' in line else line.strip() for line in util.read_file_lines(revision_file_path)]
-            with open(revision_file_path,encoding='utf-8',mode='w') as f:
-                f.write('\n'.join(lines))
+            lines = [
+                "\\q1\n" + line.strip() if r"\v " in line else line.strip()
+                for line in util.read_file_lines(revision_file_path)
+            ]
+            with open(revision_file_path, encoding="utf-8", mode="w") as f:
+                f.write("\n".join(lines))
+
 
 def make_solid_file(
-    source_folder_path = util.original_folder_path,
-    vault_output_file_path = r'E:\Notatnyk\Біблія Куліша.log',
+    source_folder_path=util.original_folder_path,
+    vault_output_file_path=r"E:\Notatnyk\Біблія Куліша.log",
 ):
-    output=[]
+    output = []
     for file_name in os.listdir(source_folder_path):
-        if 'FRT' in file_name: continue
-        res=[]
-        file_path=os.path.join(source_folder_path,file_name)
-        lines=util.read_file_lines(file_path)
-        avoided_tags='h,toc,c,p,id,mt,s'
-        avoided_tags=avoided_tags.split(',')
-        cleared_lines=[l for l in lines if not any(t in l for t in avoided_tags)]
-        for l in cleared_lines:
-            v,c=l[3:].split(' ',maxsplit=1)
-            c=util.remove_formatting_usfm_tags(c).strip()
-            c=util.remove_footnotes_and_crossreferences_with_contents(c)
+        if "FRT" in file_name:
+            continue
+        res = []
+        file_path = os.path.join(source_folder_path, file_name)
+        lines = util.read_file_lines(file_path)
+        avoided_tags = "h,toc,c,p,id,mt,s"
+        avoided_tags = avoided_tags.split(",")
+        cleared_lines = [
+            line for line in lines if not any(t in line for t in avoided_tags)
+        ]
+        for clean_line in cleared_lines:
+            v, c = clean_line[3:].split(" ", maxsplit=1)
+            c = util.remove_formatting_usfm_tags(c).strip()
+            c = util.remove_footnotes_and_crossreferences_with_contents(c)
             res.append(c)
-        res=' '.join(res)
+        res = " ".join(res)
         output.append(res)
-    output=' '.join(output)
-        
+    output = " ".join(output)
+
     try:
-        if 'Notatnyk' not in vault_output_file_path:
-            vault_output_file_path=os.path.join(r'E:\Notatnyk',vault_output_file_path)
-        with open(vault_output_file_path,encoding='utf-8',mode='w') as f:
+        if "Notatnyk" not in vault_output_file_path:
+            vault_output_file_path = os.path.join(
+                r"E:\Notatnyk", vault_output_file_path
+            )
+        with open(vault_output_file_path, encoding="utf-8", mode="w") as f:
             f.write(output.strip())
-    except: pass
+    except Exception:
+        print("Something went wrong when trying to write to a file.")
 
 
 def make_json_Bible(
-    source_folder_path = util.original_folder_path,
-    local_output_file_path = json_Bible_path,
+    source_folder_path=util.original_folder_path,
+    local_output_file_path=json_Bible_path,
 ):
     def get_Book_number(file_name: str) -> int:
-        Book_without_numbers_prefix=file_name[2:]
-        Book_abbreviation=Book_without_numbers_prefix.split(".")[0]
-        Book_number=BIBLE_ABBREVIATION_TO_BOOK_NUMBER[Book_abbreviation]
+        Book_without_numbers_prefix = file_name[2:]
+        Book_abbreviation = Book_without_numbers_prefix.split(".")[0]
+        Book_number = BIBLE_ABBREVIATION_TO_BOOK_NUMBER[Book_abbreviation]
         return int(Book_number)
 
     Bible_dictionary: defaultdict = defaultdict(dict)
 
     for file_name in os.listdir(source_folder_path):
-        if 'FRT' in file_name or "GLO" in file_name: continue
+        if "FRT" in file_name or "GLO" in file_name:
+            continue
 
-        file_path=os.path.join(source_folder_path,file_name)
-        lines=util.read_file_lines(file_path)
+        file_path = os.path.join(source_folder_path, file_name)
+        lines = util.read_file_lines(file_path)
 
         Book_number: int = get_Book_number(file_name)
-        Bible_dictionary[Book_number]=dict()
+        Bible_dictionary[Book_number] = dict()
 
         chapter_number: int = 0
         for line in lines:
             if "\\c" in line:
                 chapter_number: int = int(line[3:].strip())
-                Bible_dictionary[Book_number][chapter_number]=dict()
+                Bible_dictionary[Book_number][chapter_number] = dict()
             elif "\\v " in line:
                 line_without_tag = line[3:].strip()
                 clean_line = remove_usfm_tags(line_without_tag)
-                verse_number, verse_content = clean_line.split(" ",maxsplit=1)
+                verse_number, verse_content = clean_line.split(" ", maxsplit=1)
                 verse_number = int(verse_number)
-                Bible_dictionary[Book_number][chapter_number][verse_number]=verse_content
+                Bible_dictionary[Book_number][chapter_number][verse_number] = (
+                    verse_content
+                )
 
     try:
-        local_output_file_path=os.path.join(original_docs_folder_path,"UBK.py")
-        with open(local_output_file_path,encoding='utf-8',mode='w') as f:
-            f.write("UBK ="+str(Bible_dictionary)[27:-1])
-    except: pass
-
+        local_output_file_path = os.path.join(original_docs_folder_path, "UBK.py")
+        with open(local_output_file_path, encoding="utf-8", mode="w") as f:
+            f.write("UBK =" + str(Bible_dictionary)[27:-1])
+    except Exception:
+        print("Something went wrong when trying to write to a file.")
 
 
 def form_markdown_output(
-    source = util.original_folder_path,
-    local = formatted_original_output_file_path,
-    vault = r'E:\Notatnyk\Біблія.md',
-    browser = False,
+    source=util.original_folder_path,
+    local=formatted_original_output_file_path,
+    vault=r"E:\Notatnyk\Біблія.md",
+    browser=False,
 ):
     def format_text_line(line):
-        Strongs_numbers_removed=util.remove_strongs_numbers(line)
-        QT_tags_handled=re.sub(r'\\(\+?)qt\s',f'<span style="font-variant: small-caps">',Strongs_numbers_removed)
-        ND_tags_handled=re.sub(r'\\(\+?)nd\s',f'<span style="font-variant: small-caps; font-weight:bold">',QT_tags_handled)
-        WJ_tags_handled=re.sub(r'\\(\+?)wj\s',f'<span style="color: {WJ_COLOR}">',ND_tags_handled)
-        add_opening_tags=re.sub(r'\\(\+?)add\s','<em>',WJ_tags_handled)
-        add_closing_tags=add_opening_tags.replace('\\add*','</em>').replace('\\+add*','</em>')
-        footnotes_removed=util.remove_footnotes_and_crossreferences_with_contents(add_closing_tags)
-        qs_tags_removed=footnotes_removed.replace('\\qs ','').replace('\\qs*','')
-        other_tags_closed=re.sub(r'\\(\+?)\w+\*','</span>',qs_tags_removed)
+        Strongs_numbers_removed = util.remove_strongs_numbers(line)
+        QT_tags_handled = re.sub(
+            r"\\(\+?)qt\s",
+            '<span style="font-variant: small-caps">',
+            Strongs_numbers_removed,
+        )
+        ND_tags_handled = re.sub(
+            r"\\(\+?)nd\s",
+            '<span style="font-variant: small-caps; font-weight:bold">',
+            QT_tags_handled,
+        )
+        WJ_tags_handled = re.sub(
+            r"\\(\+?)wj\s", f'<span style="color: {WJ_COLOR}">', ND_tags_handled
+        )
+        add_opening_tags = re.sub(r"\\(\+?)add\s", "<em>", WJ_tags_handled)
+        add_closing_tags = add_opening_tags.replace("\\add*", "</em>").replace(
+            "\\+add*", "</em>"
+        )
+        footnotes_removed = util.remove_footnotes_and_crossreferences_with_contents(
+            add_closing_tags
+        )
+        qs_tags_removed = footnotes_removed.replace("\\qs ", "").replace("\\qs*", "")
+        other_tags_closed = re.sub(r"\\(\+?)\w+\*", "</span>", qs_tags_removed)
         return other_tags_closed
 
-    WJ_COLOR='#7e1717'
-    output_lines=[]
+    WJ_COLOR = "#7e1717"
+    output_lines = []
 
     for file_name in os.listdir(source):
-        if 'FRT' in file_name: continue
-        file_path=os.path.join(source,file_name)
-        lines=util.read_file_lines(file_path)
-        Book_name=util.get_Book_name_from_full_file_name(file_name)
-        short_Bible_Book_name=[l[6:].strip() for l in lines if '\\toc2 ' in l][0]
-        output_lines.append(f'### {Book_name} {short_Bible_Book_name}')  if not browser else None
-        last_verse_number=1
-        new_chapter=False
-        
+        if "FRT" in file_name:
+            continue
+        file_path = os.path.join(source, file_name)
+        lines = util.read_file_lines(file_path)
+        Book_name = util.get_Book_name_from_full_file_name(file_name)
+        short_Bible_Book_name = [
+            line[6:].strip() for line in lines if "\\toc2 " in line
+        ][0]
+        output_lines.append(
+            f"### {Book_name} {short_Bible_Book_name}"
+        ) if not browser else None
+        last_verse_number = 1
+        new_chapter = False
+
         for line in lines:
-            if r'\c ' in line:
-                chapter_number=line[3:].strip()
-                new_chapter=True
-            elif r'\p' in line or '\\b' in line:
-                line=line[3:].strip()
-                res=f'\n{line}' if line else ''
+            if r"\c " in line:
+                chapter_number = line[3:].strip()
+                new_chapter = True
+            elif r"\p" in line or "\\b" in line:
+                line = line[3:].strip()
+                res = f"\n{line}" if line else ""
                 output_lines.append(res) if not browser else None
-            elif r'\v ' in line:
-                line=line[3:].strip()
-                last_verse_number,contents=line.split(maxsplit=1)
+            elif r"\v " in line:
+                line = line[3:].strip()
+                last_verse_number, contents = line.split(maxsplit=1)
                 if not browser:
-                    formatted_line=format_text_line(contents)
-                    res=f'<small>{last_verse_number}</small> {formatted_line}' if not new_chapter else f'<strong>{chapter_number}</strong> {formatted_line}'
+                    formatted_line = format_text_line(contents)
+                    res = (
+                        f"<small>{last_verse_number}</small> {formatted_line}"
+                        if not new_chapter
+                        else f"<strong>{chapter_number}</strong> {formatted_line}"
+                    )
                 else:
-                    stripped_formatting_tags=util.remove_formatting_usfm_tags(contents)
-                    removed_footnotes=util.remove_footnotes_and_crossreferences_with_contents(stripped_formatting_tags)
-                    bare_line=util.remove_strongs_numbers(removed_footnotes).strip().replace('  ',' ')
-                    res=f"{Book_name} {chapter_number}:{last_verse_number} {bare_line}"
+                    stripped_formatting_tags = util.remove_formatting_usfm_tags(
+                        contents
+                    )
+                    removed_footnotes = (
+                        util.remove_footnotes_and_crossreferences_with_contents(
+                            stripped_formatting_tags
+                        )
+                    )
+                    bare_line = (
+                        util.remove_strongs_numbers(removed_footnotes)
+                        .strip()
+                        .replace("  ", " ")
+                    )
+                    res = (
+                        f"{Book_name} {chapter_number}:{last_verse_number} {bare_line}"
+                    )
                 output_lines.append(res)
-                new_chapter=False
-            elif '\\q' in line:
-                line=line[3:].strip()
-                if not line: continue
-                formatted_line=format_text_line(line)
-                res=f'   {formatted_line}'
+                new_chapter = False
+            elif "\\q" in line:
+                line = line[3:].strip()
+                if not line:
+                    continue
+                formatted_line = format_text_line(line)
+                res = f"   {formatted_line}"
                 output_lines.append(res)
-            elif '\\s1' in line:
-                line=line[3:].strip()
-                res=f'\n**{line}**' if not browser else ""
+            elif "\\s1" in line:
+                line = line[3:].strip()
+                res = f"\n**{line}**" if not browser else ""
                 output_lines.append(res)
 
     try:
         if local:
-            with open(local,encoding='utf-8',mode='w') as f:
-                f.write('\n'.join(output_lines))
-        if 'Notatnyk' not in vault:
-            vault=os.path.join(r'E:\Notatnyk',vault)
-        with open(vault,encoding='utf-8',mode='w') as f:
-            f.write('\n'.join(output_lines))
-    except: pass
+            with open(local, encoding="utf-8", mode="w") as f:
+                f.write("\n".join(output_lines))
+        if "Notatnyk" not in vault:
+            vault = os.path.join(r"E:\Notatnyk", vault)
+        with open(vault, encoding="utf-8", mode="w") as f:
+            f.write("\n".join(output_lines))
+    except Exception:
+        print("Something went wrong when trying to write to a file.")
 
 
 def perform_automations():
     print()
     copy_files_to_paratext_project()
-    print('Paratext Original')
-    copy_files_to_paratext_project('UFB',util.revision_folder_path,True)
-    print('Paratext Revision')
+    print("Paratext Original")
+    copy_files_to_paratext_project("UFB", util.revision_folder_path, True)
+    print("Paratext Revision")
     make_tbs_text_files()
-    print('TBS Original')
+    print("TBS Original")
 
-    form_markdown_output(vault='Біблія.md')
-    print('Original reader')
-    form_markdown_output(source=r"E:\Pereklad-Bibliji\KJV_Strongs",local=None,vault='Bible.md')
-    print('KJV reader')
+    form_markdown_output(vault="Біблія.md")
+    print("Original reader")
+    form_markdown_output(
+        source=r"E:\Pereklad-Bibliji\KJV_Strongs", local=None, vault="Bible.md"
+    )
+    print("KJV reader")
 
-    form_markdown_output(vault='Біблія.txt',browser=True)
-    print('Original browser')
-    form_markdown_output(source=r"E:\Pereklad-Bibliji\KJV_Strongs",local=None,vault='Bible.txt',browser=True)
-    print('KJV browser')
+    form_markdown_output(vault="Біблія.txt", browser=True)
+    print("Original browser")
+    form_markdown_output(
+        source=r"E:\Pereklad-Bibliji\KJV_Strongs",
+        local=None,
+        vault="Bible.txt",
+        browser=True,
+    )
+    print("KJV browser")
 
     # form_markdown_output(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.md')
     # print('Formatted Revision')
@@ -555,18 +680,25 @@ def perform_automations():
     # make_solid_file(util.original_folder_path)
     # print('Solid Original')
 
-    form_logs(util.original_folder_path,original_logs_folder)
-    print('Logs Original')
+    form_logs(util.original_folder_path, original_logs_folder)
+    print("Logs Original")
     form_logs()
-    print('Logs Revision')
+    print("Logs Revision")
     sort_markdown_table(changes_file)
-    print('Original Changes')
+    print("Original Changes")
 
     make_json_Bible()
     print("UBK in Json")
 
+
 def watch_folder_for_changes():
-    file_paths=[os.path.join(util.original_folder_path,file_name) for file_name in os.listdir(util.original_folder_path)]+[os.path.join(util.revision_folder_path,file_name) for file_name in os.listdir(util.revision_folder_path)]
+    file_paths = [
+        os.path.join(util.original_folder_path, file_name)
+        for file_name in os.listdir(util.original_folder_path)
+    ] + [
+        os.path.join(util.revision_folder_path, file_name)
+        for file_name in os.listdir(util.revision_folder_path)
+    ]
     last_modified_file = max(file_paths, key=os.path.getmtime)
     last_modification_time = os.path.getmtime(last_modified_file)
     perform_automations()
@@ -577,6 +709,7 @@ def watch_folder_for_changes():
             perform_automations()
             last_modification_time = current_modification_time
         time.sleep(1)
+
 
 if __name__ == "__main__":
     watch_folder_for_changes()
