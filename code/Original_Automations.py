@@ -521,11 +521,58 @@ def make_json_Bible(
                 )
 
     try:
-        local_output_file_path = os.path.join(original_docs_folder_path, "UBK.py")
+        local_output_file_path = os.path.join(original_docs_folder_path, "UBK.json")
         with open(local_output_file_path, encoding="utf-8", mode="w") as f:
             f.write("UBK =" + str(Bible_dictionary)[27:-1])
     except Exception:
         print("Something went wrong when trying to write to a file.")
+
+
+def form_html_Bible():
+    def format_text_line(line):
+        Strongs_numbers_removed = util.remove_strongs_numbers(line)
+        WJ_tags_handled = re.sub(
+            r"\\(\+?)wj\s", f'<span style="color: {WJ_COLOR}">', Strongs_numbers_removed
+        )
+        footnotes_removed = util.remove_footnotes_and_crossreferences_with_contents(
+            WJ_tags_handled
+        )
+        other_tags_closed = re.sub(r"\\(\+?)\w+\*", "</span>", footnotes_removed)
+        return other_tags_closed
+
+    output_folder_path = os.path.join(
+        util.docs_folder_path, "Original", "Original_HTML"
+    )
+    WJ_COLOR = "#7e1717"
+
+    for file_name in os.listdir(util.original_folder_path):
+        output_lines = []
+        if "FRT" in file_name:
+            continue
+        file_path = os.path.join(util.original_folder_path, file_name)
+        lines = util.read_file_lines(file_path)
+        Book_name = util.get_Book_name_from_full_file_name(file_name)
+        last_verse_number = 1
+
+        for line in lines:
+            if r"\c " in line:
+                chapter_number = line[3:].strip()
+                res = f"<h2>{Book_name} {chapter_number}</h2>"
+                output_lines.append(res)
+            elif r"\v " in line:
+                line = line[3:].strip()
+                last_verse_number, contents = line.split(maxsplit=1)
+                formatted_line = format_text_line(contents)
+                res = f"<p><small>{last_verse_number}</small> {formatted_line}</p>"
+                output_lines.append(res)
+            elif "\\s1" in line:
+                line = line[3:].strip()
+                res = f"<em>{line}</em>"
+                output_lines.append(res)
+
+        file_path = os.path.join(output_folder_path, f"{Book_name}.html")
+        with open(file_path, encoding="utf-8", mode="w") as f:
+            f.writelines("\n".join(output_lines))
 
 
 def form_markdown_output(
@@ -631,73 +678,24 @@ def form_markdown_output(
         if local:
             with open(local, encoding="utf-8", mode="w") as f:
                 f.write("\n".join(output_lines))
-        if "Notatnyk" not in vault:
-            vault = os.path.join(r"E:\Notatnyk", vault)
-        with open(vault, encoding="utf-8", mode="w") as f:
-            f.write("\n".join(output_lines))
+        if vault:
+            if "Notatnyk" not in vault:
+                vault = os.path.join(r"E:\Notatnyk", vault)
+            with open(vault, encoding="utf-8", mode="w") as f:
+                f.write("\n".join(output_lines))
     except Exception:
         print("Something went wrong when trying to write to a file.")
 
 
 def perform_automations():
-    print()
-    copy_files_to_paratext_project()
-    print("Paratext Original")
-    copy_files_to_paratext_project("UFB", util.revision_folder_path, True)
-    print("Paratext Revision")
-    make_tbs_text_files()
-    print("TBS Original")
-
-    form_markdown_output(vault="Біблія.md")
-    print("Original reader")
-    form_markdown_output(
-        source=r"E:\Pereklad-Bibliji\KJV_Strongs", local=None, vault="Bible.md"
-    )
-    print("KJV reader")
-
-    form_markdown_output(vault="Біблія.txt", browser=True)
-    print("Original browser")
-    form_markdown_output(
-        source=r"E:\Pereklad-Bibliji\KJV_Strongs",
-        local=None,
-        vault="Bible.txt",
-        browser=True,
-    )
-    print("KJV browser")
-
-    # form_markdown_output(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.md')
-    # print('Formatted Revision')
-    # form_markdown_output(source_folder_path=r"E:\Pereklad-Bibliji\WEB",local_output_file_path=None,vault_output_file_path=r'E:\Notatnyk\Біблія світова.md')
-    # print('Formatted WEB')
-
-    # form_text_lined(vault_output_file_path=r'Біблія Куліша.txt')
-    # print('Lined Original')
-    # form_text_lined(util.revision_folder_path,formatted_revision_output_file_path,r'E:\Notatnyk\Біблія свободи.txt')
-    # print('Lined Revision')
-    # form_text_lined(source_folder_path=r"E:\Pereklad-Bibliji\KJV_Strongs",vault_output_file_path=r'Біблія Короля Якова.txt')
-    # print('Lined KJV')
-
-    # make_solid_file(util.original_folder_path)
-    # print('Solid Original')
-
-    form_logs(util.original_folder_path, original_logs_folder)
-    print("Logs Original")
-    form_logs()
-    print("Logs Revision")
-    sort_markdown_table(changes_file)
-    print("Original Changes")
-
-    make_json_Bible()
-    print("UBK in Json")
+    form_html_Bible()
+    print("Original HTML")
 
 
 def watch_folder_for_changes():
     file_paths = [
         os.path.join(util.original_folder_path, file_name)
         for file_name in os.listdir(util.original_folder_path)
-    ] + [
-        os.path.join(util.revision_folder_path, file_name)
-        for file_name in os.listdir(util.revision_folder_path)
     ]
     last_modified_file = max(file_paths, key=os.path.getmtime)
     last_modification_time = os.path.getmtime(last_modified_file)
