@@ -563,7 +563,7 @@ def form_html_Bible():
                 line = line[3:].strip()
                 last_verse_number, contents = line.split(maxsplit=1)
                 formatted_line = format_text_line(contents)
-                res = f"<p><small>{last_verse_number}</small> {formatted_line}</p>"
+                res = f"<small>{last_verse_number}</small> {formatted_line}"
                 output_lines.append(res)
             elif "\\s1" in line:
                 line = line[3:].strip()
