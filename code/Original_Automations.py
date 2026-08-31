@@ -290,11 +290,14 @@ def sort_markdown_table(file_path: str):
 
 def form_text_lined(
     source_folder_path: str = util.original_folder_path,
-    vault_output_file_path: str = r"E:\Notatnyk\Біблія Куліша.txt",
-    local_output_file_path: str = None,
+    vault_output_file_path: str | None = r"E:\Notatnyk\Біблія Куліша.txt",
+    local_output_file_path: str | None = None,
 ):
     output_lines = []
     for file_name in os.listdir(source_folder_path):
+        if ".usfm" not in file_name.lower() or ".bak" in file_name.lower():
+            continue
+
         file_path = os.path.join(source_folder_path, file_name)
         lines = util.read_file_lines(file_path)
         Book_name = util.get_Book_name_from_full_file_name(file_name)
@@ -318,16 +321,11 @@ def form_text_lined(
                 )
                 line = f"{Book_name} {chapter_number}:{removed_strongs_numbres}"
                 output_lines.append(line)
+
     try:
         if local_output_file_path:
             with open(local_output_file_path, encoding="utf-8", mode="w") as f:
                 f.write("\n".join(output_lines))
-        if "Notatnyk" not in vault_output_file_path:
-            vault_output_file_path = os.path.join(
-                r"E:\Notatnyk", vault_output_file_path
-            )
-        with open(vault_output_file_path, encoding="utf-8", mode="w") as f:
-            f.write("\n".join(output_lines))
     except Exception:
         print("Something went wrong when trying to write to a file.")
 
@@ -516,9 +514,9 @@ def make_json_Bible(
                 clean_line = remove_usfm_tags(line_without_tag)
                 verse_number, verse_content = clean_line.split(" ", maxsplit=1)
                 verse_number = int(verse_number)
-                Bible_dictionary[Book_number][chapter_number][verse_number] = (
-                    verse_content
-                )
+                Bible_dictionary[Book_number][chapter_number][
+                    verse_number
+                ] = verse_content
 
     try:
         local_output_file_path = os.path.join(original_docs_folder_path, "UBK.json")
@@ -619,9 +617,11 @@ def form_markdown_output(
         short_Bible_Book_name = [
             line[6:].strip() for line in lines if "\\toc2 " in line
         ][0]
-        output_lines.append(
-            f"### {Book_name} {short_Bible_Book_name}"
-        ) if not browser else None
+        (
+            output_lines.append(f"### {Book_name} {short_Bible_Book_name}")
+            if not browser
+            else None
+        )
         last_verse_number = 1
         new_chapter = False
 
