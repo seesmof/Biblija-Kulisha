@@ -1,7 +1,5 @@
 import os
-
 from Original_Automations import form_text_lined
-import util
 
 paratext_project_folder_path: str = os.path.join("C:\\My Paratext 9 Projects\\UFB")
 output_file_path: str = os.path.join(
