@@ -79,9 +79,6 @@
 
 ### Noticed typos when reading the Word, not checked:
 
-- ZEC 10:6 **Гоеподь**
-- ZEC 13:8 зіетанеться
-- ZEC 13:9 ймя мов
 - ZEC 14:5 долину **мойс** гір
 - ZEC 14:12 стояти ме
 - ZEC 14:15 язва **побе** конї
