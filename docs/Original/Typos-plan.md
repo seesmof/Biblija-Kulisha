@@ -1,2 +1,3 @@
 - [x] PRO
-- [ ] JOB
+- [x] JOB
+- [ ] ISA
