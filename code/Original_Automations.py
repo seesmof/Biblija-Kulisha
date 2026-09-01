@@ -290,7 +290,6 @@ def sort_markdown_table(file_path: str):
 
 def form_text_lined(
     source_folder_path: str = util.original_folder_path,
-    vault_output_file_path: str | None = r"E:\Notatnyk\Біблія Куліша.txt",
     local_output_file_path: str | None = None,
 ):
     output_lines = []
